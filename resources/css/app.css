@@ -1,3 +1,63 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    :not(pre) > code {
+        color: theme('colors.gray.900');
+        background: none;
+        text-align: left;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        tab-size: 4;
+        hyphens: none;
+    }
+
+    .docs_main :not(pre) > code {
+        display: inline-flex;
+        padding: 0 .125rem;
+        border-radius: .125rem;
+        max-width: 100%;
+        overflow-x: auto;
+        vertical-align: middle;
+        @apply dark:bg-gray-600 dark:text-red-600;
+    }
+
+    pre {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        overflow-x: auto;
+        tab-size: 4;
+        white-space: pre;
+        word-spacing: normal;
+        word-break: normal;
+        word-wrap: normal;
+        box-shadow: 0 1px 1px rgb(0 0 0 / 8%);
+        @apply relative bg-gray-600 rounded-lg;
+    }
+
+    .code-block-wrapper .copyBtn {
+        @apply absolute right-2 top-2 outline-none text-gray-200 hover:text-gray-500 opacity-25 hover:opacity-100;
+    }
+
+    pre .copyBtn:hover,
+    pre .copyBtn:focus,
+    pre .copyBtn:active {
+        @apply text-white outline-none;
+    }
+
+    pre code.torchlight {
+        display: block;
+        min-width: max-content;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        @apply bg-gray-600 !important;
+    }
+
+    pre code.torchlight .line {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
