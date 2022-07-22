@@ -6,10 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
+        "graham-campbell/markdown": "^14.0",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "torchlight/torchlight-commonmark": "^0.5.5",
         "torchlight/torchlight-laravel": "^0.5.11"
     },
     "require-dev": {

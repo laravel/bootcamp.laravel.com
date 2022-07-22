@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dacd1359ff46f77cdf17953e79a28ae9",
+    "content-hash": "c5ea0aed54b5df53202535794bcf67c8",
     "packages": [
         {
             "name": "brick/math",
@@ -507,6 +507,86 @@
                 }
             ],
             "time": "2022-02-20T15:07:15+00:00"
+        },
+        {
+            "name": "graham-campbell/markdown",
+            "version": "v14.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Markdown.git",
+                "reference": "36dc081ad00ee5abedff939cfccbfc5008eed8eb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Markdown/zipball/36dc081ad00ee5abedff939cfccbfc5008eed8eb",
+                "reference": "36dc081ad00ee5abedff939cfccbfc5008eed8eb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^8.75 || ^9.0",
+                "illuminate/filesystem": "^8.75 || ^9.0",
+                "illuminate/support": "^8.75 || ^9.0",
+                "illuminate/view": "^8.75 || ^9.0",
+                "league/commonmark": "^2.3.1",
+                "php": "^7.4.15 || ^8.0.2"
+            },
+            "require-dev": {
+                "graham-campbell/analyzer": "^3.1",
+                "graham-campbell/testbench": "^5.7",
+                "mockery/mockery": "^1.5",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GrahamCampbell\\Markdown\\MarkdownServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Markdown\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https://github.com/GrahamCampbell"
+                }
+            ],
+            "description": "Markdown Is A CommonMark Wrapper For Laravel",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Markdown",
+                "Laravel-Markdown",
+                "common mark",
+                "commonmark",
+                "framework",
+                "laravel",
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/GrahamCampbell/Laravel-Markdown/issues",
+                "source": "https://github.com/GrahamCampbell/Laravel-Markdown/tree/v14.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/graham-campbell/markdown",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2022-05-30T21:37:30+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -4888,6 +4968,61 @@
                 "source": "https://github.com/tijsverkoyen/CssToInlineStyles/tree/2.2.4"
             },
             "time": "2021-12-08T09:12:39+00:00"
+        },
+        {
+            "name": "torchlight/torchlight-commonmark",
+            "version": "v0.5.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/torchlight-api/torchlight-commonmark-php.git",
+                "reference": "eb618ae6187090126a9ef881ccaf9c315d49c99b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/torchlight-api/torchlight-commonmark-php/zipball/eb618ae6187090126a9ef881ccaf9c315d49c99b",
+                "reference": "eb618ae6187090126a9ef881ccaf9c315d49c99b",
+                "shasum": ""
+            },
+            "require": {
+                "league/commonmark": "^1.5|^2.0",
+                "php": "^7.2|^8.0",
+                "torchlight/torchlight-laravel": "^0.5.10"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.3",
+                "orchestra/testbench": "^5.0|^6.0",
+                "phpunit/phpunit": "^8.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Torchlight\\Commonmark\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Aaron Francis",
+                    "email": "aaron@hammerstone.dev"
+                }
+            ],
+            "description": "A Commonmark extension for Torchlight, the syntax highlighting API.",
+            "homepage": "https://torchlight.dev",
+            "keywords": [
+                "Code highlighting",
+                "commonmark",
+                "laravel",
+                "markdown",
+                "syntax highlighting"
+            ],
+            "support": {
+                "issues": "https://github.com/torchlight-api/torchlight-commonmark-php/issues",
+                "source": "https://github.com/torchlight-api/torchlight-commonmark-php/tree/v0.5.5"
+            },
+            "time": "2022-02-23T17:09:44+00:00"
         },
         {
             "name": "torchlight/torchlight-laravel",
