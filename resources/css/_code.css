@@ -1,0 +1,16 @@
+pre {
+    @apply my-4 overflow-x-auto;
+}
+
+pre code.torchlight {
+    @apply block py-4 min-w-max;
+}
+
+pre code.torchlight .line {
+    @apply px-4 leading-loose;
+}
+
+pre code.torchlight .line-number,
+pre code.torchlight .summary-caret {
+    @apply mr-1;
+}
