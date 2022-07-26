@@ -33,19 +33,21 @@ class CalloutExtension implements ExtensionInterface, NodeRendererInterface
 
     public function render(Node $node, ChildNodeRendererInterface $childRenderer)
     {
-        $calloutNode = $this->calloutNode($node);
+        assert($node instanceof BlockQuote);
 
-        if (! $calloutNode) {
+        $calloutTypeNode = $this->calloutTypeNode($node);
+
+        if (! $calloutTypeNode) {
             return null;
         }
 
-        $calloutType = $this->calloutType($calloutNode);
+        $type = $this->calloutType($calloutTypeNode);
 
-        if (! $calloutType) {
+        if (! $type) {
             return null;
         }
 
-        $calloutNode->detach();
+        $calloutTypeNode->detach();
 
         return new HtmlElement(
             'aside',
@@ -53,11 +55,11 @@ class CalloutExtension implements ExtensionInterface, NodeRendererInterface
             [
                 new HtmlElement(
                     'div',
-                    ['class' => "w-20 h-20 mb-6 flex items-center justify-center shrink-0 {$this->calloutTypes[$calloutType]['color']} lg:mb-0"],
+                    ['class' => "w-20 h-20 mb-6 flex items-center justify-center shrink-0 {$this->calloutTypes[$type]['color']} lg:mb-0"],
                     new HtmlElement(
                         'img',
                         [
-                            'src' => $this->calloutTypes[$calloutType]['img'],
+                            'src' => $this->calloutTypes[$type]['img'],
                             'class' => 'opacity-75',
                         ],
                     )
@@ -71,9 +73,9 @@ class CalloutExtension implements ExtensionInterface, NodeRendererInterface
         );
     }
 
-    protected function calloutNode(Node $node): ?Emphasis
+    protected function calloutTypeNode(BlockQuote $blockQuote): ?Emphasis
     {
-        $child = $node->firstChild();
+        $child = $blockQuote->firstChild();
 
         if (! $child instanceof Paragraph) {
             return null;
