@@ -10,8 +10,13 @@ class TabContainer extends AbstractBlock
 
     public function __construct($children, string $group = null)
     {
-        $this->group = $group ?? uniqid();
+        $this->group = $group ?? $this->generateTabHash($children);
 
         $this->replaceChildren($children);
+    }
+
+    protected function generateTabHash(array $children)
+    {
+        return md5(implode('', array_map(fn ($child) => $child->name ?? '', $children)));
     }
 }

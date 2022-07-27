@@ -65,10 +65,10 @@ class TabbedCodeExtension implements ExtensionInterface, NodeRendererInterface
                                 'tab-button',
                                 $tabContent->previous() === null ? 'active' : null
                             ])),
-                            'data-tab' => $tabContent->getName(),
-                            'onClick' => "setTab('{$tabContent->getName()}', '{$tabContainer->group}')",
+                            'data-tab' => $tabContent->name,
+                            'onClick' => "setTab('{$tabContent->name}', '{$tabContainer->group}')",
                         ],
-                        $tabContent->getName(),
+                        $tabContent->name,
                     ), $tabContainer->children())
                 ),
                 new HtmlElement(
@@ -91,7 +91,7 @@ class TabbedCodeExtension implements ExtensionInterface, NodeRendererInterface
                     'tab-content',
                     $tabContent->previous() === null ? 'active' : null
                 ])),
-                'data-tab' => $tabContent->getName(),
+                'data-tab' => $tabContent->name,
             ],
             [
                 isset($attributes['filename']) ? new HtmlElement('div', ['class' => 'tab-filename'], $attributes['filename'] ?? '') : null,
