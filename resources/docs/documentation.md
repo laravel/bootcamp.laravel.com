@@ -1,4 +1,5 @@
 - ## Build Chirper with Inertia
+    - [Introduction](/introduction)
     - [Installation](/installation)
     - [Creating Chirps](/creating-chirps)
     - [Showing Chirps](/showing-chirps)
