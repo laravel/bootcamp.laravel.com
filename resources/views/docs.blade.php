@@ -201,6 +201,12 @@
                                     }
 
                                     restoreTabs()
+
+                                    Array.from(document.getElementsByTagName('a')).forEach(link => {
+                                        if (link.hostname === location.hostname && link.pathname === location.pathname) {
+                                            link.classList.add('active')
+                                        }
+                                    })
                                 </script>
                                 {{-- <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYILK3E&placement=laravelcom" id="_carbonads_js"></script> --}}
                             {{-- </x-accessibility.main-content-wrapper> --}}

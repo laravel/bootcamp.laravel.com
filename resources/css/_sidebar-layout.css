@@ -23,14 +23,14 @@
                     padding-left: 1em;
                     font-weight: 400;
                     line-height: 1.25;
-                }
 
-                &.active a::before {
-                    content: "";
-                    position: absolute;
-                    top: .25em; left: 0;
-                    width: .5rem; height: .5rem;
-                    background: url(/img/icons/active_marker.min.svg) no-repeat center;
+                    &.active::before {
+                        content: "";
+                        position: absolute;
+                        top: .25em; left: 0;
+                        width: .5rem; height: .5rem;
+                        background: url(../images/icons/active_marker.min.svg) no-repeat center;
+                    }
                 }
             }
         }
