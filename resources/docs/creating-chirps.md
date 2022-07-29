@@ -37,8 +37,6 @@ We are also going to place these routes behind two "middleware":
 * The `auth` middleware ensures that only logged-in users can access the route.
 * The `verified` middleware will be used if you decide to enable [email verification](https://laravel.com/docs/verification).
 
-<br>
-
 ```php filename=routes/web.php
 <?php
 

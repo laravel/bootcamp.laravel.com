@@ -1,5 +1,5 @@
 .tabbed-code {
-    @apply bg-dark-500 rounded-md overflow-hidden;
+    @apply my-5 bg-dark-500 rounded-md overflow-hidden;
 
     .tabbed-code-nav {
         @apply flex px-2 pt-2;
@@ -15,7 +15,7 @@
 
     .tabbed-code-body {
         .code-container {
-            @apply rounded-none hidden;
+            @apply m-0 rounded-none hidden;
 
             &.active {
                 @apply block;
@@ -25,7 +25,7 @@
 }
 
 .code-container {
-    @apply rounded-md overflow-hidden;
+    @apply my-5 rounded-md overflow-hidden;
 
     .code-container-filename {
         @apply flex items-center px-4 pb-2 pt-3 text-sm font-mono border-b border-dark-500 text-gray-600;
