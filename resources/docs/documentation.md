@@ -5,5 +5,4 @@
     - [Showing Chirps](/showing-chirps)
     - [Editing Chirps](/editing-chirps)
     - [Deleting Chirps](/deleting-chirps)
-    - [Notifications](/notifications)
     - [Conclusion](/conclusion)
