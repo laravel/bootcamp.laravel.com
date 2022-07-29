@@ -46,7 +46,7 @@ return [
 
     'extensions' => [
         League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension::class,
-        App\Markdown\TabbedCodeExtension::class,
+        Laravel\Unfenced\UnfencedExtension::class,
         App\Markdown\CalloutExtension::class,
         League\CommonMark\Extension\GithubFlavoredMarkdownExtension::class,
         Torchlight\Commonmark\V2\TorchlightExtension::class,

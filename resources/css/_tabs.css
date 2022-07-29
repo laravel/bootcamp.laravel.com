@@ -1,10 +1,10 @@
-.tab-container {
+.tabbed-code {
     @apply bg-dark-500 rounded-md overflow-hidden;
 
-    .tab-nav {
+    .tabbed-code-nav {
         @apply flex px-2 pt-2;
 
-        .tab-button {
+        .tabbed-code-nav-button {
             @apply px-4 py-2 rounded-t-md;
 
             &.active {
@@ -13,32 +13,36 @@
         }
     }
 
-    .tab-body {
-        .tab-content {
-            @apply hidden;
-
-            .tab-filename {
-                @apply flex items-center px-4 pb-2 pt-3 text-sm font-mono border-b border-dark-500 text-gray-600;
-                background-color: #292D3E;
-                background-size: 1.25rem;
-                background-position: 12px center;
-                background-repeat: no-repeat;
-                &:before {
-                    @apply block w-4 h-4 mr-1 bg-gray-700;
-                    content: '';
-                    mask-image: url('../images/icons/document.svg');
-                    mask-repeat: no-repeat;
-                    mask-size: 100%
-                }
-            }
-
-            pre {
-                @apply m-0 rounded-none;
-            }
+    .tabbed-code-body {
+        .code-container {
+            @apply rounded-none hidden;
 
             &.active {
                 @apply block;
             }
         }
+    }
+}
+
+.code-container {
+    @apply rounded-md overflow-hidden;
+
+    .code-container-filename {
+        @apply flex items-center px-4 pb-2 pt-3 text-sm font-mono border-b border-dark-500 text-gray-600;
+        background-color: #292D3E;
+        background-size: 1.25rem;
+        background-position: 12px center;
+        background-repeat: no-repeat;
+        &:before {
+            @apply block w-4 h-4 mr-1 bg-gray-700;
+            content: '';
+            mask-image: url('../images/icons/document.svg');
+            mask-repeat: no-repeat;
+            mask-size: 100%
+        }
+    }
+
+    pre {
+        @apply m-0 rounded-none;
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c5ea0aed54b5df53202535794bcf67c8",
+    "content-hash": "208f9afbd29cf702bf4cacfbd79b698c",
     "packages": [
         {
             "name": "brick/math",
@@ -1343,6 +1343,49 @@
                 "source": "https://github.com/laravel/tinker/tree/v2.7.2"
             },
             "time": "2022-03-23T12:38:24+00:00"
+        },
+        {
+            "name": "laravel/unfenced",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:laravel-labs/unfenced.git",
+                "reference": "63a5091d7b7a177d70db0bebbea75d3db22caf82"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-labs/unfenced/zipball/63a5091d7b7a177d70db0bebbea75d3db22caf82",
+                "reference": "63a5091d7b7a177d70db0bebbea75d3db22caf82",
+                "shasum": ""
+            },
+            "require": {
+                "league/commonmark": "^2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Unfenced\\": "src/",
+                    "Tests\\": "tests/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jess Archer",
+                    "email": "jess@jessarcher.com"
+                }
+            ],
+            "support": {
+                "source": "https://github.com/laravel-labs/unfenced/tree/main",
+                "issues": "https://github.com/laravel-labs/unfenced/issues"
+            },
+            "time": "2022-07-29T05:58:08+00:00"
         },
         {
             "name": "league/commonmark",
@@ -7965,7 +8008,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "laravel/unfenced": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
