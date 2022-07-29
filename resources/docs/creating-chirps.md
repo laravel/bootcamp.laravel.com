@@ -308,27 +308,36 @@ const form = useForm({
 ```
 
 ```javascript tab=React filename=resources/js/Pages/Chirps/Index.jsx
-// TODO
 import React from 'react';
 import Authenticated from '@/Layouts/Authenticated';
 import Button from '@/Components/Button';
-import InputError from '@/Components/Button';
+import InputError from '@/Components/InputError';
 import { useForm, Head } from '@inertiajs/inertia-react';
 
 export default function Index(props) {
+    const { data, setData, post, processing, reset, errors } = useForm({
+        message: '',
+    });
+
+    const submit = (e) => {
+        e.preventDefault();
+        post(route('chirps.store'), { onSuccess: () => reset() });
+    };
+
     return (
-        <Authenticated>
+        <Authenticated auth={props.auth}>
             <Head title="Chirps" />
 
-            <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-                <form onSubmit="form.post(route('chirps.store'), { onSuccess: () => form.reset() })">
+            <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+                <form onSubmit={submit}>
                     <textarea
-                        value="form.message"
+                        value={data.message}
                         placeholder="What's on your mind?"
                         className="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        onChange={e => setData('message', e.target.value)}
                     ></textarea>
-                    <InputError :message="form.errors.message" class="mt-2" />
-                    <Button class="mt-4">Chirp</Button>
+                    <InputError message={errors.message} className="mt-2" />
+                    <Button className="mt-4" disabled={processing}>Chirp</Button>
                 </form>
             </div>
         </Authenticated>
@@ -347,8 +356,7 @@ Let take a moment to add a link to the navigation menu provided by Breeze.
 Update the `Authenticated` layout component provided by Breeze to add a menu item for desktop screens:
 
 ```vue tab=Vue filename=resources/js/Layouts/Authenticated.vue
-<template><!-- [tl! .hidden]
-<!-- Navigation Links -->
+<template><!-- [tl! .hidden] -->
 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
     <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
         Dashboard
@@ -357,45 +365,48 @@ Update the `Authenticated` layout component provided by Breeze to add a menu ite
         Chirps
     </BreezeNavLink><!-- [tl! add:end] -->
 </div>
-</template><!-- [tl! .hidden]
+</template><!-- [tl! .hidden] -->
 ```
 ```javascript tab=React filename=resources/js/Layouts/Authenticated.jsx
-// TODO
+// [tl! add:6,3 .hidden:0,2 .hidden:10,1]
+return (
+<div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+    <NavLink href={route('dashboard')} active={route().current('dashboard')}>
+        Dashboard
+    </NavLink>
+    <NavLink href={route('chirps.index')} active={route().current('chirps.index')}>
+        Chirps
+    </NavLink>
+</div>
+)
 ```
 
 And also for mobile screens:
 
 ```vue tab=Vue filename=resources/js/Layouts/Authenticated.vue
-<template><!-- [tl! .hidden]
-<!-- Responsive Navigation Menu -->
-<div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
-    <div class="pt-2 pb-3 space-y-1">
-        <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
-            Dashboard
-        </BreezeResponsiveNavLink>
-        <BreezeResponsiveNavLink :href="route('chirps.index')" :active="route().current('chirps.index')"><!-- [tl! add:start] -->
-            Chirps
-        </BreezeResponsiveNavLink><!-- [tl! add:end] -->
-    </div>
-    <!-- [tl! collapse:start] -->
-    <!-- Responsive Settings Options -->
-    <div class="pt-4 pb-1 border-t border-gray-200">
-        <div class="px-4">
-            <div class="font-medium text-base text-gray-800">{{ $page.props.auth.user.name }}</div>
-            <div class="font-medium text-sm text-gray-500">{{ $page.props.auth.user.email }}</div>
-        </div>
-
-        <div class="mt-3 space-y-1">
-            <BreezeResponsiveNavLink :href="route('logout')" method="post" as="button">
-                Log Out
-            </BreezeResponsiveNavLink>
-        </div>
-    </div><!-- [tl! collapse:end] -->
+<template><!-- [tl! .hidden] -->
+<div class="pt-2 pb-3 space-y-1">
+    <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+        Dashboard
+    </BreezeResponsiveNavLink>
+    <BreezeResponsiveNavLink :href="route('chirps.index')" :active="route().current('chirps.index')"><!-- [tl! add:start] -->
+        Chirps
+    </BreezeResponsiveNavLink><!-- [tl! add:end] -->
 </div>
-</template><!-- [tl! .hidden]
+</template><!-- [tl! .hidden] -->
 ```
 ```javascript tab=React filename=resources/js/Layouts/Authenticated.jsx
-// TODO
+// [tl! add:6,3 .hidden:0,2 .hidden:10,1]
+return (
+<div className="pt-2 pb-3 space-y-1">
+    <ResponsiveNavLink href={route('dashboard')} active={route().current('dashboard')}>
+        Dashboard
+    </ResponsiveNavLink>
+    <ResponsiveNavLink href={route('chirps.index')} active={route().current('chirps.index')}>
+        Chirps
+    </ResponsiveNavLink>
+</div>
+)
 ```
 
 ## Saving the chirp
