@@ -12,12 +12,12 @@ If you're not sure where to start, we're big fans of Vue for being beginner-frie
 
 Go ahead and choose your stack:
 
-```javascript tab=Vue filename=Welcome.vue
-// You have selected Vue!
+```plain tab=Vue filename=Welcome.vue
+You have selected Vue!
 ```
 
-```javascript tab=React filename=Welcome.jsx
-// You have selected React!
+```plain tab=React filename=Welcome.jsx
+You have selected React!
 ```
 
 At any point you may view the code for either stack to see what life is like on the other side, just be sure not to mix the code in your project.
