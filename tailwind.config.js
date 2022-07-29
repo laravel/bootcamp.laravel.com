@@ -58,6 +58,10 @@ module.exports = {
                             fontSize: '1.75rem',
                             fontWeight: '400',
                         },
+                        h3: {
+                            fontSize: '1.25rem',
+                            fontWeight: '500',
+                        },
                         a: {
                             fontWeight: theme('fontWeight.normal'),
                         },

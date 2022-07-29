@@ -1,10 +1,12 @@
-# Editing Chirps
+# Deleting Chirps
 
-Let's add a feature that's missing from other popular bird-themed microblogging platforms, the ability to edit Chirps!
+Sometimes no amount of editing can fix a message, so let's give our users the ability to delete their Chirps.
+
+Hopefully you're starting to get the hang of things now. We think you'll be impressed how quickly we can add this feature.
 
 ## Route
 
-First we will update our routes file to enable the `update` route for our resource controller:
+We'll start again by updating our routes to enable the `destroy` action:
 
 ```php filename=routes/web.php
 <?php
@@ -39,8 +41,8 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 // [tl! collapse:end]
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store'])// [tl! remove]
-    ->only(['index', 'store', 'update'])// [tl! add]
+    ->only(['index', 'store', 'update'])// [tl! remove]
+    ->only(['index', 'store', 'update', 'destroy'])// [tl! add]
     ->middleware(['auth', 'verified']);
 // [tl! collapse:start]
 require __DIR__.'/auth.php';
@@ -54,84 +56,11 @@ Verb      | URI                    | Action       | Route Name
 GET       | `/chirps`              | index        | chirps.index
 POST      | `/chirps`              | store        | chirps.store
 PUT/PATCH | `/chirps/{chirp}`      | update       | chirps.update
+DELETE    | `/chirps/{chirp}`      | destroy      | chirps.destroy
 
-## Updating our component
+## Controller
 
-Now let's update our `Chirp` component to have a form containing the existing message.
-
-We're going to use the `Dropdown` component that comes with Breeze, which we'll only display to the Chirp author.
-
-We'll also display an extra status if a Chirp has been edited by comparing the `created_at` date with the `updated_at` date.
-
-```vue tab=Vue filename=resources/js/Components/Chirp.vue
-<script setup>
-import BreezeButton from '@/Components/Button.vue';// [tl! add]
-import BreezeDropdown from '@/Components/Dropdown.vue'// [tl! add]
-import BreezeInputError from '@/Components/InputError.vue';// [tl! add]
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
-import { useForm } from '@inertiajs/inertia-vue3';// [tl! add]
-import { ref } from 'vue';// [tl! add]
-
-dayjs.extend(relativeTime);
-
-defineProps(['chirp']);// [tl! remove]
-const props = defineProps(['chirp']);// [tl! add:start]
-
-const form = useForm({
-    message: props.chirp.message
-})
-
-const editing = ref(false)// [tl! add:end]
-</script>
-
-<template>
-    <div class="p-6 flex space-x-2">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-        <div class="flex-1">
-            <div class="text-gray-800">{{ chirp.user.name }} <small class="text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}</small></div><!-- [tl! remove] -->
-            <p class="mt-4 text-lg text-gray-900">{{ chirp.message }}</p><!-- [tl! remove ] -->
-            <div class="flex justify-between items-center"><!-- [tl! add:start] -->
-                <div class="text-gray-800">{{ chirp.user.name }} <small class="text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}<span v-if="chirp.created_at !== chirp.updated_at"> &middot; edited</span></small></div>
-                <BreezeDropdown v-if="chirp.user.id === $page.props.auth.user.id">
-                    <template #trigger>
-                        <button>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
-                            </svg>
-                        </button>
-                    </template>
-                    <template #content>
-                        <button class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" @click="editing = true">
-                            Edit
-                        </button>
-                    </template>
-                </BreezeDropdown>
-            </div>
-            <form v-if="editing" @submit.prevent="form.put(route('chirps.update', chirp.id), { onSuccess: editing = false })">
-                <textarea v-model="form.message" class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
-                <BreezeInputError :message="form.errors.message" class="mt-2" />
-                <div class="space-x-2">
-                    <BreezeButton class="mt-4">Save</BreezeButton>
-                    <button class="mt-4" @click="editing = false; form.reset()">Cancel</button>
-                </div>
-            </form>
-
-            <p v-else class="mt-4 text-lg text-gray-900">{{ chirp.message }}</p><!-- [tl! add:end] -->
-        </div>
-    </div>
-</template>
-```
-
-```javascript tab=React filename=resources/js/Components/Chirp.jsx
-// TODO
-```
-
-## Updating our controller
-
-We can now update our `ChirpController` to accept the request and update the Chirp. Even though we're only displaying the edit button to the author of the Chirp, we need to authorize the request to make sure it's the author that is updating it.
+Now we can update our `ChirpController` to perform the deletion and return to the Chirp index:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -205,7 +134,7 @@ class ChirpController extends Controller
     {
         //
     }
-    // [tl! collapse:end]
+
     /**
      * Update the specified resource in storage.
      *
@@ -215,8 +144,7 @@ class ChirpController extends Controller
      */
     public function update(Request $request, Chirp $chirp)
     {
-        //
-        $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
+        $this->authorize('update', $chirp);
 
         $validated = $request->validate([
             'message' => 'required|string|max:255',
@@ -224,9 +152,9 @@ class ChirpController extends Controller
 
         $chirp->update($validated);
 
-        return redirect(route('chirps.index'));// [tl! add:end]
+        return redirect(route('chirps.index'));
     }
-    // [tl! collapse:start]
+     // [tl! collapse:end]
     /**
      * Remove the specified resource from storage.
      *
@@ -236,20 +164,18 @@ class ChirpController extends Controller
     public function destroy(Chirp $chirp)
     {
         //
+        $this->authorize('delete', $chirp);// [tl! remove:-1,1 add:start]
+
+        $chirp->delete();
+
+        return redirect(route('chirps.index'));// [tl! add:end]
     }
-    // [tl! collapse:end]
 }
 ```
 
 ## Authorization
 
-By default, the `authorize()` method will prevent anyone from being able to update the Chirp. We can specify who is allowed to update it by creating a [Model Policy](https://laravel.com/docs/authorization#creating-policies) with the following command:
-
-```sh
-./vendor/bin/sail artisan make:policy ChirpPolicy --model=Chirp
-```
-
-This will create a policy class at `app/Policies/ChirpPolicy.php` which we can update to specify that only the author is authorized to update a Chirp:
+As with editing, we only want our Chirp authors to be able to delete their Chirps, so let's update our policy:
 
 ```php filename=app/Policies/ChirpPolicy.php
 <?php
@@ -298,7 +224,7 @@ class ChirpPolicy
     {
         //
     }
-    // [tl! collapse:end]
+
     /**
      * Determine whether the user can update the model.
      *
@@ -308,10 +234,9 @@ class ChirpPolicy
      */
     public function update(User $user, Chirp $chirp)
     {
-        //
-        return $user->id === $chirp->user_id; // [tl! remove:-1,1 add]
+        return $user->id === $chirp->user_id;
     }
-    // [tl! collapse:start]
+    // [tl! collapse:end]
     /**
      * Determine whether the user can delete the model.
      *
@@ -322,8 +247,9 @@ class ChirpPolicy
     public function delete(User $user, Chirp $chirp)
     {
         //
+        return $user->id === $chirp->user_id;// [tl! remove:-1,1 add]
     }
-
+    // [tl! collapse:start]
     /**
      * Determine whether the user can restore the model.
      *
@@ -351,8 +277,85 @@ class ChirpPolicy
 }
 ```
 
+## Updating our component
+
+Finally, we can add a delete button to our user interface. We'll place it inside the dropdown menu we created earlier that is only visible to the Chirp author:
+
+```vue tab=Vue filename=resources/js/Components/Chirp.vue
+<script setup>
+import BreezeButton from '@/Components/Button.vue';
+import BreezeDropdown from '@/Components/Dropdown.vue';
+import BreezeDropdownLink from '@/Components/DropdownLink.vue';// [tl! add]
+import BreezeInputError from '@/Components/InputError.vue';
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import { useForm } from '@inertiajs/inertia-vue3';
+import { ref } from 'vue';
+// [tl! collapse:start]
+dayjs.extend(relativeTime);
+
+const props = defineProps(['chirp']);
+
+const form = useForm({
+    message: props.chirp.message
+})
+
+const editing = ref(false)
+// [tl! collapse:end]
+</script>
+
+<template>
+    <div class="p-6 flex space-x-2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+        </svg>
+        <div class="flex-1">
+            <div class="flex justify-between items-center">
+                <div class="text-gray-800">{{ chirp.user.name }} <small class="text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}<span v-if="chirp.created_at !== chirp.updated_at"> &middot; edited</span></small></div>
+                <BreezeDropdown v-if="chirp.user.id === $page.props.auth.user.id">
+                    <template #trigger>
+                        <button>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                            </svg>
+                        </button>
+                    </template>
+                    <template #content>
+                        <button class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" @click="editing = true">
+                            Edit
+                        </button>
+                        <BreezeDropdownLink as="button" :href="route('chirps.destroy', chirp.id)" method="delete"><!-- [tl! add:start] -->
+                            Delete
+                        </BreezeDropdownLink><!-- [tl! add:end] -->
+                    </template>
+                </BreezeDropdown>
+            </div>
+            <form
+                v-if="editing"
+                @submit.prevent="form.put(route('chirps.update', chirp.id), { onSuccess: editing = false })"
+            >
+                <textarea
+                    v-model="form.message"
+                    class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                ></textarea>
+                <BreezeInputError :message="form.errors.message" class="mt-2" />
+                <div class="space-x-2">
+                    <BreezeButton class="mt-4">Save</BreezeButton>
+                    <button class="mt-4" @click="editing = false; form.reset()">Cancel</button>
+                </div>
+            </form>
+            <p v-else class="mt-4 text-lg text-gray-900">{{ chirp.message }}</p>
+        </div>
+    </div>
+</template>
+```
+
+```javascript tab=React filename=resources/js/Components/Chirp.js
+// TODO
+```
+
 ## Testing it out
 
-Time to test it out! Go ahead and edit a few Chirps. If you register another user account, you'll see that only the author of a Chirp can edit it.
+If you chirped anything you weren't happy with, try deleting it!
 
-[Continue to deleting chirps](/deleting-chirps)
+[Continue to notifications](/notifications)

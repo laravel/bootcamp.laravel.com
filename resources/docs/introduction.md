@@ -10,12 +10,14 @@ We will be providing front-end code samples for both Vue and React. Both are fan
 
 If you're not sure where to start, we're big fans of Vue for being beginner-friendly and extremely powerful. After you've finished the Bootcamp, you can always try it again with the other stack.
 
-```javascript tab=Vue group=frontend filename=Welcome.vue
-// You have selected Vue
+Go ahead and choose your stack:
+
+```javascript tab=Vue filename=Welcome.vue
+// You have selected Vue!
 ```
 
-```javascript tab=React group=frontend filename=Welcome.jsx
-// You have selected React
+```javascript tab=React filename=Welcome.jsx
+// You have selected React!
 ```
 
 At any point you may view the code for either stack to see what life is like on the other side, just be sure not to mix the code in your project.

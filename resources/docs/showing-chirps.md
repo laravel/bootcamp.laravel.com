@@ -1,8 +1,12 @@
 # Showing Chirps
 
-Let's update the `index()` method our `app/Http/Controllers/ChirpController.php` file to pass Chirps from every user to our Index page.
+In the previous step we added the ability to create Chirps, now we're ready to display them!
 
-```php
+## Controller
+
+Let's update the `index()` method our `ChirpController` to pass Chirps from every user to our Index page.
+
+```php filename=app/Http/Controllers/ChirpController.php
 <?php
 // [tl! collapse:start]
 namespace App\Http\Controllers;
@@ -99,9 +103,11 @@ class ChirpController extends Controller
 }
 ```
 
+## Relationship
+
 We've instructed Laravel to return the `id` and `name` property from the `user` relationship so that we can display the name of the Chirp author, without returning other potentially sensitive information such as the users email address. The `user` relationship hasn't been defined yet, so let's add a new "belongs to" relationship on our `Chirp` model:
 
-```php
+```php filename=app/Models/Chirp.php
 <?php
 // [tl! collapse:start]
 namespace App\Models;
@@ -127,9 +133,11 @@ class Chirp extends Model
 
 This is the inverse relationship for the "has many" relationship we created earlier on the `User` model.
 
-We'll also create a separate component to display each Chirp at `resources/js/Components/Chirp.vue`:
+## Updating our component
 
-```vue
+We'll also create a `Chirp` component for our front-end:
+
+```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
 defineProps(['chirp']);
 </script>
@@ -147,9 +155,13 @@ defineProps(['chirp']);
 </template>
 ```
 
-And finally, we will update `resources/js/Pages/Chirps/Index.vue` to accept the `chirps` prop and render them below our form using our new component:
+```javascript tab=React filename=resources/js/Components/Chirp.jsx
+// TODO
+```
 
-```vue
+And finally, we will update our `Chirps/Index` page component to accept the `chirps` prop and render them below our form using our new component:
+
+```vue tab=Vue filename=resources/js/Pages/Chirps/Index.vue
 <script setup>
 import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import BreezeButton from '@/Components/Button.vue';
@@ -191,11 +203,15 @@ const form = useForm({
 </template>
 ```
 
+```javascript tab=React filename=resources/js/Pages/Chirps/Index.jsx
+// TODO
+```
+
 Refresh the page at [http://localhost/chirps](http://localhost/chirps) to see the message you chirped earlier!
 
 <img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg" />
 
-## Date formatting
+### Date formatting
 
 The dates we get back from Laravel are computer-friendly, but not very human-friendly. We can [customize the serialization format](https://laravel.com/docs/9.x/eloquent-serialization#date-serialization) that Laravel uses, but it's often useful to keep the date in a computer-friendly format for our front-end code. Let's take advantage of that format by using the popular [Day.js](https://day.js.org) library to display relative dates beside our Chirps!
 
@@ -205,9 +221,9 @@ First, install the `dayjs` NPM package:
 npm install dayjs
 ```
 
-Then we can use this in `resources/js/Components/Chirp.vue`:
+Then we can use this in our `Chirp` component:
 
-```vue
+```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
 import dayjs from 'dayjs';// [tl! add]
 import relativeTime from 'dayjs/plugin/relativeTime';// [tl! add]
@@ -231,8 +247,14 @@ defineProps(['chirp']);
 </template>
 ```
 
+```vue tab=React filename=resources/js/Components/Chirp.jsx
+// TODO
+```
+
 Take a look in the browser to see your relative dates.
 
 <img src="/img/screenshots/chirp-index-dates.png" alt="Chirp listing with relative dates" class="rounded-lg" />
 
 Feel free to Chirp some more, or even register another account and start a conversation!
+
+[Continue to allow editing of chirps](/editing-chirps)

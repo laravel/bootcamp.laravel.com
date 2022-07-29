@@ -1,9 +1,5 @@
 # Installation
 
-In this guide we will show you how to build a Laravel application from scratch. Our example application will be a microblogging platform called *Chirper*.
-
-In addition to Laravel, we'll be using [Vue](https://vuejs.org/) with [Inertia](https://inertiajs.com/) for our front-end, and [Tailwind CSS](https://tailwindcss.com/) to apply styles.
-
 ## Installing Laravel
 
 For this application we will be using [Laravel Sail](https://laravel.com/docs/sail), a light-weight command-line interface for interacting with Laravel's default Docker development environment. Before we get started, make sure to install [Docker](https://docs.docker.com/get-docker/) for your operating system. For alternative installation methods, check out our full [installation guide](https://laravel.com/docs/installation).
@@ -41,10 +37,14 @@ In another terminal, run the following command:
 ./vendor/bin/sail composer require laravel/breeze --dev
 ```
 
-Laravel Breeze offer several options for your view layer, including simple Blade templates, or Vue and React with [Inertia](https://inertiajs.com/). For our example application, we will install the Vue option with the following command:
+Laravel Breeze offer several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React. Choose your stack below, and install it with the given command:
 
-```sh
+```sh tab=Vue
 ./vendor/bin/sail artisan breeze:install vue
+```
+
+```sh tab=React
+./vendor/bin/sail artisan breeze:install react
 ```
 
 Next, we will run the initial database migrations to populate your database with the default tables from Laravel and Breeze:
@@ -63,3 +63,5 @@ npm run dev
 If you refresh your Laravel application in the browser at [http://localhost](http://localhost), you may now follow the "Register" link at the top right to register a test account and log in.
 
 <img src="/img/screenshots/register.png" alt="Laravel registration page" class="rounded-lg" />
+
+[Continue to start building your application](/creating-chirps)
