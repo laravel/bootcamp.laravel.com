@@ -5,15 +5,14 @@
         @apply flex px-2 pt-2;
 
         .tabbed-code-nav-button {
-            @apply px-4 py-2 rounded-t-md;
-
+            @apply px-3 py-2 rounded-t text-sm;
 
             &[data-tab="Vue"],
             &[data-tab="React"] {
-                @apply pl-10;
+                @apply pl-9;
                 background-size: 1rem;
                 background-repeat: no-repeat;
-                background-position: 1rem center;
+                background-position: 0.75rem center;
             }
 
             &[data-tab="Vue"] {

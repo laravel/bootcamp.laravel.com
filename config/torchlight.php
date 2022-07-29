@@ -53,7 +53,7 @@ return [
         // 'lineNumbersStyle' => '',
 
         // Turn on +/- diff indicators.
-        'diffIndicators' => true,
+        'diffIndicators' => false,
 
         // Preserve syntax colors in diffs.
         'diffPreserveSyntaxColors' => true,
