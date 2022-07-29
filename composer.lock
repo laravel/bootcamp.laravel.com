@@ -1350,12 +1350,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:laravel-labs/unfenced.git",
-                "reference": "63a5091d7b7a177d70db0bebbea75d3db22caf82"
+                "reference": "aa8e64100cfe8f12b36159db49054c51020fb98d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-labs/unfenced/zipball/63a5091d7b7a177d70db0bebbea75d3db22caf82",
-                "reference": "63a5091d7b7a177d70db0bebbea75d3db22caf82",
+                "url": "https://api.github.com/repos/laravel-labs/unfenced/zipball/aa8e64100cfe8f12b36159db49054c51020fb98d",
+                "reference": "aa8e64100cfe8f12b36159db49054c51020fb98d",
                 "shasum": ""
             },
             "require": {
@@ -1385,7 +1385,7 @@
                 "source": "https://github.com/laravel-labs/unfenced/tree/main",
                 "issues": "https://github.com/laravel-labs/unfenced/issues"
             },
-            "time": "2022-07-29T05:58:08+00:00"
+            "time": "2022-07-29T13:43:28+00:00"
         },
         {
             "name": "league/commonmark",
