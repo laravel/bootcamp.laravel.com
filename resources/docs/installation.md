@@ -31,37 +31,35 @@ Once the application's Docker containers have been started, you can access the a
 
 Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, your are encouraged to customize the components to suit your needs.
 
-In another terminal, run the following command:
-
-```sh
-./vendor/bin/sail composer require laravel/breeze --dev
-```
-
-Laravel Breeze offer several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React. Choose your stack below, and install it with the given command:
+Laravel Breeze offer several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React. Choose your stack below, and install the package and scaffolding with the given commands:
 
 ```sh tab=Vue
+./vendor/bin/sail composer require laravel/breeze --dev
+
 ./vendor/bin/sail artisan breeze:install vue
 ```
 
 ```sh tab=React
+./vendor/bin/sail composer require laravel/breeze --dev
+
 ./vendor/bin/sail artisan breeze:install react
 ```
 
-Next, we will run the initial database migrations to populate your database with the default tables from Laravel and Breeze:
-
-```sh
-./vendor/bin/sail artisan migrate
-```
-
-Finally, we will install your applications frontend dependencies using NPM and start the Vite development server:
+Breeze will configure your front-end dependencies for you, so we can now install them and start the Vite development server:
 
 ```sh
 npm install
 npm run dev
 ```
 
+And finally, in another terminal, we can now run the initial database migrations to populate our database with the default tables from Laravel and Breeze:
+
+```sh
+./vendor/bin/sail artisan migrate
+```
+
 If you refresh your Laravel application in the browser at [http://localhost](http://localhost), you may now follow the "Register" link at the top right to register a test account and log in.
 
 <img src="/img/screenshots/register.png" alt="Laravel registration page" class="rounded-lg" />
 
-[Continue to start building your application](/creating-chirps)
+[Continue to start creating chirps...](/creating-chirps)

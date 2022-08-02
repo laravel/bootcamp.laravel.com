@@ -22,4 +22,4 @@ You have selected React!
 
 At any point you may view the code for either stack to see what life is like on the other side, just be sure not to mix the code in your project.
 
-[Continue to installation](/installation)
+[Continue to installation...](/installation)

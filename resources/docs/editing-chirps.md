@@ -421,4 +421,4 @@ class ChirpPolicy
 
 Time to test it out! Go ahead and edit a few Chirps. If you register another user account, you'll see that only the author of a Chirp can edit it.
 
-[Continue to deleting chirps](/deleting-chirps)
+[Continue to allow deleting of chirps...](/deleting-chirps)

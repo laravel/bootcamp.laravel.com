@@ -694,4 +694,4 @@ Chirp::all();
 
 You may exit tinker by using the `exit` command, or by pressing <kbd>Ctrl</kbd> + <kbd>c</kbd>.
 
-[Continue to display chirps in the UI](/showing-chirps)
+[Continue to start showing chirps...](/showing-chirps)

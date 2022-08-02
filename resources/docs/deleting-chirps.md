@@ -424,4 +424,4 @@ export default function Chirp({ chirp }) {
 
 If you chirped anything you weren't happy with, try deleting it!
 
-[Continue to conclusion and next steps](/conclusion)
+[Continue to conclusion and next steps...](/conclusion)
