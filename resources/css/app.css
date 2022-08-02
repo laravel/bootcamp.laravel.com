@@ -3,7 +3,6 @@
 @import "tailwindcss/components";
 
 @import '_code.css';
-@import '_tabs.css';
 @import '_sidebar-layout.css';
 
 @import "tailwindcss/utilities";
