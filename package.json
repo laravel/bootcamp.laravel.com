@@ -6,6 +6,7 @@
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.4",
+        "alpinejs": "^3.10.3",
         "autoprefixer": "^10.4.8",
         "axios": "^0.27",
         "laravel-vite-plugin": "^0.5.2",

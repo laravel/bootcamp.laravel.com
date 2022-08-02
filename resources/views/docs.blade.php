@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+    <x-accessibility.skip-to-content-link />
+
     <div class="min-h-screen dark:bg-dark-700">
         <div class="relative lg:flex lg:items-start">
             <aside
@@ -158,7 +160,7 @@
 
                     <section class="py-8 md:py-16">
                         <section class="docs_main max-w-prose">
-                            {{-- <x-accessibility.main-content-wrapper> --}}
+                            <x-accessibility.main-content-wrapper>
                                 <div class="prose dark:prose-invert">
                                     @include($page)
                                 </div>
@@ -170,7 +172,7 @@
                                     })
                                 </script>
                                 {{-- <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYILK3E&placement=laravelcom" id="_carbonads_js"></script> --}}
-                            {{-- </x-accessibility.main-content-wrapper> --}}
+                            </x-accessibility.main-content-wrapper>
                         </section>
                     </section>
                 </div>
