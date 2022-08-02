@@ -22,7 +22,7 @@ pre code.torchlight .summary-caret {
         @apply flex px-2 pt-2;
 
         .tabbed-code-nav-button {
-            @apply px-3 pt-3 pb-2 rounded-t text-sm;
+            @apply px-3 pt-3 pb-2 rounded-t text-sm text-gray-300;
 
             &[data-tab="Vue"],
             &[data-tab="React"] {
