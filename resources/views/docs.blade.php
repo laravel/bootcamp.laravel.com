@@ -151,7 +151,9 @@
                                 </div>
                                 <script>
                                     Array.from(document.getElementsByTagName('a')).forEach(link => {
-                                        if (link.hostname === location.hostname && link.pathname === location.pathname) {
+                                        if (link.hostname === location.hostname
+                                            && (link.pathname === location.pathname || (link.pathname === '/introduction' && location.pathname === '/'))
+                                        ) {
                                             link.classList.add('active')
                                         }
                                     })
