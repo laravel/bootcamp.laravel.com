@@ -33,21 +33,6 @@
                             width="50"
                             height="52"
                         >
-                        <img
-                            x-show="navIsOpen"
-                            x-cloak
-                            class="ml-4 transition-all duration-300 lg:hidden"
-                            x-transition:enter="duration-250 ease-out"
-                            x-transition:enter-start="opacity-0"
-                            x-transition:enter-end="opacity-100"
-                            x-transition:leave="duration-250 ease-in"
-                            x-transition:leave-start="opacity-100"
-                            x-transition:leave-end="opacity-0"
-                            src="/img/logotype.min.svg"
-                            alt="Laravel"
-                            width="114"
-                            height="29"
-                        >
                         <span class="hidden lg:block ml-4 text-red-500 text-3xl font-medium">Bootcamp</span>
                     </a>
                     <div class="overflow-y-auto overflow-x-hidden px-4 lg:overflow-hidden lg:px-8 xl:px-16">
