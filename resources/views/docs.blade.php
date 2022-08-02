@@ -143,7 +143,7 @@
                         </div>
                     </div>
 
-                    <section class="py-8 md:py-16">
+                    <section class="pt-4 pb-8 md:pt-8 md:pb-16">
                         <section class="docs_main max-w-prose">
                             <x-accessibility.main-content-wrapper>
                                 <div class="prose dark:prose-invert">
