@@ -94,6 +94,7 @@ module.exports = {
                     css: {
                         '--tw-prose-links': theme('colors.red[600]'),
                         '--tw-prose-code': theme('colors.red[600]'),
+                        '--tw-prose-pre-bg': 'none',
                         code: {
                             background: theme('colors.dark[600]'),
                         },
