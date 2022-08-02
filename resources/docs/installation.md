@@ -49,6 +49,7 @@ Breeze will configure your front-end dependencies for you, so we can now install
 
 ```sh
 npm install
+
 npm run dev
 ```
 
