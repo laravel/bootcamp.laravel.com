@@ -49,6 +49,9 @@ return [
         Laravel\Unfenced\UnfencedExtension::class,
         App\Markdown\CalloutExtension::class,
         League\CommonMark\Extension\GithubFlavoredMarkdownExtension::class,
+        League\CommonMark\Extension\HeadingPermalink\HeadingPermalinkExtension::class,
+        League\CommonMark\Extension\TableOfContents\TableOfContentsExtension::class,
+        App\Markdown\TableOfContentsSidebarExtension::class,
         Torchlight\Commonmark\V2\TorchlightExtension::class,
     ],
 
@@ -96,6 +99,18 @@ return [
         'use_asterisk'           => true,
         'use_underscore'         => true,
         'unordered_list_markers' => ['-', '+', '*'],
+    ],
+
+    'heading_permalink' => [
+        'min_heading_level' => 2,
+        'id_prefix' => '',
+        'fragment_prefix' => '',
+        'symbol' => '#',
+    ],
+
+    'table_of_contents' => [
+        'position' => 'placeholder',
+        'placeholder' => '[TOC]',
     ],
 
     /*

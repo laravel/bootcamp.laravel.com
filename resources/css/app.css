@@ -12,3 +12,10 @@
 html[color-theme="dark"] #header__moon { display: block; }
 html[color-theme="light"] #header__sun { display: block; }
 html[color-theme="system"] #header__indeterminate { display: block; }
+
+.heading-permalink {
+    @apply absolute;
+    left: -10px;
+    transform: translate(-100%);
+    text-decoration: none;
+}

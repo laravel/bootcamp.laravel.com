@@ -1,3 +1,5 @@
+[TOC]
+
 # Editing Chirps
 
 Let's add a feature that's missing from other popular bird-themed microblogging platforms, the ability to edit Chirps!

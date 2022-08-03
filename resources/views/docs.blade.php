@@ -6,6 +6,7 @@
     <div class="min-h-screen dark:bg-dark-700">
         <div class="relative lg:flex lg:items-start">
             <aside
+                id="sidebar"
                 x-data="{
                     navIsOpen: false,
                     init() {
@@ -59,6 +60,7 @@
             </aside>
 
             <header
+                id="header"
                 class="lg:hidden"
                 @keydown.window.escape="navIsOpen = false"
                 @click.away="navIsOpen = false"
@@ -120,7 +122,7 @@
             </header>
 
             <section class="flex-1 dark:bg-dark-700">
-                <div class="max-w-screen-lg px-8 sm:px-16 lg:px-24">
+                <div class="px-8 sm:px-16 lg:px-24">
                     <div class="flex flex-col items-end transition-colors dark:border-gray-700 lg:mt-8 lg:flex-row-reverse">
                         <div class="hidden lg:flex items-center justify-center">
                             <button id="header__sun" onclick="toSystemMode()" title="Switch to system theme" class="relative w-10 h-10 focus:outline-none focus:shadow-outline text-gray-500">
@@ -143,20 +145,45 @@
                         </div>
                     </div>
 
-                    <section class="pt-4 pb-8 md:pt-8 md:pb-16">
+                    <section class="pt-4 pb-8 md:pt-8 md:pb-16 flex">
                         <section class="docs_main max-w-prose">
                             <x-accessibility.main-content-wrapper>
-                                <div class="prose dark:prose-invert">
+                                <div class="prose dark:prose-invert relative">
                                     @include($page)
                                 </div>
                                 <script>
-                                    Array.from(document.getElementsByTagName('a')).forEach(link => {
+                                    Array.from(document.querySelectorAll('#header a, #sidebar a')).forEach(link => {
                                         if (link.hostname === location.hostname
                                             && (link.pathname === location.pathname || (link.pathname === '/introduction' && location.pathname === '/'))
                                         ) {
                                             link.classList.add('active')
                                         }
                                     })
+
+                                    function setActiveTableOfContents () {
+                                        console.log('------')
+
+                                        const links = Array.from(document.querySelectorAll('.table-of-contents a'))
+                                        const lastVisible = links
+                                            .slice()
+                                            .reverse()
+                                            .find(link => {
+                                                const el = document.querySelector(link.hash)
+
+                                                return el.getBoundingClientRect().top <= 56;
+                                            }) ?? links[0]
+
+                                        links.forEach(link => {
+                                            if (link === lastVisible) {
+                                                link.classList.add('active')
+                                            } else {
+                                                link.classList.remove('active')
+                                            }
+                                        })
+                                    }
+
+                                    setActiveTableOfContents()
+                                    window.addEventListener('scroll', setActiveTableOfContents, { passive: true })
                                 </script>
                                 {{-- <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CKYILK3E&placement=laravelcom" id="_carbonads_js"></script> --}}
                             </x-accessibility.main-content-wrapper>

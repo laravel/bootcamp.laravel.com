@@ -5,6 +5,10 @@
 
             h2 {
                 @apply mb-4 text-sm text-gray-900 dark:text-gray-400 font-medium;
+
+                .heading-permalink {
+                    display: none;
+                }
             }
 
             a {
@@ -42,6 +46,32 @@
 
             ul {
                 max-height: none;
+            }
+        }
+    }
+}
+
+.table-of-contents-sidebar-wrapper {
+    @apply hidden xl:block absolute right-0 text-sm;
+
+    .table-of-contents-sidebar {
+        @apply fixed ml-16;
+
+        h2 {
+            @apply font-medium mb-4;
+        }
+
+        .table-of-contents {
+            li {
+                @apply py-2;
+
+                a.active {
+                    @apply text-red-500;
+                }
+
+                ul {
+                    @apply mt-2 pl-4;
+                }
             }
         }
     }
