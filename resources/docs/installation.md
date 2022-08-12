@@ -22,7 +22,9 @@ cd chirper
 ./vendor/bin/sail up
 ```
 
-> *Tip* You can [create an alias](https://laravel.com/docs/sail#configuring-a-bash-alias) that allows you execute Sail's commands more easily.
+The first time you run the Sail up command, Sail's application containers will be built on your local machine. This could take several minutes. Don't worry, subsequent attempts to start Sail will be much faster.
+
+> *Tip* You can [create a shell alias](https://laravel.com/docs/sail#configuring-a-shell-alias) that allows you execute Sail's commands more easily.
 
 Once the application's Docker containers have been started, you can access the application in your web browser at: [http://localhost](http://localhost).
 
@@ -33,7 +35,9 @@ Once the application's Docker containers have been started, you can access the a
 
 Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, your are encouraged to customize the components to suit your needs.
 
-Laravel Breeze offer several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React. Choose your stack below, and install the package and scaffolding with the given commands:
+Laravel Breeze offer several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React.
+
+Open a new terminal in your `chirper` project directory, and then install your chosen stack with the given commands:
 
 ```sh tab=Vue
 ./vendor/bin/sail composer require laravel/breeze --dev
@@ -55,7 +59,7 @@ npm install
 npm run dev
 ```
 
-And finally, in another terminal, we can now run the initial database migrations to populate our database with the default tables from Laravel and Breeze:
+Finally, open another terminal in your `chirper` project directory and run the initial database migrations to populate the database with the default tables from Laravel and Breeze:
 
 ```sh
 ./vendor/bin/sail artisan migrate

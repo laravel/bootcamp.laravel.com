@@ -6,6 +6,7 @@ We've really only scratched the surface. There's plenty more you could do with C
 
 * Notifications
 * Broadcasting
+* Form Requests
 * Queues
 * Scheduled Tasks
 * File storage

@@ -167,7 +167,7 @@ export default function Chirp({ chirp }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
             <div className="flex-1">
-                <div className="text-gray-800">{chirp.user.name} <small class="text-sm text-gray-600">{chirp.created_at}</small></div>
+                <div className="text-gray-800">{chirp.user.name} <small className="text-sm text-gray-600">{chirp.created_at}</small></div>
                 <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
             </div>
         </div>
@@ -255,7 +255,7 @@ export default function Index(props) {
                 </form>
 
                 <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
-                    {chirps.map(chirp =>
+                    {props.chirps.map(chirp =>
                         <Chirp key={chirp.id} chirp={chirp} />
                     )}
                 </div>
