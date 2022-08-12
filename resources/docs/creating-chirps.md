@@ -20,6 +20,9 @@ Let's create a model, migration, and resource controller for our Chirps with the
 ./vendor/bin/sail artisan make:model -mrc Chirp
 ```
 
+> **Note**
+> You can see all the available options by running the `./vendor/bin/sail artisan make:model --help` command.
+
 This command will create three files for you:
 
 * `app/Models/Chirp.php` - The Eloquent model.
@@ -578,7 +581,8 @@ class User extends Authenticatable
 }
 ```
 
-Laravel offers many different types of model relationships that you can read more about in the [Eloquent Relationships](https://laravel.com/docs/eloquent-relationships) documentation.
+> **Note**
+> Laravel offers many different types of model relationships that you can read more about in the [Eloquent Relationships](https://laravel.com/docs/eloquent-relationships) documentation.
 
 ## Mass assignment protection
 

@@ -307,7 +307,8 @@ class ChirpController extends Controller
 }
 ```
 
-You may have noticed the validation rules are duplicated with the `store` method. You may like to consider extracting them using Laravel's [Form Request Validation](https://laravel.com/docs/9.x/validation#form-request-validation) which make it easy to re-use validation rules and to keep your controllers light.
+> **Note**
+> You may have noticed the validation rules are duplicated with the `store` method. You might like to consider extracting them using Laravel's [Form Request Validation](https://laravel.com/docs/9.x/validation#form-request-validation) which make it easy to re-use validation rules and to keep your controllers light.
 
 ## Authorization
 
