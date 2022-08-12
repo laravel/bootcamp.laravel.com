@@ -656,7 +656,8 @@ We haven't migrated the database since we added this migration, so let do it now
 ./vendor/bin/sail artisan migrate
 ```
 
-> *Note* Each database migration will only be run once. To make additional changes to a table, you will need to create another migration. During development, you may wish to update an undeployed migration and rebuild your database from scratch using the `./vendor/bin/sail artisan migrate:fresh` command.
+> **Warning**
+> Each database migration will only be run once. To make additional changes to a table, you will need to create another migration. During development, you may wish to update an undeployed migration and rebuild your database from scratch using the `./vendor/bin/sail artisan migrate:fresh` command.
 
 ## Testing it out
 

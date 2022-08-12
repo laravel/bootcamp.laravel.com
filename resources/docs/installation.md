@@ -24,7 +24,8 @@ cd chirper
 
 The first time you run the Sail up command, Sail's application containers will be built on your local machine. This could take several minutes. Don't worry, subsequent attempts to start Sail will be much faster.
 
-> *Tip* You can [create a shell alias](https://laravel.com/docs/sail#configuring-a-shell-alias) that allows you execute Sail's commands more easily.
+> **Note**
+> You can [create a shell alias](https://laravel.com/docs/sail#configuring-a-shell-alias) that allows you execute Sail's commands more easily.
 
 Once the application's Docker containers have been started, you can access the application in your web browser at: [http://localhost](http://localhost).
 

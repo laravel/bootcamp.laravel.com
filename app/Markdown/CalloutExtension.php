@@ -4,7 +4,7 @@ namespace App\Markdown;
 
 use League\CommonMark\Environment\EnvironmentBuilderInterface;
 use League\CommonMark\Extension\CommonMark\Node\Block\BlockQuote;
-use League\CommonMark\Extension\CommonMark\Node\Inline\Emphasis;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Strong;
 use League\CommonMark\Extension\ExtensionInterface;
 use League\CommonMark\Node\Block\Paragraph;
 use League\CommonMark\Node\Inline\Text;
@@ -17,13 +17,13 @@ class CalloutExtension implements ExtensionInterface, NodeRendererInterface
 {
     protected $calloutTypes = [
         'note' => [
+            'img' => '/img/callouts/lightbulb.min.svg',
+            'color' => 'bg-purple-600',
+        ],
+        'warning' => [
             'img' => '/img/callouts/exclamation.min.svg',
             'color' => 'bg-red-600',
         ],
-        'tip' => [
-            'img' => '/img/callouts/lightbulb.min.svg',
-            'color' => 'bg-purple-600',
-        ]
     ];
 
     public function register(EnvironmentBuilderInterface $environment): void
@@ -73,7 +73,7 @@ class CalloutExtension implements ExtensionInterface, NodeRendererInterface
         );
     }
 
-    protected function calloutTypeNode(BlockQuote $blockQuote): ?Emphasis
+    protected function calloutTypeNode(BlockQuote $blockQuote): ?Strong
     {
         $child = $blockQuote->firstChild();
 
@@ -83,10 +83,10 @@ class CalloutExtension implements ExtensionInterface, NodeRendererInterface
 
         $child = $child->firstChild();
 
-        return $child instanceof Emphasis ? $child : null;
+        return $child instanceof Strong ? $child : null;
     }
 
-    protected function calloutType(Emphasis $node): ?string
+    protected function calloutType(Strong $node): ?string
     {
         $child = $node->firstChild();
 
