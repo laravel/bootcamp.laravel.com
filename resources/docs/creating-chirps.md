@@ -319,7 +319,7 @@ import Button from '@/Components/Button';
 import InputError from '@/Components/InputError';
 import { useForm, Head } from '@inertiajs/inertia-react';
 
-export default function Index(props) {
+export default function Index({ auth }) {
     const { data, setData, post, processing, reset, errors } = useForm({
         message: '',
     });
@@ -330,7 +330,7 @@ export default function Index(props) {
     };
 
     return (
-        <Authenticated auth={props.auth}>
+        <Authenticated auth={auth}>
             <Head title="Chirps" />
 
             <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">

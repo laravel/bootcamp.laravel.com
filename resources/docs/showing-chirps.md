@@ -228,7 +228,8 @@ import Chirp from '@/Components/Chirp';// [tl! add]
 import InputError from '@/Components/InputError';
 import { useForm, Head } from '@inertiajs/inertia-react';
 
-export default function Index(props) {
+export default function Index({ auth }) {// [tl! remove]
+export default function Index({ auth, chirps }) {// [tl! add]
     const { data, setData, post, processing, reset, errors } = useForm({
       message: '',
     });
@@ -239,7 +240,7 @@ export default function Index(props) {
     };
 
     return (
-        <Authenticated auth={props.auth}>
+        <Authenticated auth={auth}>
             <Head title="Chirps" />
 
             <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -255,7 +256,7 @@ export default function Index(props) {
                 </form>
 
                 <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
-                    {props.chirps.map(chirp =>
+                    {chirps.map(chirp =>
                         <Chirp key={chirp.id} chirp={chirp} />
                     )}
                 </div>
