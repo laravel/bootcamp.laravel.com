@@ -13,9 +13,31 @@ html[color-theme="dark"] #header__moon { display: block; }
 html[color-theme="light"] #header__sun { display: block; }
 html[color-theme="system"] #header__indeterminate { display: block; }
 
+/* Subtle red background gradient */
+.bg-radial-gradient {
+    background-image: radial-gradient(50% 50% at 50% 50%, #EB4432 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+/* Heading permalinks */
+h2:hover .heading-permalink,
+h3:hover .heading-permalink,
+h4:hover .heading-permalink,
+h5:hover .heading-permalink,
+h6:hover .heading-permalink,
+.heading-permalink:focus {
+    opacity: 1;
+}
+
 .heading-permalink {
-    @apply absolute;
-    left: -10px;
+    opacity: 0;
     transform: translate(-100%);
+    position: absolute;
+    padding-right: 10px;
     text-decoration: none;
+}
+
+/* Red heading numerals */
+h1 b {
+    @apply text-red-600;
+    font-weight: inherit;
 }

@@ -51,7 +51,7 @@ class CalloutExtension implements ExtensionInterface, NodeRendererInterface
 
         return new HtmlElement(
             'aside',
-            ['class' => "mb-10 max-w-2xl mx-auto px-4 py-8 shadow-lg lg:flex lg:items-center"],
+            ['class' => "mb-10 max-w-2xl mx-auto px-4 py-8 shadow-lg lg:flex lg:items-center bg-white dark:bg-dark-700"],
             [
                 new HtmlElement(
                     'div',

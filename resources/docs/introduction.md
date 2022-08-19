@@ -1,4 +1,4 @@
-# Laravel Bootcamp
+# <b>01.</b> Introduction
 
 In this guide we will walk through building a modern Laravel application from scratch. Our example application will be a microblogging platform called *Chirper*.
 

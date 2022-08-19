@@ -1,6 +1,6 @@
 [TOC]
 
-# Creating Chirps
+# <b>03.</b> Creating Chirps
 
 Your application is now ready start development! Let's allow our users to post short messages called *Chirps*.
 

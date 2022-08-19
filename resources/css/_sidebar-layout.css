@@ -1,20 +1,20 @@
 .docs_sidebar {
     ul {
         li {
-            @apply block whitespace-nowrap py-[0.65em];
+            @apply block whitespace-nowrap py-2;
 
             h2 {
                 @apply mb-4 text-sm text-gray-900 dark:text-gray-400 font-medium;
 
                 .heading-permalink {
-                    display: none;
+                    @apply hidden;
                 }
             }
 
             a {
-                @apply block text-sm text-gray-900 dark:text-gray-400 font-medium ease-in-out duration-300;
+                @apply block py-1 text-sm text-gray-900 dark:text-gray-400 font-medium ease-in-out duration-300;
 
-                &:hover {
+                &:hover:not(.active) {
                     @apply translate-x-1;
                 }
             }
@@ -23,29 +23,12 @@
         ul {
             li {
                 a {
-                    position: relative;
-                    padding-left: 1em;
-                    font-weight: 400;
-                    line-height: 1.25;
+                    @apply pl-4 font-normal leading-5 relative border-l-[3px] border-transparent;
 
-                    &.active::before {
-                        content: "";
-                        position: absolute;
-                        top: .25em; left: 0;
-                        width: .5rem; height: .5rem;
-                        background: url(../images/icons/active_marker.min.svg) no-repeat center;
+                    &.active {
+                        @apply border-red-600 text-red-600 font-medium;
                     }
                 }
-            }
-        }
-
-        .sub--on {
-            &> h2 {
-                margin-bottom: 1em;
-            }
-
-            ul {
-                max-height: none;
             }
         }
     }

@@ -1,6 +1,6 @@
 [TOC]
 
-# Deleting Chirps
+# <b>06.</b> Deleting Chirps
 
 Sometimes no amount of editing can fix a message, so let's give our users the ability to delete their Chirps.
 

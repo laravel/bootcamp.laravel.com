@@ -45,6 +45,14 @@ module.exports = {
             maxWidth: {
                 '8xl': '88rem',
             },
+            keyframes: {
+                cube: {
+                    '50%': { transform: 'translateY(1rem)' },
+                },
+            },
+            animation: {
+                cube: 'cube 12s ease-in-out infinite',
+            },
             typography: (theme) => ({
                 DEFAULT: {
                     css: {

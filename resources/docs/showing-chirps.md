@@ -1,6 +1,6 @@
 [TOC]
 
-# Showing Chirps
+# <b>04.</b> Showing Chirps
 
 In the previous step we added the ability to create Chirps, now we're ready to display them!
 

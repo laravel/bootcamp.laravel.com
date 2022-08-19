@@ -1,6 +1,6 @@
 [TOC]
 
-# Installation
+# <b>02.</b> Installation
 
 ## Installing Laravel
 

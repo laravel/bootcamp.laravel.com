@@ -19,7 +19,7 @@
                         });
                     }
                 }"
-                class="hidden fixed top-0 bottom-0 left-0 z-20 h-full w-16 bg-gradient-to-b from-gray-100 to-white transition-all duration-300 overflow-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full dark:from-dark-800 dark:to-dark-700"
+                class="min-h-screen hidden fixed top-0 bottom-0 left-0 z-20 h-full w-16 bg-gradient-to-b from-gray-100 to-white transition-all duration-300 overflow-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full dark:from-dark-800 dark:to-dark-700"
                 :class="{ 'w-64': navIsOpen }"
                 @click.away="navIsOpen = false"
                 @keydown.window.escape="navIsOpen = false"
@@ -48,6 +48,13 @@
                             </div>
                         </nav>
                     </div>
+
+                    <div class="absolute bottom-0 mb-12 pl-16">
+                        <x-cube delay="0" class="ml-8" />
+                        <x-cube delay="2000" class="mt-6 ml-32" />
+                        <x-cube delay="1000" class="mt-12" />
+                    </div>
+
                     <div class="sticky bottom-0 flex-1 flex flex-col justify-end lg:hidden">
                         <div class="py-4 px-4 bg-white">
                             <button class="relative ml-1 w-6 h-6 text-red-600 lg:hidden focus:outline-none focus:shadow-outline" aria-label="Menu" @click.prevent="navIsOpen = !navIsOpen">
@@ -122,6 +129,7 @@
             </header>
 
             <section class="flex-1 dark:bg-dark-700">
+                <span class="hidden dark:hidden fixed -bottom-[300px] right-0 bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex w-[800px] h-[600px]"></span>
                 <div class="px-8 sm:px-16 lg:px-24">
                     <div class="max-w-screen-lg flex flex-col items-end transition-colors dark:border-gray-700 lg:mt-8 lg:flex-row-reverse">
                         <div class="hidden lg:flex items-center justify-center">

@@ -1,4 +1,4 @@
-# Conclusion & Next Steps
+# <b>07.</b> Conclusion & Next Steps
 
 You've now built a fully-functional application using Laravel! We really hoped you enjoyed the experience.
 
