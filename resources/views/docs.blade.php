@@ -132,7 +132,7 @@
                 <span class="hidden dark:hidden fixed -bottom-[300px] right-0 bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex w-[800px] h-[600px]"></span>
                 <div class="px-8 sm:px-16 lg:px-24">
                     <div class="max-w-screen-lg flex flex-col items-end transition-colors dark:border-gray-700 lg:mt-8 lg:flex-row-reverse">
-                        <div class="hidden lg:flex items-center justify-center">
+                        <div class="fixed top-8 hidden lg:flex items-center justify-center">
                             <button id="header__sun" onclick="toSystemMode()" title="Switch to system theme" class="relative w-10 h-10 focus:outline-none focus:shadow-outline text-gray-500">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-sun" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                     <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
@@ -153,7 +153,7 @@
                         </div>
                     </div>
 
-                    <section class="pt-4 pb-8 md:pt-8 md:pb-16 flex">
+                    <section class="pt-8 pb-8 md:pt-16 md:pb-16 flex">
                         <section class="docs_main max-w-prose">
                             <x-accessibility.main-content-wrapper>
                                 <div class="prose dark:prose-invert relative">
