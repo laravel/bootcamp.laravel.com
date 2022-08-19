@@ -5,4 +5,6 @@
     - [Showing Chirps](/showing-chirps)
     - [Editing Chirps](/editing-chirps)
     - [Deleting Chirps](/deleting-chirps)
+    - [Notifications & Events](/notifications-and-events)
+    - [Deploying](/deploying)
     - [Conclusion](/conclusion)
