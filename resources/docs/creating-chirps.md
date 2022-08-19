@@ -9,14 +9,14 @@ Your application is now ready start development! Let's allow our users to post s
 There's a little bit to unpack here so let's break it down:
 
 * [Models](https://laravel.com/docs/eloquent) provide a powerful and enjoyable interface for you to interact with the tables in your database.
-* [Migrations](https://laravel.com/docs/migrations) allow you to easily create and modify the tables in your database. They guarantee that the same database structure exists everywhere that your application runs.
+* [Migrations](https://laravel.com/docs/migrations) allow you to easily create and modify the tables in your database. They ensure that the same database structure exists everywhere that your application runs.
 * [Controllers](https://laravel.com/docs/9.x/controllers) are responsible for processing requests made to your application and returning a response.
 
 Almost every feature you build will involve all of these pieces working together in harmony, so the `artisan make:model` command can create them all for you at once.
 
 Let's create a model, migration, and resource controller for our Chirps with the following command:
 
-```sh
+```shell
 ./vendor/bin/sail artisan make:model -mrc Chirp
 ```
 
@@ -88,7 +88,10 @@ Verb      | URI                    | Action       | Route Name
 GET       | `/chirps`              | index        | chirps.index
 POST      | `/chirps`              | store        | chirps.store
 
-Let's test this out by returning a test message from the `index` method of our `ChirpController`:
+> **Note**
+> You may view all of the routes for your application by running the `./vendor/bin/sail artisan route:list` command.
+
+Let's test our route and controller by returning a test message from the `index` method of our `ChirpController`:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -518,7 +521,7 @@ class ChirpController extends Controller
 }
 ```
 
-We're using Laravel's powerful validation features to ensure that the user provides a message, and that it won't the 255 character limit of the database column we'll be creating.
+We're using Laravel's powerful validation feature to ensure that the user provides a message, and that it won't the 255 character limit of the database column we'll be creating.
 
 We're then creating a record that will belong to the logged in user by leveraging a `chirps()` relationship that we will create next.
 
@@ -656,7 +659,7 @@ return new class extends Migration
 
 We haven't migrated the database since we added this migration, so let do it now:
 
-```sh
+```shell
 ./vendor/bin/sail artisan migrate
 ```
 
@@ -675,13 +678,13 @@ This is great time to learn about [Artisan Tinker](https://laravel.com/docs/9.x/
 
 In your console, start a new tinker session:
 
-```sh
+```shell
 ./vendor/bin/sail artisan tinker
 ```
 
 Next, execute the following code to display the Chirps in your database:
 
-```sh
+```shell
 Chirp::all();
 ```
 

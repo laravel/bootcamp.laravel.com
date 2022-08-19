@@ -299,10 +299,10 @@ dayjs.extend(relativeTime);
 const props = defineProps(['chirp']);
 
 const form = useForm({
-    message: props.chirp.message
-})
+    message: props.chirp.message,
+});
 
-const editing = ref(false)
+const editing = ref(false);
 // [tl! collapse:end]
 </script>
 
@@ -313,7 +313,11 @@ const editing = ref(false)
         </svg>
         <div class="flex-1">
             <div class="flex justify-between items-center">
-                <div class="text-gray-800">{{ chirp.user.name }} <small class="text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}<span v-if="chirp.created_at !== chirp.updated_at"> &middot; edited</span></small></div>
+                <div>
+                    <span class="text-gray-800">{{ chirp.user.name }}</span>
+                    <small class="ml-2 text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}</small>
+                    <small v-if="chirp.created_at !== chirp.updated_at" class="text-sm text-gray-600"> &middot; edited</small>
+                </div>
                 <BreezeDropdown v-if="chirp.user.id === $page.props.auth.user.id">
                     <template #trigger>
                         <button>
@@ -332,14 +336,8 @@ const editing = ref(false)
                     </template>
                 </BreezeDropdown>
             </div>
-            <form
-                v-if="editing"
-                @submit.prevent="form.put(route('chirps.update', chirp.id), { onSuccess: editing = false })"
-            >
-                <textarea
-                    v-model="form.message"
-                    class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                ></textarea>
+            <form v-if="editing" @submit.prevent="form.put(route('chirps.update', chirp.id), { onSuccess: editing = false })">
+                <textarea v-model="form.message" class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
                 <BreezeInputError :message="form.errors.message" class="mt-2" />
                 <div class="space-x-2">
                     <BreezeButton class="mt-4">Save</BreezeButton>
@@ -352,7 +350,7 @@ const editing = ref(false)
 </template>
 ```
 
-```javascript tab=React filename=resources/js/Components/Chirp.js
+```javascript tab=React filename=resources/js/Components/Chirp.jsx
 import React, { useState } from 'react';
 import Button from '@/Components/Button';
 import Dropdown from '@/Components/Dropdown';
@@ -372,19 +370,21 @@ export default function Chirp({ chirp }) {
 
     const submit = (e) => {
         e.preventDefault();
-        patch(route('chirps.update', chirp.id), { onSuccess: () => setEditing(false) })
+        patch(route('chirps.update', chirp.id), { onSuccess: () => setEditing(false) });
     };
-    // [tl! add:24,3]
+    // [tl! add:26,3]
     return (
         <div className="p-6 flex space-x-2">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
             <div className="flex-1">
-                <div className="text-gray-800">{chirp.user.name} <small className="text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}</small></div>
-                <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
                 <div className="flex justify-between items-center">
-                    <div className="text-gray-800">{chirp.user.name} <small className="text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}{ chirp.created_at !== chirp.updated_at && <span> &middot; edited</span>}</small></div>
+                    <div>
+                        <span className="text-gray-800">{chirp.user.name}</span>
+                        <small className="ml-2 text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}</small>
+                        { chirp.created_at !== chirp.updated_at && <span className="text-sm text-gray-600"> &middot; edited</span>}</small></div>
+                    </div>
                     {chirp.user.id === usePage().props.auth.user.id &&
                         <Dropdown>
                             <Dropdown.Trigger>

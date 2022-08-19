@@ -150,7 +150,12 @@ defineProps(['chirp']);
             <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
         <div class="flex-1">
-            <div class="text-gray-800">{{ chirp.user.name }} <small class="text-sm text-gray-600">{{ chirp.created_at }}</small></div>
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-gray-800">{{ chirp.user.name }}</span>
+                    <small class="ml-2 text-sm text-gray-600">{{ new Date(chirp.created_at).toLocaleString() }}</small>
+                </div>
+            </div>
             <p class="mt-4 text-lg text-gray-900">{{ chirp.message }}</p>
         </div>
     </div>
@@ -167,7 +172,12 @@ export default function Chirp({ chirp }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
             <div className="flex-1">
-                <div className="text-gray-800">{chirp.user.name} <small className="text-sm text-gray-600">{chirp.created_at}</small></div>
+                <div className="flex justify-between items-center">
+                    <div>
+                        <span className="text-gray-800">{chirp.user.name}</span>
+                        <small className="ml-2 text-sm text-gray-600">{new Date(chirp.created_at).toLocaleString()}</small>
+                    </div>
+                </div>
                 <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
             </div>
         </div>
@@ -271,13 +281,13 @@ Refresh the page at [http://localhost/chirps](http://localhost/chirps) to see th
 
 <img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg" />
 
-### Date formatting
+### Extra Credit: Relative dates
 
-The dates we get back from Laravel are computer-friendly, but not very human-friendly. We can [customize the serialization format](https://laravel.com/docs/9.x/eloquent-serialization#date-serialization) that Laravel uses, but it's often useful to keep the date in a computer-friendly format for our front-end code. Let's take advantage of that format by using the popular [Day.js](https://day.js.org) library to display relative dates beside our Chirps!
+In our `Chirp` component we formatted the dates to be human-readable, but we can take that one step further by displaying relative dates using the popular [Day.js](https://day.js.org) library.
 
 First, install the `dayjs` NPM package:
 
-```sh
+```shell
 npm install dayjs
 ```
 
@@ -299,8 +309,13 @@ defineProps(['chirp']);
             <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
         </svg>
         <div class="flex-1">
-            <div class="text-gray-800">{{ chirp.user.name }} <small class="text-sm text-gray-600">{{ chirp.created_at }}</small></div><!-- [tl! remove] -->
-            <div class="text-gray-800">{{ chirp.user.name }} <small class="text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}</small></div><!-- [tl! add] -->
+            <div class="flex justify-between items-center">
+                <div>
+                    <span class="text-gray-800">{{ chirp.user.name }}</span>
+                    <small class="ml-2 text-sm text-gray-600">{{ new Date(chirp.created_at).toLocaleString() }}</small><!-- [tl! remove] -->
+                    <small class="ml-2 text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}</small><!-- [tl! add] -->
+                </div>
+            </div>
             <p class="mt-4 text-lg text-gray-900">{{ chirp.message }}</p>
         </div>
     </div>
@@ -321,13 +336,18 @@ export default function Chirp({ chirp }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
             </svg>
             <div className="flex-1">
-                <div className="text-gray-800">{chirp.user.name} <small className="text-sm text-gray-600">{chirp.created_at}</small></div>
-                <div className="text-gray-800">{chirp.user.name} <small className="text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}</small></div>
+                <div className="flex justify-between items-center">
+                    <div>
+                        <span className="text-gray-800">{chirp.user.name}</span>
+                        <small className="ml-2 text-sm text-gray-600">{new Date(chirp.created_at).toLocaleString()}</small>
+                        <small className="ml-2 text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}</small>
+                    </div>
+                </div>
                 <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
             </div>
         </div>
     );
-    // [tl! remove:-6,1 add:-5,1 .hidden]
+    // [tl! remove:-8,1 add:-7,1 .hidden]
 }
 ```
 

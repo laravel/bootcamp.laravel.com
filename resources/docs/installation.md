@@ -12,6 +12,8 @@ The easiest way to install Laravel is using our `laravel.build` service, which w
 curl -s "https://laravel.build/chirper" | bash
 ```
 
+Sail installation may take several minutes while Sail's application containers are built on your local machine.
+
 By default, the installer will pre-configure Laravel Sail with a number of useful services for your application, including a MySQL database server. You may [customize the Sail services](https://laravel.com/docs/9.x/installation#choosing-your-sail-services) if needed.
 
 After the project has been created, you can navigate to the application directory and start Laravel Sail:
@@ -21,8 +23,6 @@ cd chirper
 
 ./vendor/bin/sail up
 ```
-
-The first time you run the Sail up command, Sail's application containers will be built on your local machine. This could take several minutes. Don't worry, subsequent attempts to start Sail will be much faster.
 
 > **Note**
 > You can [create a shell alias](https://laravel.com/docs/sail#configuring-a-shell-alias) that allows you execute Sail's commands more easily.
@@ -34,19 +34,19 @@ Once the application's Docker containers have been started, you can access the a
 
 ## Installing Laravel Breeze
 
-Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, your are encouraged to customize the components to suit your needs.
+Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, you are welcome to customize the components to suit your needs.
 
-Laravel Breeze offer several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React.
+Laravel Breeze offers several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React.
 
 Open a new terminal in your `chirper` project directory, and then install your chosen stack with the given commands:
 
-```sh tab=Vue
+```shell tab=Vue
 ./vendor/bin/sail composer require laravel/breeze --dev
 
 ./vendor/bin/sail artisan breeze:install vue
 ```
 
-```sh tab=React
+```shell tab=React
 ./vendor/bin/sail composer require laravel/breeze --dev
 
 ./vendor/bin/sail artisan breeze:install react
@@ -54,7 +54,7 @@ Open a new terminal in your `chirper` project directory, and then install your c
 
 Breeze will configure your front-end dependencies for you, so we can now install them and start the Vite development server:
 
-```sh
+```shell
 npm install
 
 npm run dev
@@ -62,7 +62,7 @@ npm run dev
 
 Finally, open another terminal in your `chirper` project directory and run the initial database migrations to populate the database with the default tables from Laravel and Breeze:
 
-```sh
+```shell
 ./vendor/bin/sail artisan migrate
 ```
 
