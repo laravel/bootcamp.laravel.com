@@ -169,8 +169,6 @@
                                     })
 
                                     function setActiveTableOfContents () {
-                                        console.log('------')
-
                                         const links = Array.from(document.querySelectorAll('.table-of-contents a'))
                                         const lastVisible = links
                                             .slice()
