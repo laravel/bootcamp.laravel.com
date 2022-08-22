@@ -129,7 +129,7 @@
             </header>
 
             <section class="flex-1 dark:bg-dark-700">
-                <span class="hidden dark:hidden fixed -bottom-[300px] right-0 bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex w-[800px] h-[600px]"></span>
+                <span class="hidden dark:hidden fixed -bottom-[350px] ml-[300px] bg-radial-gradient opacity-[.15] pointer-events-none lg:inline-flex w-[800px] h-[600px]"></span>
                 <div class="px-8 sm:px-16 lg:px-24">
                     <div class="max-w-screen-lg flex flex-col items-end transition-colors dark:border-gray-700 lg:mt-8 lg:flex-row-reverse">
                         <div class="fixed top-8 hidden lg:flex items-center justify-center">
