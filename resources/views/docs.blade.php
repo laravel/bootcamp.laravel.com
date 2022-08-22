@@ -154,7 +154,7 @@
                     </div>
 
                     <section class="pt-8 pb-8 md:pt-16 md:pb-16 flex">
-                        <section class="docs_main max-w-prose">
+                        <section class="docs_main flex-1 max-w-full">
                             <x-accessibility.main-content-wrapper>
                                 <div class="prose dark:prose-invert relative">
                                     @include($page)
