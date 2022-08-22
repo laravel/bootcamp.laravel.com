@@ -8,7 +8,7 @@ In addition to support for sending email, Laravel provides support for sending n
 
 ## Creating the notification
 
-Let's once again allow Artisan to do all the hard work for us.
+Artisan can, once again, do all the hard work for us with the following command:
 
 ```shell
 ./vendor/bin/sail artisan make:notification NewChirp
@@ -89,7 +89,7 @@ class NewChirp extends Notification
 }
 ```
 
-We could send the notification directly from the `store` method on our `ChirpController`, but that adds more work for the controller which could slow down the request, especially as we'll be querying the database and sending emails.
+We could send the notification directly from the `store` method on our `ChirpController`, but that adds more work for the controller, which in turn could slow down the request, especially as we'll be querying the database and sending emails.
 
 Instead, let's dispatch an event from the controller that we can listen for and process in a background queue.
 
@@ -103,7 +103,7 @@ Let's create our event with the following command:
 ./vendor/bin/sail artisan make:event ChirpCreated
 ```
 
-We'll be dispatching events for each new Chirp that is created, so let's update our `ChirpCreated` event to accept the specific `Chirp` model that the event relates to, so that we can include details from the Chirp in our message.
+We'll be dispatching events for each new Chirp that is created, so let's update our `ChirpCreated` event to accept the newly created `Chirp` so we can pass it on to our notification.
 
 ```php filename=app/Events/ChirpCreated.php
 <?php
@@ -151,7 +151,7 @@ Eloquent models automatically dispatch several events that you can hook into, in
 
 ## Dispatching the event
 
-We can now dispatch our `ChirpCreated` event from the `store` method on our `ChirpController`, passing in the Chirp that was just created:
+We may now dispatch our `ChirpCreated` event from the `store` method on our `ChirpController`, passing in the Chirp that was just created:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -269,9 +269,9 @@ class ChirpController extends Controller
 
 ## Creating an event listener
 
-Now that we're dispatching an event, we need to listen for that event so that we can send our notifications.
+Now that we're dispatching an event, we can listen for that event and send our notification.
 
-Let's create a listener that will subscribe to our `ChirpCreated` event:
+Let's create a listener that subscribes to our `ChirpCreated` event:
 
 ```sail
 ./vendor/bin/sail artisan make:listener SendChirpNotifications --event=ChirpCreated
@@ -320,25 +320,25 @@ class SendChirpNotifications implements ShouldQueue// [tl! add]
 }
 ```
 
-We've configured our listener to send notifications to every user in the platform except for the author of the Chirp. In reality, this might annoy your users, so you may want to implement a "following" feature so that users only receive notifications for people they follow.
-
 We've marked our listener with the `ShouldQueue` interface, which tells Laravel that the listener should be run via a [background queue](https://laravel.com/docs/queues).
 
-We've also used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once. Another thing to be mindful of as your application scales, is any rate limiting that your mail provider might impose. You may consider sending a summary once per day using Laravel's [scheduling](https://laravel.com/docs/scheduling) feature.
+We've then configured our listener to send notifications to every user in the platform, except for the author of the Chirp. In reality, this might annoy users, so you may want to implement a "following" feature so users only receive notifications for people they follow.
+
+We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once, but another thing to be mindful of as your application scales, is any rate limiting that your mail provider might impose. You may want to consider sending a summary once per day using Laravel's [scheduling](https://laravel.com/docs/scheduling) feature.
 
 > **Note**
 > In a production application you should add the ability for your users to unsubscribe from notifications like these.
 
 ## Testing it out
 
-Laravel Sail comes with [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application. It allows your to view an inbox of any emails so you can see what your users would see in a production environment.
+Laravel Sail comes with [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application so you may view them.
 
-Our notification won't be sent to the Chirp author, so first be sure that you have registered at least two users accounts. Then, go ahead and send a Chirp from one of your registered accounts!
+We've configured our notification not to send to the Chirp author, so first be sure that you have registered at least two users accounts. Then, you may go ahead and send a Chirp from one of your registered accounts to trigger a notification.
 
-In your web browser, navigate to [http://localhost:8025/](http://localhost:8025/) where you'll find MailHog's interface. In the inbox, you should see the notification from the message your just chirped!
+In your web browser, navigate to [http://localhost:8025/](http://localhost:8025/) where you'll find MailHog's interface. In the inbox, you should see the notification from the message you just chirped!
 
 ### Sending emails in production
 
-To send real emails in production, you will need an SMTP server, or a transactional email provider, such as Mailgun, Postmark, or Amazon SES. Laravel supports these out of the box. For more information, take a look at the [Mail documentation](https://laravel.com/docs/9.x/mail#introduction).
+To send real emails in production, you will need an SMTP server, or a transactional email provider, such as Mailgun, Postmark, or Amazon SES. Laravel supports all of these out of the box. For more information, take a look at the [Mail documentation](https://laravel.com/docs/9.x/mail#introduction).
 
 [Continue to learn about deploying your application...](/deploying)
