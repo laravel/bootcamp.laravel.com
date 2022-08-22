@@ -362,6 +362,8 @@ import { useForm, usePage } from '@inertiajs/inertia-react';
 dayjs.extend(relativeTime);
 
 export default function Chirp({ chirp }) {
+    const { auth } = usePage().props;
+
     const [editing, setEditing] = useState(false);
 
     const { data, setData, patch, processing, reset, errors } = useForm({
@@ -385,7 +387,7 @@ export default function Chirp({ chirp }) {
                         <small className="ml-2 text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}</small>
                         { chirp.created_at !== chirp.updated_at && <span className="text-sm text-gray-600"> &middot; edited</span>}</small></div>
                     </div>
-                    {chirp.user.id === usePage().props.auth.user.id &&
+                    {chirp.user.id === auth.user.id &&
                         <Dropdown>
                             <Dropdown.Trigger>
                                 <button>
