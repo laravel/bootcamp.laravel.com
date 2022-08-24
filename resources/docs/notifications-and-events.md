@@ -149,119 +149,33 @@ class ChirpCreated
 
 ## Dispatching the event
 
-We may now dispatch our `ChirpCreated` event from the `store` method on our `ChirpController`, passing in the Chirp that was just created:
+Now that we have our event class, we're ready to dispatch it any time a Chirp is created. You may [dispatch events](https://laravel.com/docs/events#dispatching-events) anywhere in your application lifecycle, but as our event relates to the creation of an Eloquent model, we can configure our `Chirp` model to dispatch the event for us.
 
-```php filename=app/Http/Controllers/ChirpController.php
+```php filename=app/Models/Chirp.php
 <?php
-namespace App\Http\Controllers;
+
+namespace App\Models;
 
 use App\Events\ChirpCreated;// [tl! add]
-use App\Models\Chirp;
-use Illuminate\Http\Request;
-use Inertia\Inertia;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 
-class ChirpController extends Controller
+class Chirp extends Model
 {
-    // [tl! collapse:start]
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    use HasFactory;
+
+    protected $fillable = [
+        'message',
+    ];
+
+    protected $dispatchesEvents = [// [tl! add:start]
+        'created' => ChirpCreated::class,
+    ];// [tl! add:end]
+
+    public function user()
     {
-        return Inertia::render('Chirps/Index', [
-            'chirps' => Chirp::with('user:id,name')->latest()->get(),
-        ]);
+        return $this->belongsTo(User::class);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-    // [tl! collapse:end]
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'message' => 'required|string|max:255',
-        ]);
-
-        $request->user()->chirps()->create($validated);// [tl! remove]
-        $chirp = $request->user()->chirps()->create($validated);// [tl! add]
-
-        ChirpCreated::dispatch($chirp);// [tl! add]
-
-        return redirect(route('chirps.index'));
-    }
-    // [tl! collapse:start]
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Chirp $chirp)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Chirp $chirp)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Chirp $chirp)
-    {
-        $this->authorize('update', $chirp);
-
-        $validated = $request->validate([
-            'message' => 'required|string|max:255',
-        ]);
-
-        $chirp->update($validated);
-
-        return redirect(route('chirps.index'));
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Chirp $chirp)
-    {
-        $this->authorize('delete', $chirp);
-
-        $chirp->delete();
-
-        return redirect(route('chirps.index'));
-    }
-    // [tl! collapse:end]
 }
 ```
 
