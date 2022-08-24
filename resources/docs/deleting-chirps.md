@@ -8,7 +8,7 @@ Hopefully you're starting to get the hang of things now. We think you'll be impr
 
 ## Route
 
-We'll start again by updating our routes to enable the `destroy` action:
+We'll start again by updating our routes to enable the `chirps.destroy` route:
 
 ```php filename=routes/web.php
 <?php
@@ -62,7 +62,7 @@ DELETE    | `/chirps/{chirp}`      | destroy      | chirps.destroy
 
 ## Controller
 
-Now we can update our `ChirpController` to perform the deletion and return to the Chirp index:
+Now we can update the `destroy` method on our `ChirpController` class to perform the deletion and return to the Chirp index:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -177,7 +177,7 @@ class ChirpController extends Controller
 
 ## Authorization
 
-As with editing, we only want our Chirp authors to be able to delete their Chirps, so let's update our policy:
+As with editing, we only want our Chirp authors to be able to delete their Chirps, so let's update the `delete` method our `ChirpPolicy` class:
 
 ```php filename=app/Policies/ChirpPolicy.php
 <?php
@@ -249,7 +249,7 @@ class ChirpPolicy
     public function delete(User $user, Chirp $chirp)
     {
         //
-        return $user->id === $chirp->user_id;// [tl! remove:-1,1 add]
+        return $this->update($user, $chirp);// [tl! remove:-1,1 add]
     }
     // [tl! collapse:start]
     /**
@@ -279,9 +279,11 @@ class ChirpPolicy
 }
 ```
 
+Rather than repeating the logic from the `update` method, we can define the same logic by calling the `update` method from our `destroy` method.
+
 ## Updating our component
 
-Finally, we can add a delete button to our user interface. We'll place it inside the dropdown menu we created earlier that is only visible to the Chirp author:
+Finally, we can add a delete button to the dropdown menu we created earlier in our `Chirp` component:
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
@@ -427,5 +429,7 @@ export default function Chirp({ chirp }) {
 ## Testing it out
 
 If you chirped anything you weren't happy with, try deleting it!
+
+<img src="/img/screenshots/chirp-delete.png" alt="Deleting a chirp" class="rounded-lg border dark:border-none shadow-lg" />
 
 [Continue to notifications & events...](/notifications-and-events)

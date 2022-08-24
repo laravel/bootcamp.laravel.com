@@ -6,7 +6,7 @@ In the previous step we added the ability to create Chirps, now we're ready to d
 
 ## Controller
 
-Let's update the `index()` method our `ChirpController` to pass Chirps from every user to our Index page.
+Let's update the `index` method our `ChirpController` class to pass Chirps from every user to our Index page.
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -105,6 +105,9 @@ class ChirpController extends Controller
 }
 ```
 
+> **Note**
+> Returning all Chirps at once won't scale in production. Take a look at Laravel's powerful [pagination](https://laravel.com/docs/9.x/pagination) to improve performance.
+
 ## Relationship
 
 We've instructed Laravel to return the `id` and `name` property from the `user` relationship so that we can display the name of the Chirp author, without returning other potentially sensitive information such as the users email address. The `user` relationship hasn't been defined yet, so let's add a new "belongs to" relationship on our `Chirp` model:
@@ -193,8 +196,7 @@ import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
 import BreezeButton from '@/Components/Button.vue';
 import BreezeInputError from '@/Components/InputError.vue';
 import Chirp from '@/Components/Chirp.vue';// [tl! add]
-import { Head } from '@inertiajs/inertia-vue3';
-import { useForm } from '@inertiajs/inertia-vue3';
+import { useForm, Head } from '@inertiajs/inertia-vue3';
 
 defineProps(['chirps']);// [tl! add]
 
@@ -279,7 +281,7 @@ export default function Index({ auth, chirps }) {// [tl! add]
 
 Refresh the page at [http://localhost/chirps](http://localhost/chirps) to see the message you chirped earlier!
 
-<img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg" />
+<img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg border dark:border-none shadow-lg" />
 
 ### Extra Credit: Relative dates
 
@@ -353,7 +355,7 @@ export default function Chirp({ chirp }) {
 
 Take a look in the browser to see your relative dates.
 
-<img src="/img/screenshots/chirp-index-dates.png" alt="Chirp listing with relative dates" class="rounded-lg" />
+<img src="/img/screenshots/chirp-index-dates.png" alt="Chirp listing with relative dates" class="rounded-lg border dark:border-none shadow-lg" />
 
 Feel free to Chirp some more, or even register another account and start a conversation!
 

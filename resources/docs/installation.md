@@ -29,8 +29,8 @@ cd chirper
 
 Once the application's Docker containers have been started, you can access the application in your web browser at: [http://localhost](http://localhost).
 
-<img src="/img/screenshots/fresh.png" alt="A fresh Laravel installation" class="dark:hidden rounded-lg" />
-<img src="/img/screenshots/fresh-dark.png" alt="A fresh Laravel installation" class="hidden dark:block rounded-lg" />
+<img src="/img/screenshots/fresh.png" alt="A fresh Laravel installation" class="dark:hidden rounded-lg border shadow-lg" />
+<img src="/img/screenshots/fresh-dark.png" alt="A fresh Laravel installation" class="hidden dark:block rounded-lg border-gray-700 shadow-lg" />
 
 ## Installing Laravel Breeze
 
@@ -52,11 +52,9 @@ Open a new terminal in your `chirper` project directory, and then install your c
 ./vendor/bin/sail artisan breeze:install react
 ```
 
-Breeze will configure your front-end dependencies for you, so we can now install them and start the Vite development server:
+Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to enable instant hot-module replacement while we build our application.
 
 ```shell
-npm install
-
 npm run dev
 ```
 
@@ -66,8 +64,10 @@ Finally, open another terminal in your `chirper` project directory and run the i
 ./vendor/bin/sail artisan migrate
 ```
 
-If you refresh your Laravel application in the browser at [http://localhost](http://localhost), you may now follow the "Register" link at the top right to register a test account and log in.
+If you refresh your new Laravel application in the browser at [http://localhost](http://localhost), you should now see a "Register" link at the top-right. Follow that to see the registration form provided by Laravel Breeze.
 
-<img src="/img/screenshots/register.png" alt="Laravel registration page" class="rounded-lg" />
+<img src="/img/screenshots/register.png" alt="Laravel registration page" class="rounded-lg border dark:border-none shadow-lg" />
+
+Register yourself an account and log in!
 
 [Continue to start creating chirps...](/creating-chirps)

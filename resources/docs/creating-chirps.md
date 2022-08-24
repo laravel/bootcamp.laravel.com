@@ -91,7 +91,7 @@ POST      | `/chirps`              | store        | chirps.store
 > **Note**
 > You may view all of the routes for your application by running the `./vendor/bin/sail artisan route:list` command.
 
-Let's test our route and controller by returning a test message from the `index` method of our `ChirpController`:
+Let's test our route and controller by returning a test message from the `index` method of our new `ChirpController` class:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -187,7 +187,7 @@ If you are still logged in from earlier, you should see your message when naviga
 
 ## Inertia
 
-Not impressed yet? Let's use Inertia to render a front-end page component:
+Not impressed yet? Let's update the `index` method of our `ChirpController` class to render a front-end page component using Inertia:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -292,7 +292,7 @@ import BreezeInputError from '@/Components/InputError.vue';
 import { useForm, Head } from '@inertiajs/inertia-vue3';
 
 const form = useForm({
-    message => '',
+    message: '',
 });
 </script>
 
@@ -355,7 +355,7 @@ export default function Index({ auth }) {
 
 That's it! Refresh the page at [http://localhost/chirps](http://localhost/chirps) and you should see your new form rendered in the default layout provided by Breeze!
 
-<img src="/img/screenshots/chirp-form.png" alt="Chirp form" class="rounded-lg" />
+<img src="/img/screenshots/chirp-form.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
 ## Navigation menu
 
@@ -419,7 +419,7 @@ return (
 
 ## Saving the chirp
 
-Our form has been configured to post messages to the `chirps.store` route that we created earlier. Let's update the `store()` method on our `ChirpController` to validate the data and create a new Chirp:
+Our form has been configured to post messages to the `chirps.store` route that we created earlier. Let's update the `store` method on our `ChirpController` class to validate the data and create a new Chirp:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -521,15 +521,15 @@ class ChirpController extends Controller
 }
 ```
 
-We're using Laravel's powerful validation feature to ensure that the user provides a message, and that it won't the 255 character limit of the database column we'll be creating.
+We're using Laravel's powerful validation feature to ensure that the user provides a message, and that it won't exceed the 255 character limit of the database column we'll be creating.
 
-We're then creating a record that will belong to the logged in user by leveraging a `chirps()` relationship that we will create next.
+We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship that we will create next.
 
-And then finally, when using Inertia, we can return a `redirect()` to instruct Inertia to reload our `chirps.index` route.
+And finally, when using Inertia, we can return a redirect response to instruct Inertia to reload our `chirps.index` route.
 
 ## Creating a relationship
 
-You may have noticed in the previous step that we called a `chirps()` method on the `$request->user()` object. This method doesn't actually exist yet, but it would be nice if it did. We can do this by creating a "has many" relationship on our `User` model:
+You may have noticed in the previous step that we called a `chirps` method on the `$request->user()` object. We need to create this method on our `User` model to define a "has many" relationship:
 
 ```php filename=app/Models/User.php
 <?php
@@ -593,7 +593,7 @@ Passing all of the data from a request to your model can be risky. Imagine you h
 
 Laravel protects you from accidentally doing this by blocking mass assignment by default. Mass assignment is very convenient though, as it prevents you from having to assign each attribute one-by-one. We can enable mass assignment for safe attributes my marking them as "fillable".
 
-Open your `Chirp` model and add a `$fillable` property that includes our `messages` attribute:
+Let's add the `$fillable` property to our `Chirp` model enable mass-assignment for the `message` attribute:
 
 ```php filename=app/Models/Chirp.php
 <?php
@@ -618,7 +618,7 @@ You can learn more about Laravel's mass assignment protection in the [documentat
 
 ## Updating the migration
 
-The only thing missing is the extra columns in the database to store the relationship between a `Chirp` and its `User`, and the message itself. Remember the database migration we created earlier? It's time to open that file to add some extra columns:
+The only thing missing is extra columns in the database to store the relationship between a `Chirp` and its `User` and the message itself. Remember the database migration we created earlier? It's time to open that file to add some extra columns:
 
 ```php filename=databases/migration/&amp;lt;timestamp&amp;gt;_create_chirps_table.php
 <?php
@@ -670,6 +670,8 @@ We haven't migrated the database since we added this migration, so let do it now
 
 We're now ready to send a "chirp" from the form we added to [http://localhost/chirps](http://localhost/chirps)! You won't be able to see the result yet because we haven't displayed existing chirps on the page.
 
+<img src="/img/screenshots/chirp-form-filled.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
+
 If you leave the message field empty, or enter more than 255 characters, then you'll see the validation in action.
 
 ### Artisan Tinker
@@ -694,9 +696,9 @@ Chirp::all();
        App\Models\Chirp {#4514
          id: 1,
          user_id: 1,
-         message: "I'm building a new microblogging platform with Laravel!",
-         created_at: "2022-07-10 04:47:10",
-         updated_at: "2022-07-10 04:47:10",
+         message: "I'm building Chirper with Laravel!",
+         created_at: "2022-08-24 13:37:00",
+         updated_at: "2022-08-24 13:37:00",
        },
      ],
    }

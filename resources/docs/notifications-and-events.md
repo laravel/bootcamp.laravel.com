@@ -16,7 +16,7 @@ Artisan can, once again, do all the hard work for us with the following command:
 
 This will create a new notification at `app/Notifications/NewChirp.php` that is ready for us to customize.
 
-Let's open this class and allow it to accept the Chirp that was just created, and then customize the message to include the name of the Chirp author, and a snippet from the message.
+Let's open the `NewChirp` class and allow it to accept the `Chirp` that was just created, and then customize the message to include author's name and a snippet from the message.
 
 ```php filename=app/Notifications/NewChirp.php
 <?php
@@ -89,7 +89,7 @@ class NewChirp extends Notification
 }
 ```
 
-We could send the notification directly from the `store` method on our `ChirpController`, but that adds more work for the controller, which in turn could slow down the request, especially as we'll be querying the database and sending emails.
+We could send the notification directly from the `store` method on our `ChirpController` class, but that adds more work for the controller, which in turn can slow down the request, especially as we'll be querying the database and sending emails.
 
 Instead, let's dispatch an event that we can listen for and process in a background queue to keep our application snappy.
 
@@ -102,6 +102,8 @@ Let's create our new event with the following command:
 ```shell
 ./vendor/bin/sail artisan make:event ChirpCreated
 ```
+
+This will create a new event class at `app/Events/ChirpCreated.php`.
 
 Since we'll be dispatching events for each new Chirp that is created, let's update our `ChirpCreated` event to accept the newly created `Chirp` so we may pass it on to our notification.
 
@@ -178,6 +180,8 @@ class Chirp extends Model
     }
 }
 ```
+
+Now any time a new `Chirp` is created, the `ChirpCreated` event will be dispatched.
 
 ## Creating an event listener
 
@@ -303,6 +307,8 @@ Laravel Sail comes with [MailHog](https://github.com/mailhog/MailHog), an email 
 We've configured our notification not to send to the Chirp author, so first be sure that you have registered at least two users accounts. Then, you may go ahead and send a Chirp from one of your registered accounts to trigger a notification.
 
 In your web browser, navigate to [http://localhost:8025/](http://localhost:8025/) where you'll find MailHog's interface. In the inbox, you should see the notification from the message you just chirped!
+
+<img src="/img/screenshots/mailhog.png" alt="MailHog" class="rounded-lg border dark:border-none shadow-lg" />
 
 ### Sending emails in production
 

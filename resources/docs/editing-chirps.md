@@ -6,7 +6,7 @@ Let's add a feature that's missing from other popular bird-themed microblogging 
 
 ## Route
 
-First we will update our routes file to enable the `update` route for our resource controller:
+First we will update our routes file to enable the `chirps.update` route for our resource controller:
 
 ```php filename=routes/web.php
 <?php
@@ -204,7 +204,7 @@ export default function Chirp({ chirp }) {
 
 ## Updating our controller
 
-We can now update our `ChirpController` to accept the request and update the Chirp. Even though we're only displaying the edit button to the author of the Chirp, we need to authorize the request to make sure it's the author that is updating it.
+We can now update the `update` method on our `ChirpController` class to validate the request and update the database. Even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request to make sure it's the author that is updating it.
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -319,7 +319,7 @@ class ChirpController extends Controller
 
 ## Authorization
 
-By default, the `authorize()` method will prevent anyone from being able to update the Chirp. We can specify who is allowed to update it by creating a [Model Policy](https://laravel.com/docs/authorization#creating-policies) with the following command:
+By default, the `authorize` method will prevent *everyone* from being able to update the Chirp. We can specify who is allowed to update it by creating a [Model Policy](https://laravel.com/docs/authorization#creating-policies) with the following command:
 
 ```shell
 ./vendor/bin/sail artisan make:policy ChirpPolicy --model=Chirp
@@ -429,6 +429,8 @@ class ChirpPolicy
 
 ## Testing it out
 
-Time to test it out! Go ahead and edit a few Chirps. If you register another user account, you'll see that only the author of a Chirp can edit it.
+Time to test it out! Go ahead and edit a few Chirps using the dropdown menu. If you register another user account, you'll see that only the author of a Chirp can edit it.
+
+<img src="/img/screenshots/chirp-editted.png" alt="An editted chirp" class="rounded-lg border dark:border-none shadow-lg" />
 
 [Continue to allow deleting of chirps...](/deleting-chirps)
