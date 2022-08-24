@@ -91,19 +91,19 @@ class NewChirp extends Notification
 
 We could send the notification directly from the `store` method on our `ChirpController`, but that adds more work for the controller, which in turn could slow down the request, especially as we'll be querying the database and sending emails.
 
-Instead, let's dispatch an event from the controller that we can listen for and process in a background queue.
+Instead, let's dispatch an event that we can listen for and process in a background queue to keep our application snappy.
 
 ## Creating an event
 
 Events are a great way to decouple various aspects of your application, since a single event can have multiple listeners that do not depend on each other.
 
-Let's create our event with the following command:
+Let's create our new event with the following command:
 
 ```shell
 ./vendor/bin/sail artisan make:event ChirpCreated
 ```
 
-We'll be dispatching events for each new Chirp that is created, so let's update our `ChirpCreated` event to accept the newly created `Chirp` so we can pass it on to our notification.
+Since we'll be dispatching events for each new Chirp that is created, let's update our `ChirpCreated` event to accept the newly created `Chirp` so we may pass it on to our notification.
 
 ```php filename=app/Events/ChirpCreated.php
 <?php
@@ -146,8 +146,6 @@ class ChirpCreated
     // [tl! collapse:end]
 }
 ```
-
-Eloquent models automatically dispatch several events that you can hook into, including a `model:created` event. While we could use Laravel's built-in events, we wanted to demonstrate how you might create your own custom events. Check out the [Eloquent documentation](https://laravel.com/docs/9.x/eloquent#events) to learn more about the built-in events.
 
 ## Dispatching the event
 
@@ -269,17 +267,17 @@ class ChirpController extends Controller
 
 ## Creating an event listener
 
-Now that we're dispatching an event, we can listen for that event and send our notification.
+Now that we're dispatching an event, we're ready to listen for that event and send our notification.
 
 Let's create a listener that subscribes to our `ChirpCreated` event:
 
 ```sail
-./vendor/bin/sail artisan make:listener SendChirpNotifications --event=ChirpCreated
+./vendor/bin/sail artisan make:listener SendChirpCreatedNotifications --event=ChirpCreated
 ```
 
-The new listener will be placed at `app/Listeners/SendChirpNotification.php`. Let's edit that file to send our notifications.
+The new listener will be placed at `app/Listeners/SendChirpCreatedNotifications.php`. Let's update the listener to send our notifications.
 
-```php filename=app/Http/Listeners/SendChirpNotifications.php
+```php filename=app/Http/Listeners/SendChirpCreatedNotifications.php
 <?php
 
 namespace App\Listeners;
@@ -290,8 +288,8 @@ use App\Notifications\NewChirp;// [tl! add]
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class SendChirpNotifications// [tl! remove]
-class SendChirpNotifications implements ShouldQueue// [tl! add]
+class SendChirpCreatedNotifications// [tl! remove]
+class SendChirpCreatedNotifications implements ShouldQueue// [tl! add]
 {
     // [tl! collapse:start]
     /**
@@ -324,10 +322,65 @@ We've marked our listener with the `ShouldQueue` interface, which tells Laravel 
 
 We've then configured our listener to send notifications to every user in the platform, except for the author of the Chirp. In reality, this might annoy users, so you may want to implement a "following" feature so users only receive notifications for people they follow.
 
-We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once, but another thing to be mindful of as your application scales, is any rate limiting that your mail provider might impose. You may want to consider sending a summary once per day using Laravel's [scheduling](https://laravel.com/docs/scheduling) feature.
+We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once, but another thing to be mindful of as your application scales is any rate limiting that your mail provider might impose. You may want to consider sending a summary once per day using Laravel's [scheduling](https://laravel.com/docs/scheduling) feature.
 
 > **Note**
 > In a production application you should add the ability for your users to unsubscribe from notifications like these.
+
+### Registering the event listener
+
+The last step is to bind our event listener to the event. We can do this via our `EventServiceProvider` class:
+
+```php filename=App\Providers\EventServiceProvider.php
+<?php
+
+namespace App\Providers;
+
+use App\Events\ChirpCreated;// [tl! add]
+use App\Listeners\SendChirpCreatedNotifications;// [tl! add]
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
+
+class EventServiceProvider extends ServiceProvider
+{
+    /**
+     * The event to listener mappings for the application.
+     *
+     * @var array<class-string, array<int, class-string>>
+     */
+    protected $listen = [
+        ChirpCreated::class => [// [tl! add:start]
+            SendChirpCreatedNotifications::class,
+        ],// [tl! add:end]
+        Registered::class => [
+            SendEmailVerificationNotification::class,
+        ],
+    ];
+    // [tl! collapse:start]
+    /**
+     * Register any events for your application.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+
+    /**
+     * Determine if events and listeners should be automatically discovered.
+     *
+     * @return bool
+     */
+    public function shouldDiscoverEvents()
+    {
+        return false;
+    }
+    // [tl! collapse:end]
+}
+```
 
 ## Testing it out
 
