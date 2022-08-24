@@ -108,6 +108,9 @@ fi
 
 We're ready to deploy our application for the first time! Press the *Deploy Now* button, and then sit back while Forge runs your deploy script.
 
+> **Note**
+> You may enable *Quick Deploy* to automatically deploy your application every time you push to your main branch.
+
 You may review your deployment history on the *Deployments* tab.
 
 Once complete, visit your site again to confirm everything has deployed successfully.
