@@ -110,6 +110,7 @@ return [
 
     'table_of_contents' => [
         'position' => 'placeholder',
+        'max_heading_level' => 3,
         'placeholder' => '[TOC]',
     ],
 
