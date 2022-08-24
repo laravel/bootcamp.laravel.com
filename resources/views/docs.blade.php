@@ -49,7 +49,7 @@
                         </nav>
                     </div>
 
-                    <div class="absolute bottom-0 mb-12 pl-16">
+                    <div class="hidden xl:block absolute bottom-0 mb-12 pl-16">
                         <x-cube delay="0" class="ml-8" />
                         <x-cube delay="2000" class="mt-6 ml-32" />
                         <x-cube delay="1000" class="mt-12" />
