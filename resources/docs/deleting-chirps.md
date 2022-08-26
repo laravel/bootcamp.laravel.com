@@ -279,7 +279,7 @@ class ChirpPolicy
 }
 ```
 
-Rather than repeating the logic from the `update` method, we can define the same logic by calling the `update` method from our `destroy` method.
+Rather than repeating the logic from the `update` method, we can define the same logic by calling the `update` method from our `destroy` method. Anyone that is authorized to update a Chirp will now be authorized to delete it as well.
 
 ## Updating our component
 

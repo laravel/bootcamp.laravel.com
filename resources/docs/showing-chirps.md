@@ -105,12 +105,14 @@ class ChirpController extends Controller
 }
 ```
 
+Here we've used Eloquent's `with` method to [eager-load](https://laravel.com/docs/eloquent-relationships#eager-loading) the user id and name for every Chirp. We've also used the `latest` scope to return the records in reverse-chronological order.
+
 > **Note**
-> Returning all Chirps at once won't scale in production. Take a look at Laravel's powerful [pagination](https://laravel.com/docs/9.x/pagination) to improve performance.
+> Returning all Chirps at once won't scale in production. Take a look at Laravel's powerful [pagination](https://laravel.com/docs/pagination) to improve performance.
 
 ## Relationship
 
-We've instructed Laravel to return the `id` and `name` property from the `user` relationship so that we can display the name of the Chirp author, without returning other potentially sensitive information such as the users email address. The `user` relationship hasn't been defined yet, so let's add a new "belongs to" relationship on our `Chirp` model:
+We've instructed Laravel to return the `id` and `name` property from the `user` relationship so that we can display the name of the Chirp author, without returning other potentially sensitive information such as the users email address. The `user` relationship hasn't been defined yet, so let's add a new ["belongs to"](https://laravel.com/docs/eloquent-relationships#one-to-many-inverse) relationship on our `Chirp` model:
 
 ```php filename=app/Models/Chirp.php
 <?php
@@ -136,11 +138,11 @@ class Chirp extends Model
 }
 ```
 
-This is the inverse relationship for the "has many" relationship we created earlier on the `User` model.
+This is the inverse of the "has many" relationship we created earlier on the `User` model.
 
 ## Updating our component
 
-We'll also create a `Chirp` component for our front-end:
+We'll also need to create a `Chirp` component for our front-end:
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>

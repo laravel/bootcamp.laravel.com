@@ -2,7 +2,7 @@
 
 # <b>05.</b> Editing Chirps
 
-Let's add a feature that's missing from other popular bird-themed microblogging platforms, the ability to edit Chirps!
+Let's add a feature that's missing from other popular bird-themed microblogging platforms&mdash;the ability to edit Chirps!
 
 ## Route
 

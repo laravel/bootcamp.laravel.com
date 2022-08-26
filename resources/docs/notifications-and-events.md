@@ -2,7 +2,7 @@
 
 # <b>07.</b> Notifications & Events
 
-Let's take Chirper to the next level by sending email notifications when a new Chirp is created.
+Let's take Chirper to the next level by sending [email notifications](https://laravel.com/docs/notifications#introduction) when a new Chirp is created.
 
 In addition to support for sending email, Laravel provides support for sending notifications across a variety of delivery channels, including email, SMS, and Slack. In addition, a variety of community built notification channels have been created to send notification over dozens of different channels! Notifications may also be stored in a database so they may be displayed in your web interface.
 
@@ -236,11 +236,11 @@ class SendChirpCreatedNotifications implements ShouldQueue// [tl! add]
 }
 ```
 
-We've marked our listener with the `ShouldQueue` interface, which tells Laravel that the listener should be run via a [background queue](https://laravel.com/docs/queues).
+We've marked our listener with the `ShouldQueue` interface, which tells Laravel that the listener should be run in a [queue](https://laravel.com/docs/queues). By default, the "sync" queue will be used to process jobs synchronously, however you may configure a queue worker to process jobs in the background.
 
-We've then configured our listener to send notifications to every user in the platform, except for the author of the Chirp. In reality, this might annoy users, so you may want to implement a "following" feature so users only receive notifications for people they follow.
+We've then configured our listener to send notifications to every user in the platform, except the author of the Chirp. In reality, this might annoy users, so you may want to implement a "following" feature so users only receive notifications for accounts they follow.
 
-We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once, but another thing to be mindful of as your application scales is any rate limiting that your mail provider might impose. You may want to consider sending a summary once per day using Laravel's [scheduling](https://laravel.com/docs/scheduling) feature.
+We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once, but another thing to be mindful of as your application scales is any rate limiting that your mail provider might impose. You may like to consider sending a summary email once per day instead, using Laravel's [scheduling](https://laravel.com/docs/scheduling) feature.
 
 > **Note**
 > In a production application you should add the ability for your users to unsubscribe from notifications like these.

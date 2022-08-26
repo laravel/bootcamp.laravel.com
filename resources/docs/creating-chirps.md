@@ -38,7 +38,7 @@ To start with, we are going to enable two routes:
 * The `index` route will display our form and a listing of Chirps.
 * The `store` route will be used for saving new Chirps.
 
-We are also going to place these routes behind two "middleware":
+We are also going to place these routes behind two [middleware](https://laravel.com/docs/middleware):
 * The `auth` middleware ensures that only logged-in users can access the route.
 * The `verified` middleware will be used if you decide to enable [email verification](https://laravel.com/docs/verification).
 
@@ -529,7 +529,7 @@ And finally, when using Inertia, we can return a redirect response to instruct I
 
 ## Creating a relationship
 
-You may have noticed in the previous step that we called a `chirps` method on the `$request->user()` object. We need to create this method on our `User` model to define a "has many" relationship:
+You may have noticed in the previous step that we called a `chirps` method on the `$request->user()` object. We need to create this method on our `User` model to define a ["has many"](https://laravel.com/docs/eloquent-relationships#one-to-many) relationship:
 
 ```php filename=app/Models/User.php
 <?php
