@@ -304,14 +304,14 @@ class EventServiceProvider extends ServiceProvider
 
 Laravel Sail comes with [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application so you may view them.
 
-We've configured our notification not to send to the Chirp author, so first be sure that you have registered at least two users accounts. Then, you may go ahead and send a Chirp from one of your registered accounts to trigger a notification.
+We've configured our notification not to send to the Chirp author, so be sure to register at least two users accounts. Then, you may go ahead and post a new Chirp to trigger a notification.
 
-In your web browser, navigate to [http://localhost:8025/](http://localhost:8025/) where you'll find MailHog's interface. In the inbox, you should see the notification from the message you just chirped!
+Open MailHog in your web browser by navigating to [http://localhost:8025/](http://localhost:8025/) where you'll find an inbox with the notification for the message you just chirped!
 
 <img src="/img/screenshots/mailhog.png" alt="MailHog" class="rounded-lg border dark:border-none shadow-lg" />
 
 ### Sending emails in production
 
-To send real emails in production, you will need an SMTP server, or a transactional email provider, such as Mailgun, Postmark, or Amazon SES. Laravel supports all of these out of the box. For more information, take a look at the [Mail documentation](https://laravel.com/docs/9.x/mail#introduction).
+To send real emails in production, you will need an SMTP server, or a transactional email provider, such as Mailgun, Postmark, or Amazon SES. Laravel supports all of these out of the box. For more information, take a look at the [Mail documentation](https://laravel.com/docs/mail#introduction).
 
 [Continue to learn about deploying your application...](/deploying)

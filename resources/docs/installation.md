@@ -14,7 +14,7 @@ curl -s "https://laravel.build/chirper" | bash
 
 Sail installation may take several minutes while Sail's application containers are built on your local machine.
 
-By default, the installer will pre-configure Laravel Sail with a number of useful services for your application, including a MySQL database server. You may [customize the Sail services](https://laravel.com/docs/9.x/installation#choosing-your-sail-services) if needed.
+By default, the installer will pre-configure Laravel Sail with a number of useful services for your application, including a MySQL database server. You may [customize the Sail services](https://laravel.com/docs/installation#choosing-your-sail-services) if needed.
 
 After the project has been created, you can navigate to the application directory and start Laravel Sail:
 

@@ -6,7 +6,7 @@ We've really only scratched the surface. There's plenty more you could do with C
 
 Here are a few of our favorite features that you might like to consider:
 
-* [Automated Testing](https://laravel.com/docs/9.x/testing)
+* [Automated Testing](https://laravel.com/docs/testing)
 * [Broadcasting (Web Sockets)](https://laravel.com/docs/broadcasting)
 * [Form Request Validation](https://laravel.com/docs/validation#form-request-validation)
 * [Queues](https://laravel.com/docs/queues)

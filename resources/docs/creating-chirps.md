@@ -10,7 +10,7 @@ There's a little bit to unpack here so let's break it down:
 
 * [Models](https://laravel.com/docs/eloquent) provide a powerful and enjoyable interface for you to interact with the tables in your database.
 * [Migrations](https://laravel.com/docs/migrations) allow you to easily create and modify the tables in your database. They ensure that the same database structure exists everywhere that your application runs.
-* [Controllers](https://laravel.com/docs/9.x/controllers) are responsible for processing requests made to your application and returning a response.
+* [Controllers](https://laravel.com/docs/controllers) are responsible for processing requests made to your application and returning a response.
 
 Almost every feature you build will involve all of these pieces working together in harmony, so the `artisan make:model` command can create them all for you at once.
 
@@ -614,7 +614,7 @@ class Chirp extends Model
 }
 ```
 
-You can learn more about Laravel's mass assignment protection in the [documentation](https://laravel.com/docs/9.x/eloquent#mass-assignment).
+You can learn more about Laravel's mass assignment protection in the [documentation](https://laravel.com/docs/eloquent#mass-assignment).
 
 ## Updating the migration
 
@@ -676,7 +676,7 @@ If you leave the message field empty, or enter more than 255 characters, then yo
 
 ### Artisan Tinker
 
-This is great time to learn about [Artisan Tinker](https://laravel.com/docs/9.x/artisan#tinker), a *REPL* ([Read-eval-print loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can execute arbitrary PHP code in your Laravel application.
+This is great time to learn about [Artisan Tinker](https://laravel.com/docs/artisan#tinker), a *REPL* ([Read-eval-print loop](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop)) where you can execute arbitrary PHP code in your Laravel application.
 
 In your console, start a new tinker session:
 
