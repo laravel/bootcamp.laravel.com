@@ -1,8 +1,8 @@
 # <b>09.</b> Conclusion & Next Steps
 
-You've now built a fully-functional application using Laravel! We really hoped you enjoyed the experience.
+You've now built a fully functional application using Laravel. We really hoped you enjoyed the experience.
 
-We've really only scratched the surface. There's plenty more you could do with Chirper to put your own spin on it, and there's plenty more features in Laravel that help you build powerful applications while staying focused on the unique parts of your application. We've mentioned a few of them along the way, but we'd recommend browsing the complete [documentation](https://laravel.com/docs) to understand everything Laravel provides.
+We've really only scratched the surface of what is possible with Laravel. There is plenty more you could do with Chirper to put your own spin on it, and there are many more features in Laravel that help you to build modern applications while allowing you to stay focused on the unique aspects of your application. We've mentioned a few extra features along the way, but we'd recommend reading the complete [documentation](https://laravel.com/docs) to understand everything Laravel has to offer.
 
 Here are a few of our favorite features that you might like to consider:
 
@@ -16,5 +16,8 @@ Here are a few of our favorite features that you might like to consider:
 * [Database Seeding](https://laravel.com/docs/seeding)
 * [Collections](https://laravel.com/docs/collections)
 * [Subscription Billing](https://spark.laravel.com/)
-* [Administration Panel](https://nova.laravel.com/)
+* [Administration Panels](https://nova.laravel.com/)
+* [Server Management](https://vapor.laravel.com)
 * [Serverless Deployment](https://vapor.laravel.com)
+
+We'd love to hear your feedback. Follow [Laravel on Twitter](https://twitter.com/laravelphp) and let us know your thoughts.
