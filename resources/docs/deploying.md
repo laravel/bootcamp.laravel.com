@@ -6,7 +6,7 @@ Let's switch gears and look at how we can deploy our new Laravel application.
 
 ## Choosing a provider
 
-Laravel can be deployed to any modern PHP hosting environment that meets Laravel's modest [server requirements](https://laravel.com/docs/deployment#server-requirements). However, configuring and managing a web server and database server takes our attention away from building applications and delivering value to our users. That why we built [Laravel Forge](https://forge.laravel.com/) and [Laravel Vapor](https://vapor.laravel.com/).
+Laravel can be deployed to any modern PHP hosting environment that meets Laravel's modest [server requirements](https://laravel.com/docs/deployment#server-requirements). However, configuring and managing a web server and database server takes our attention away from building applications and delivering value to our users. That's why we built [Laravel Forge](https://forge.laravel.com/) and [Laravel Vapor](https://vapor.laravel.com/).
 
 #### Laravel Forge
 
@@ -20,14 +20,14 @@ Both are fantastic options, but today we're going with Forge for it's simplicity
 
 Sign up for your free trial with [Laravel Forge](https://forge.laravel.com/) and then pick your server provider:
 
-* [Digital Ocean](https://try.digitalocean.com/freetrialoffer/) <small>($100 free credit available)</small>
+* [DigitalOcean](https://try.digitalocean.com/freetrialoffer/) <small>($100 free credit available)</small>
 * [Linode](https://www.linode.com/) <small>($50 free credit available)</small>
 * [AWS](https://aws.amazon.com/free/) <small>(free tier available)</small>
 * [Vultr](https://www.vultr.com/promo/try50/) <small>($50 free credit available)</small>
 * [Hetzner](https://www.hetzner.com/)
 * Custom VPS server
 
-If you're not sure who to pick, we'd recommend [Digital Ocean](https://try.digitalocean.com/freetrialoffer/) for their generous credit, great user interface, and excellent features.
+If you're not sure who to pick, we recommend [DigitalOcean](https://try.digitalocean.com/freetrialoffer/) for their generous credit, great user interface, and excellent features.
 
 ## Connecting to source control
 
@@ -39,7 +39,7 @@ You may then connect Forge to your provider by selecting it on Forge's welcome s
 
 Forge will need the API key for your server provider so that it can build your servers. You can connect to your server provider on the Forge welcome screen, or by visiting the *Server Providers* section of your Forge account.
 
-Follow the instructions to create API credentials for Forge with your selected provider, and then enter the details to the continue.
+Follow the instructions to create API credentials for Forge with your selected provider, and then enter the details to continue.
 
 ## Creating a server
 
@@ -47,18 +47,18 @@ Now that Forge is connected to your source control and server providers, we're r
 
 From the *Servers* page, click the *Create Server* button.
 
-Next, select your server provider. You'll be presented with several options depending on your provider. The default options will be perfect for deploying Chirper, but we'd recommend reviewing all of the available options for your chosen provider to ensure everything matches your requirements and budget.
+Next, select your server provider. You'll be presented with several options depending on your provider. The default options will be perfect for deploying Chirper, but we recommend reviewing all of the available options for your chosen provider to ensure everything matches your requirements and budget.
 
 > **Note**
-> We'd recommend starting with an "App Server", which will provision everything you need all on one server. You may destroy the server when you're finished to avoid unnecessary costs.
+> We recommend starting with an "App Server", which will provision everything you need all on one server. You may destroy the server when you're finished to avoid unnecessary costs.
 
 Creating a server takes about 10 minutes, depending on your provider and the options selected.
 
 ## Creating a site (optional)
 
-Forge will automatically create a "default" site on your new server. This is perfect for deploying our application because we can visit it using the servers IP address, instead of purchasing a domain name.
+Forge will automatically create a "default" site on your new server. This is perfect for deploying our application because we can visit it using the server's public IP address instead of purchasing a domain name.
 
-If you'd like to use a domain name then we would recommend visiting the *Sites* tab of your server to delete the "default" site and create a new site. You may create as many sites as you need. You'll also have the option to create a database for your new site.
+If you would like to use a domain name then we recommend visiting the *Sites* tab of your server to delete the "default" site and create a new site. You may create as many sites as you need. You'll also have the option to create a database for your new site.
 
 Select your site, and then click on it's name in the heading to visit your site and see Forge's default site page.
 

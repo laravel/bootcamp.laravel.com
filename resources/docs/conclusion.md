@@ -2,7 +2,7 @@
 
 You've now built a fully functional application using Laravel. We really hoped you enjoyed the experience.
 
-We've really only scratched the surface of what is possible with Laravel. There is plenty more you could do with Chirper to put your own spin on it, and there are many more features in Laravel that help you to build modern applications while allowing you to stay focused on the unique aspects of your application. We've mentioned a few extra features along the way, but we'd recommend reading the complete [documentation](https://laravel.com/docs) to understand everything Laravel has to offer.
+We've really only scratched the surface of what is possible with Laravel. Keep experimenting and adding features to Chirper! There are many more features in Laravel that help you to build modern applications while allowing you to stay focused on the unique aspects of your application. We've mentioned a few extra features along the way, but we recommend reading the complete [documentation](https://laravel.com/docs) to understand everything Laravel has to offer.
 
 Here are a few of our favorite features that you might like to consider:
 
@@ -20,4 +20,4 @@ Here are a few of our favorite features that you might like to consider:
 * [Server Management](https://vapor.laravel.com)
 * [Serverless Deployment](https://vapor.laravel.com)
 
-We'd love to hear your feedback. Follow [Laravel on Twitter](https://twitter.com/laravelphp) and let us know your thoughts.
+We'd love to hear what you think about Laravel! Follow [Laravel on Twitter](https://twitter.com/laravelphp) and let us know your thoughts. Go build something amazing!

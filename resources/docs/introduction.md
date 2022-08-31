@@ -6,9 +6,9 @@ In addition to Laravel, you will have the option of building your front-end usin
 
 ## Choose your own adventure: Vue or React
 
-We will be providing front-end code samples for both Vue and React. Both are fantastic options for building a modern front-end application.
+We will be providing front-end code samples for both Vue and React. Both are fantastic options for building a modern front-end application. We'll use [Inertia](https://inertiajs.com) to connect our Laravel application with our Vue or React front-end.
 
-If you're not sure where to start, we're big fans of Vue for being beginner-friendly and extremely powerful. After you've finished the Bootcamp, you can always try it again with the other stack.
+If you're not sure where to start, we're big fans of Vue since it is beginner-friendly and extremely powerful. After you've finished the Bootcamp, you can always try it again with the other stack.
 
 Go ahead and choose your stack:
 

@@ -4,7 +4,7 @@
 
 In the previous step we added the ability to create Chirps, now we're ready to display them!
 
-## Controller
+## Retrieving the Chirps
 
 Let's update the `index` method our `ChirpController` class to pass Chirps from every user to our Index page.
 
@@ -105,14 +105,14 @@ class ChirpController extends Controller
 }
 ```
 
-Here we've used Eloquent's `with` method to [eager-load](https://laravel.com/docs/eloquent-relationships#eager-loading) the user id and name for every Chirp. We've also used the `latest` scope to return the records in reverse-chronological order.
+Here we've used Eloquent's `with` method to [eager-load](https://laravel.com/docs/eloquent-relationships#eager-loading) every Chirp's associated user's ID and name. We've also used the `latest` scope to return the records in reverse-chronological order.
 
 > **Note**
 > Returning all Chirps at once won't scale in production. Take a look at Laravel's powerful [pagination](https://laravel.com/docs/pagination) to improve performance.
 
-## Relationship
+## Connecting users to Chirps
 
-We've instructed Laravel to return the `id` and `name` property from the `user` relationship so that we can display the name of the Chirp author, without returning other potentially sensitive information such as the users email address. The `user` relationship hasn't been defined yet, so let's add a new ["belongs to"](https://laravel.com/docs/eloquent-relationships#one-to-many-inverse) relationship on our `Chirp` model:
+We've instructed Laravel to return the `id` and `name` property from the `user` relationship so that we can display the name of the Chirp's author without returning other potentially sensitive information such as the author's email address. But, the Chirp's `user` relationship hasn't been defined yet. To fix this, let's add a new ["belongs to"](https://laravel.com/docs/eloquent-relationships#one-to-many-inverse) relationship to our `Chirp` model:
 
 ```php filename=app/Models/Chirp.php
 <?php
@@ -138,11 +138,11 @@ class Chirp extends Model
 }
 ```
 
-This is the inverse of the "has many" relationship we created earlier on the `User` model.
+This relationship is the inverse of the "has many" relationship we created earlier on the `User` model.
 
 ## Updating our component
 
-We'll also need to create a `Chirp` component for our front-end:
+Next, let's create a `Chirp` component for our front-end. This component will be responsible for displaying an individual Chirp:
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
@@ -190,7 +190,7 @@ export default function Chirp({ chirp }) {
 }
 ```
 
-And finally, we will update our `Chirps/Index` page component to accept the `chirps` prop and render them below our form using our new component:
+Finally, we will update our `Chirps/Index` page component to accept the `chirps` prop and render the Chirps below our form using our new component:
 
 ```vue tab=Vue filename=resources/js/Pages/Chirps/Index.vue
 <script setup>
@@ -281,7 +281,7 @@ export default function Index({ auth, chirps }) {// [tl! add]
 }
 ```
 
-Refresh the page at [http://localhost/chirps](http://localhost/chirps) to see the message you chirped earlier!
+Refresh the page at [http://localhost/chirps](http://localhost/chirps) to see the message you Chirped earlier!
 
 <img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg border dark:border-none shadow-lg" />
 
@@ -295,7 +295,7 @@ First, install the `dayjs` NPM package:
 npm install dayjs
 ```
 
-Then we can use this in our `Chirp` component:
+Then we can this library in our `Chirp` component to display relative dates:
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
@@ -361,4 +361,4 @@ Take a look in the browser to see your relative dates.
 
 Feel free to Chirp some more, or even register another account and start a conversation!
 
-[Continue to allow editing of chirps...](/editing-chirps)
+[Continue to allow editing of Chirps...](/editing-chirps)

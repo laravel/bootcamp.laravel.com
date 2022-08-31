@@ -4,7 +4,7 @@
 
 ## Installing Laravel
 
-For this application we will be using [Laravel Sail](https://laravel.com/docs/sail), a light-weight command-line interface for interacting with Laravel's default Docker development environment. Before we get started, make sure to install [Docker](https://docs.docker.com/get-docker/) for your operating system. For alternative installation methods, check out our full [installation guide](https://laravel.com/docs/installation).
+For this application we will be using [Laravel Sail](https://laravel.com/docs/sail), a light-weight command-line interface for interacting with Laravel's default Docker development environment, which is compatible with all operating systems. Before we get started, make sure to install [Docker](https://docs.docker.com/get-docker/) for your operating system. For alternative installation methods, check out our full [installation guide](https://laravel.com/docs/installation).
 
 The easiest way to install Laravel is using our `laravel.build` service, which will download and create a fresh Laravel application for you. Launch a terminal and run the following command:
 
@@ -36,9 +36,9 @@ Once the application's Docker containers have been started, you can access the a
 
 Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, you are welcome to customize the components to suit your needs.
 
-Laravel Breeze offers several options for your view layer, including simple Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React.
+Laravel Breeze offers several options for your view layer, including Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React.
 
-Open a new terminal in your `chirper` project directory, and then install your chosen stack with the given commands:
+Open a new terminal in your `chirper` project directory and install your chosen stack with the given commands:
 
 ```shell tab=Vue
 ./vendor/bin/sail composer require laravel/breeze --dev
@@ -52,7 +52,7 @@ Open a new terminal in your `chirper` project directory, and then install your c
 ./vendor/bin/sail artisan breeze:install react
 ```
 
-Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to enable instant hot-module replacement while we build our application.
+Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to enable instant hot-module replacement while we build our application:
 
 ```shell
 npm run dev
@@ -70,4 +70,4 @@ If you refresh your new Laravel application in the browser at [http://localhost]
 
 Register yourself an account and log in!
 
-[Continue to start creating chirps...](/creating-chirps)
+[Continue to start creating Chirps...](/creating-chirps)

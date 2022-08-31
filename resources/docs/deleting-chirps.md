@@ -6,7 +6,7 @@ Sometimes no amount of editing can fix a message, so let's give our users the ab
 
 Hopefully you're starting to get the hang of things now. We think you'll be impressed how quickly we can add this feature.
 
-## Route
+## Routing
 
 We'll start again by updating our routes to enable the `chirps.destroy` route:
 
@@ -60,7 +60,7 @@ POST      | `/chirps`              | store        | chirps.store
 PUT/PATCH | `/chirps/{chirp}`      | update       | chirps.update
 DELETE    | `/chirps/{chirp}`      | destroy      | chirps.destroy
 
-## Controller
+## Updating our controller
 
 Now we can update the `destroy` method on our `ChirpController` class to perform the deletion and return to the Chirp index:
 
@@ -428,7 +428,7 @@ export default function Chirp({ chirp }) {
 
 ## Testing it out
 
-If you chirped anything you weren't happy with, try deleting it!
+If you Chirped anything you weren't happy with, try deleting it!
 
 <img src="/img/screenshots/chirp-delete.png" alt="Deleting a chirp" class="rounded-lg border dark:border-none shadow-lg" />
 

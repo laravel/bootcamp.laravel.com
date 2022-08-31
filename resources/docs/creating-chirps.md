@@ -2,11 +2,11 @@
 
 # <b>03.</b> Creating Chirps
 
-Your application is now ready start development! Let's allow our users to post short messages called *Chirps*.
+You're now ready to start building your new application! Let's allow our users to post short messages called *Chirps*.
 
 ## Models, migrations, and controllers
 
-There's a little bit to unpack here so let's break it down:
+To allow users to post Chirps, we will need to create models, migrations, and controllers. Let's explore each of these concepts a little deeper:
 
 * [Models](https://laravel.com/docs/eloquent) provide a powerful and enjoyable interface for you to interact with the tables in your database.
 * [Migrations](https://laravel.com/docs/migrations) allow you to easily create and modify the tables in your database. They ensure that the same database structure exists everywhere that your application runs.
@@ -81,7 +81,7 @@ Route::resource('chirps', ChirpController::class)// [tl! add:start]
 require __DIR__.'/auth.php';
 ```
 
-This will create the following route:
+This will create the following routes:
 
 Verb      | URI                    | Action       | Route Name
 ----------|------------------------|--------------|---------------------
@@ -187,7 +187,7 @@ If you are still logged in from earlier, you should see your message when naviga
 
 ## Inertia
 
-Not impressed yet? Let's update the `index` method of our `ChirpController` class to render a front-end page component using Inertia:
+Not impressed yet? Let's update the `index` method of our `ChirpController` class to render a front-end page component using Inertia. Inertia is what links our Laravel application with our Vue or React front-end:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -282,7 +282,7 @@ class ChirpController extends Controller
 }
 ```
 
-We can then create our front-end `Chirps/Index` page component with a form for creating new chirps:
+We can then create our front-end `Chirps/Index` page component with a form for creating new Chirps:
 
 ```vue tab=Vue filename=resources/js/Pages/Chirps/Index.vue
 <script setup>
@@ -417,7 +417,7 @@ return (
 )
 ```
 
-## Saving the chirp
+## Saving the Chirp
 
 Our form has been configured to post messages to the `chirps.store` route that we created earlier. Let's update the `store` method on our `ChirpController` class to validate the data and create a new Chirp:
 
@@ -521,11 +521,11 @@ class ChirpController extends Controller
 }
 ```
 
-We're using Laravel's powerful validation feature to ensure that the user provides a message, and that it won't exceed the 255 character limit of the database column we'll be creating.
+We're using Laravel's powerful validation feature to ensure that the user provides a message and that it won't exceed the 255 character limit of the database column we'll be creating.
 
-We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship that we will create next.
+We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
 
-And finally, when using Inertia, we can return a redirect response to instruct Inertia to reload our `chirps.index` route.
+Finally, when using Inertia, we can return a redirect response to instruct Inertia to reload our `chirps.index` route.
 
 ## Creating a relationship
 
@@ -591,9 +591,9 @@ class User extends Authenticatable
 
 Passing all of the data from a request to your model can be risky. Imagine you have a page where users can edit their profiles. If you were to pass the entire request to the model, then a user could edit *any* column they like, such as an `is_admin` column. This is called a [mass assignment vulnerability](https://en.wikipedia.org/wiki/Mass_assignment_vulnerability).
 
-Laravel protects you from accidentally doing this by blocking mass assignment by default. Mass assignment is very convenient though, as it prevents you from having to assign each attribute one-by-one. We can enable mass assignment for safe attributes my marking them as "fillable".
+Laravel protects you from accidentally doing this by blocking mass assignment by default. Mass assignment is very convenient though, as it prevents you from having to assign each attribute one-by-one. We can enable mass assignment for safe attributes by marking them as "fillable".
 
-Let's add the `$fillable` property to our `Chirp` model enable mass-assignment for the `message` attribute:
+Let's add the `$fillable` property to our `Chirp` model to enable mass-assignment for the `message` attribute:
 
 ```php filename=app/Models/Chirp.php
 <?php
@@ -618,7 +618,7 @@ You can learn more about Laravel's mass assignment protection in the [documentat
 
 ## Updating the migration
 
-The only thing missing is extra columns in the database to store the relationship between a `Chirp` and its `User` and the message itself. Remember the database migration we created earlier? It's time to open that file to add some extra columns:
+The only thing missing is extra columns in our database to store the relationship between a `Chirp` and its `User` and the message itself. Remember the database migration we created earlier? It's time to open that file to add some extra columns:
 
 ```php filename=databases/migration/&amp;lt;timestamp&amp;gt;_create_chirps_table.php
 <?php
@@ -668,7 +668,7 @@ We haven't migrated the database since we added this migration, so let do it now
 
 ## Testing it out
 
-We're now ready to send a "chirp" from the form we added to [http://localhost/chirps](http://localhost/chirps)! You won't be able to see the result yet because we haven't displayed existing chirps on the page.
+We're now ready to send a Chirp from the form we added to [http://localhost/chirps](http://localhost/chirps)! You won't be able to see the result yet because we haven't displayed existing Chirps on the page.
 
 <img src="/img/screenshots/chirp-form-filled.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
@@ -704,6 +704,6 @@ Chirp::all();
    }
 ```
 
-You may exit tinker by using the `exit` command, or by pressing <kbd>Ctrl</kbd> + <kbd>c</kbd>.
+You may exit Tinker by using the `exit` command, or by pressing <kbd>Ctrl</kbd> + <kbd>c</kbd>.
 
-[Continue to start showing chirps...](/showing-chirps)
+[Continue to start showing Chirps...](/showing-chirps)

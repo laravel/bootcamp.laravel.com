@@ -4,7 +4,7 @@
 
 Let's take Chirper to the next level by sending [email notifications](https://laravel.com/docs/notifications#introduction) when a new Chirp is created.
 
-In addition to support for sending email, Laravel provides support for sending notifications across a variety of delivery channels, including email, SMS, and Slack. In addition, a variety of community built notification channels have been created to send notification over dozens of different channels! Notifications may also be stored in a database so they may be displayed in your web interface.
+In addition to support for sending email, Laravel provides support for sending notifications across a variety of delivery channels, including email, SMS, and Slack. Plus, a variety of community built notification channels have been created to send notification over dozens of different channels! Notifications may also be stored in a database so they may be displayed in your web interface.
 
 ## Creating the notification
 
@@ -16,7 +16,7 @@ Artisan can, once again, do all the hard work for us with the following command:
 
 This will create a new notification at `app/Notifications/NewChirp.php` that is ready for us to customize.
 
-Let's open the `NewChirp` class and allow it to accept the `Chirp` that was just created, and then customize the message to include author's name and a snippet from the message.
+Let's open the `NewChirp` class and allow it to accept the `Chirp` that was just created, and then customize the message to include the author's name and a snippet from the message:
 
 ```php filename=app/Notifications/NewChirp.php
 <?php
@@ -105,7 +105,7 @@ Let's create our new event with the following command:
 
 This will create a new event class at `app/Events/ChirpCreated.php`.
 
-Since we'll be dispatching events for each new Chirp that is created, let's update our `ChirpCreated` event to accept the newly created `Chirp` so we may pass it on to our notification.
+Since we'll be dispatching events for each new Chirp that is created, let's update our `ChirpCreated` event to accept the newly created `Chirp` so we may pass it on to our notification:
 
 ```php filename=app/Events/ChirpCreated.php
 <?php
@@ -236,18 +236,18 @@ class SendChirpCreatedNotifications implements ShouldQueue// [tl! add]
 }
 ```
 
-We've marked our listener with the `ShouldQueue` interface, which tells Laravel that the listener should be run in a [queue](https://laravel.com/docs/queues). By default, the "sync" queue will be used to process jobs synchronously, however you may configure a queue worker to process jobs in the background.
+We've marked our listener with the `ShouldQueue` interface, which tells Laravel that the listener should be run in a [queue](https://laravel.com/docs/queues). By default, the "sync" queue will be used to process jobs synchronously; however, you may configure a queue worker to process jobs in the background.
 
-We've then configured our listener to send notifications to every user in the platform, except the author of the Chirp. In reality, this might annoy users, so you may want to implement a "following" feature so users only receive notifications for accounts they follow.
+We've also configured our listener to send notifications to every user in the platform, except the author of the Chirp. In reality, this might annoy users, so you may want to implement a "following" feature so users only receive notifications for accounts they follow.
 
-We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once, but another thing to be mindful of as your application scales is any rate limiting that your mail provider might impose. You may like to consider sending a summary email once per day instead, using Laravel's [scheduling](https://laravel.com/docs/scheduling) feature.
+We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avoid loading every user into memory at once.
 
 > **Note**
 > In a production application you should add the ability for your users to unsubscribe from notifications like these.
 
 ### Registering the event listener
 
-The last step is to bind our event listener to the event. We can do this via our `EventServiceProvider` class:
+Finally, let's bind our event listener to the event. This will tell Laravel to invoke our event listener when the corresponding event is dispatched. We can do this within our `EventServiceProvider` class:
 
 ```php filename=App\Providers\EventServiceProvider.php
 <?php
@@ -272,6 +272,7 @@ class EventServiceProvider extends ServiceProvider
         ChirpCreated::class => [// [tl! add:start]
             SendChirpCreatedNotifications::class,
         ],// [tl! add:end]
+
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
@@ -302,9 +303,9 @@ class EventServiceProvider extends ServiceProvider
 
 ## Testing it out
 
-Laravel Sail comes with [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application so you may view them.
+Laravel Sail includes [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application so you may view them.
 
-We've configured our notification not to send to the Chirp author, so be sure to register at least two users accounts. Then, you may go ahead and post a new Chirp to trigger a notification.
+We've configured our notification not to send to the Chirp author, so be sure to register at least two users accounts. Then, go ahead and post a new Chirp to trigger a notification.
 
 Open MailHog in your web browser by navigating to [http://localhost:8025/](http://localhost:8025/) where you'll find an inbox with the notification for the message you just chirped!
 

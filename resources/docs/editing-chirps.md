@@ -2,9 +2,9 @@
 
 # <b>05.</b> Editing Chirps
 
-Let's add a feature that's missing from other popular bird-themed microblogging platforms&mdash;the ability to edit Chirps!
+Let's add a feature that's missing from other popular bird-themed microblogging platforms &mdash; the ability to edit Chirps!
 
-## Route
+## Routing
 
 First we will update our routes file to enable the `chirps.update` route for our resource controller:
 
@@ -59,11 +59,9 @@ PUT/PATCH | `/chirps/{chirp}`      | update       | chirps.update
 
 ## Updating our component
 
-Now let's update our `Chirp` component to have a form containing the existing message.
+Next, let's update our `Chirp` component to have an edit form for existing Chirps.
 
-We're going to use the `Dropdown` component that comes with Breeze, which we'll only display to the Chirp author.
-
-We'll also display an extra status if a Chirp has been edited by comparing the `created_at` date with the `updated_at` date.
+We're going to use the `Dropdown` component that comes with Breeze, which we'll only display to the Chirp author. We'll also display an indication if a Chirp has been edited by comparing the Chirp's `created_at` date with its `updated_at` date:
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
@@ -204,7 +202,7 @@ export default function Chirp({ chirp }) {
 
 ## Updating our controller
 
-We can now update the `update` method on our `ChirpController` class to validate the request and update the database. Even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request to make sure it's the author that is updating it.
+We can now update the `update` method on our `ChirpController` class to validate the request and update the database. Even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request to make sure it's actually the author that is updating it:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -315,7 +313,7 @@ class ChirpController extends Controller
 ```
 
 > **Note**
-> You may have noticed the validation rules are duplicated with the `store` method. You might like to consider extracting them using Laravel's [Form Request Validation](https://laravel.com/docs/validation#form-request-validation) which make it easy to re-use validation rules and to keep your controllers light.
+> You may have noticed the validation rules are duplicated with the `store` method. You might consider extracting them using Laravel's [Form Request Validation](https://laravel.com/docs/validation#form-request-validation), which makes it easy to re-use validation rules and to keep your controllers light.
 
 ## Authorization
 
@@ -433,4 +431,4 @@ Time to test it out! Go ahead and edit a few Chirps using the dropdown menu. If 
 
 <img src="/img/screenshots/chirp-editted.png" alt="An editted chirp" class="rounded-lg border dark:border-none shadow-lg" />
 
-[Continue to allow deleting of chirps...](/deleting-chirps)
+[Continue to allow deleting of Chirps...](/deleting-chirps)
