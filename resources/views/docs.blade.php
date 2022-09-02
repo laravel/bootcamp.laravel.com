@@ -49,11 +49,13 @@
                         </nav>
                     </div>
 
-                    <div class="hidden xl:block absolute bottom-0 mb-12 pl-16">
-                        <x-cube delay="0" class="ml-8" />
-                        <x-cube delay="2000" class="mt-6 ml-32" />
-                        <x-cube delay="1000" class="mt-12" />
-                    </div>
+                    @if ($page !== 'introduction')
+                        <div class="hidden xl:block absolute bottom-0 mb-12 pl-16">
+                            <x-cube delay="0" class="ml-8" />
+                            <x-cube delay="2000" class="mt-6 ml-32" />
+                            <x-cube delay="1000" class="mt-12" />
+                        </div>
+                    @endif
 
                     <div class="sticky bottom-0 flex-1 flex flex-col justify-end lg:hidden">
                         <div class="py-4 px-4 bg-white">
@@ -156,6 +158,40 @@
                     <section class="pt-8 pb-8 md:pt-16 md:pb-16 flex">
                         <section class="docs_main flex-1 max-w-full">
                             <x-accessibility.main-content-wrapper>
+                                @if ($page === 'introduction')
+                                    <div class="max-w-prose">
+                                        <div class="relative -mr-44 mb-20 flex justify-between items-center">
+                                            <x-cube delay="0" class="absolute bottom-0 left-0 -ml-14" />
+                                            <x-cube delay="2000" class="absolute top-0 right-0 -mr-8 -mt-8" />
+                                            <x-cube delay="1000" class="absolute bottom-0 right-0 mr-32 -mb-16" />
+                                            <div>
+                                                <h1>
+                                                    <small class="text-lg font-medium leading-10">Learn the</small><br>
+                                                    <span class="mt-4 text-5xl font-bold text-gray-900">PHP Framework</span><br>
+                                                    <strong class="text-5xl font-bold text-red-600">for Web Artisans</strong>
+                                                </h1>
+                                                <div class="-mr-24 mt-6 p-6 flex space-x-2 rounded-lg border relative bg-white shadow-xl z-10">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                                                    </svg>
+                                                    <div class="flex-1">
+                                                        <div class="flex justify-between items-center">
+                                                            <div>
+                                                                <span class="text-gray-800">Taylor Otwell</span>
+                                                                <small class="ml-2 text-sm text-gray-600">a few seconds ago</small>
+                                                            </div>
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                                                <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                            </svg>
+                                                        </div>
+                                                        <p class="mt-4 text-lg text-gray-900">Join me in building an app with Laravel.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <img src="/img/screenshots/code-sample.png" class="rotate-1 rounded-md w-[400px]" />
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="prose dark:prose-invert relative">
                                     @include($page)
                                 </div>
