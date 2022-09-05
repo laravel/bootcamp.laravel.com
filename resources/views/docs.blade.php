@@ -168,9 +168,9 @@
                                                     <strong class="text-4xl sm:text-5xl font-bold text-red-600">for Web Artisans</strong>
                                                 </h1>
                                                 <div class="mt-6 xl:mt-8 relative xl:static">
-                                                    <x-cube delay="0" class="hidden sm:block absolute xl:bottom-0 left-0 mt-14 xl:mt-0 ml-4 xl:-ml-14" />
-                                                    <x-cube delay="2000" class="hidden sm:block absolute top-0 right-0 -mr-8 -mt-8" />
-                                                    <x-cube delay="1000" class="hidden sm:block absolute bottom-0 right-0 mr-32 -mb-16" />
+                                                    <x-cube delay="0" class="h-8 sm:h-auto absolute xl:bottom-0 left-0 mt-8 sm:mt-14 xl:mt-0 -ml-4 sm:ml-4 xl:-ml-14" />
+                                                    <x-cube delay="2000" class="h-8 sm:h-auto absolute top-0 right-0 -mr-6 sm:-mr-8 -mt-2 sm:-mt-8" />
+                                                    <x-cube delay="1000" class="h-8 sm:h-auto absolute bottom-0 right-0 mr-16 sm:mr-32 -mb-6 sm:-mb-16" />
                                                     <img src="/img/screenshots/code-sample.png" class="xl:hidden mx-auto sm:ml-auto rotate-1 rounded-md w-5/6 sm:w-[450px]" />
                                                     <div class="mb-6 sm:mt-0 absolute bottom-0 xl:static">
                                                         <div class="xl:-mr-24 p-3 sm:p-6 flex sm:inline-flex xl:flex space-x-2 rounded-lg border dark:border-none relative bg-white dark:bg-dark-500 shadow-xl z-10">
