@@ -42,6 +42,12 @@
         <!-- Scripts & Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        @production
+            <!-- Fathom - beautiful, simple website analytics -->
+            <script src="https://cdn.usefathom.com/script.js" data-site="KRRQTWHM" defer></script>
+            <!-- / Fathom -->
+        @endproduction
+
         <script>
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
                 if (localStorage.theme === 'system') {
