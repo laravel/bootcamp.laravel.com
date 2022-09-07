@@ -6,6 +6,24 @@
 
         <title>{{ isset($title) ? $title . ' - ' : null }}Laravel Bootcamp</title>
 
+        <!-- Primary Meta Tags -->
+        <meta name="title" content="Laravel Bootcamp - Learn the PHP Framework for Web Artisans">
+        <meta name="description" content="Together let's walk through building and deploying a modern Laravel application from scratch.">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://bootcamp.laravel.com/">
+        <meta property="og:title" content="Laravel Bootcamp - Learn the PHP Framework for Web Artisans">
+        <meta property="og:description" content="Together let's walk through building and deploying a modern Laravel application from scratch.">
+        <meta property="og:image" content="https://bootcamp.laravel.com/img/og-image.jpg">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="https://bootcamp.laravel.com/">
+        <meta property="twitter:title" content="Laravel - Learn the PHP Framework for Web Artisans">
+        <meta property="twitter:description" content="Together let's walk through building and deploying a modern Laravel application from scratch.">
+        <meta property="twitter:image" content="https://bootcamp.laravel.com/img/og-image.jpg">
+
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
