@@ -65,9 +65,9 @@ We're going to use the `Dropdown` component that comes with Breeze, which we'll 
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
-import BreezeButton from '@/Components/Button.vue';// [tl! add]
-import BreezeDropdown from '@/Components/Dropdown.vue';// [tl! add]
-import BreezeInputError from '@/Components/InputError.vue';// [tl! add]
+import Dropdown from '@/Components/Dropdown.vue';// [tl! add]
+import InputError from '@/Components/InputError.vue';// [tl! add]
+import PrimaryButton from '@/Components/PrimaryButton.vue';// [tl! add]
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useForm } from '@inertiajs/inertia-vue3';// [tl! add]
@@ -97,7 +97,7 @@ const editing = ref(false);// [tl! add:end]
                     <small class="ml-2 text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}</small>
                     <small v-if="chirp.created_at !== chirp.updated_at" class="text-sm text-gray-600"> &middot; edited</small><!-- [tl! add] -->
                 </div>
-                <BreezeDropdown v-if="chirp.user.id === $page.props.auth.user.id"><!-- [tl! add:start] -->
+                <Dropdown v-if="chirp.user.id === $page.props.auth.user.id"><!-- [tl! add:start] -->
                     <template #trigger>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -110,14 +110,14 @@ const editing = ref(false);// [tl! add:end]
                             Edit
                         </button>
                     </template>
-                </BreezeDropdown><!-- [tl! add:end] -->
+                </Dropdown><!-- [tl! add:end] -->
             </div>
             <p class="mt-4 text-lg text-gray-900">{{ chirp.message }}</p><!-- [tl! remove] -->
             <form v-if="editing" @submit.prevent="form.put(route('chirps.update', chirp.id), { onSuccess: editing = false })"><!-- [tl! add:start] -->
                 <textarea v-model="form.message" class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
-                <BreezeInputError :message="form.errors.message" class="mt-2" />
+                <InputError :message="form.errors.message" class="mt-2" />
                 <div class="space-x-2">
-                    <BreezeButton class="mt-4">Save</BreezeButton>
+                    <PrimaryButton class="mt-4">Save</PrimaryButton>
                     <button class="mt-4" @click="editing = false; form.reset()">Cancel</button>
                 </div>
             </form>
@@ -130,9 +130,9 @@ const editing = ref(false);// [tl! add:end]
 ```javascript tab=React filename=resources/js/Components/Chirp.jsx
 import React from 'react';// [tl! remove]
 import React, { useState } from 'react';// [tl! add]
-import Button from '@/Components/Button';// [tl! add]
 import Dropdown from '@/Components/Dropdown';// [tl! add]
 import InputError from '@/Components/InputError';// [tl! add]
+import PrimaryButton from '@/Components/PrimaryButton';// [tl! add]
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useForm, usePage } from '@inertiajs/inertia-react';// [tl! add]
@@ -188,7 +188,7 @@ export default function Chirp({ chirp }) {
                         <textarea value={data.message} onChange={e => setData('message', e.target.value)} className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
                         <InputError message={errors.message} class="mt-2" />
                         <div className="space-x-2">
-                            <Button className="mt-4">Save</Button>
+                            <PrimaryButton className="mt-4">Save</PrimaryButton>
                             <button className="mt-4" onClick={() => setEditing(false) && reset()}>Cancel</button>
                         </div>
                     </form>

@@ -286,9 +286,9 @@ We can then create our front-end `Chirps/Index` page component with a form for c
 
 ```vue tab=Vue filename=resources/js/Pages/Chirps/Index.vue
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import BreezeButton from '@/Components/Button.vue';
-import BreezeInputError from '@/Components/InputError.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import InputError from '@/Components/InputError.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
 import { useForm, Head } from '@inertiajs/inertia-vue3';
 
 const form = useForm({
@@ -299,7 +299,7 @@ const form = useForm({
 <template>
     <Head title="Chirps" />
 
-    <BreezeAuthenticatedLayout>
+    <AuthenticatedLayout>
         <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
             <form @submit.prevent="form.post(route('chirps.store'), { onSuccess: () => form.reset() })">
                 <textarea
@@ -307,19 +307,19 @@ const form = useForm({
                     placeholder="What's on your mind?"
                     class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                 ></textarea>
-                <BreezeInputError :message="form.errors.message" class="mt-2" />
-                <BreezeButton class="mt-4">Chirp</BreezeButton>
+                <InputError :message="form.errors.message" class="mt-2" />
+                <PrimaryButton class="mt-4">Chirp</PrimaryButton>
             </form>
         </div>
-    </BreezeAuthenticatedLayout>
+    </AuthenticatedLayout>
 </template>
 ```
 
 ```javascript tab=React filename=resources/js/Pages/Chirps/Index.jsx
 import React from 'react';
-import Authenticated from '@/Layouts/Authenticated';
-import Button from '@/Components/Button';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputError from '@/Components/InputError';
+import PrimaryButton from '@/Components/PrimaryButton';
 import { useForm, Head } from '@inertiajs/inertia-react';
 
 export default function Index({ auth }) {
@@ -333,7 +333,7 @@ export default function Index({ auth }) {
     };
 
     return (
-        <Authenticated auth={auth}>
+        <AuthenticatedLayout auth={auth}>
             <Head title="Chirps" />
 
             <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -345,10 +345,10 @@ export default function Index({ auth }) {
                         onChange={e => setData('message', e.target.value)}
                     ></textarea>
                     <InputError message={errors.message} className="mt-2" />
-                    <Button className="mt-4" disabled={processing}>Chirp</Button>
+                    <PrimaryButton className="mt-4" disabled={processing}>Chirp</PrimaryButton>
                 </form>
             </div>
-        </Authenticated>
+        </AuthenticatedLayout>
     );
 }
 ```
@@ -361,21 +361,21 @@ That's it! Refresh the page at [http://localhost/chirps](http://localhost/chirps
 
 Let take a moment to add a link to the navigation menu provided by Breeze.
 
-Update the `Authenticated` layout component provided by Breeze to add a menu item for desktop screens:
+Update the `AuthenticatedLayout` component provided by Breeze to add a menu item for desktop screens:
 
-```vue tab=Vue filename=resources/js/Layouts/Authenticated.vue
+```vue tab=Vue filename=resources/js/Layouts/AuthenticatedLayout.vue
 <template><!-- [tl! .hidden] -->
 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-    <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+    <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
         Dashboard
-    </BreezeNavLink>
-    <BreezeNavLink :href="route('chirps.index')" :active="route().current('chirps.index')"><!-- [tl! add:start] -->
+    </NavLink>
+    <NavLink :href="route('chirps.index')" :active="route().current('chirps.index')"><!-- [tl! add:start] -->
         Chirps
-    </BreezeNavLink><!-- [tl! add:end] -->
+    </NavLink><!-- [tl! add:end] -->
 </div>
 </template><!-- [tl! .hidden] -->
 ```
-```javascript tab=React filename=resources/js/Layouts/Authenticated.jsx
+```javascript tab=React filename=resources/js/Layouts/AuthenticatedLayout.jsx
 // [tl! add:6,3 .hidden:0,2 .hidden:10,1]
 return (
 <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -391,19 +391,19 @@ return (
 
 And also for mobile screens:
 
-```vue tab=Vue filename=resources/js/Layouts/Authenticated.vue
+```vue tab=Vue filename=resources/js/Layouts/AuthenticatedLayout.vue
 <template><!-- [tl! .hidden] -->
 <div class="pt-2 pb-3 space-y-1">
-    <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+    <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
         Dashboard
-    </BreezeResponsiveNavLink>
-    <BreezeResponsiveNavLink :href="route('chirps.index')" :active="route().current('chirps.index')"><!-- [tl! add:start] -->
+    </ResponsiveNavLink>
+    <ResponsiveNavLink :href="route('chirps.index')" :active="route().current('chirps.index')"><!-- [tl! add:start] -->
         Chirps
-    </BreezeResponsiveNavLink><!-- [tl! add:end] -->
+    </ResponsiveNavLink><!-- [tl! add:end] -->
 </div>
 </template><!-- [tl! .hidden] -->
 ```
-```javascript tab=React filename=resources/js/Layouts/Authenticated.jsx
+```javascript tab=React filename=resources/js/Layouts/AuthenticatedLayout.jsx
 // [tl! add:6,3 .hidden:0,2 .hidden:10,1]
 return (
 <div className="pt-2 pb-3 space-y-1">

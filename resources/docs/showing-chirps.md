@@ -194,10 +194,10 @@ Finally, we will update our `Chirps/Index` page component to accept the `chirps`
 
 ```vue tab=Vue filename=resources/js/Pages/Chirps/Index.vue
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import BreezeButton from '@/Components/Button.vue';
-import BreezeInputError from '@/Components/InputError.vue';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import Chirp from '@/Components/Chirp.vue';// [tl! add]
+import InputError from '@/Components/InputError.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
 import { useForm, Head } from '@inertiajs/inertia-vue3';
 
 defineProps(['chirps']);// [tl! add]
@@ -210,7 +210,7 @@ const form = useForm({
 <template>
     <Head title="Dashboard" />
 
-    <BreezeAuthenticatedLayout>
+    <AuthenticatedLayout>
         <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
             <form @submit.prevent="form.post(route('chirps.store'), { onSuccess: () => form.reset() })">
                 <textarea
@@ -218,8 +218,8 @@ const form = useForm({
                     placeholder="What's on your mind?"
                     class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
                 ></textarea>
-                <BreezeInputError :message="form.errors.message" class="mt-2" />
-                <BreezeButton class="mt-4">Chirp</BreezeButton>
+                <InputError :message="form.errors.message" class="mt-2" />
+                <PrimaryButton class="mt-4">Chirp</PrimaryButton>
             </form>
 
             <div class="mt-6 bg-white shadow-sm rounded-lg divide-y"><!-- [tl! add:start] -->
@@ -230,16 +230,16 @@ const form = useForm({
                 />
             </div><!-- [tl! add:end] -->
         </div>
-    </BreezeAuthenticatedLayout>
+    </AuthenticatedLayout>
 </template>
 ```
 
 ```javascript tab=React filename=resources/js/Pages/Chirps/Index.jsx
 import React from 'react';
-import Authenticated from '@/Layouts/Authenticated';
-import Button from '@/Components/Button';
+import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import Chirp from '@/Components/Chirp';// [tl! add]
 import InputError from '@/Components/InputError';
+import PrimaryButton from '@/Components/PrimaryButton';
 import { useForm, Head } from '@inertiajs/inertia-react';
 
 export default function Index({ auth }) {// [tl! remove]
@@ -254,7 +254,7 @@ export default function Index({ auth, chirps }) {// [tl! add]
     };
 
     return (
-        <Authenticated auth={auth}>
+        <AuthenticatedLayout auth={auth}>
             <Head title="Chirps" />
 
             <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -266,7 +266,7 @@ export default function Index({ auth, chirps }) {// [tl! add]
                         onChange={e => setData('message', e.target.value)}
                     ></textarea>
                     <InputError message={errors.message} className="mt-2" />
-                    <Button className="mt-4" disabled={processing}>Chirp</Button>
+                    <PrimaryButton className="mt-4" disabled={processing}>Chirp</PrimaryButton>
                 </form>
 
                 <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
@@ -275,7 +275,7 @@ export default function Index({ auth, chirps }) {// [tl! add]
                     )}
                 </div>
             </div>
-        </Authenticated>
+        </AuthenticatedLayout>
     );
     // [tl! add:-8,5 .hidden]
 }

@@ -287,10 +287,10 @@ Finally, we can add a delete button to the dropdown menu we created earlier in o
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
-import BreezeButton from '@/Components/Button.vue';
-import BreezeDropdown from '@/Components/Dropdown.vue';
-import BreezeDropdownLink from '@/Components/DropdownLink.vue';// [tl! add]
-import BreezeInputError from '@/Components/InputError.vue';
+import Dropdown from '@/Components/Dropdown.vue';
+import DropdownLink from '@/Components/DropdownLink.vue';// [tl! add]
+import InputError from '@/Components/InputError.vue';
+import PrimaryButton from '@/Components/PrimaryButton.vue';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useForm } from '@inertiajs/inertia-vue3';
@@ -320,7 +320,7 @@ const editing = ref(false);
                     <small class="ml-2 text-sm text-gray-600">{{ dayjs(chirp.created_at).fromNow() }}</small>
                     <small v-if="chirp.created_at !== chirp.updated_at" class="text-sm text-gray-600"> &middot; edited</small>
                 </div>
-                <BreezeDropdown v-if="chirp.user.id === $page.props.auth.user.id">
+                <Dropdown v-if="chirp.user.id === $page.props.auth.user.id">
                     <template #trigger>
                         <button>
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
@@ -332,17 +332,17 @@ const editing = ref(false);
                         <button class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" @click="editing = true">
                             Edit
                         </button>
-                        <BreezeDropdownLink as="button" :href="route('chirps.destroy', chirp.id)" method="delete"><!-- [tl! add:start] -->
+                        <DropdownLink as="button" :href="route('chirps.destroy', chirp.id)" method="delete"><!-- [tl! add:start] -->
                             Delete
-                        </BreezeDropdownLink><!-- [tl! add:end] -->
+                        </DropdownLink><!-- [tl! add:end] -->
                     </template>
-                </BreezeDropdown>
+                </Dropdown>
             </div>
             <form v-if="editing" @submit.prevent="form.put(route('chirps.update', chirp.id), { onSuccess: editing = false })">
                 <textarea v-model="form.message" class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
-                <BreezeInputError :message="form.errors.message" class="mt-2" />
+                <InputError :message="form.errors.message" class="mt-2" />
                 <div class="space-x-2">
-                    <BreezeButton class="mt-4">Save</BreezeButton>
+                    <PrimaryButton class="mt-4">Save</PrimaryButton>
                     <button class="mt-4" @click="editing = false; form.reset()">Cancel</button>
                 </div>
             </form>
@@ -354,9 +354,9 @@ const editing = ref(false);
 
 ```javascript tab=React filename=resources/js/Components/Chirp.jsx
 import React, { useState } from 'react';
-import Button from '@/Components/Button';
 import Dropdown from '@/Components/Dropdown';
 import InputError from '@/Components/InputError';
+import PrimaryButton from '@/Components/PrimaryButton';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useForm, usePage } from '@inertiajs/inertia-react';
@@ -414,7 +414,7 @@ export default function Chirp({ chirp }) {
                         <textarea value={data.message} onChange={e => setData('message', e.target.value)} className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
                         <InputError message={errors.message} class="mt-2" />
                         <div className="space-x-2">
-                            <Button className="mt-4">Save</Button>
+                            <PrimaryButton className="mt-4">Save</PrimaryButton>
                             <button className="mt-4" onClick={() => setEditing(false) && reset()}>Cancel</button>
                         </div>
                     </form>
