@@ -17,7 +17,7 @@ Here are a few of our favorite features that you might like to consider:
 * [Collections](https://laravel.com/docs/collections)
 * [Subscription Billing](https://spark.laravel.com/)
 * [Administration Panels](https://nova.laravel.com/)
-* [Server Management](https://vapor.laravel.com)
+* [Server Management](https://forge.laravel.com/)
 * [Serverless Deployment](https://vapor.laravel.com)
 
 We'd love to hear what you think about Laravel! Follow [Laravel on Twitter](https://twitter.com/laravelphp) and let us know your thoughts. Go build something amazing!
