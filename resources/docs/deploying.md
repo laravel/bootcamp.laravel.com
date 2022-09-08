@@ -6,7 +6,7 @@ Let's switch gears and look at how we can deploy our new Laravel application.
 
 ## Choosing a provider
 
-Laravel can be deployed to any modern PHP hosting environment that meets Laravel's modest [server requirements](https://laravel.com/docs/deployment#server-requirements). However, configuring and managing a web server and database server takes our attention away from building applications and delivering value to our users. That's why we built [Laravel Forge](https://forge.laravel.com/) and [Laravel Vapor](https://vapor.laravel.com/).
+Laravel can be deployed to any modern PHP hosting environment that meets Laravel's modest [server requirements](https://laravel.com/docs/deployment#server-requirements). However, configuring and managing a web server and database server takes our attention away from building applications and delivering value to our users. That's why we built [Laravel Forge](https://forge.laravel.com/?ref=bootcamp.laravel.com) and [Laravel Vapor](https://vapor.laravel.com/?ref=bootcamp.laravel.com).
 
 #### Laravel Forge
 
@@ -18,7 +18,7 @@ Laravel Vapor is a serverless deployment platform for Laravel, powered by AWS. L
 
 Both are fantastic options, but today we're going with Forge for it's simplicity, choice of providers, and for being budget-friendly on smaller applications. You can always move to Vapor later if you want the scalability of serverless.
 
-Sign up for your free trial with [Laravel Forge](https://forge.laravel.com/) and then pick your server provider:
+Sign up for your free trial with [Laravel Forge](https://forge.laravel.com/?ref=bootcamp.laravel.com) and then pick your server provider:
 
 * [DigitalOcean](https://try.digitalocean.com/freetrialoffer/) <small>($100 free credit available)</small>
 * [Linode](https://www.linode.com/) <small>($50 free credit available)</small>
