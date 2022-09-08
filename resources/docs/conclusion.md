@@ -15,9 +15,9 @@ Here are a few of our favorite features that you might like to consider:
 * [HTTP Client](https://laravel.com/docs/http-client)
 * [Database Seeding](https://laravel.com/docs/seeding)
 * [Collections](https://laravel.com/docs/collections)
-* [Subscription Billing](https://spark.laravel.com/)
-* [Administration Panels](https://nova.laravel.com/)
-* [Server Management](https://forge.laravel.com/)
-* [Serverless Deployment](https://vapor.laravel.com)
+* [Subscription Billing](https://spark.laravel.com/?ref=bootcamp.laravel.com)
+* [Administration Panels](https://nova.laravel.com/?ref=bootcamp.laravel.com)
+* [Server Management](https://forge.laravel.com/?ref=bootcamp.laravel.com)
+* [Serverless Deployment](https://vapor.laravel.com/?ref=bootcamp.laravel.com)
 
 We'd love to hear what you think about Laravel! Follow [Laravel on Twitter](https://twitter.com/laravelphp) and let us know your thoughts. Go build something amazing!
