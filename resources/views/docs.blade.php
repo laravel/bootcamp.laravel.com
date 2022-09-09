@@ -240,5 +240,52 @@
                 </div>
             </section>
         </div>
+
+        <footer class="relative mt-12 pt-12 bg-gradient-to-b from-gray-50 to-white dark:from-dark-800 dark:to-dark-700">
+            <div class="max-w-screen-2xl mx-auto w-full px-8">
+                <div>
+                    <a href="https://laravel.com" class="inline-flex">
+                        <img class="h-14" src="/img/logo.min.svg" alt="Laravel" loading="lazy">
+                    </a>
+                </div>
+                <div class="mt-6 sm:mt-12">
+                    <p class="max-w-sm text-xs text-gray-700 sm:text-sm dark:text-gray-500">Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in most web projects.</p>
+                    <ul class="mt-6 flex items-center space-x-3">
+                        <li>
+                            <a href="https://twitter.com/laravelphp">
+                                <img id="footer__twitter_dark" class="hidden dark:inline-block w-6 h-6" src="/img/social/twitter.dark.min.svg" alt="Twitter" loading="lazy" width="24" height="20">
+                                <img id="footer__twitter" class="inline-block dark:hidden w-6 h-6" src="/img/social/twitter.min.svg" alt="Twitter" loading="lazy" width="24" height="20">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/laravel">
+                                <img id="footer__github_dark" class="hidden dark:inline-block w-6 h-6" src="/img/social/github.dark.min.svg" alt="GitHub" loading="lazy" width="24" height="24">
+                                <img id="footer__github" class="inline-block dark:hidden w-6 h-6" src="/img/social/github.min.svg" alt="GitHub" loading="lazy" width="24" height="24">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://discord.gg/mPZNm7A">
+                                <img id="footer__discord_dark" class="hidden dark:inline-block w-6 h-6" src="/img/social/discord.dark.min.svg" alt="Discord" loading="lazy" width="21" height="24">
+                                <img id="footer__discord" class="inline-block dark:hidden w-6 h-6" src="/img/social/discord.min.svg" alt="Discord" loading="lazy" width="21" height="24">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/laravelphp">
+                                <img id="footer__youtube_dark" class="hidden dark:inline-block w-6 h-6" src="/img/social/youtube.dark.min.svg" alt="YouTube" loading="lazy" width="169" height="150">
+                                <img id="footer__youtube" class="inline-block dark:hidden w-6 h-6" src="/img/social/youtube.min.svg" alt="YouTube" loading="lazy" width="169" height="150">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="mt-10 border-t pt-6 pb-16 border-gray-200 dark:border-dark-500">
+                    <p class="text-xs text-gray-700 dark:text-gray-400">
+                        Laravel is a Trademark of Taylor Otwell. Copyright © 2011-2022 Laravel LLC.
+                    </p>
+                    <p class="mt-6 text-xs text-gray-700 dark:text-gray-400">
+                        Code highlighting provided by <a href="https://torchlight.dev">Torchlight</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
 @endsection
