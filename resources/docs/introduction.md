@@ -1,8 +1,8 @@
 # <b>01.</b> Introduction
 
-In this guide we will walk through building a modern Laravel application from scratch. Our example application will be a microblogging platform called *Chirper*.
+Welcome to the Laravel Bootcamp! In this guide we will walk through building a modern Laravel application from scratch. To explore the framework, we'll build a microblogging platform called *Chirper*.
 
-In addition to Laravel, you will have the option of building your front-end using [Vue](https://vuejs.org/) or [React](https://reactjs.org/). We will also be using [Inertia](https://inertiajs.com/) and [Tailwind CSS](https://tailwindcss.com/).
+In addition to Laravel, you will have the choice of building your front-end using [Vue](https://vuejs.org/) or [React](https://reactjs.org/). We will also be digging into [Inertia](https://inertiajs.com/) and [Tailwind CSS](https://tailwindcss.com/).
 
 ## Choose your own adventure: Vue or React
 
