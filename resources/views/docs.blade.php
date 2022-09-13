@@ -173,14 +173,14 @@
                                                     <x-cube delay="1000" class="h-8 sm:h-auto absolute bottom-0 right-0 mr-16 sm:mr-32 -mb-6 sm:-mb-16" />
                                                     <img src="/img/screenshots/code-sample.png" class="xl:hidden mx-auto sm:ml-auto rotate-1 rounded-md w-5/6 sm:w-[450px]" />
                                                     <div class="mb-6 sm:mt-0 absolute bottom-0 xl:static">
-                                                        <div class="xl:-mr-24 p-3 sm:p-6 flex sm:inline-flex xl:flex space-x-2 rounded-lg border dark:border-none relative bg-white dark:bg-dark-500 shadow-xl z-[1]">
+                                                        <div class="xl:-mr-24 p-3 sm:p-6 flex sm:inline-flex xl:flex space-x-2 rounded-lg border dark:border-none relative bg-white dark:bg-dark-500 shadow-xl z-[1] border-l-4 border-l-red-600">
                                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 dark:text-gray-500 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                                                             </svg>
                                                             <div class="flex-1">
                                                                 <div class="flex justify-between">
                                                                     <div>
-                                                                        <span class="text-sm sm:text-base text-gray-800 dark:text-gray-200">Taylor Otwell</span>
+                                                                        <span class="text-sm font-medium sm:text-sm text-gray-800 dark:text-gray-200">Taylor Otwell</span>
                                                                         <br class="sm:hidden">
                                                                         <small class="sm:ml-2 text-xs sm:text-sm text-gray-600 dark:text-gray-500">a few seconds ago</small>
                                                                     </div>
@@ -188,13 +188,13 @@
                                                                         <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                                                     </svg>
                                                                 </div>
-                                                                <p class="mt-2 sm:mt-4 mr-1 sm:mr-0 text-sm sm:text-lg text-gray-900 dark:text-gray-100">Join me in building an app with Laravel.</p>
+                                                                <p class="mt-2 sm:mt-4 mr-1 sm:mr-0 text-sm sm:text-md text-gray-900 dark:text-gray-100">Let's build something with Laravel!</p>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <img src="/img/screenshots/code-sample.png" class="hidden xl:block rotate-1 rounded-md w-[400px]" />
+                                            <img src="/img/screenshots/code-sample.png" class="hidden xl:block rotate-3 rounded-md w-[400px]" />
                                         </div>
                                     </div>
                                 @endif
