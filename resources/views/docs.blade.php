@@ -184,7 +184,7 @@
                                                                         <br class="sm:hidden">
                                                                         <small class="sm:ml-2 text-xs sm:text-sm text-gray-600 dark:text-gray-500">a few seconds ago</small>
                                                                     </div>
-                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-4 w-4 text-gray-400 dark:text-gray-600" viewBox="0 0 20 20" fill="currentColor">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 ml-4 h-4 w-4 text-gray-400 dark:text-gray-600" viewBox="0 0 20 20" fill="currentColor">
                                                                         <path d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
                                                                     </svg>
                                                                 </div>
