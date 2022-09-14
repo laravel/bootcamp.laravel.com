@@ -72,7 +72,7 @@ Select your site, and then click on it's name in the heading to visit your site 
 
 ## Creating a database
 
-If you you're using the "default" site, you will need to create a database for your application. You may create databases on the *Database* tab of your server.
+If you're using the "default" site, you will need to create a database for your application. You may create databases on the *Database* tab of your server.
 
 <img src="/img/screenshots/forge-add-database.png" alt="Add database screenshot" class="rounded-lg border dark:border-none shadow-lg" />
 

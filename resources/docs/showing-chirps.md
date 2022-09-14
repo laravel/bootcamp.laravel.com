@@ -295,7 +295,7 @@ First, install the `dayjs` NPM package:
 npm install dayjs
 ```
 
-Then we can this library in our `Chirp` component to display relative dates:
+Then we can use this library in our `Chirp` component to display relative dates:
 
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
