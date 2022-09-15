@@ -359,7 +359,7 @@ That's it! Refresh the page at [http://localhost/chirps](http://localhost/chirps
 
 ## Navigation menu
 
-Let take a moment to add a link to the navigation menu provided by Breeze.
+Let's take a moment to add a link to the navigation menu provided by Breeze.
 
 Update the `AuthenticatedLayout` component provided by Breeze to add a menu item for desktop screens:
 
