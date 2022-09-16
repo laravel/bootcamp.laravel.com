@@ -292,7 +292,7 @@ In our `Chirp` component we formatted the dates to be human-readable, but we can
 First, install the `dayjs` NPM package:
 
 ```shell
-npm install dayjs
+./vendor/bin/sail npm install dayjs
 ```
 
 Then we can use this library in our `Chirp` component to display relative dates:

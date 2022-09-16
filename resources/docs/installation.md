@@ -55,7 +55,7 @@ Open a new terminal in your `chirper` project directory and install your chosen 
 Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to enable instant hot-module replacement while we build our application:
 
 ```shell
-npm run dev
+./vendor/bin/sail npm run dev
 ```
 
 Finally, open another terminal in your `chirper` project directory and run the initial database migrations to populate the database with the default tables from Laravel and Breeze:
