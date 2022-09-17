@@ -320,7 +320,7 @@ class ChirpController extends Controller
 By default, the `authorize` method will prevent *everyone* from being able to update the Chirp. We can specify who is allowed to update it by creating a [Model Policy](https://laravel.com/docs/authorization#creating-policies) with the following command:
 
 ```shell
-./vendor/bin/sail artisan make:policy ChirpPolicy --model=Chirp
+php artisan make:policy ChirpPolicy --model=Chirp
 ```
 
 This will create a policy class at `app/Policies/ChirpPolicy.php` which we can update to specify that only the author is authorized to update a Chirp:

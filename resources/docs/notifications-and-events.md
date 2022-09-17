@@ -11,7 +11,7 @@ In addition to support for sending email, Laravel provides support for sending n
 Artisan can, once again, do all the hard work for us with the following command:
 
 ```shell
-./vendor/bin/sail artisan make:notification NewChirp
+php artisan make:notification NewChirp
 ```
 
 This will create a new notification at `app/Notifications/NewChirp.php` that is ready for us to customize.
@@ -100,7 +100,7 @@ Events are a great way to decouple various aspects of your application, since a 
 Let's create our new event with the following command:
 
 ```shell
-./vendor/bin/sail artisan make:event ChirpCreated
+php artisan make:event ChirpCreated
 ```
 
 This will create a new event class at `app/Events/ChirpCreated.php`.
@@ -190,7 +190,7 @@ Now that we're dispatching an event, we're ready to listen for that event and se
 Let's create a listener that subscribes to our `ChirpCreated` event:
 
 ```sail
-./vendor/bin/sail artisan make:listener SendChirpCreatedNotifications --event=ChirpCreated
+php artisan make:listener SendChirpCreatedNotifications --event=ChirpCreated
 ```
 
 The new listener will be placed at `app/Listeners/SendChirpCreatedNotifications.php`. Let's update the listener to send our notifications.
@@ -303,7 +303,7 @@ class EventServiceProvider extends ServiceProvider
 
 ## Testing it out
 
-Laravel Sail includes [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application so you may view them.
+If you are developing via Docker and Laravel Sail, you may utilize [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application so you may view them.
 
 We've configured our notification not to send to the Chirp author, so be sure to register at least two users accounts. Then, go ahead and post a new Chirp to trigger a notification.
 

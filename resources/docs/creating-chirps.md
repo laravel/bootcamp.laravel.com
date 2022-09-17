@@ -17,11 +17,11 @@ Almost every feature you build will involve all of these pieces working together
 Let's create a model, migration, and resource controller for our Chirps with the following command:
 
 ```shell
-./vendor/bin/sail artisan make:model -mrc Chirp
+php artisan make:model -mrc Chirp
 ```
 
 > **Note**
-> You can see all the available options by running the `./vendor/bin/sail artisan make:model --help` command.
+> You can see all the available options by running the `php artisan make:model --help` command.
 
 This command will create three files for you:
 
@@ -89,7 +89,7 @@ GET       | `/chirps`              | index        | chirps.index
 POST      | `/chirps`              | store        | chirps.store
 
 > **Note**
-> You may view all of the routes for your application by running the `./vendor/bin/sail artisan route:list` command.
+> You may view all of the routes for your application by running the `php artisan route:list` command.
 
 Let's test our route and controller by returning a test message from the `index` method of our new `ChirpController` class:
 
@@ -660,11 +660,11 @@ return new class extends Migration
 We haven't migrated the database since we added this migration, so let do it now:
 
 ```shell
-./vendor/bin/sail artisan migrate
+php artisan migrate
 ```
 
 > **Warning**
-> Each database migration will only be run once. To make additional changes to a table, you will need to create another migration. During development, you may wish to update an undeployed migration and rebuild your database from scratch using the `./vendor/bin/sail artisan migrate:fresh` command.
+> Each database migration will only be run once. To make additional changes to a table, you will need to create another migration. During development, you may wish to update an undeployed migration and rebuild your database from scratch using the `php artisan migrate:fresh` command.
 
 ## Testing it out
 
@@ -681,7 +681,7 @@ This is great time to learn about [Artisan Tinker](https://laravel.com/docs/arti
 In your console, start a new tinker session:
 
 ```shell
-./vendor/bin/sail artisan tinker
+php artisan tinker
 ```
 
 Next, execute the following code to display the Chirps in your database:
