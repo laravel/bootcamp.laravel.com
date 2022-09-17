@@ -14,7 +14,7 @@ composer create-project laravel/laravel chirper
 
 After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI serve command:
 
-```shell
+```none
 cd chirper
 
 php artisan serve
