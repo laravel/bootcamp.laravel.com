@@ -20,7 +20,7 @@ cd chirper
 php artisan serve
 ```
 
-Once you have started the Artisan development server, your application will be accessible in your web browser at `http://localhost:8000`.
+Once you have started the Artisan development server, your application will be accessible in your web browser at [http://localhost:8000](http://localhost:8000).
 
 For simplicity, you may use SQLite to store your application's data. To instruct Laravel to use SQLite instead of MySQL, update your new application's `.env` file and remove all of the `DB_*` environment variables except for the `DB_CONNECTION` variable, which should be set to `sqlite`:
 
