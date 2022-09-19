@@ -357,6 +357,8 @@ That's it! Refresh the page in your browser to see your new form rendered in the
 
 <img src="/img/screenshots/chirp-form.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
+Now that our front-end is powered by JavaScript, any changes we make to our JavaScript templates will be automatically reloaded in the browser when the Vite development server is running.
+
 ## Navigation menu
 
 Let's take a moment to add a link to the navigation menu provided by Breeze.
