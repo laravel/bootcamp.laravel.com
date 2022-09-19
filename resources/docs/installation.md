@@ -98,7 +98,7 @@ Finally, open another terminal in your `chirper` project directory and run the i
 php artisan migrate
 ```
 
-If you refresh your new Laravel application in the browser at [http://localhost](http://localhost), you should now see a "Register" link at the top-right. Follow that to see the registration form provided by Laravel Breeze.
+If you refresh your new Laravel application in the browser, you should now see a "Register" link at the top-right. Follow that to see the registration form provided by Laravel Breeze.
 
 <img src="/img/screenshots/register.png" alt="Laravel registration page" class="rounded-lg border dark:border-none shadow-lg" />
 

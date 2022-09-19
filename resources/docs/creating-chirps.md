@@ -183,7 +183,7 @@ class ChirpController extends Controller
 }
 ```
 
-If you are still logged in from earlier, you should see your message when navigating to [http://localhost/chirps](http://localhost/chirps)!
+If you are still logged in from earlier, you should see your message when navigating to [http://localhost:8000/chirps](http://localhost:8000/chirps), or [http://localhost/chirps](http://localhost/chirps) if you're using Sail!
 
 ## Inertia
 
@@ -353,7 +353,7 @@ export default function Index({ auth }) {
 }
 ```
 
-That's it! Refresh the page at [http://localhost/chirps](http://localhost/chirps) and you should see your new form rendered in the default layout provided by Breeze!
+That's it! Refresh the page in your browser to see your new form rendered in the default layout provided by Breeze!
 
 <img src="/img/screenshots/chirp-form.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
@@ -668,7 +668,7 @@ php artisan migrate
 
 ## Testing it out
 
-We're now ready to send a Chirp from the form we added to [http://localhost/chirps](http://localhost/chirps)! You won't be able to see the result yet because we haven't displayed existing Chirps on the page.
+We're now ready to send a Chirp using the form we just added! We won't be able to see the result yet because we haven't displayed existing Chirps on the page.
 
 <img src="/img/screenshots/chirp-form-filled.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
