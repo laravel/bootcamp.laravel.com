@@ -357,7 +357,7 @@ That's it! Refresh the page in your browser to see your new form rendered in the
 
 <img src="/img/screenshots/chirp-form.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
-Now that our front-end is powered by JavaScript, any changes we make to our JavaScript templates will be automatically reloaded in the browser when the Vite development server is running.
+Now that our front-end is powered by JavaScript, any changes we make to our JavaScript templates will be automatically reloaded in the browser whenever the Vite development server is running via `npm run dev`.
 
 ## Navigation menu
 
@@ -670,7 +670,7 @@ php artisan migrate
 
 ## Testing it out
 
-We're now ready to send a Chirp using the form we just added! We won't be able to see the result yet because we haven't displayed existing Chirps on the page.
+We're now ready to send a Chirp using the form we just created! We won't be able to see the result yet because we haven't displayed existing Chirps on the page.
 
 <img src="/img/screenshots/chirp-form-filled.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
