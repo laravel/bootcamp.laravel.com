@@ -20,7 +20,10 @@ cd chirper
 php artisan serve
 ```
 
-Once you have started the Artisan development server, your application will be accessible in your web browser at `http://localhost:8000`.
+Once you have started the Artisan development server, your application will be accessible in your web browser at [http://localhost:8000](http://localhost:8000).
+
+<img src="/img/screenshots/fresh.png" alt="A fresh Laravel installation" class="dark:hidden rounded-lg border shadow-lg" />
+<img src="/img/screenshots/fresh-dark.png" alt="A fresh Laravel installation" class="hidden dark:block rounded-lg border-gray-700 shadow-lg" />
 
 For simplicity, you may use SQLite to store your application's data. To instruct Laravel to use SQLite instead of MySQL, update your new application's `.env` file and remove all of the `DB_*` environment variables except for the `DB_CONNECTION` variable, which should be set to `sqlite`:
 
@@ -98,7 +101,7 @@ Finally, open another terminal in your `chirper` project directory and run the i
 php artisan migrate
 ```
 
-If you refresh your new Laravel application in the browser at [http://localhost](http://localhost), you should now see a "Register" link at the top-right. Follow that to see the registration form provided by Laravel Breeze.
+If you refresh your new Laravel application in the browser, you should now see a "Register" link at the top-right. Follow that to see the registration form provided by Laravel Breeze.
 
 <img src="/img/screenshots/register.png" alt="Laravel registration page" class="rounded-lg border dark:border-none shadow-lg" />
 

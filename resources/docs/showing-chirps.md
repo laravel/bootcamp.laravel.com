@@ -281,7 +281,7 @@ export default function Index({ auth, chirps }) {// [tl! add]
 }
 ```
 
-Refresh the page at [http://localhost/chirps](http://localhost/chirps) to see the message you Chirped earlier!
+Now take a look in your browser to see the message you Chirped earlier!
 
 <img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg border dark:border-none shadow-lg" />
 
