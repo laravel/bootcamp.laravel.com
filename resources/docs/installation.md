@@ -31,6 +31,9 @@ For simplicity, you may use SQLite to store your application's data. To instruct
 DB_CONNECTION=sqlite
 ```
 
+> **Note**
+> If you are using macOS, you can install [Laravel Valet](https://laravel.com/docs/9.x/valet) via Composer that allows you run local development server without running `php artisan serve` command every time.
+
 ### Installation via Docker
 
 If you do not have PHP installed locally, you may develop your application using [Laravel Sail](https://laravel.com/docs/sail), a light-weight command-line interface for interacting with Laravel's default Docker development environment, which is compatible with all operating systems. Before we get started, make sure to install [Docker](https://docs.docker.com/get-docker/) for your operating system. For alternative installation methods, check out our full [installation guide](https://laravel.com/docs/installation).
