@@ -14,8 +14,20 @@ use Illuminate\Support\Facades\View;
 |
 */
 
-Route::get('/{page?}', function (string $page = 'introduction') {
-    abort_unless(View::exists($page), 404);
+Route::redirect('/installation', '/inertia/installation');
+Route::redirect('/creating-chirps', '/inertia/creating-chirps');
+Route::redirect('/showing-chirps', '/inertia/showing-chirps');
+Route::redirect('/editing-chirps', '/inertia/editing-chirps');
+Route::redirect('/deleting-chirps', '/inertia/deleting-chirps');
+Route::redirect('/notifications-and-events', '/inertia/notifications-and-events');
 
-    return view('docs', ['page' => $page]);
-});
+Route::get('/{page?}', function (string $page = 'introduction') {
+    if (View::exists($page)) {
+        return view('docs', ['page' => $page]);
+    }
+
+    $fallback = preg_replace('/^(inertia|blade)\//', '', $page);
+    abort_unless(View::exists($fallback), 404);
+
+    return view('docs', ['page' => $fallback]);
+})->where('page', '[a-z-\/]+');

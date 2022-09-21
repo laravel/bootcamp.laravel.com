@@ -363,4 +363,4 @@ Take a look in the browser to see your relative dates.
 
 Feel free to Chirp some more, or even register another account and start a conversation!
 
-[Continue to allow editing of Chirps...](/editing-chirps)
+[Continue to allow editing of Chirps...](/inertia/editing-chirps)

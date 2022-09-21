@@ -431,4 +431,4 @@ Time to test it out! Go ahead and edit a few Chirps using the dropdown menu. If 
 
 <img src="/img/screenshots/chirp-editted.png" alt="An editted chirp" class="rounded-lg border dark:border-none shadow-lg" />
 
-[Continue to allow deleting of Chirps...](/deleting-chirps)
+[Continue to allow deleting of Chirps...](/inertia/deleting-chirps)
