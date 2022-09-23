@@ -352,6 +352,6 @@ class ChirpPolicy
 
 Time to test it out! Go ahead and edit a few Chirps using the dropdown menu. If you register another user account, you'll see that only the author of a Chirp can edit it.
 
-<img src="/img/screenshots/chirp-editted.png" alt="An editted chirp" class="rounded-lg border dark:border-none shadow-lg" />
+<img src="/img/screenshots/chirp-editted-blade.png" alt="An editted chirp" class="rounded-lg border dark:border-none shadow-lg" />
 
 [Continue to allow deleting of Chirps...](/blade/deleting-chirps)

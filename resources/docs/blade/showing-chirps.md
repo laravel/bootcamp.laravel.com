@@ -183,7 +183,7 @@ Next, let's update our `chirps.index` component ti display the Chirps below our 
 
 Now take a look in your browser to see the message you Chirped earlier!
 
-<img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg border dark:border-none shadow-lg" />
+<img src="/img/screenshots/chirp-index-blade.png" alt="Chirp listing" class="rounded-lg border dark:border-none shadow-lg" />
 
 Feel free to Chirp some more, or even register another account and start a conversation!
 
