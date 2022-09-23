@@ -31,7 +31,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 // [tl! collapse:end]
 Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store'])// [tl! remove]
@@ -63,12 +63,12 @@ We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed wit
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         <form method="POST" action="{{ route('chirps.store') }}">
             @csrf
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
             <textarea
                 name="message"
                 placeholder="{{ __('What\'s on your mind?') }}"
                 class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
             >{{ old('message') }}</textarea>
+            <x-input-error :messages="$errors->store->get('message')" class="mt-2" />
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
 
@@ -110,6 +110,7 @@ We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed wit
                             @csrf
                             @method('patch')
                             <textarea name="message" class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ $chirp->message }}</textarea>
+                            <x-input-error :messages="$errors->update->get('message')" class="mt-2" />
                             <div class="mt-4 space-x-2">
                                 <x-primary-button>{{ __('Save') }}</x-primary-button>
                                 <button type="reset" @click="editing = false">{{ __('Cancel') }}</button>
@@ -169,7 +170,7 @@ class ChirpController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('store', [
             'message' => 'required|string|max:255',
         ]);
 
@@ -212,7 +213,7 @@ class ChirpController extends Controller
         //
         $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
 
-        $validated = $request->validate([
+        $validated = $request->validateWithBag('update', [
             'message' => 'required|string|max:255',
         ]);
 

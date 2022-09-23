@@ -65,7 +65,7 @@ Route::get('/', function () {
 // [tl! collapse:end]
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::resource('chirps', ChirpController::class)// [tl! add:start]
     ->only(['index', 'store'])
@@ -279,12 +279,12 @@ We can then create our Blade view template with a form for creating new Chirps:
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         <form method="POST" action="{{ route('chirps.store') }}">
             @csrf
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
             <textarea
                 name="message"
                 placeholder="{{ __('What\'s on your mind?') }}"
                 class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
             >{{ old('message') }}</textarea>
+            <x-input-error :messages="$errors->store->get('message')" class="mt-2" />
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
     </div>
@@ -371,7 +371,7 @@ class ChirpController extends Controller
     public function store(Request $request)
     {
         //
-        $validated = $request->validate([// [tl! remove:-1,1 add:start]
+        $validated = $request->validateWithBag('store', [// [tl! remove:-1,1 add:start]
             'message' => 'required|string|max:255',
         ]);
 
@@ -428,7 +428,7 @@ class ChirpController extends Controller
 }
 ```
 
-We're using Laravel's powerful validation feature to ensure that the user provides a message and that it won't exceed the 255 character limit of the database column we'll be creating.
+We're using Laravel's powerful validation feature to ensure that the user provides a message and that it won't exceed the 255 character limit of the database column we'll be creating. We've also specified a message bag because we'll be creating another form on this page later, so we'll need to keep the errors for each form separate.
 
 We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
 
