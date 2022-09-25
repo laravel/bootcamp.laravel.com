@@ -118,7 +118,7 @@ const editing = ref(false);// [tl! add:end]
                 <InputError :message="form.errors.message" class="mt-2" />
                 <div class="space-x-2">
                     <PrimaryButton class="mt-4">Save</PrimaryButton>
-                    <button class="mt-4" @click="editing = false; form.reset()">Cancel</button>
+                    <button class="mt-4" @click="editing = false; form.reset(); form.clearErrors()">Cancel</button>
                 </div>
             </form>
             <p v-else class="mt-4 text-lg text-gray-900">{{ chirp.message }}</p><!-- [tl! add:end] -->
