@@ -295,6 +295,8 @@ That's it! Refresh the page in your browser to see your new form rendered in the
 
 <img src="/img/screenshots/chirp-form.png" alt="Chirp form" class="rounded-lg border dark:border-none shadow-lg" />
 
+If your screenshot doesn't look quite like the above, you may need to stop and start the Vite development server for Tailwind to detect the CSS classes in the new file we just created.
+
 From this point forward, any changes we make to our Blade templates will be automatically refreshed in the browser whenever the Vite development server is running via `npm run dev`.
 
 ## Navigation menu
