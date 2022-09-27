@@ -383,7 +383,7 @@ class ChirpPolicy
     public function update(User $user, Chirp $chirp)
     {
         //
-        return $chirp->user()->is($user); // [tl! remove:-1,1 add]
+        return $chirp->user()->is($user);// [tl! remove:-1,1 add]
     }
     // [tl! collapse:start]
     /**
