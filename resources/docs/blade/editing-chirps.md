@@ -54,6 +54,8 @@ PUT/PATCH | `/chirps/{chirp}`      | update       | chirps.update
 
 Next, let's update our `chirps.index` view to have a form for editing existing Chirps.
 
+Because we'll have multiple forms on the same page, we'll need to use [named error bags](https://laravel.com/docs/validation#named-error-bags) in order to show the validation errors on the right form, and we'll also need to make sure we only load the "old" data when the form contains errors.
+
 We're going to use the `x-dropdown` component that comes with Breeze, which we'll only display to the Chirp author. We'll also display an indication if a Chirp has been edited by comparing the Chirp's `created_at` date with its `updated_at` date.
 
 We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed with Breeze, to only display the form when the edit button is been pressed.
@@ -67,15 +69,16 @@ We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed wit
                 name="message"
                 placeholder="{{ __('What\'s on your mind?') }}"
                 class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            >{{ old('message') }}</textarea>
-            <x-input-error :messages="$errors->store->get('message')" class="mt-2" />
+            >{{ old('message') }}</textarea><!-- [tl! remove] -->
+            >{{ $errors->isNotEmpty() ? old('message') : '' }}</textarea><!-- [tl! add] -->
+            <x-input-error :messages="$errors->get('message')" class="mt-2" />
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
 
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             @foreach ($chirps as $chirp)
                 <div class="p-6 flex space-x-2"><!-- [tl! remove] -->
-                <div class="p-6 flex space-x-2" x-data="{ editing: false }"><!-- [tl! add] -->
+                <div class="p-6 flex space-x-2" x-data="{ editing: {{ $errors->getBag("update.{$chirp->id}")->isNotEmpty() ? 'true' : 'false' }} }"}><!-- [tl! add] -->
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
@@ -109,8 +112,11 @@ We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed wit
                         <form x-show="editing" method="POST" action="{{ route('chirps.update', $chirp->id) }}" style="display: none;"><!-- [tl! add:start] -->
                             @csrf
                             @method('patch')
-                            <textarea name="message" class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ $chirp->message }}</textarea>
-                            <x-input-error :messages="$errors->update->get('message')" class="mt-2" />
+                            <textarea
+                                name="message"
+                                class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            >{{ $errors->getBag("update.{$chirp->id}")->isNotEmpty() ? old('message') : $chirp->message }}</textarea>
+                            <x-input-error :messages='$errors->getBag("update.{$chirp->id}")->get("message")' class="mt-2" />
                             <div class="mt-4 space-x-2">
                                 <x-primary-button>{{ __('Save') }}</x-primary-button>
                                 <button type="reset" @click="editing = false">{{ __('Cancel') }}</button>
@@ -170,7 +176,7 @@ class ChirpController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validateWithBag('store', [
+        $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
 
@@ -213,7 +219,7 @@ class ChirpController extends Controller
         //
         $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
 
-        $validated = $request->validateWithBag('update', [
+        $validated = $request->validateWithBag("update.{$chirp->id}", [
             'message' => 'required|string|max:255',
         ]);
 

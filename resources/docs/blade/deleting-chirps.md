@@ -98,7 +98,7 @@ class ChirpController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validateWithBag('store', [
+        $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
 
@@ -140,7 +140,7 @@ class ChirpController extends Controller
     {
         $this->authorize('update', $chirp);
 
-        $validated = $request->validateWithBag('update', [
+        $validated = $request->validateWithBag("update.{$chirp->id}", [
             'message' => 'required|string|max:255',
         ]);
 
@@ -277,7 +277,7 @@ Rather than repeating the logic from the `update` method, we can define the same
 
 Finally, we can add a delete button to the dropdown menu we created earlier in our `chirps.index` view:
 
-```blade filename=resources/views/chirps/index.php
+```blade filename=resources/views/chirps/index.blade.php
 <x-app-layout>
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         <form method="POST" action="{{ route('chirps.store') }}">
@@ -286,14 +286,14 @@ Finally, we can add a delete button to the dropdown menu we created earlier in o
                 name="message"
                 placeholder="{{ __('What\'s on your mind?') }}"
                 class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            >{{ old('message') }}</textarea>
-            <x-input-error :messages="$errors->store->get('message')" class="mt-2" />
+            >{{ $errors->isNotEmpty() ? old('message') : '' }}</textarea>
+            <x-input-error :messages="$errors->get('message')" class="mt-2" />
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
 
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             @foreach ($chirps as $chirp)
-                <div class="p-6 flex space-x-2" x-data="{ editing: false }">
+                <div class="p-6 flex space-x-2" x-data="{ editing: {{ $errors->getBag("update.{$chirp->id}")->isNotEmpty() ? 'true' : 'false' }} }"}>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
@@ -333,8 +333,11 @@ Finally, we can add a delete button to the dropdown menu we created earlier in o
                         <form x-show="editing" method="POST" action="{{ route('chirps.update', $chirp->id) }}" style="display: none;">
                             @csrf
                             @method('patch')
-                            <textarea name="message" class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm">{{ $chirp->message }}</textarea>
-                            <x-input-error :messages="$errors->update->get('message')" class="mt-2" />
+                            <textarea
+                                name="message"
+                                class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                            >{{ $errors->getBag("update.{$chirp->id}")->isNotEmpty() ? old('message') : $chirp->message }}</textarea>
+                            <x-input-error :messages='$errors->getBag("update.{$chirp->id}")->get("message")' class="mt-2" />
                             <div class="mt-4 space-x-2">
                                 <x-primary-button>{{ __('Save') }}</x-primary-button>
                                 <button type="reset" @click="editing = false">{{ __('Cancel') }}</button>
