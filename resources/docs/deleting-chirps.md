@@ -236,7 +236,7 @@ class ChirpPolicy
      */
     public function update(User $user, Chirp $chirp)
     {
-        return $user->id === $chirp->user_id;
+        return $chirp->user()->is($user);
     }
     // [tl! collapse:end]
     /**
