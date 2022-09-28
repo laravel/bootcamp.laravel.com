@@ -6,7 +6,7 @@ Let's add a feature that's missing from other popular bird-themed microblogging 
 
 ## Routing
 
-First we will update our routes file to enable the `chirps.update` route for our resource controller:
+First we will update our routes file to enable the `chirps.edit` and `chirps.update` routes for our resource controller. The `chirps.edit` route will display the form for editing a Chirp, while the `chirps.update` route will accept the data from the form and update the model.
 
 ```php filename=routes/web.php
 <?php
@@ -35,7 +35,7 @@ Route::get('/dashboard', function () {
 // [tl! collapse:end]
 Route::resource('chirps', ChirpController::class)
     ->only(['index', 'store'])// [tl! remove]
-    ->only(['index', 'store', 'update'])// [tl! add]
+    ->only(['index', 'store', 'edit', 'update'])// [tl! add]
     ->middleware(['auth', 'verified']);
 // [tl! collapse:start]
 require __DIR__.'/auth.php';
@@ -48,17 +48,12 @@ Verb      | URI                    | Action       | Route Name
 ----------|------------------------|--------------|---------------------
 GET       | `/chirps`              | index        | chirps.index
 POST      | `/chirps`              | store        | chirps.store
+GET       | `/chirps/{chirp}/edit` | edit         | chirps.edit
 PUT/PATCH | `/chirps/{chirp}`      | update       | chirps.update
 
-## Updating our view
+## Linking to the edit page
 
-Next, let's update our `chirps.index` view to have a form for editing existing Chirps.
-
-Because we'll have multiple forms on the same page, we'll need to use [named error bags](https://laravel.com/docs/validation#named-error-bags) in order to show the validation errors on the right form, and we'll also need to make sure we only load the "old" data when the form contains errors.
-
-We're going to use the `x-dropdown` component that comes with Breeze, which we'll only display to the Chirp author. We'll also display an indication if a Chirp has been edited by comparing the Chirp's `created_at` date with its `updated_at` date.
-
-We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed with Breeze, to only display the form when the edit button is been pressed.
+Next, let's link our new `chirps.edit` route. We'll use the `x-dropdown` component that comes with Breeze, which we'll only display to the Chirp author. We'll also display an indication if a Chirp has been edited by comparing the Chirp's `created_at` date with its `updated_at` date.
 
 ```blade filename=resources/views/chirps/index.blade.php
 <x-app-layout>
@@ -69,16 +64,14 @@ We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed wit
                 name="message"
                 placeholder="{{ __('What\'s on your mind?') }}"
                 class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            >{{ old('message') }}</textarea><!-- [tl! remove] -->
-            >{{ $errors->isNotEmpty() ? old('message') : '' }}</textarea><!-- [tl! add] -->
+            >{{ old('message') }}</textarea>
             <x-input-error :messages="$errors->get('message')" class="mt-2" />
             <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
         </form>
 
         <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
             @foreach ($chirps as $chirp)
-                <div class="p-6 flex space-x-2"><!-- [tl! remove] -->
-                <div class="p-6 flex space-x-2" x-data="{ editing: {{ $errors->getBag("update.{$chirp->id}")->isNotEmpty() ? 'true' : 'false' }} }"}><!-- [tl! add] -->
+                <div class="p-6 flex space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                     </svg>
@@ -101,28 +94,14 @@ We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed wit
                                         </button>
                                     </x-slot>
                                     <x-slot name="content">
-                                        <button type="button" class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" @click="editing = true">
+                                        <x-dropdown-link :href="route('chirps.edit', $chirp)">
                                             {{ __('Edit') }}
-                                        </button>
+                                        </x-dropdown-link>
                                     </x-slot>
                                 </x-dropdown>
                             @endif<!-- [tl! add:end] -->
                         </div>
-                        <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p><!-- [tl! remove] -->
-                        <form x-show="editing" method="POST" action="{{ route('chirps.update', $chirp->id) }}" style="display: none;"><!-- [tl! add:start] -->
-                            @csrf
-                            @method('patch')
-                            <textarea
-                                name="message"
-                                class="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                            >{{ $errors->getBag("update.{$chirp->id}")->isNotEmpty() ? old('message') : $chirp->message }}</textarea>
-                            <x-input-error :messages='$errors->getBag("update.{$chirp->id}")->get("message")' class="mt-2" />
-                            <div class="mt-4 space-x-2">
-                                <x-primary-button>{{ __('Save') }}</x-primary-button>
-                                <button type="reset" @click="editing = false">{{ __('Cancel') }}</button>
-                            </div>
-                        </form>
-                        <p x-show="! editing" class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p><!-- [tl! add:end] -->
+                        <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
                     </div>
                 </div>
             @endforeach
@@ -131,9 +110,37 @@ We'll be using [Alpine.js](https://alpinejs.dev/), which comes pre-installed wit
 </x-app-layout>
 ```
 
+## Creating the edit form
+
+Let's create a new Blade view with a form for editing a Chirp. This is similar to the form for creating Chirps, except we'll post to the `chirps.update` route and use the `@method` directive to specify that we're making a "PATCH" request. We'll also pre-populate the field with the existing Chirp message.
+
+```blade filename=resources/views/chirps/edit.blade.php
+<x-app-layout>
+    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+        <form method="POST" action="{{ route('chirps.update', $chirp) }}">
+            @csrf
+            @method('patch')
+            <textarea
+                name="message"
+                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+            >{{ old('message', $chirp->message) }}</textarea>
+            <x-input-error :messages="$errors->get('message')" class="mt-2" />
+            <div class="mt-4 space-x-2">
+                <x-primary-button>{{ __('Save') }}</x-primary-button>
+                <a href="{{ route('chirps.index') }}">{{ __('Cancel') }}</a>
+            </div>
+        </form>
+    </div>
+</x-app-layout>
+```
+
 ## Updating our controller
 
-We can now update the `update` method on our `ChirpController` class to validate the request and update the database. Even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request to make sure it's actually the author that is updating it:
+Let's update the `edit` method on our `ChirpController` to display our form. Laravel will automatically load the Chirp model from the database using [route model binding](https://laravel.com/docs/9.x/routing#route-model-binding) so we can pass it straight to the view.
+
+We'll then update the `update` method to validate the request and update the database.
+
+Even though we're only displaying the edit button to the author of the Chirp, we still need to make sure the user accessing these routes is authorized.
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -195,7 +202,7 @@ class ChirpController extends Controller
     {
         //
     }
-
+    // [tl! collapse:end]
     /**
      * Show the form for editing the specified resource.
      *
@@ -205,8 +212,12 @@ class ChirpController extends Controller
     public function edit(Chirp $chirp)
     {
         //
+        $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
+
+        return view('chirps.edit', [
+            'chirp' => $chirp,
+        ]);// [tl! add:end]
     }
-    // [tl! collapse:end]
     /**
      * Update the specified resource in storage.
      *
@@ -219,7 +230,7 @@ class ChirpController extends Controller
         //
         $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
 
-        $validated = $request->validateWithBag("update.{$chirp->id}", [
+        $validated = $request->validate([
             'message' => 'required|string|max:255',
         ]);
 
