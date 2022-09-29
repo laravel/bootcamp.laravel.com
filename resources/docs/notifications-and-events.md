@@ -195,7 +195,7 @@ php artisan make:listener SendChirpCreatedNotifications --event=ChirpCreated
 
 The new listener will be placed at `app/Listeners/SendChirpCreatedNotifications.php`. Let's update the listener to send our notifications.
 
-```php filename=app/Http/Listeners/SendChirpCreatedNotifications.php
+```php filename=app/Listeners/SendChirpCreatedNotifications.php
 <?php
 
 namespace App\Listeners;
