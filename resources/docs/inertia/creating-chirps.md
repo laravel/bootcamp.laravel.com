@@ -708,4 +708,4 @@ Chirp::all();
 
 You may exit Tinker by using the `exit` command, or by pressing <kbd>Ctrl</kbd> + <kbd>c</kbd>.
 
-[Continue to start showing Chirps...](/showing-chirps)
+[Continue to start showing Chirps...](/inertia/showing-chirps)

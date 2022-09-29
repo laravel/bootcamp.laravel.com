@@ -49,6 +49,24 @@
                         </nav>
                     </div>
 
+                    <script>
+                        Array.from(document.querySelectorAll('.docs_sidebar h2')).forEach(el => {
+                            if (el.children.length > 1) {
+                                return
+                            }
+
+                            el.addEventListener('click', (e) => {
+                                const active = el.parentNode.classList.contains('sub--on');
+
+                                [...document.querySelectorAll('.docs_sidebar ul li')].forEach(el => el.classList.remove('sub--on'));
+
+                                if (! active) {
+                                    el.parentNode.classList.add('sub--on');
+                                }
+                            })
+                        })
+                    </script>
+
                     @if ($page !== 'introduction')
                         <div class="hidden 2xl:block absolute bottom-0 mb-12 pl-16">
                             <x-cube delay="0" class="ml-8" />
@@ -207,6 +225,9 @@
                                             && (link.pathname === location.pathname || (link.pathname === '/introduction' && location.pathname === '/'))
                                         ) {
                                             link.classList.add('active')
+                                            if (link.parentNode.tagName === 'LI') {
+                                                link.parentNode.parentNode.parentNode.classList.add('sub--on')
+                                            }
                                         }
                                     })
 

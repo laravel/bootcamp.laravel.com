@@ -74,23 +74,17 @@ Once the application's Docker containers have been started, you can access the a
 
 Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, you are welcome to customize the components to suit your needs.
 
-Laravel Breeze offers several options for your view layer, including Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, you have the option of Vue or React.
+Laravel Breeze offers several options for your view layer, including Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). For this tutorial, we'll be using Blade.
 
 Open a new terminal in your `chirper` project directory and install your chosen stack with the given commands:
 
-```shell tab=Vue
+```shell
 composer require laravel/breeze --dev
 
-php artisan breeze:install vue
+php artisan breeze:install blade
 ```
 
-```shell tab=React
-composer require laravel/breeze --dev
-
-php artisan breeze:install react
-```
-
-Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to enable instant hot-module replacement while we build our application:
+Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates:
 
 ```shell
 npm run dev
@@ -108,4 +102,4 @@ If you refresh your new Laravel application in the browser, you should now see a
 
 Register yourself an account and log in!
 
-[Continue to start creating Chirps...](/creating-chirps)
+[Continue to start creating Chirps...](/blade/creating-chirps)

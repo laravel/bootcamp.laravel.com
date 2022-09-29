@@ -6,7 +6,7 @@ In the previous step we added the ability to create Chirps, now we're ready to d
 
 ## Retrieving the Chirps
 
-Let's update the `index` method our `ChirpController` class to pass Chirps from every user to our Index page.
+Let's update the `index` method our `ChirpController` class to pass Chirps from every user to our Index page:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
@@ -363,4 +363,4 @@ Take a look in the browser to see your relative dates.
 
 Feel free to Chirp some more, or even register another account and start a conversation!
 
-[Continue to allow editing of Chirps...](/editing-chirps)
+[Continue to allow editing of Chirps...](/inertia/editing-chirps)
