@@ -49,24 +49,6 @@
                         </nav>
                     </div>
 
-                    <script>
-                        Array.from(document.querySelectorAll('.docs_sidebar h2')).forEach(el => {
-                            if (el.children.length > 1) {
-                                return
-                            }
-
-                            el.addEventListener('click', (e) => {
-                                const active = el.parentNode.classList.contains('sub--on');
-
-                                [...document.querySelectorAll('.docs_sidebar ul li')].forEach(el => el.classList.remove('sub--on'));
-
-                                if (! active) {
-                                    el.parentNode.classList.add('sub--on');
-                                }
-                            })
-                        })
-                    </script>
-
                     @if ($page !== 'introduction')
                         <div class="hidden 2xl:block absolute bottom-0 mb-12 pl-16">
                             <x-cube delay="0" class="ml-8" />
@@ -220,6 +202,7 @@
                                     @include($page)
                                 </div>
                                 <script>
+                                    // Set the active navigation state...
                                     Array.from(document.querySelectorAll('#header a, #sidebar a')).forEach(link => {
                                         if (link.hostname === location.hostname
                                             && (link.pathname === location.pathname || (link.pathname === '/introduction' && location.pathname === '/'))
@@ -231,6 +214,24 @@
                                         }
                                     })
 
+                                    // Make the navigation headings expandable...
+                                    Array.from(document.querySelectorAll('.docs_sidebar h2')).forEach(el => {
+                                        if (el.children.length > 1) {
+                                            return
+                                        }
+
+                                        el.addEventListener('click', (e) => {
+                                            const active = el.parentNode.classList.contains('sub--on');
+
+                                            [...document.querySelectorAll('.docs_sidebar ul li')].forEach(el => el.classList.remove('sub--on'));
+
+                                            if (! active) {
+                                                el.parentNode.classList.add('sub--on');
+                                            }
+                                        })
+                                    })
+
+                                    // Highlight the active section in the table of contents...
                                     function setActiveTableOfContents () {
                                         const links = Array.from(document.querySelectorAll('.table-of-contents a'))
                                         const lastVisible = links
