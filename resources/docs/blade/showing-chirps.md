@@ -143,7 +143,7 @@ This relationship is the inverse of the "has many" relationship we created earli
 
 ## Updating our view
 
-Next, let's update our `chirps.index` component ti display the Chirps below our form:
+Next, let's update our `chirps.index` component to display the Chirps below our form:
 
 ```blade filename=resources/views/chirps/index.blade.php
 <x-app-layout>
