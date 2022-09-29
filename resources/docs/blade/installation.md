@@ -84,7 +84,7 @@ composer require laravel/breeze --dev
 php artisan breeze:install blade
 ```
 
-Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates.
+Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates:
 
 ```shell
 npm run dev

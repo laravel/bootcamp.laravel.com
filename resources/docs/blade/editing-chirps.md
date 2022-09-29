@@ -6,7 +6,7 @@ Let's add a feature that's missing from other popular bird-themed microblogging 
 
 ## Routing
 
-First we will update our routes file to enable the `chirps.edit` and `chirps.update` routes for our resource controller. The `chirps.edit` route will display the form for editing a Chirp, while the `chirps.update` route will accept the data from the form and update the model.
+First we will update our routes file to enable the `chirps.edit` and `chirps.update` routes for our resource controller. The `chirps.edit` route will display the form for editing a Chirp, while the `chirps.update` route will accept the data from the form and update the model:
 
 ```php filename=routes/web.php
 <?php
@@ -53,7 +53,7 @@ PUT/PATCH | `/chirps/{chirp}`      | update       | chirps.update
 
 ## Linking to the edit page
 
-Next, let's link our new `chirps.edit` route. We'll use the `x-dropdown` component that comes with Breeze, which we'll only display to the Chirp author. We'll also display an indication if a Chirp has been edited by comparing the Chirp's `created_at` date with its `updated_at` date.
+Next, let's link our new `chirps.edit` route. We'll use the `x-dropdown` component that comes with Breeze, which we'll only display to the Chirp author. We'll also display an indication if a Chirp has been edited by comparing the Chirp's `created_at` date with its `updated_at` date:
 
 ```blade filename=resources/views/chirps/index.blade.php
 <x-app-layout>
@@ -112,7 +112,7 @@ Next, let's link our new `chirps.edit` route. We'll use the `x-dropdown` compone
 
 ## Creating the edit form
 
-Let's create a new Blade view with a form for editing a Chirp. This is similar to the form for creating Chirps, except we'll post to the `chirps.update` route and use the `@method` directive to specify that we're making a "PATCH" request. We'll also pre-populate the field with the existing Chirp message.
+Let's create a new Blade view with a form for editing a Chirp. This is similar to the form for creating Chirps, except we'll post to the `chirps.update` route and use the `@method` directive to specify that we're making a "PATCH" request. We'll also pre-populate the field with the existing Chirp message:
 
 ```blade filename=resources/views/chirps/edit.blade.php
 <x-app-layout>
@@ -140,7 +140,7 @@ Let's update the `edit` method on our `ChirpController` to display our form. Lar
 
 We'll then update the `update` method to validate the request and update the database.
 
-Even though we're only displaying the edit button to the author of the Chirp, we still need to make sure the user accessing these routes is authorized.
+Even though we're only displaying the edit button to the author of the Chirp, we still need to make sure the user accessing these routes is authorized:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
