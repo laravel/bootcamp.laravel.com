@@ -7,22 +7,7 @@
         <div class="relative lg:flex lg:items-start">
             <aside
                 id="sidebar"
-                x-data="{
-                    navIsOpen: false,
-                    init() {
-                        this.$watch('navIsOpen', (val) => {
-                            if (val) {
-                                document.body.classList.add('overflow-hidden');
-                            } else {
-                                document.body.classList.remove('overflow-hidden');
-                            }
-                        });
-                    }
-                }"
                 class="min-h-screen hidden fixed top-0 bottom-0 left-0 z-20 h-full w-16 bg-gradient-to-b from-gray-100 to-white transition-all duration-300 overflow-hidden lg:sticky lg:w-80 lg:shrink-0 lg:flex lg:flex-col lg:justify-end lg:items-end 2xl:max-w-lg 2xl:w-full dark:from-dark-800 dark:to-dark-700"
-                :class="{ 'w-64': navIsOpen }"
-                @click.away="navIsOpen = false"
-                @keydown.window.escape="navIsOpen = false"
             >
                 <div class="relative min-h-0 flex-1 flex flex-col xl:w-80">
                     <a href="/" class="flex items-center py-8 px-4 lg:px-8 xl:px-16">
@@ -37,35 +22,12 @@
                         <span class="hidden lg:block ml-4 text-red-500 text-3xl font-medium">Bootcamp</span>
                     </a>
                     <div class="overflow-y-auto overflow-x-hidden px-4 lg:overflow-hidden lg:px-8 xl:px-16">
-                        <nav x-show="navIsOpen" x-cloak class="mt-4 lg:hidden">
-                            <div class="docs_sidebar">
-                                @include('documentation')
-                            </div>
-                        </nav>
                         <nav id="indexed-nav" class="hidden lg:block lg:mt-4">
                             <div class="docs_sidebar">
                                 @include('documentation')
                             </div>
                         </nav>
                     </div>
-
-                    <script>
-                        Array.from(document.querySelectorAll('.docs_sidebar h2')).forEach(el => {
-                            if (el.children.length > 1) {
-                                return
-                            }
-
-                            el.addEventListener('click', (e) => {
-                                const active = el.parentNode.classList.contains('sub--on');
-
-                                [...document.querySelectorAll('.docs_sidebar ul li')].forEach(el => el.classList.remove('sub--on'));
-
-                                if (! active) {
-                                    el.parentNode.classList.add('sub--on');
-                                }
-                            })
-                        })
-                    </script>
 
                     @if ($page !== 'introduction')
                         <div class="hidden 2xl:block absolute bottom-0 mb-12 pl-16">
@@ -74,15 +36,6 @@
                             <x-cube delay="1000" class="mt-12" />
                         </div>
                     @endif
-
-                    <div class="sticky bottom-0 flex-1 flex flex-col justify-end lg:hidden">
-                        <div class="py-4 px-4 bg-white">
-                            <button class="relative ml-1 w-6 h-6 text-red-600 lg:hidden focus:outline-none focus:shadow-outline" aria-label="Menu" @click.prevent="navIsOpen = !navIsOpen">
-                                <svg x-show="! navIsOpen" x-transition.opacity class="absolute inset-0 w-6 h-6" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                                <svg x-show="navIsOpen" x-transition.opacity x-cloak class="absolute inset-0 w-6 h-6" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </aside>
 
@@ -220,6 +173,7 @@
                                     @include($page)
                                 </div>
                                 <script>
+                                    // Set the active navigation state...
                                     Array.from(document.querySelectorAll('#header a, #sidebar a')).forEach(link => {
                                         if (link.hostname === location.hostname
                                             && (link.pathname === location.pathname || (link.pathname === '/introduction' && location.pathname === '/'))
@@ -231,6 +185,24 @@
                                         }
                                     })
 
+                                    // Make the navigation headings expandable...
+                                    Array.from(document.querySelectorAll('.docs_sidebar h2')).forEach(el => {
+                                        if (el.children.length > 1) {
+                                            return
+                                        }
+
+                                        el.addEventListener('click', (e) => {
+                                            const active = el.parentNode.classList.contains('sub--on');
+
+                                            [...document.querySelectorAll('.docs_sidebar ul li')].forEach(el => el.classList.remove('sub--on'));
+
+                                            if (! active) {
+                                                el.parentNode.classList.add('sub--on');
+                                            }
+                                        })
+                                    })
+
+                                    // Highlight the active section in the table of contents...
                                     function setActiveTableOfContents () {
                                         const links = Array.from(document.querySelectorAll('.table-of-contents a'))
                                         const lastVisible = links
