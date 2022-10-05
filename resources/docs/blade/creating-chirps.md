@@ -306,6 +306,7 @@ Let's take a moment to add a link to the navigation menu provided by Breeze.
 Update the `navigation.blade.php` component provided by Breeze to add a menu item for desktop screens:
 
 ```blade filename=resources/views/layouts/navigation.blade.php
+...
 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
@@ -314,11 +315,13 @@ Update the `navigation.blade.php` component provided by Breeze to add a menu ite
         {{ __('Chirps') }}
     </x-nav-link><!-- [tl! add:end] -->
 </div>
+...
 ```
 
 And also for mobile screens:
 
 ```blade filename=resources/views/layouts/navigation.blade.php
+...
 <div class="pt-2 pb-3 space-y-1">
     <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
@@ -327,6 +330,7 @@ And also for mobile screens:
         {{ __('Chirps') }}
     </x-responsive-nav-link><!-- [tl! add:end] -->
 </div>
+...
 ```
 
 ## Saving the Chirp
