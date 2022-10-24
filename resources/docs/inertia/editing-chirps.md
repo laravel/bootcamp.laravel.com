@@ -189,7 +189,7 @@ export default function Chirp({ chirp }) {
                         <InputError message={errors.message} class="mt-2" />
                         <div className="space-x-2">
                             <PrimaryButton className="mt-4">Save</PrimaryButton>
-                            <button className="mt-4" onClick={() => setEditing(false); reset(); clearErrors()}>Cancel</button>
+                            <button className="mt-4" onClick={() => { setEditing(false); reset(); clearErrors(); }}>Cancel</button>
                         </div>
                     </form>
                     : <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
