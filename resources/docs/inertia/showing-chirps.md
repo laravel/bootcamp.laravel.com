@@ -268,7 +268,7 @@ export default function Index({ auth, chirps }) {// [tl! add]
                         onChange={e => setData('message', e.target.value)}
                     ></textarea>
                     <InputError message={errors.message} className="mt-2" />
-                    <PrimaryButton className="mt-4" disabled={processing}>Chirp</PrimaryButton>
+                    <PrimaryButton className="mt-4" processing={processing}>Chirp</PrimaryButton>
                 </form>
 
                 <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
