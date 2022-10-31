@@ -345,7 +345,7 @@ export default function Index({ auth }) {
                         onChange={e => setData('message', e.target.value)}
                     ></textarea>
                     <InputError message={errors.message} className="mt-2" />
-                    <PrimaryButton className="mt-4" disabled={processing}>Chirp</PrimaryButton>
+                    <PrimaryButton className="mt-4" processing={processing}>Chirp</PrimaryButton>
                 </form>
             </div>
         </AuthenticatedLayout>
