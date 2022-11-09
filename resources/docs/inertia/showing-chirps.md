@@ -14,17 +14,17 @@ Let's update the `index` method our `ChirpController` class to pass Chirps from 
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 // [tl! collapse:end]
 class ChirpController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         return Inertia::render('Chirps/Index', [
             //
@@ -34,21 +34,16 @@ class ChirpController extends Controller
     // [tl! collapse:start]
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'message' => 'required|string|max:255',
@@ -61,45 +56,32 @@ class ChirpController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function show(Chirp $chirp)
+    public function show(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chirp $chirp)
+    public function update(Request $request, Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(Chirp $chirp): Response
     {
         //
     }
@@ -122,8 +104,9 @@ We've instructed Laravel to return the `id` and `name` property from the `user` 
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-// [tl! collapse:end]
+use Illuminate\Database\Eloquent\Model;// [tl! collapse:end]
+use Illuminate\Database\Eloquent\Relations\BelongsTo;// [tl! add]
+
 class Chirp extends Model
 {
     // [tl! collapse:start]
@@ -133,7 +116,7 @@ class Chirp extends Model
         'message',
     ];
     // [tl! collapse:end]
-    public function user()// [tl! add:start]
+    public function user(): BelongsTo// [tl! add:start]
     {
         return $this->belongsTo(User::class);
     }// [tl! add:end]

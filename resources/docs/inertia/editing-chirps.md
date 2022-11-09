@@ -210,18 +210,18 @@ We can now update the `update` method on our `ChirpController` class to validate
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
+use Inertia\Response;
 // [tl! collapse:end]
 class ChirpController extends Controller
 {
     // [tl! collapse:start]
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         return Inertia::render('Chirps/Index', [
             'chirps' => Chirp::with('user:id,name')->latest()->get(),
@@ -230,21 +230,16 @@ class ChirpController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
             'message' => 'required|string|max:255',
@@ -257,34 +252,25 @@ class ChirpController extends Controller
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function show(Chirp $chirp)
+    public function show(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): Response
     {
         //
     }
     // [tl! collapse:end]
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chirp $chirp)
+    public function update(Request $request, Chirp $chirp): Response// [tl! remove]
+    public function update(Request $request, Chirp $chirp): RedirectResponse// [tl! add]
     {
         //
         $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
@@ -300,11 +286,8 @@ class ChirpController extends Controller
     // [tl! collapse:start]
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(Chirp $chirp): Response
     {
         //
     }
@@ -341,46 +324,32 @@ class ChirpPolicy
 
     /**
      * Determine whether the user can view any models.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function viewAny(User $user)
+    public function viewAny(User $user): bool
     {
         //
     }
 
     /**
      * Determine whether the user can view the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Chirp $chirp)
+    public function view(User $user, Chirp $chirp): bool
     {
         //
     }
 
     /**
      * Determine whether the user can create models.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function create(User $user)
+    public function create(User $user): bool
     {
         //
     }
     // [tl! collapse:end]
     /**
      * Determine whether the user can update the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Chirp $chirp)
+    public function update(User $user, Chirp $chirp): bool
     {
         //
         return $chirp->user()->is($user);// [tl! remove:-1,1 add]
@@ -388,36 +357,24 @@ class ChirpPolicy
     // [tl! collapse:start]
     /**
      * Determine whether the user can delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Chirp $chirp)
+    public function delete(User $user, Chirp $chirp): bool
     {
         //
     }
 
     /**
      * Determine whether the user can restore the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Chirp $chirp)
+    public function restore(User $user, Chirp $chirp): bool
     {
         //
     }
 
     /**
      * Determine whether the user can permanently delete the model.
-     *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Chirp $chirp)
+    public function forceDelete(User $user, Chirp $chirp): bool
     {
         //
     }

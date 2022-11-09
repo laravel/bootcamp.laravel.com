@@ -213,7 +213,7 @@ class ChirpController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Chirp $chirp): Response// [tl! remove]
-    public function update(Request $request, Chirp $chirp): RedirectResponse// [tl! remove]
+    public function update(Request $request, Chirp $chirp): RedirectResponse// [tl! add]
     {
         //
         $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
