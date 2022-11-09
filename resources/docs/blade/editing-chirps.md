@@ -229,11 +229,8 @@ class ChirpController extends Controller
     // [tl! collapse:start]
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(Chirp $chirp): Response
     {
         //
     }

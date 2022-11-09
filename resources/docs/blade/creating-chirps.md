@@ -503,10 +503,8 @@ return new class extends Migration
     // [tl! collapse:start]
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('chirps');
     }
