@@ -35,8 +35,6 @@ class NewChirp extends Notification
 
     /**
      * Create a new notification instance.
-     *
-     * @return void
      */
     public function __construct()// [tl! remove]
     public function __construct(public Chirp $chirp)// [tl! add]
@@ -47,21 +45,17 @@ class NewChirp extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
-     * @return array
+     * @return array<int, string>
      */
-    public function via($notifiable)
+    public function via(object $notifiable): array
     {
         return ['mail'];
     }
     // [tl! collapse:end]
     /**
      * Get the mail representation of the notification.
-     *
-     * @param  mixed  $notifiable
-     * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail($notifiable)
+    public function toMail(object $notifiable): MailMessage
     {
         return (new MailMessage)
                     ->line('The introduction to the notification.')// [tl! remove]
@@ -76,10 +70,9 @@ class NewChirp extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
-     * @return array
+     * @return array<string, mixed>
      */
-    public function toArray($notifiable)
+    public function toArray(object $notifiable): array
     {
         return [
             //
@@ -127,8 +120,6 @@ class ChirpCreated
 
     /**
      * Create a new event instance.
-     *
-     * @return void
      */
     public function __construct()// [tl! remove]
     public function __construct(public Chirp $chirp)// [tl! add]
@@ -138,12 +129,12 @@ class ChirpCreated
     // [tl! collapse:start]
     /**
      * Get the channels the event should broadcast on.
-     *
-     * @return \Illuminate\Broadcasting\Channel|array
      */
-    public function broadcastOn()
+    public function broadcastOn(): array
     {
-        return new PrivateChannel('channel-name');
+        return [
+            new PrivateChannel('channel-name'),
+        ];
     }
     // [tl! collapse:end]
 }
@@ -161,6 +152,7 @@ namespace App\Models;
 use App\Events\ChirpCreated;// [tl! add]
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Chirp extends Model
 {
@@ -174,7 +166,7 @@ class Chirp extends Model
         'created' => ChirpCreated::class,
     ];// [tl! add:end]
 
-    public function user()
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
@@ -212,8 +204,6 @@ class SendChirpCreatedNotifications implements ShouldQueue// [tl! add]
     // [tl! collapse:start]
     /**
      * Create the event listener.
-     *
-     * @return void
      */
     public function __construct()
     {
@@ -222,11 +212,8 @@ class SendChirpCreatedNotifications implements ShouldQueue// [tl! add]
     // [tl! collapse:end]
     /**
      * Handle the event.
-     *
-     * @param  \App\Events\ChirpCreated  $event
-     * @return void
      */
-    public function handle(ChirpCreated $event)
+    public function handle(ChirpCreated $event): void
     {
         //
         foreach (User::whereNot('id', $event->chirp->user_id)->cursor() as $user) {// [tl! remove:-1,1 add:start]
@@ -280,20 +267,16 @@ class EventServiceProvider extends ServiceProvider
     // [tl! collapse:start]
     /**
      * Register any events for your application.
-     *
-     * @return void
      */
-    public function boot()
+    public function boot(): void
     {
         //
     }
 
     /**
      * Determine if events and listeners should be automatically discovered.
-     *
-     * @return bool
      */
-    public function shouldDiscoverEvents()
+    public function shouldDiscoverEvents(): bool
     {
         return false;
     }
