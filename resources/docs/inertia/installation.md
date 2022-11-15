@@ -8,6 +8,10 @@
 
 If you have already installed PHP and Composer on your local machine, you may create a new Laravel project via Composer:
 
+> **Note**
+> We recommend using PHP 8.0 or higher to run this document without problems.   
+> If you are using a version earlier than 8.0, we recommend that you try the installation method through docker described below.
+
 ```shell
 composer create-project laravel/laravel chirper
 ```
