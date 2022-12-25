@@ -6,7 +6,7 @@ In the previous step we added the ability to create Chirps, now we're ready to d
 
 ## Retrieving the Chirps
 
-Let's update the `index` method our `ChirpController` class to pass Chirps from every user to our index page:
+Let's update the `index` method on our `ChirpController` class to pass Chirps from every user to our index page:
 
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
