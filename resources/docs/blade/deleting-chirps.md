@@ -174,7 +174,7 @@ class ChirpController extends Controller
 
 ## Authorization
 
-As with editing, we only want our Chirp authors to be able to delete their Chirps, so let's update the `delete` method our `ChirpPolicy` class:
+As with editing, we only want our Chirp authors to be able to delete their Chirps, so let's update the `delete` method in our `ChirpPolicy` class:
 
 ```php filename=app/Policies/ChirpPolicy.php
 <?php
