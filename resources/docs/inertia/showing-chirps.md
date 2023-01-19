@@ -200,7 +200,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import Chirp from '@/Components/Chirp.vue';// [tl! add]
 import InputError from '@/Components/InputError.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import { useForm, Head } from '@inertiajs/inertia-vue3';
+import { useForm, Head } from '@inertiajs/vue3';
 
 defineProps(['chirps']);// [tl! add]
 
@@ -242,7 +242,7 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import Chirp from '@/Components/Chirp';// [tl! add]
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
-import { useForm, Head } from '@inertiajs/inertia-react';
+import { useForm, Head } from '@inertiajs/react';
 
 export default function Index({ auth }) {// [tl! remove]
 export default function Index({ auth, chirps }) {// [tl! add]
