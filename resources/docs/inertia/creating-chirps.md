@@ -289,7 +289,7 @@ We can then create our front-end `Chirps/Index` page component with a form for c
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import { useForm, Head } from '@inertiajs/inertia-vue3';
+import { useForm, Head } from '@inertiajs/vue3';
 
 const form = useForm({
     message: '',
@@ -320,7 +320,7 @@ import React from 'react';
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
-import { useForm, Head } from '@inertiajs/inertia-react';
+import { useForm, Head } from '@inertiajs/react';
 
 export default function Index({ auth }) {
     const { data, setData, post, processing, reset, errors } = useForm({

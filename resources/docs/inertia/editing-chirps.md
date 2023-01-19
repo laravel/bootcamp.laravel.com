@@ -70,7 +70,7 @@ import InputError from '@/Components/InputError.vue';// [tl! add]
 import PrimaryButton from '@/Components/PrimaryButton.vue';// [tl! add]
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { useForm } from '@inertiajs/inertia-vue3';// [tl! add]
+import { useForm } from '@inertiajs/vue3';// [tl! add]
 import { ref } from 'vue';// [tl! add]
 
 dayjs.extend(relativeTime);
@@ -135,7 +135,7 @@ import InputError from '@/Components/InputError';// [tl! add]
 import PrimaryButton from '@/Components/PrimaryButton';// [tl! add]
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { useForm, usePage } from '@inertiajs/inertia-react';// [tl! add]
+import { useForm, usePage } from '@inertiajs/react';// [tl! add]
 
 dayjs.extend(relativeTime);
 
