@@ -93,82 +93,63 @@ namespace App\Http\Controllers;
 
 use App\Models\Chirp;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 // [tl! collapse:end]
 class ChirpController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response
     {
         //
-        return 'Hello, World!';// [tl! remove:-1,1 add]
+        return response('Hello, World!');// [tl! remove:-1,1 add]
     }
     // [tl! collapse:start]
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function show(Chirp $chirp)
+    public function show(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chirp $chirp)
+    public function update(Request $request, Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(Chirp $chirp): Response
     {
         //
     }
@@ -185,86 +166,70 @@ Not impressed yet? Let's update the `index` method of our `ChirpController` clas
 ```php filename=app/Http/Controllers/ChirpController.php
 <?php
 // [tl! collapse:start]
+
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
 use Illuminate\Http\Request;
-// [tl! collapse:end]
+use Illuminate\Http\Response;// [tl! collapse:end]
+use Illuminate\View\View;// [tl! add]
+
 class ChirpController extends Controller
 {
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): Response// [tl! remove]
+    public function index(): View// [tl! add]
     {
-        return 'Hello, World!';// [tl! remove]
+        return response('Hello, World!');// [tl! remove]
         return view('chirps.index');// [tl! add]
     }
     // [tl! collapse:start]
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
 
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response
     {
         //
     }
 
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function show(Chirp $chirp)
+    public function show(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chirp $chirp)
+    public function update(Request $request, Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(Chirp $chirp): Response
     {
         //
     }
@@ -338,39 +303,36 @@ Our form has been configured to post messages to the `chirps.store` route that w
 // [tl! collapse:start]
 namespace App\Http\Controllers;
 
-use App\Models\Chirp;
+use App\Models\Chirp;// [tl! collapse:end]
+use Illuminate\Http\RedirectResponse;// [tl! add:0,1]
 use Illuminate\Http\Request;
-// [tl! collapse:end]
+use Illuminate\Http\Response;
+use Illuminate\View\View;
+
 class ChirpController extends Controller
 {
     // [tl! collapse:start]
     /**
      * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(): View
     {
         return view('chirps.index');
     }
 
     /**
      * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(): Response
     {
         //
     }
     // [tl! collapse:end]
     /**
      * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request): Response// [tl! remove]
+    public function store(Request $request): RedirectResponse// [tl! add]
     {
         //
         $validated = $request->validate([// [tl! remove:-1,1 add:start]
@@ -384,45 +346,32 @@ class ChirpController extends Controller
     // [tl! collapse:start]
     /**
      * Display the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function show(Chirp $chirp)
+    public function show(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chirp $chirp)
+    public function update(Request $request, Chirp $chirp): Response
     {
         //
     }
 
     /**
      * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Chirp  $chirp
-     * @return \Illuminate\Http\Response
      */
-    public function destroy(Chirp $chirp)
+    public function destroy(Chirp $chirp): Response
     {
         //
     }
@@ -446,11 +395,12 @@ You may have noticed in the previous step that we called a `chirps` method on th
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Factories\HasFactory;// [tl! collapse:end]
+use Illuminate\Database\Eloquent\Relations\HasMany;// [tl! add]
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-// [tl! collapse:end]
+
 class User extends Authenticatable
 {
     // [tl! collapse:start]
@@ -486,7 +436,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
     // [tl! collapse:end]
-    public function chirps()// [tl! add:start]
+    public function chirps(): HasMany// [tl! add:start]
     {
         return $this->hasMany(Chirp::class);
     }// [tl! add:end]
@@ -540,10 +490,8 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
-     * @return void
      */
-    public function up()
+    public function up(): void
     {
         Schema::create('chirps', function (Blueprint $table) {
             $table->id();
@@ -555,10 +503,8 @@ return new class extends Migration
     // [tl! collapse:start]
     /**
      * Reverse the migrations.
-     *
-     * @return void
      */
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('chirps');
     }
