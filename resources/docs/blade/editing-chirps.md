@@ -169,7 +169,7 @@ class ChirpController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): Response
+    public function create()
     {
         //
     }
@@ -191,7 +191,7 @@ class ChirpController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Chirp $chirp): Response
+    public function show(Chirp $chirp)
     {
         //
     }
@@ -230,7 +230,7 @@ class ChirpController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Chirp $chirp): Response
+    public function destroy(Chirp $chirp)
     {
         //
     }
