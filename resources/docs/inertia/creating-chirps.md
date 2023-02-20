@@ -253,7 +253,7 @@ We can then create our front-end `Chirps/Index` page component with a form for c
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import InputError from '@/Components/InputError.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
-import { useForm, Head } from '@inertiajs/inertia-vue3';
+import { useForm, Head } from '@inertiajs/vue3';
 
 const form = useForm({
     message: '',
