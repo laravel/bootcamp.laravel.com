@@ -99,16 +99,16 @@ Let's test our route and controller by returning a test message from the `index`
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use Illuminate\Http\Request; // [tl! collapse:end]
+use Illuminate\Http\Response; // [tl! 1 add]
 
-// [tl! collapse:end]
 class ChirpController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(): Response
+    public function index()
+    public function index(): Response // [tl! remove:-1,1 add]
     {
         //
         return response('Hello, World!');// [tl! remove:-1,1 add]
@@ -422,7 +422,7 @@ class ChirpController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): Response// [tl! remove]
+    public function store(Request $request)// [tl! remove]
     public function store(Request $request): RedirectResponse// [tl! add]
     {
         //

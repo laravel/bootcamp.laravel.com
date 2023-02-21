@@ -199,7 +199,7 @@ class ChirpController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Chirp $chirp): Response// [tl! remove]
+    public function edit(Chirp $chirp)// [tl! remove]
     public function edit(Chirp $chirp): View// [tl! add]
     {
         //
@@ -212,7 +212,7 @@ class ChirpController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Chirp $chirp): Response// [tl! remove]
+    public function update(Request $request, Chirp $chirp)// [tl! remove]
     public function update(Request $request, Chirp $chirp): RedirectResponse// [tl! add]
     {
         //

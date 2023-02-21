@@ -145,7 +145,7 @@ class ChirpController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Chirp $chirp): Response// [tl! remove]
+    public function destroy(Chirp $chirp)// [tl! remove]
     public function destroy(Chirp $chirp): RedirectResponse// [tl! add]
     {
         //
