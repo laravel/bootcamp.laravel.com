@@ -147,7 +147,7 @@ class ChirpController extends Controller
     public function destroy(Chirp $chirp): RedirectResponse// [tl! add]
     {
         //
-        $this->authorize('delete', $chirp);// [tl! remove:-1,1 add:start]
+        $this->authorize('destroy', $chirp);// [tl! remove:-1,1 add:start]
 
         $chirp->delete();
 
@@ -209,7 +209,7 @@ class ChirpPolicy
     /**
      * Determine whether the user can delete the model.
      */
-    public function delete(User $user, Chirp $chirp): bool
+    public function destroy(User $user, Chirp $chirp): bool
     {
         //
         return $this->update($user, $chirp);// [tl! remove:-1,1 add]
