@@ -286,13 +286,13 @@ class EventServiceProvider extends ServiceProvider
 
 ## Testing it out
 
-If you are developing via Docker and Laravel Sail, you may utilize [MailHog](https://github.com/mailhog/MailHog), an email testing tool that catches any emails coming from your application so you may view them.
+If you are developing via Docker and Laravel Sail, you may utilize [Mailpit](https://github.com/axllent/mailpit), an email testing tool that catches any emails coming from your application so you may view them.
 
 We've configured our notification not to send to the Chirp author, so be sure to register at least two users accounts. Then, go ahead and post a new Chirp to trigger a notification.
 
-Open MailHog in your web browser by navigating to [http://localhost:8025/](http://localhost:8025/) where you'll find an inbox with the notification for the message you just chirped!
+Open Mailpit in your web browser by navigating to [http://localhost:8025/](http://localhost:8025/) where you'll find an inbox with the notification for the message you just chirped!
 
-<img src="/img/screenshots/mailhog.png" alt="MailHog" class="rounded-lg border dark:border-none shadow-lg" />
+<img src="/img/screenshots/mailpit.png" alt="Mailpit" class="rounded-lg border dark:border-none shadow-lg" />
 
 ### Sending emails in production
 
