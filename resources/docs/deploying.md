@@ -82,7 +82,7 @@ You may leave the username and password fields empty to use the credentials gene
 
 We're ready to install a source control repository on our new site. If you haven't already, make sure to create a git repository for your application and push the source code up to the source control provider that you connected to Forge earlier.
 
-Choose your site from the your servers *Sites* tab and then click *Git Repository*. Enter your repository name (e.g. `taylorotwell/chirper`) and select your branch. Be sure that "Install Composer Dependencies" is checked, and then install your repository to continue.
+Choose your site from the *Sites* tab of your server and then click *Git Repository*. Enter your repository name (e.g. `taylorotwell/chirper`) and select your branch. Be sure that "Install Composer Dependencies" is checked, and then install your repository to continue.
 
 <img src="/img/screenshots/forge-install-repository.png" alt="Install repository screenshot" class="rounded-lg border dark:border-none shadow-lg" />
 
