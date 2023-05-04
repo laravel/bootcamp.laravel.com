@@ -543,6 +543,7 @@ php artisan tinker
 Next, execute the following code to display the Chirps in your database:
 
 ```shell
+use App\Models\Chirp;
 Chirp::all();
 ```
 
