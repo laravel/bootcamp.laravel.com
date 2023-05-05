@@ -369,7 +369,7 @@ export default function Chirp({ chirp }) {
                 {editing
                     ? <form onSubmit={submit}>
                         <textarea value={data.message} onChange={e => setData('message', e.target.value)} className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
-                        <InputError message={errors.message} class="mt-2" />
+                        <InputError message={errors.message} className="mt-2" />
                         <div className="space-x-2">
                             <PrimaryButton className="mt-4">Save</PrimaryButton>
                             <button className="mt-4" onClick={() => setEditing(false) && reset()}>Cancel</button>
