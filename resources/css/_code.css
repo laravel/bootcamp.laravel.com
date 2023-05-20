@@ -15,6 +15,10 @@ pre code.torchlight .summary-caret {
     @apply mr-1;
 }
 
+p code {
+    @apply inline-flex max-w-full overflow-scroll
+}
+
 .tabbed-code {
     @apply my-5 bg-dark-500 rounded-md overflow-hidden;
 
