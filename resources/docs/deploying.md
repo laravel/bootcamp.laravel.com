@@ -109,7 +109,7 @@ On the *App* tab for your site you may review the deploy script that Forge creat
 Our application is using Node dependencies and Vite, so we'll need to add steps to install the dependencies and build our assets:
 
 ```env
-cd /home/forge/default
+cd $FORGE_SITE_ID
 git pull origin $FORGE_SITE_BRANCH
 
 $FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader
