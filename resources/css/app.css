@@ -41,3 +41,8 @@ h1 b {
     @apply text-red-600;
     font-weight: inherit;
 }
+
+/* Responsive tables */
+table {
+    @apply block max-w-full overflow-auto
+}

@@ -17,11 +17,7 @@ pre code.torchlight .summary-caret {
 
 li code,
 p code {
-    @apply inline-flex max-w-full overflow-scroll
-}
-
-table {
-    @apply block max-w-full overflow-scroll
+    @apply break-words;
 }
 
 .tabbed-code {
