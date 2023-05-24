@@ -15,6 +15,11 @@ pre code.torchlight .summary-caret {
     @apply mr-1;
 }
 
+li code,
+p code {
+    @apply break-words;
+}
+
 .tabbed-code {
     @apply my-5 bg-dark-500 rounded-md overflow-hidden;
 
