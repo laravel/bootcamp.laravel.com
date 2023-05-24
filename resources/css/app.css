@@ -44,5 +44,5 @@ h1 b {
 
 /* Responsive tables */
 table {
-    @apply block max-w-full overflow-auto
+    @apply block max-w-full overflow-auto;
 }
