@@ -286,11 +286,13 @@ class EventServiceProvider extends ServiceProvider
 
 ## Testing it out
 
-If you are developing via Docker and Laravel Sail, you may utilize [Mailpit](https://github.com/axllent/mailpit), an email testing tool that catches any emails coming from your application so you may view them.
+You may utilize local email testing tools like [Mailpit](https://github.com/axllent/mailpit) and [HELO](https://usehelo.com/) to catch any emails coming from your application so you may view them. If you are developing via Docker and Laravel Sail then Mailpit is included for you.
+
+Alternatively, you may configure Laravel to write mail to a log file by editing the `.env` file in your project and changing the `MAIL_MAILER` environment variable to `log`. By default, emails will be written to a log file located at `storage/logs/laravel.log`.
 
 We've configured our notification not to send to the Chirp author, so be sure to register at least two users accounts. Then, go ahead and post a new Chirp to trigger a notification.
 
-Open Mailpit in your web browser by navigating to [http://localhost:8025/](http://localhost:8025/) where you'll find an inbox with the notification for the message you just chirped!
+If you're using Mailpit, navigate to [http://localhost:8025/](http://localhost:8025/), where you will find the notification for the message you just chirped!
 
 <img src="/img/screenshots/mailpit.png" alt="Mailpit" class="rounded-lg border dark:border-none shadow-lg" />
 
