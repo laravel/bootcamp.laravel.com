@@ -6,7 +6,7 @@
 
 ### Quick Installation
 
-If you have already installed PHP and Composer on your local machine, you may create a new Laravel project via Composer:
+If you have already [installed PHP and Composer on your local machine](https://herd.laravel.com), you may create a new Laravel project via Composer:
 
 ```shell
 composer create-project laravel/laravel chirper
