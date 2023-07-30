@@ -513,7 +513,7 @@ return new class extends Migration
 };
 ```
 
-We haven't migrated the database since we added this migration, so let do it now:
+We haven't migrated the database since we added this migration, so let's do it now:
 
 ```shell
 php artisan migrate
