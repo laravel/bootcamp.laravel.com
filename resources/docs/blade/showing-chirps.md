@@ -27,9 +27,9 @@ class ChirpController extends Controller
     public function index(): View
     {
         return view('chirps.index');// [tl! remove]
-        return view('chirps.index', [// [tl! add:start]
-            'chirps' => Chirp::with('user')->latest()->get(),
-        ]);// [tl! add:end]
+        $chirps = Chirp::with('user')->latest()->get();// [tl! add:start]
+        
+        return view('chirps.index', compact('chirps'));// [tl! add:end]
     }
     // [tl! collapse:start]
     /**
