@@ -63,9 +63,9 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // [tl! add:start]
-Route::controller(ChirpController::class)->group(function () {
-    Route::get('/', 'index')->name('chirps.index');
-})->middleware(['auth', 'verified']); // [tl! add:end]
+Route::get('/chirps', ChirpController::class)
+    ->middleware(['auth', 'verified'])
+    ->name('chirps'); // [tl! add:end]
 
 require __DIR__.'/auth.php';
 ```
@@ -158,7 +158,7 @@ use Livewire\Volt\Component;
 
 new class extends Component
 {
-    public $message = '';
+    public string $message = '';
 } ?>
 
 <div>
@@ -168,6 +168,7 @@ new class extends Component
             placeholder="{{ __('What\'s on your mind?') }}"
             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
         ></textarea>
+
         <x-input-error :messages="$errors->get('message')" class="mt-2" />
         <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
     </form>
@@ -215,7 +216,7 @@ Update the `navigation.blade.php` component provided by Breeze to add a menu ite
     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
     </x-nav-link>
-    <x-nav-link :href="route('chirps.index')" :active="request()->routeIs('chirps.index')"><!-- [tl! add:start] -->
+    <x-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')"><!-- [tl! add:start] -->
         {{ __('Chirps') }}
     </x-nav-link><!-- [tl! add:end] -->
 </div>
@@ -228,7 +229,7 @@ And also for mobile screens:
     <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
         {{ __('Dashboard') }}
     </x-responsive-nav-link>
-    <x-responsive-nav-link :href="route('chirps.index')" :active="request()->routeIs('chirps.index')"><!-- [tl! add:start] -->
+    <x-responsive-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')"><!-- [tl! add:start] -->
         {{ __('Chirps') }}
     </x-responsive-nav-link><!-- [tl! add:end] -->
 </div>
@@ -247,7 +248,7 @@ use Livewire\Volt\Component;
 new class extends Component
 {
     #[Rule('required|string|max:255')]// [tl! add]
-    public $message = '';
+    public string $message = '';
     // [tl! add:start]
     public function store(): void
     {
@@ -267,7 +268,7 @@ new class extends Component
             wire:model="message"
             placeholder="{{ __('What\'s on your mind?') }}"
             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-        />
+        ></textarea>
         <x-input-error :messages="$errors->get('message')" class="mt-2" />
         <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
     </form>
@@ -302,7 +303,7 @@ $store = function () {
             wire:model="message"
             placeholder="{{ __('What\'s on your mind?') }}"
             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-        />
+        ></textarea>
 
         <x-input-error :messages="$errors->get('message')" class="mt-2" />
         <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
@@ -314,7 +315,7 @@ We're using Laravel's powerful validation feature to ensure that the user provid
 
 We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
 
-Finally, we can return a redirect response to send users back to the `chirps.index` route.
+Finally, we can return a redirect response to send users back to the `chirps` route.
 
 ## Creating a relationship
 

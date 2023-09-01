@@ -32,15 +32,18 @@ Lets update the Livewire component contents to display our list of Chirps:
 <?php
 
 use App\Models\Chirp;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Volt\Component;
 
 new class extends Component
 {
-    public array $chirps = [];
+    public Collection $chirps;
 
-    public function mount()
+    public function mount(): void
     {
-        $this->chirps = Chirp::with('user')->latest()->get();
+        $this->chirps = Chirp::with('user')
+            ->latest()
+            ->get();
     }
 } ?>
 
@@ -183,20 +186,21 @@ Now, we can update our `chirps.list` component to listen for the `chirp-created`
 <?php
 
 use App\Models\Chirp;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Attributes\On; // [tl! add]
 use Livewire\Volt\Component;
 
 new class extends Component
 {
-    public array $chirps = [];
+    public Collection $chirps;
 
-    public function mount()
+    public function mount(): void
     {
         $this->chirps = Chirp::with('user')->latest()->get();
     }
     // [tl! add:start]
     #[On('chirp-created')]
-    public function refreshList()
+    public function getChirps()
     {
         $this->chirps = Chirp::with('user')->latest()->get();
     } // [tl! add:end]
@@ -292,7 +296,7 @@ This relationship is the inverse of the "has many" relationship we created earli
 
 Now take a look in your browser to see the message you Chirped earlier!
 
-<img src="/img/screenshots/chirp-index-blade.png" alt="Chirp listing" class="rounded-lg border dark:border-none shadow-lg" />
+<img src="/img/screenshots/chirp-index.png" alt="Chirp listing" class="rounded-lg border dark:border-none shadow-lg" />
 
 Feel free to Chirp some more, or even register another account and start a conversation!
 
