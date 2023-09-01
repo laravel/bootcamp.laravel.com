@@ -8,6 +8,14 @@
     - [Deleting Chirps](/blade/deleting-chirps)
     - [Notifications & Events](/blade/notifications-and-events)
 
+- ## Build Chirper with Livewire
+    - [Installation](/livewire/installation)
+    - [Creating Chirps](/livewire/creating-chirps)
+    - [Showing Chirps](/livewire/showing-chirps)
+    - [Editing Chirps](/livewire/editing-chirps)
+    - [Deleting Chirps](/livewire/deleting-chirps)
+    - [Notifications & Events](/livewire/notifications-and-events)
+
 - ## Build Chirper with Inertia
     - [Installation](/inertia/installation)
     - [Creating Chirps](/inertia/creating-chirps)
