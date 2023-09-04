@@ -222,13 +222,13 @@ new class extends Component
 <?php
 
 use function Livewire\Volt\{state}; // [tl! remove]
-use function Livewire\Volt\{rules, state}; // [tl! add:start]
+use function Livewire\Volt\{mount, rules, state}; // [tl! add:start]
 
 state(['chirp', 'message']);
 
 rules(['message' => 'required|max:255']);
 
-$mount = fn () => $this->message = $this->chirp->message;
+mount(fn () => $this->message = $this->chirp->message);
 
 $update = function () {
     $this->authorize('update', $this->chirp);
