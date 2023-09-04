@@ -321,7 +321,7 @@ We're using Laravel's powerful validation feature, via Livewire's `Rule` attribu
 
 We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
 
-Finally, we can reset the `message` field value to clear the form.
+Finally, we are also clearing the `message` form field value.
 
 ## Creating a relationship
 
