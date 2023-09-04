@@ -72,17 +72,31 @@ Once the application's Docker containers have been started, you can access the a
 
 ## Installing Livewire
 
-Now that we have a fresh Laravel application set up, we can install both Livewire and Livewire Volt. The latter allows a Livewire component's PHP logic and Blade templates to coexist in the same file.
+Now that we have a fresh Laravel application set up, we can install both Livewire and Livewire Volt. The latter allows a Livewire component's PHP logic and Blade templates to coexist in the same file, similar to modern JavaScript frameworks like Vue and React.
 
 Open a new terminal in your `chirper` project directory and install Livewire with the given command:
 
-```shell 
+```shell
 composer require livewire/livewire livewire/volt
 
 php artisan volt:install
 ```
 
-Then, include the Livewire JavaScript and CSS assets in your application's main Blade layout file, `resources/views/layouts/app.blade.php`:
+## Installing Laravel Breeze
+
+Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, you are welcome to customize the components to suit your needs.
+
+Laravel Breeze offers several options for your view layer, including Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). Because Livewire uses Blade templates under the hood, we'll be using Blade for this tutorial.
+
+Open a new terminal in your `chirper` project directory and install your chosen stack with the given commands:
+
+```shell
+composer require laravel/breeze --dev
+
+php artisan breeze:install blade
+```
+
+Then, include the Livewire JavaScript and CSS assets in your application's new main Blade layout file (`resources/views/layouts/app.blade.php`) created by Breeze:
 
 ```html
 <!DOCTYPE html>
@@ -129,21 +143,7 @@ Then, include the Livewire JavaScript and CSS assets in your application's main 
 </html>
 ```
 
-## Installing Laravel Breeze
-
-Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, you are welcome to customize the components to suit your needs.
-
-Laravel Breeze offers several options for your view layer, including Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). Because Livewire uses Blade templates under the hood, we'll be using Blade for this tutorial.
-
-Open a new terminal in your `chirper` project directory and install your chosen stack with the given commands:
-
-```shell
-composer require laravel/breeze --dev
-
-php artisan breeze:install blade
-```
-
-Now, because Livewire brings its own Alpine.js dependency, we can remove the Alpine.js from the `resources/js/app.js` file:
+Also, because Livewire brings its own Alpine.js dependency, we can remove the Alpine.js from the `resources/js/app.js` file:
 
 ```js
 import './bootstrap';
@@ -155,7 +155,7 @@ window.Alpine = Alpine;
 Alpine.start(); // [tl! remove:end]
 ```
 
-Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates:
+Now, because Breeze installs and configures your front-end dependencies for you, we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates:
 
 ```shell
 npm run dev

@@ -222,7 +222,7 @@ new class extends Component
 <?php
 
 use function Livewire\Volt\{state}; // [tl! remove]
-use function Livewire\Volt\{rules,state}; // [tl! add:start]
+use function Livewire\Volt\{rules, state}; // [tl! add:start]
 
 state(['chirp', 'message']);
 
