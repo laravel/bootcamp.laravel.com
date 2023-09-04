@@ -72,7 +72,7 @@ Once the application's Docker containers have been started, you can access the a
 
 ## Installing Livewire
 
-Now that we have a fresh Laravel application set up, we can install both Livewire and Livewire Volt. The latter allows a component's PHP logic and Blade templates to coexist in the same file.
+Now that we have a fresh Laravel application set up, we can install both Livewire and Livewire Volt. The latter allows a Livewire component's PHP logic and Blade templates to coexist in the same file.
 
 Open a new terminal in your `chirper` project directory and install Livewire with the given command:
 
@@ -80,6 +80,53 @@ Open a new terminal in your `chirper` project directory and install Livewire wit
 composer require livewire/livewire livewire/volt
 
 php artisan volt:install
+```
+
+Then, include the Livewire JavaScript and CSS assets in your application's main Blade layout file, `resources/views/layouts/app.blade.php`:
+
+```html
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <!-- [tl! collapse:start] -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.bunny.net">
+        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
+        <!-- Scripts -->
+        @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- [tl! collapse:end] -->
+        <!-- [tl! add:start] -->
+        @livewireStyles <!-- [tl! add:end] -->
+    </head>
+    <body class="font-sans antialiased">
+        <!-- [tl! collapse:start] -->
+        <div class="min-h-screen bg-gray-100">
+            @include('layouts.navigation')
+
+            <!-- Page Heading -->
+            @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif
+
+            <!-- Page Content -->
+            <main>
+                {{ $slot }}
+            </main>
+        </div> <!-- [tl! collapse:end] -->
+        <!-- [tl! add:start] -->
+        @livewireScripts <!-- [tl! add:end] -->
+    </body>
+</html>
 ```
 
 ## Installing Laravel Breeze
