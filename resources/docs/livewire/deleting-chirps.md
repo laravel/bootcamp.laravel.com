@@ -1,4 +1,4 @@
-\[TOC]
+[TOC]
 
 # <b>06.</b> Deleting Chirps
 

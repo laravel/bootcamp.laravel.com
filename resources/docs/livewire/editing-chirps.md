@@ -363,7 +363,7 @@ $getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get(); // [
 $getChirps = function () { // [tl! add:start]
     $this->editing = null;
 
-    $this->chirps = Chirp::with('user')->latest()->get();
+    return $this->chirps = Chirp::with('user')->latest()->get();
 }; // [tl! add:end]
 
 state(['chirps' => $getChirps, 'editing' => null]);
