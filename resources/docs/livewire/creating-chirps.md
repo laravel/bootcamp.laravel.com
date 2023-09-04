@@ -154,7 +154,7 @@ php artisan make:volt chirps/create
 
 This will create a new Livewire component at the `app/resources/views/livewire/chirps/create.blade.php` path.
 
-Lets update the Livewire component contents to display a form:
+Let's update the Livewire component contents to display a form:
 
 ```php tab=Class filename=resources/views/livewire/chirps/create.blade.php
 <?php

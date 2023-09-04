@@ -18,7 +18,7 @@ So, first, we should update our `app/resources/views/chirps.blade.php` view to d
 </x-app-layout>
 ```
 
-After, let's create a the new `chirps.list` Livewire component:
+After, let's create a new `chirps.list` Livewire component:
 
 ```shell tab=Class
 php artisan make:volt chirps/list --class
@@ -28,9 +28,7 @@ php artisan make:volt chirps/list --class
 php artisan make:volt chirps/list
 ```
 
-This will create a new Livewire component at the `app/resources/views/livewire/chirps/list.blade.php` path.
-
-Lets update the Livewire component contents to display our list of Chirps:
+This will create a new Livewire component at the `app/resources/views/livewire/chirps/list.blade.php` path. Let's update the Livewire component contents to display our list of Chirps:
 
 ```php tab=Class filename=resources/views/livewire/chirps/list.blade.php
 <?php
