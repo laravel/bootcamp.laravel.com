@@ -28,6 +28,11 @@ Greetings {{ $friend }}, let's build Chirper with Blade!
 Greetings {{ $friend }}, let's build Chirper with Livewire!
 ```
 
+<a href="/livewire/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
+    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-red-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with Livewire</span>
+</a>
+
+
 ### JavaScript & Inertia
 
 If you'd like to use JavaScript, we will be providing code samples for both [Vue](https://vuejs.org/) and [React](https://reactjs.org/). We'll also be using [Inertia](https://inertiajs.com/) to connect it all up and [Tailwind CSS](https://tailwindcss.com/) to make it look great!
