@@ -47,7 +47,7 @@ new class extends Component
         $this->message = $chirp->message;
     }
 
-    public function edit(Chirp $chirp)
+    public function cancelEdit()
     {
         $this->chirpBeingEdited = null;
         $this->message = '';
