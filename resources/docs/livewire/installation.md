@@ -72,7 +72,7 @@ Once the application's Docker containers have been started, you can access the a
 
 ## Installing Livewire
 
-Now that we have a fresh Laravel application set up, we can install both Livewire and Livewire Volt. The latter allows a Livewire component's PHP logic and Blade templates to coexist in the same file, similar to modern JavaScript frameworks like Vue and React.
+Now that we have a fresh Laravel application set up, we can install both Livewire and Livewire Volt. The latter is a simple Livewire extension that allows a Livewire component's PHP logic and Blade templates to coexist in the same file, similar to modern JavaScript frameworks like Vue and React.
 
 Open a new terminal in your `chirper` project directory and install Livewire with the given command:
 
