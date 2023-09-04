@@ -142,7 +142,9 @@ We can then create our Blade view template with a Livewire component with a form
 </x-app-layout>
 ```
 
-And finally, we can create a Livewire component to render the form. For that, you may use the `make:volt` Artisan command:
+And finally, we can create a Livewire component to render the form. For that, you may use the `make:volt` Artisan command.
+
+Note that the snippet below offers two different ways to create the component: one using a `Class` API and the other using a `Functional` API. You will see both APIs throughout this tutorial, and you can choose the one you prefer:
 
 ```shell tab=Class
 php artisan make:volt chirps/create --class
