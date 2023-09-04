@@ -42,15 +42,15 @@ new class extends Component
             ->get();
     }
 
+    public function edit(Chirp $chirp)
+    {
+        $this->editing = $chirp;
+    }
+
     #[On('chirp-edit-canceled')]
     public function cancelEdit()
     {
         $this->editing = null;
-    }
-
-    public function edit(Chirp $chirp)
-    {
-        $this->editing = $chirp;
     } // [tl! collapse:end]
     // [tl! add:start]
     public function delete(Chirp $chirp)
@@ -130,8 +130,7 @@ on([
     'chirp-edit-canceled' => fn () => $this->editing = null,
 ]);
 
-$edit = fn (Chirp $chirp) => $this->editing = $chirp;
-// [tl! collapse:end]
+$edit = fn (Chirp $chirp) => $this->editing = $chirp; // [tl! collapse:end]
 // [tl! add:start]
 $delete = function (Chirp $chirp) {
     $this->authorize('delete', $chirp);
