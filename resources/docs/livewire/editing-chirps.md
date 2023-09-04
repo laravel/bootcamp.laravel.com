@@ -162,7 +162,9 @@ php artisan make:volt chirps/edit --class
 php artisan make:volt chirps/edit
 ```
 
-This will create a new Livewire component at the `app/resources/views/livewire/chirps/edit.blade.php` path. Let's update the Livewire component contents to display a form for editing a Chirp:
+This will create a new Livewire component at the `app/resources/views/livewire/chirps/edit.blade.php` path. Let's update the Livewire component contents to display a form for editing a Chirp.
+
+Note that, even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request to make sure it's actually the author that is updating it:
 
 ```php tab=Class filename=resources/views/livewire/chirps/edit.blade.php
 <?php
@@ -211,7 +213,7 @@ new class extends Component
 
         <x-input-error :messages="$errors->get('message')" class="mt-2" />
         <x-primary-button class="mt-4">{{ __('Save') }}</x-primary-button>
-        <button class="mt-4" wire:click="cancel">Cancel</button>
+        <button class="mt-4" wire:click.prevent="cancel">Cancel</button>
     </form> <!-- [tl! add:end] -->
 </div>
 ```
@@ -253,7 +255,7 @@ $cancel = fn () => $this->dispatch('chirp-edit-canceled'); // [tl! add:end]
 
         <x-input-error :messages="$errors->get('message')" class="mt-2" />
         <x-primary-button class="mt-4">{{ __('Save') }}</x-primary-button>
-        <button class="mt-4" wire:click="cancel">Cancel</button>
+        <button class="mt-4" wire:click.prevent="cancel">Cancel</button>
     </form> <!-- [tl! add:end] -->
 </div>
 ```
