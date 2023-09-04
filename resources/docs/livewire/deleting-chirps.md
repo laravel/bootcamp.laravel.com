@@ -331,4 +331,4 @@ If you Chirped anything you weren't happy with, try deleting it!
 
 <img src="/img/screenshots/chirp-delete-blade.png" alt="Deleting a chirp" class="rounded-lg border dark:border-none shadow-lg" />
 
-[Continue to notifications & events...](/blade/notifications-and-events)
+[Continue to notifications & events...](/livewire/notifications-and-events)
