@@ -73,14 +73,15 @@ new class extends Component
 ```php tab=Functional filename=resources/views/livewire/chirps/list.blade.php
 <?php
 
-use App\Models\Chirp;
+use App\Models\Chirp; // [tl! add]
 use function Livewire\Volt\{state};
 
-state(['chirps' => fn () => Chirp::with('user')->latest()->get()]);
+state(['chirps' => fn () => Chirp::with('user')->latest()->get()]); // [tl! add]
 
 ?>
 
-<div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
+<div> <!-- [tl! remove] -->
+<div class="mt-6 bg-white shadow-sm rounded-lg divide-y"> <!-- [tl! add:start] -->
     @foreach ($chirps as $chirp)
         <div class="p-6 flex space-x-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -96,7 +97,7 @@ state(['chirps' => fn () => Chirp::with('user')->latest()->get()]);
                 <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
             </div>
         </div>
-    @endforeach
+    @endforeach <!-- [tl! add:end] -->
 </div>
 ```
 
