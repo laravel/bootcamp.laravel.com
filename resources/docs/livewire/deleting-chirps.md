@@ -35,6 +35,8 @@ new class extends Component
     #[On('chirp-updated')]
     public function getChirps()
     {
+        $this->editing = null;
+
         $this->chirps = Chirp::with('user')
             ->latest()
             ->get();
@@ -114,7 +116,11 @@ new class extends Component
 use App\Models\Chirp;
 use function Livewire\Volt\{on, state};
 
-$getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get();
+$getChirps = function () {
+    $this->editing = null;
+
+    return $this->chirps = Chirp::with('user')->latest()->get();
+};
 
 state(['chirps' => $getChirps, 'editing' => null]);
 
@@ -126,7 +132,8 @@ on([
 
 $edit = fn (Chirp $chirp) => $this->editing = $chirp;
 // [tl! collapse:end]
-$delete = function (Chirp $chirp) { // [tl! add:start]
+// [tl! add:start]
+$delete = function (Chirp $chirp) {
     $this->authorize('delete', $chirp);
 
     $chirp->delete();
