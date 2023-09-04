@@ -1,4 +1,4 @@
-[TOC]
+\[TOC]
 
 # <b>06.</b> Deleting Chirps
 
@@ -13,67 +13,51 @@ Next, let's update our `chirp.list` Livewire component to have a delete button a
 ```php tab=Class filename=resources/views/livewire/chirps/list.blade.php
 <?php
 // [tl! collapse:start]
+
 use App\Models\Chirp;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Attributes\On;
-use Livewire\Attributes\Rule;
 use Livewire\Volt\Component;
-use Illuminate\Support\Collection;
 // [tl! collapse:end]
-new class extends Component 
+new class extends Component
 {
     // [tl! collapse:start]
     public Collection $chirps;
 
-    public ?Chirp $chirpBeingEdited;
-
-    #[Rule('required|string|max:255')]
-    public string $message;
+    public ?Chirp $editing = null;
 
     public function mount(): void
     {
-        $this->chirps = Chirp::with('user')->latest()->get();
+        $this->getChirps();
     }
 
     #[On('chirp-created')]
-    public function refreshChirps()
+    #[On('chirp-updated')]
+    public function getChirps()
     {
-        $this->chirps = Chirp::with('user')->latest()->get();
+        $this->chirps = Chirp::with('user')
+            ->latest()
+            ->get();
+    }
+
+    #[On('chirp-edit-canceled')]
+    public function cancelEdit()
+    {
+        $this->editing = null;
     }
 
     public function edit(Chirp $chirp)
     {
-        $this->chirpBeingEdited = $chirp;
-        $this->message = $chirp->message;
-    }
-
-    public function cancelEdit()
-    {
-        $this->chirpBeingEdited = null;
-        $this->message = '';
-    }
-
-    public function update()
-    {
-        $this->authorize('update', $this->chirpBeingEdited);
-
-        $this->validate();
-
-        $this->chirpBeingEdited->update([
-            'message' => $this->message,
-        ]);
-
-        $this->chirpBeingEdited = null;
-
-        $this->refreshChirps();
-    }
-    // [tl! collapse:end]
-    public function delete(Chirp $chirp) // [tl! add:start]
+        $this->editing = $chirp;
+    } // [tl! collapse:end]
+    // [tl! add:start]
+    public function delete(Chirp $chirp)
     {
         $this->authorize('delete', $chirp);
 
         $chirp->delete();
 
-        $this->refreshChirps();
+        $this->getChirps();
     } // [tl! add:end]
 } ?>
 
@@ -112,20 +96,9 @@ new class extends Component
                         </x-dropdown>
                     @endif
                 </div>
-
                 <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
-                @if ($chirp->is($chirpBeingEdited))
-                    <form wire:submit="update">
-                        <textarea
-                            wire:model="message"
-                            placeholder="{{ __('What\'s on your mind?') }}"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                        ></textarea>
-
-                        <x-input-error :messages="$errors->get('message')" class="mt-2" />
-                        <x-primary-button class="mt-4">{{ __('Save') }}</x-primary-button>
-                        <button wire:click.prevent="cancelEdit">{{ __('Cancel') }}</button>
-                    </form>
+                @if ($chirp->is($editing))
+                    <livewire:chirps.edit :chirp="$chirp" :key="$chirp->id" />
                 @else
                     <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
                 @endif
@@ -139,51 +112,27 @@ new class extends Component
 <?php
 // [tl! collapse:start]
 use App\Models\Chirp;
-use function Livewire\Volt\{on, rules, state};
+use function Livewire\Volt\{on, state};
 
-state([
-    'chirps' => fn () => Chirp::with('user')->latest()->get(),
-    'chirpBeingEdited' => null,
-    'message' => '',
+$getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get();
+
+state(['chirps' => $getChirps, 'editing' => null]);
+
+on([
+    'chirp-created' => $getChirps,
+    'chirp-updated' => $getChirps,
+    'chirp-edit-canceled' => fn () => $this->editing = null,
 ]);
 
-rules([
-    'message' => 'required|string|max:255',
-]);
-
-on(['chirp-created' => fn () => $this->chirps = Chirp::with('user')->latest()->get()]);
-
-$edit = function (Chirp $chirp) {
-    $this->chirpBeingEdited = $chirp;
-    $this->message = $chirp->message;
-};
-
-$cancelEdit = function () {
-    $this->chirpBeingEdited = null;
-    $this->message = '';
-};
-
-$update = function () {
-    $this->authorize('update', $this->chirpBeingEdited);
-
-    $this->validate();
-
-    $this->chirpBeingEdited->update([
-        'message' => $this->message,
-    ]);
-
-    $this->chirpBeingEdited = null;
-
-    $this->refreshChirps();
-};
+$edit = fn (Chirp $chirp) => $this->editing = $chirp;
 // [tl! collapse:end]
-$delete = function (Chirp $chirp) {
+$delete = function (Chirp $chirp) { // [tl! add:start]
     $this->authorize('delete', $chirp);
 
     $chirp->delete();
 
-    $this->refreshChirps();
-};
+    $this->getChirps();
+}; // [tl! add:end]
 
 ?>
 
@@ -222,20 +171,9 @@ $delete = function (Chirp $chirp) {
                         </x-dropdown>
                     @endif
                 </div>
-
                 <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
-                @if ($chirp->is($chirpBeingEdited))
-                    <form wire:submit="update">
-                        <textarea
-                            wire:model="message"
-                            placeholder="{{ __('What\'s on your mind?') }}"
-                            class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-                        ></textarea>
-
-                        <x-input-error :messages="$errors->get('message')" class="mt-2" />
-                        <x-primary-button class="mt-4">{{ __('Save') }}</x-primary-button>
-                        <button wire:click.prevent="cancelEdit">{{ __('Cancel') }}</button>
-                    </form>
+                @if ($chirp->is($editing))
+                    <livewire:chirps.edit :chirp="$chirp" :key="$chirp->id" />
                 @else
                     <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
                 @endif

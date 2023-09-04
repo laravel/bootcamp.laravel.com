@@ -31,9 +31,10 @@ This command will create three files for you:
 
 ## Routing
 
-We will also need to create URLs for our controller. We can do this by adding "routes", which are managed in the `routes` directory of your project. Because we're using a Livewire, we can use a single `Route::get()` statement that returns a view file to render our application:
 
-So, the `index` route will display our form and a listing of Chirps. In addition, we are also going to place these routes behind two [middleware](https://laravel.com/docs/middleware):
+We will also need to create URLs for our controller. We can do this by adding "routes", which are managed in the `routes` directory of your project.
+
+Now, because we're using Livewire, we only need to enable a single `Route::get` route to display our form and a listing of Chirps. Additionally, we are going to place this route behind two [middleware](https://laravel.com/docs/middleware):
 
 * The `auth` middleware ensures that only logged-in users can access the route.
 * The `verified` middleware will be used if you decide to enable [email verification](https://laravel.com/docs/verification).
@@ -63,7 +64,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 // [tl! add:start]
-Route::get('/chirps', ChirpController::class)
+Route::get('/chirps', [ChirpController::class, 'index'])
     ->middleware(['auth', 'verified'])
     ->name('chirps'); // [tl! add:end]
 
@@ -143,7 +144,11 @@ We can then create our Blade view template with a Livewire component with a form
 
 And finally, we can create a Livewire component to render the form. For that, you may use the `livewire:make` Artisan command:
 
-```shell
+```shell tab=Class
+php artisan make:volt chirps/create --class
+```
+
+```shell tab=Functional
 php artisan make:volt chirps/create
 ```
 
@@ -158,11 +163,11 @@ use Livewire\Volt\Component;
 
 new class extends Component
 {
-    public string $message = '';
+    public string $message = ''; // [tl! add]
 } ?>
 
 <div>
-    <form wire:submit="store">
+    <form wire:submit="store"> <!-- [tl! add:start] -->
         <textarea
             wire:model="message"
             placeholder="{{ __('What\'s on your mind?') }}"
@@ -171,7 +176,7 @@ new class extends Component
 
         <x-input-error :messages="$errors->get('message')" class="mt-2" />
         <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
-    </form>
+    </form> <!-- [tl! add:end] -->
 </div>
 ```
 
@@ -180,20 +185,21 @@ new class extends Component
 
 use function Livewire\Volt\{state};
 
-state(['message' => '']);
+state(['message' => '']); // [tl! add]
 
 ?>
 
 <div>
-    <form wire:submit="store">
+    <form wire:submit="store"> <!-- [tl! add:start] -->
         <textarea
             wire:model="message"
             placeholder="{{ __('What\'s on your mind?') }}"
             class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-        />
+        ></textarea>
+
         <x-input-error :messages="$errors->get('message')" class="mt-2" />
         <x-primary-button class="mt-4">{{ __('Chirp') }}</x-primary-button>
-    </form>
+    </form> <!-- [tl! add:end] -->
 </div>
 ```
 
@@ -236,8 +242,8 @@ And also for mobile screens:
 ```
 
 ## Saving the Chirp
-fma
-Now, to save a Chirp, we need to add a `save` function to our `chimp.create` component to validate the data and create a new Chirp:
+
+Our form has been configured to invoke the `store` action when the `Chirp` button is clicked. Let's add a `store` action to our `chirp.create` component to validate the data and create a new Chirp.
 
 ```php tab=Class filename=resources/views/livewire/chirps/create.blade.php
 <?php
@@ -315,7 +321,7 @@ We're using Laravel's powerful validation feature to ensure that the user provid
 
 We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
 
-Finally, we can return a redirect response to send users back to the `chirps` route.
+Finally, we can reset the `message` field value to clear the form.
 
 ## Creating a relationship
 

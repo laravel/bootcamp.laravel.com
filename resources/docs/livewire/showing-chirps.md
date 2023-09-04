@@ -6,7 +6,7 @@ In the previous step we added the ability to create Chirps, now we're ready to d
 
 ## Retrieving the Chirps
 
-So, first, we should update our `app/resources/views/chirps.blade.php` view to display the Chirps:
+So, first, we should update our `app/resources/views/chirps.blade.php` view to display a listing of Chirps. For that, we can use a new Livewire component:
 
 ```blade filename=resources/views/chirps.blade.php
 <x-app-layout>
@@ -18,9 +18,13 @@ So, first, we should update our `app/resources/views/chirps.blade.php` view to d
 </x-app-layout>
 ```
 
-After, let's create a new `chirps.list` Livewire component:
+After, let's create a the new `chirps.list` Livewire component:
 
-```shell
+```shell tab=Class
+php artisan make:volt chirps/list --class
+```
+
+```shell tab=Functional
 php artisan make:volt chirps/list
 ```
 
@@ -31,23 +35,24 @@ Lets update the Livewire component contents to display our list of Chirps:
 ```php tab=Class filename=resources/views/livewire/chirps/list.blade.php
 <?php
 
-use App\Models\Chirp;
-use Illuminate\Database\Eloquent\Collection;
+use App\Models\Chirp; // [tl! add]
+use Illuminate\Database\Eloquent\Collection; // [tl! add]
 use Livewire\Volt\Component;
 
 new class extends Component
 {
-    public Collection $chirps;
+    public Collection $chirps; // [tl! add:start]
 
     public function mount(): void
     {
         $this->chirps = Chirp::with('user')
             ->latest()
-            ->get();
+            ->get(); // [tl! add:end]
     }
 } ?>
 
-<div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
+<div> <!-- [tl! remove] -->
+<div class="mt-6 bg-white shadow-sm rounded-lg divide-y"> <!-- [tl! add:start] -->
     @foreach ($chirps as $chirp)
         <div class="p-6 flex space-x-2">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -63,7 +68,7 @@ new class extends Component
                 <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
             </div>
         </div>
-    @endforeach
+    @endforeach <!-- [tl! add:end] -->
 </div>
 ```
 
@@ -196,13 +201,18 @@ new class extends Component
 
     public function mount(): void
     {
-        $this->chirps = Chirp::with('user')->latest()->get();
+        $this->chirps = Chirp::with('user') // [tl! remove:start]
+            ->latest()
+            ->get(); // [tl! remove:end]
+        $this->getChirps(); // [tl! add]
     }
     // [tl! add:start]
     #[On('chirp-created')]
     public function getChirps()
     {
-        $this->chirps = Chirp::with('user')->latest()->get();
+        $this->chirps = Chirp::with('user')
+            ->latest()
+            ->get();
     } // [tl! add:end]
 } ?>
 
@@ -223,8 +233,7 @@ new class extends Component
                 <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
             </div>
         </div>
-    @endforeach
-    <!-- [tl! collapse:end] -->
+    @endforeach <!-- [tl! collapse:end] -->
 </div>
 ```
 
@@ -235,9 +244,12 @@ use App\Models\Chirp;
 use function Livewire\Volt\{state}; // [tl! remove]
 use function Livewire\Volt\{on, state}; // [tl! add]
 
-state(['chirps' => fn () => Chirp::with('user')->latest()->get()]);
-// [tl! add]
-on(['chirp-created' => fn () => $this->chirps = Chirp::with('user')->latest()->get()]); // [tl! add]
+state(['chirps' => Chirp::with('user')->latest()->get()]); // [tl! remove]
+$getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get(); // [tl! add:start]
+
+state(['chirps' => $getChirps]);
+
+on(['chirp-created' => $getChirps]); // [tl! add:end]
 
 ?>
 
@@ -258,8 +270,7 @@ on(['chirp-created' => fn () => $this->chirps = Chirp::with('user')->latest()->g
                 <p class="mt-4 text-lg text-gray-900">{{ $chirp->message }}</p>
             </div>
         </div>
-    @endforeach
-    <!-- [tl! collapse:end] -->
+    @endforeach <!-- [tl! collapse:end] -->
 </div>
 ```
 

@@ -72,7 +72,9 @@ Once the application's Docker containers have been started, you can access the a
 
 ## Installing Livewire
 
-Now that we have a fresh Laravel application, we can install Livewire, and it's Volt API. Open a new terminal in your `chirper` project directory and install Livewire with the given command:
+Now that we have a fresh Laravel application set up, we can install both Livewire and Livewire Volt. The latter allows a component's PHP logic and Blade templates to coexist in the same file.
+
+Open a new terminal in your `chirper` project directory and install Livewire with the given command:
 
 ```shell 
 composer require livewire/livewire livewire/volt
@@ -92,6 +94,18 @@ Open a new terminal in your `chirper` project directory and install your chosen 
 composer require laravel/breeze --dev
 
 php artisan breeze:install blade
+```
+
+Now, because Livewire brings its own Alpine.js dependency, we can remove the Alpine.js from the `resources/js/app.js` file:
+
+```js
+import './bootstrap';
+// [tl! remove:start]
+import Alpine from 'alpinejs';
+
+window.Alpine = Alpine;
+
+Alpine.start(); // [tl! remove:end]
 ```
 
 Breeze will install and configure your front-end dependencies for you, so we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates:
