@@ -177,7 +177,7 @@ new class extends Component
 {
     public Chirp $chirp; // [tl! add:start]
 
-    #[Rule('required', 'max:255')]
+    #[Rule('required|string|max:255')]
     public string $message = '';
 
     public function mount(): void
@@ -226,7 +226,7 @@ use function Livewire\Volt\{mount, rules, state}; // [tl! add:start]
 
 state(['chirp', 'message']);
 
-rules(['message' => 'required|max:255']);
+rules(['message' => 'required|string|max:255']);
 
 mount(fn () => $this->message = $this->chirp->message);
 
