@@ -317,7 +317,7 @@ $store = function () {
 </div>
 ```
 
-We're using Laravel's powerful validation feature to ensure that the user provides a message and that it won't exceed the 255 character limit of the database column we'll be creating.
+We're using Laravel's powerful validation feature, via Livewire's `Rule` attribute, to ensure that the user provides a message and that it won't exceed the 255 character limit of the database column we'll be creating.
 
 We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
 
