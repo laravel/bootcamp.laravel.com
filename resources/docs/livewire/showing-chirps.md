@@ -47,7 +47,7 @@ new class extends Component
             ->latest()
             ->get(); // [tl! add:end]
     }
-} ?>
+}; ?>
 
 <div> <!-- [tl! remove] -->
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y"> <!-- [tl! add:start] -->
@@ -131,7 +131,7 @@ new class extends Component
         // [tl! add:start]
         $this->dispatch('chirp-created'); // [tl! add:end]
     }
-} ?> <!-- [tl! collapse:start] -->
+}; ?> <!-- [tl! collapse:start] -->
 
 <div> <!-- [tl! collapse:start] -->
     <form wire:submit="store">
@@ -213,7 +213,7 @@ new class extends Component
             ->latest()
             ->get();
     } // [tl! add:end]
-} ?>
+}; ?>
 
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
     <!-- [tl! collapse:start] -->

@@ -43,7 +43,7 @@ new class extends Component
     {
         $this->editing = $chirp;
     } // [tl! add:end]
-} ?>
+}; ?>
 
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
     @foreach ($chirps as $chirp)
@@ -202,7 +202,7 @@ new class extends Component
     {
         $this->dispatch('chirp-edit-canceled');
     }  // [tl! add:end]
-} ?>
+}; ?>
 
 <div>
     <form wire:submit="update"> <!-- [tl! add:start] -->
@@ -306,7 +306,7 @@ new class extends Component
     {
         $this->editing = null;
     } // [tl! add:end]
-} ?>
+}; ?>
 
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
     <!-- [tl! collapse:start] -->

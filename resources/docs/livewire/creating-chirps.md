@@ -166,7 +166,7 @@ use Livewire\Volt\Component;
 new class extends Component
 {
     public string $message = ''; // [tl! add]
-} ?>
+}; ?>
 
 <div>
     <form wire:submit="store"> <!-- [tl! add:start] -->
@@ -268,7 +268,7 @@ new class extends Component
 
         $this->message = '';
     } // [tl! add:end]
-} ?>
+}; ?>
 
 <div>
     <form wire:submit="store">

@@ -61,7 +61,7 @@ new class extends Component
 
         $this->getChirps();
     } // [tl! add:end]
-} ?>
+}; ?>
 
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y">
     @foreach ($chirps as $chirp)
