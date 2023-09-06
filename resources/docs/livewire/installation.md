@@ -102,7 +102,7 @@ composer require livewire/livewire livewire/volt
 php artisan volt:install
 ```
 
-Then, include the Livewire JavaScript and CSS assets in your application's new main Blade layout (`resources/views/layouts/app.blade.php`) file:
+Then, include the Livewire JavaScript and CSS assets in your application's main Blade layout (`resources/views/layouts/app.blade.php`) file:
 
 ```html
 <!DOCTYPE html>
