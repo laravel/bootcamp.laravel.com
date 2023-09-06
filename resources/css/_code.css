@@ -29,12 +29,22 @@ p code {
         .tabbed-code-nav-button {
             @apply px-3 pt-2.5 pb-2.5 rounded-t text-sm text-gray-300;
 
+            &[data-tab="Class"],
+            &[data-tab="Functional"],
             &[data-tab="Vue"],
             &[data-tab="React"] {
                 @apply pl-9;
                 background-size: 1rem;
                 background-repeat: no-repeat;
                 background-position: 0.75rem center;
+            }
+
+            &[data-tab="Class"] {
+                background-image: url('../images/icons/class.svg');
+            }
+
+            &[data-tab="Functional"] {
+                background-image: url('../images/icons/functional.svg');
             }
 
             &[data-tab="Vue"] {
