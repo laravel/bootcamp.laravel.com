@@ -24,8 +24,42 @@ Greetings {{ $friend }}, let's build Chirper with Blade!
 
 [Livewire](https://livewire.laravel.com/) is a powerful way of building dynamic, reactive, front-end UIs using just PHP. It's perfect for small teams that don't have the time to learn JavaScript, or for solo developers who'd rather write PHP than JavaScript. If you're a Laravel developer, you'll feel right at home.
 
-```blade filename=welcome.blade.php
-Greetings {{ $friend }}, let's build Chirper with Livewire!
+```php tab=Class filename=counter.blade.php
+<?php
+
+use Livewire\Volt\Component;
+
+new class extends Component
+{
+    public int $count = 0;
+
+    public function increment(): void
+    {
+        $this->count++;
+    }
+}; ?>
+
+<div>
+    <h1>{{ $count }}</h1>
+    <button wire:click="increment">+</button>
+</div>
+```
+
+```php tab=Functional filename=counter.blade.php
+<?php
+
+use function Livewire\Volt\{state};
+
+state(['count' => 0]);
+
+$increment = fn () => $this->count++;
+
+?>
+
+<div>
+    <h1>{{ $count }}</h1>
+    <button wire:click="increment">+</button>
+</div>
 ```
 
 <a href="/livewire/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
