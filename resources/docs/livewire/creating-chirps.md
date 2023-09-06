@@ -169,6 +169,7 @@ new class extends Component
 }; ?>
 
 <div>
+    // <!-- [tl! remove] -->
     <form wire:submit="store"> <!-- [tl! add:start] -->
         <textarea
             wire:model="message"
@@ -192,6 +193,7 @@ state(['message' => '']); // [tl! add]
 ?>
 
 <div>
+    // <!-- [tl! remove] -->
     <form wire:submit="store"> <!-- [tl! add:start] -->
         <textarea
             wire:model="message"

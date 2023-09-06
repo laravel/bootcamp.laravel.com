@@ -203,6 +203,7 @@ new class extends Component
 }; ?>
 
 <div>
+    // <!-- [tl! remove] -->
     <form wire:submit="update"> <!-- [tl! add:start] -->
         <textarea
             wire:model="message"
@@ -243,6 +244,7 @@ $cancel = fn () => $this->dispatch('chirp-edit-canceled'); // [tl! add:end]
 ?>
 
 <div>
+    // <!-- [tl! remove] -->
     <form wire:submit="update"> <!-- [tl! add:start] -->
         <textarea
             wire:model="message"

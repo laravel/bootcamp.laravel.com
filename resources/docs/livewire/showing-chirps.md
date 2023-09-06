@@ -50,6 +50,7 @@ new class extends Component
 }; ?>
 
 <div> <!-- [tl! remove] -->
+    // <!-- [tl! remove] -->
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y"> <!-- [tl! add:start] -->
     @foreach ($chirps as $chirp)
         <div class="p-6 flex space-x-2">
@@ -81,6 +82,7 @@ state(['chirps' => fn () => Chirp::with('user')->latest()->get()]); // [tl! add]
 ?>
 
 <div> <!-- [tl! remove] -->
+    // <!-- [tl! remove] -->
 <div class="mt-6 bg-white shadow-sm rounded-lg divide-y"> <!-- [tl! add:start] -->
     @foreach ($chirps as $chirp)
         <div class="p-6 flex space-x-2">
