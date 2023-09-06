@@ -33,7 +33,7 @@ new class extends Component
 
     #[On('chirp-created')]
     #[On('chirp-updated')]
-    public function getChirps()
+    public function getChirps(): void
     {
         $this->editing = null;
 
@@ -42,18 +42,18 @@ new class extends Component
             ->get();
     }
 
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): void
     {
         $this->editing = $chirp;
     }
 
     #[On('chirp-edit-canceled')]
-    public function cancelEdit()
+    public function cancelEdit(): void
     {
         $this->editing = null;
     } // [tl! collapse:end]
     // [tl! add:start]
-    public function delete(Chirp $chirp)
+    public function delete(Chirp $chirp): void
     {
         $this->authorize('delete', $chirp);
 

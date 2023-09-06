@@ -32,14 +32,14 @@ new class extends Component
     }
 
     #[On('chirp-created')]
-    public function getChirps()
+    public function getChirps(): void
     {
         $this->chirps = Chirp::with('user')
             ->latest()
             ->get();
     }
     // [tl! add:start]
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): void
     {
         $this->editing = $chirp;
     } // [tl! add:end]
@@ -283,7 +283,7 @@ new class extends Component
     // [tl! collapse:end]
     #[On('chirp-created')]
     #[On('chirp-updated')] // [tl! add]
-    public function getChirps()
+    public function getChirps(): void
     {
         $this->editing = null; // [tl! add:start]
         // [tl! add:end]
@@ -292,13 +292,13 @@ new class extends Component
             ->get();
     }
 
-    public function edit(Chirp $chirp)
+    public function edit(Chirp $chirp): void
     {
         $this->editing = $chirp;
     }
     // [tl! add:start]
     #[On('chirp-edit-canceled')]
-    public function cancelEdit()
+    public function cancelEdit(): void
     {
         $this->editing = null;
     } // [tl! add:end]

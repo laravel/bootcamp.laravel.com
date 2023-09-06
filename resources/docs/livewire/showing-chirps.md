@@ -203,7 +203,7 @@ new class extends Component
     }
     // [tl! add:start]
     #[On('chirp-created')]
-    public function getChirps()
+    public function getChirps(): void
     {
         $this->chirps = Chirp::with('user')
             ->latest()
