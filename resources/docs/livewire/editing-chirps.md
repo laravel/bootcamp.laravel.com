@@ -189,11 +189,9 @@ new class extends Component
     {
         $this->authorize('update', $this->chirp);
 
-        $this->validate();
+        $validated = $this->validate();
 
-        $this->chirp->update([
-            'message' => $this->message,
-        ]);
+        $this->chirp->update($validated);
 
         $this->dispatch('chirp-updated');
     }
@@ -233,11 +231,9 @@ mount(fn () => $this->message = $this->chirp->message);
 $update = function () {
     $this->authorize('update', $this->chirp);
 
-    $this->validate();
+    $validated = $this->validate();
 
-    $this->chirp->update([
-        'message' => $this->message,
-    ]);
+    $this->chirp->update($validated);
 
     $this->dispatch('chirp-updated');
 };

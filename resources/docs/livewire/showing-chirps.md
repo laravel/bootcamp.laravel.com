@@ -121,11 +121,9 @@ new class extends Component
     // [tl! collapse:end]
     public function store(): void
     {
-        $this->validate();
+        $validated = $this->validate();
 
-        auth()->user()->chirps()->create([
-            'message' => $this->message,
-        ]);
+        auth()->user()->chirps()->create($validated);
 
         $this->message = '';
         // [tl! add:start]
@@ -157,11 +155,9 @@ state(['message' => '']);
 rules(['message' => 'required|string|max:255']);
 // [tl! collapse:end]
 $store = function () {
-    $this->validate();
+    $validated = $this->validate();
 
-    auth()->user()->chirps()->create([
-        'message' => $this->message,
-    ]);
+    auth()->user()->chirps()->create($validated);
 
     $this->message = '';
     // [tl! add:start]
