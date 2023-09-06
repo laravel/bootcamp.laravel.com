@@ -92,9 +92,9 @@ php artisan migrate
 
 ## Installing Livewire
 
-Now that we have installed Laravel Breeze, we can install both Livewire and Livewire Volt. The latter is a simple Livewire extension that allows a Livewire component's PHP logic and Blade templates to coexist in the same file, similar to modern JavaScript frameworks like Vue and React.
+Now that we have installed Laravel Breeze, we can install both Livewire and Livewire Volt. The latter is a Livewire extension that allows a Livewire component's PHP logic and Blade templates to coexist in the same file, similar to modern JavaScript frameworks like Vue and React.
 
-Open a new terminal in your `chirper` project directory and install Livewire with the given command:
+Open a new terminal in your `chirper` project directory and install Livewire with the following commands:
 
 ```shell
 composer require livewire/livewire livewire/volt
@@ -149,7 +149,7 @@ Then, include the Livewire JavaScript and CSS assets in your application's main 
 </html>
 ```
 
-Also, because Livewire brings its own Alpine.js dependency, we can remove the Alpine.js from the `resources/js/app.js` file:
+And, since Livewire includes Alpine.js by default, we can remove the Alpine initialization from our application's `resources/js/app.js` file:
 
 ```js
 import './bootstrap';

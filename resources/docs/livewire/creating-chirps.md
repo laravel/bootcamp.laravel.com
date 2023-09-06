@@ -34,7 +34,7 @@ This command will create three files for you:
 
 We will also need to create URLs for our controller. We can do this by adding "routes", which are managed in the `routes` directory of your project.
 
-Now, because we're using Livewire, we only need to enable a single `Route::get` route to display our form and a listing of Chirps. Additionally, we are going to place this route behind two [middleware](https://laravel.com/docs/middleware):
+Because we're using Livewire, we only need to define a single `Route::get` route to display our Chirp creation form and a listing of existing Chirps. Additionally, we are going to place this route behind two [middleware](https://laravel.com/docs/middleware):
 
 * The `auth` middleware ensures that only logged-in users can access the route.
 * The `verified` middleware will be used if you decide to enable [email verification](https://laravel.com/docs/verification).
@@ -70,12 +70,6 @@ Route::get('/chirps', [ChirpController::class, 'index'])
 
 require __DIR__.'/auth.php';
 ```
-
-This will create the following route:
-
-Verb      | URI                    | Action | Route Name
-----------|------------------------|--------|---------------------
-GET       | `/chirps`              | index  | chirps
 
 > **Note**
 > You may view all of the routes for your application by running the `php artisan route:list` command.
@@ -132,7 +126,7 @@ class ChirpController extends Controller
 }
 ```
 
-We can then create our Blade view template with a Livewire component with a form for creating new Chirps:
+We can then create our Blade template and include a Livewire component that will render our form for creating new Chirps:
 
 ```blade filename=resources/views/chirps.blade.php
 <x-app-layout>
@@ -142,9 +136,9 @@ We can then create our Blade view template with a Livewire component with a form
 </x-app-layout>
 ```
 
-And finally, we can create a Livewire component to render the form. For that, you may use the `make:volt` Artisan command.
+Next, let's create the Livewire component to render the form. For that, you may use the `make:volt` Artisan command.
 
-Note that the snippet below offers two different ways to create the component: one using a `Class` API and the other using a `Functional` API. You will see both APIs throughout this tutorial, and you can choose the one you prefer:
+Note that the snippet below offers two different ways to create the component: one using a `Class` API and the other using a `Functional` API. You will see both APIs throughout this tutorial, and you can choose the style of Livewire development that you prefer:
 
 ```shell tab=Class
 php artisan make:volt chirps/create --class
@@ -154,9 +148,9 @@ php artisan make:volt chirps/create --class
 php artisan make:volt chirps/create
 ```
 
-This will create a new Livewire component at the `resources/views/livewire/chirps/create.blade.php` path.
+This command will create a new Livewire component at `resources/views/livewire/chirps/create.blade.php`.
 
-Let's update the Livewire component contents to display a form:
+Let's update the Livewire component to display a form:
 
 ```php tab=Class filename=resources/views/livewire/chirps/create.blade.php
 <?php
@@ -317,9 +311,9 @@ $store = function () {
 </div>
 ```
 
-We're using Laravel's powerful validation feature, via Livewire's `Rule` attribute, to ensure that the user provides a message and that it won't exceed the 255 character limit of the database column we'll be creating.
+Using Livewire's `Rule` attribute, we're leveraging Laravel's powerful validation features to ensure that the user provides a message that doesn't exceed the 255 character limit of the database column we'll be creating.
 
-We're then creating a record that will belong to the logged in user by leveraging a `chirps` relationship. We will define that relationship soon.
+We're then creating a record that will belong to the logged in user by utilizing a `chirps` relationship. We will define that relationship soon.
 
 Finally, we are also clearing the `message` form field value.
 

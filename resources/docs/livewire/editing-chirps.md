@@ -6,9 +6,9 @@ Let's add a feature that's missing from other popular bird-themed microblogging 
 
 ## Updating our component
 
-Let's start by update our existing `chirp.list` Livewire component to have an edit form for existing Chirps. The edit form is a nested component that we'll create later.
+Let's start by updating our existing `chirp.list` Livewire component to have an edit form for existing Chirps. The edit form will be a nested Livewire component that we'll create later.
 
-First, we'll use the `x-dropdown` component that comes with Breeze, which we'll only display to the Chirp author. In this dropdown, we'll add a link that will trigger the `edit` action on the component. This method will set the `editing` property to the Chirp that we want to edit. We'll use this property to conditionally display the edit form.
+First, we'll use the `x-dropdown` component that is included with Breeze. In addition, we will make this dropdown only visible to the Chirp's original author. In this dropdown, we'll add a link that will trigger the `edit` action on the component. This method will set the `editing` property to the Chirp that we want to edit. We'll use this property to conditionally display the edit form.
 
 We'll also display an indication if a Chirp has been edited by comparing the Chirp's `created_at` date with its `updated_at` date:
 
@@ -152,7 +152,7 @@ $edit = fn (Chirp $chirp) => $this->editing = $chirp; // [tl! add:end]
 
 ## Creating the edit form
 
-Let's now create the `chirps.edit` Livewire component:
+Next, let's create the `chirps.edit` Livewire component:
 
 ```shell tab=Class
 php artisan make:volt chirps/edit --class
@@ -162,9 +162,9 @@ php artisan make:volt chirps/edit --class
 php artisan make:volt chirps/edit
 ```
 
-This will create a new Livewire component at the `resources/views/livewire/chirps/edit.blade.php` path. Let's update the Livewire component contents to display a form for editing a Chirp.
+This will create a new Livewire component at `resources/views/livewire/chirps/edit.blade.php`. Let's update the Livewire component content to display a form for editing a Chirp.
 
-Note that, even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request to make sure it's actually the author that is updating it:
+Note that, even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request on the server to make sure it's actually the Chirp's author requesting that the Chirp be updated:
 
 ```php tab=Class filename=resources/views/livewire/chirps/edit.blade.php
 <?php

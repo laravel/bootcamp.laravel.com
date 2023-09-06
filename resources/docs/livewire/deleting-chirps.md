@@ -8,7 +8,7 @@ Hopefully you're starting to get the hang of things now. We think you'll be impr
 
 ## Updating our component
 
-Next, let's update our `chirp.list` Livewire component to have a delete button and perform the deletion of the Chirp when clicked:
+To get started, let's update our `chirp.list` Livewire component to have a delete button and add an action to delete the Chirp when the button is clicked:
 
 ```php tab=Class filename=resources/views/livewire/chirps/list.blade.php
 <?php

@@ -2,7 +2,7 @@
 
 Welcome to the Laravel Bootcamp! In this guide we will walk through building a modern Laravel application from scratch. To explore the framework, we'll build a microblogging platform called *Chirper*.
 
-## Choose your own adventure:<br>Blade, Livewire or JavaScript
+## Choose your own adventure:<br>Blade, Livewire, or JavaScript
 
 Laravel is incredibly flexible, allowing you to build your front-end with a wide variety of technologies to suit your needs. For this tutorial, we have prepared a few choices for you.
 
@@ -22,7 +22,7 @@ Greetings {{ $friend }}, let's build Chirper with Blade!
 
 ### Livewire
 
-[Livewire](https://livewire.laravel.com/) is a powerful way of building dynamic, reactive, front-end UIs using just PHP. It's perfect for small teams that don't have the time to learn JavaScript, or for solo developers who'd rather write PHP than JavaScript. If you're a Laravel developer, you'll feel right at home.
+[Livewire](https://livewire.laravel.com/) is a powerful way of building dynamic, reactive, front-end UIs using just PHP. Honestly, you won't believe it's not JavaScript. If you're a Laravel developer, you'll feel right at home.
 
 ```php tab=Class filename=counter.blade.php
 <?php

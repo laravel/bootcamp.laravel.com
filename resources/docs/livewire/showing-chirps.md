@@ -6,7 +6,7 @@ In the previous step we added the ability to create Chirps, now we're ready to d
 
 ## Retrieving the Chirps
 
-So, first, we should update our `resources/views/chirps.blade.php` view to display a listing of Chirps. For that, we can use a new Livewire component:
+First, we should update our `resources/views/chirps.blade.php` view to display a listing of Chirps. For that, we can use a new Livewire component:
 
 ```blade filename=resources/views/chirps.blade.php
 <x-app-layout>
@@ -18,7 +18,7 @@ So, first, we should update our `resources/views/chirps.blade.php` view to displ
 </x-app-layout>
 ```
 
-After, let's create a new `chirps.list` Livewire component:
+Then, let's create a new `chirps.list` Livewire component:
 
 ```shell tab=Class
 php artisan make:volt chirps/list --class
@@ -28,7 +28,7 @@ php artisan make:volt chirps/list --class
 php artisan make:volt chirps/list
 ```
 
-This will create a new Livewire component at the `resources/views/livewire/chirps/list.blade.php` path. Let's update the Livewire component contents to display our list of Chirps:
+This will create a new Livewire component at `resources/views/livewire/chirps/list.blade.php`. Let's update the Livewire component to display our list of Chirps:
 
 ```php tab=Class filename=resources/views/livewire/chirps/list.blade.php
 <?php
@@ -108,7 +108,7 @@ Here we've used Eloquent's `with` method to [eager-load](https://laravel.com/doc
 > **Note**
 > Returning all Chirps at once won't scale in production. Take a look at Laravel's powerful [pagination](https://laravel.com/docs/pagination) to improve performance.
 
-Finally, every time a new Chirp is created, we need to update the list of Chirps. We can do this by using [Livewire's events](https://livewire.laravel.com/docs/events):
+Finally, every time a new Chirp is created, we need to update the list of Chirps. We can do this using [Livewire events](https://livewire.laravel.com/docs/events). Let's dispatch an event each time a new Chirp is created:
 
 ```php tab=Class filename=resources/views/livewire/chirps/create.blade.php
 <?php
