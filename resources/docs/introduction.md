@@ -22,7 +22,7 @@ Greetings {{ $friend }}, let's build Chirper with Blade!
 
 ### Livewire
 
-[Livewire](https://livewire.laravel.com/) is a powerful way of building dynamic, reactive, front-end UIs using just PHP. It's perfect for small teams that don't have the time to learn JavaScript, or for solo developers who'd rather write PHP than JS. If you're a Laravel developer, you'll feel right at home.
+[Livewire](https://livewire.laravel.com/) is a powerful way of building dynamic, reactive, front-end UIs using just PHP. It's perfect for small teams that don't have the time to learn JavaScript, or for solo developers who'd rather write PHP than JavaScript. If you're a Laravel developer, you'll feel right at home.
 
 ```blade filename=welcome.blade.php
 Greetings {{ $friend }}, let's build Chirper with Livewire!
