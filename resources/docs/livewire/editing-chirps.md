@@ -162,7 +162,7 @@ php artisan make:volt chirps/edit --class
 php artisan make:volt chirps/edit
 ```
 
-This will create a new Livewire component at the `app/resources/views/livewire/chirps/edit.blade.php` path. Let's update the Livewire component contents to display a form for editing a Chirp.
+This will create a new Livewire component at the `resources/views/livewire/chirps/edit.blade.php` path. Let's update the Livewire component contents to display a form for editing a Chirp.
 
 Note that, even though we're only displaying the edit button to the author of the Chirp, we also need to authorize the request to make sure it's actually the author that is updating it:
 

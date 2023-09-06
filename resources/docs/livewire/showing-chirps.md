@@ -6,7 +6,7 @@ In the previous step we added the ability to create Chirps, now we're ready to d
 
 ## Retrieving the Chirps
 
-So, first, we should update our `app/resources/views/chirps.blade.php` view to display a listing of Chirps. For that, we can use a new Livewire component:
+So, first, we should update our `resources/views/chirps.blade.php` view to display a listing of Chirps. For that, we can use a new Livewire component:
 
 ```blade filename=resources/views/chirps.blade.php
 <x-app-layout>
@@ -28,7 +28,7 @@ php artisan make:volt chirps/list --class
 php artisan make:volt chirps/list
 ```
 
-This will create a new Livewire component at the `app/resources/views/livewire/chirps/list.blade.php` path. Let's update the Livewire component contents to display our list of Chirps:
+This will create a new Livewire component at the `resources/views/livewire/chirps/list.blade.php` path. Let's update the Livewire component contents to display our list of Chirps:
 
 ```php tab=Class filename=resources/views/livewire/chirps/list.blade.php
 <?php
