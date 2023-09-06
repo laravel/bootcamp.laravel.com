@@ -217,7 +217,7 @@ new class extends Component
 </div>
 ```
 
-```php tab=Functional filename=resources/views/livewire/chirps/create.blade.php
+```php tab=Functional filename=resources/views/livewire/chirps/edit.blade.php
 <?php
 
 use function Livewire\Volt\{state}; // [tl! remove]
