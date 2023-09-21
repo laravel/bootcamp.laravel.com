@@ -425,7 +425,6 @@ $edit = fn (Chirp $chirp) => $this->editing = $chirp;
 ## Authorization
 
 By default, the `authorize` method will prevent *everyone* from being able to update the Chirp. We can specify who is allowed to update it by creating a [Model Policy](https://laravel.com/docs/authorization#creating-policies) with the following command:
-By default, the `authorize` method will prevent _everyone_ from being able to update the Chirp. We can specify who is allowed to update it by creating a [Model Policy](https://laravel.com/docs/authorization#creating-policies) with the following command:
 
 ```shell
 php artisan make:policy ChirpPolicy --model=Chirp
