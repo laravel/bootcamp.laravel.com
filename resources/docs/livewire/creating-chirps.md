@@ -215,12 +215,12 @@ Let's take a moment to add a link to the navigation menu provided by Breeze.
 
 Update the `navigation.blade.php` component provided by Breeze to add a menu item for desktop screens:
 
-```blade filename=resources/views/layouts/navigation.blade.php
+```blade filename=resources/views/livewire/layout/navigation.blade.php
 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
         {{ __('Dashboard') }}
     </x-nav-link>
-    <x-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')"><!-- [tl! add:start] -->
+    <x-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')" wire:navigate><!-- [tl! add:start] -->
         {{ __('Chirps') }}
     </x-nav-link><!-- [tl! add:end] -->
 </div>
@@ -228,12 +228,12 @@ Update the `navigation.blade.php` component provided by Breeze to add a menu ite
 
 And also for mobile screens:
 
-```blade filename=resources/views/layouts/navigation.blade.php
+```blade filename=resources/views/livewire/layout/navigation.blade.php
 <div class="pt-2 pb-3 space-y-1">
-    <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+    <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>
         {{ __('Dashboard') }}
     </x-responsive-nav-link>
-    <x-responsive-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')"><!-- [tl! add:start] -->
+    <x-responsive-nav-link :href="route('chirps')" :active="request()->routeIs('chirps')" wire:navigate><!-- [tl! add:start] -->
         {{ __('Chirps') }}
     </x-responsive-nav-link><!-- [tl! add:end] -->
 </div>

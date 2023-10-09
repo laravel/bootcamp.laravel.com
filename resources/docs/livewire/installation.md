@@ -74,91 +74,26 @@ Once the application's Docker containers have been started, you can access the a
 
 Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, you are welcome to customize the components to suit your needs.
 
-Laravel Breeze offers several options for your view layer, including Blade templates, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). Because Livewire uses Blade templates under the hood, we'll be using Blade for this tutorial.
+Laravel Breeze offers several options for your view layer, including Blade templates, Livewire, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/).
 
 Open a new terminal in your `chirper` project directory and install your chosen stack with the given commands:
 
-```shell
+```shell tab=Class
 composer require laravel/breeze --dev
 
-php artisan breeze:install blade
+php artisan breeze:install livewire
+```
+
+```shell tab=Functional
+composer require laravel/breeze --dev
+
+php artisan breeze:install livewire-functional
 ```
 
 Finally, open another terminal in your `chirper` project directory and run the initial database migrations to populate the database with the default tables from Laravel and Breeze:
 
 ```shell
 php artisan migrate
-```
-
-## Installing Livewire
-
-Now that we have installed Laravel Breeze, we can install both Livewire and Livewire Volt. The latter is a Livewire extension that allows a Livewire component's PHP logic and Blade templates to coexist in the same file, similar to modern JavaScript frameworks like Vue and React.
-
-Open a new terminal in your `chirper` project directory and install Livewire with the following commands:
-
-```shell
-composer require livewire/livewire livewire/volt
-
-php artisan volt:install
-```
-
-Then, include the Livewire JavaScript and CSS assets in your application's main Blade layout (`resources/views/layouts/app.blade.php`) file:
-
-```html
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <!-- [tl! collapse:start] -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
-
-        <title>{{ config('app.name', 'Laravel') }}</title>
-
-        <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js']) <!-- [tl! collapse:end] -->
-        <!-- [tl! add:start] -->
-        @livewireStyles <!-- [tl! add:end] -->
-    </head>
-    <body class="font-sans antialiased">
-        <!-- [tl! collapse:start] -->
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div> <!-- [tl! collapse:end] -->
-        <!-- [tl! add:start] -->
-        @livewireScripts <!-- [tl! add:end] -->
-    </body>
-</html>
-```
-
-And, since Livewire includes Alpine.js by default, we can remove the Alpine initialization from our application's `resources/js/app.js` file:
-
-```js
-import './bootstrap';
-// [tl! remove:start]
-import Alpine from 'alpinejs';
-
-window.Alpine = Alpine;
-
-Alpine.start(); // [tl! remove:end]
 ```
 
 Now, we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates:
