@@ -74,7 +74,7 @@ Once the application's Docker containers have been started, you can access the a
 
 Next, we will give your application a head-start by installing [Laravel Breeze](https://laravel.com/docs/starter-kits#laravel-breeze), a minimal, simple implementation of all of Laravel's authentication features, including login, registration, password reset, email verification, and password confirmation. Once installed, you are welcome to customize the components to suit your needs.
 
-Laravel Breeze offers several options for your view layer, including Blade templates, Livewire, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/). Because Livewire uses Blade templates under the hood, we'll be using Blade for this tutorial.
+Laravel Breeze offers several options for your view layer, including Blade templates, Livewire, or [Vue](https://vuejs.org/) and [React](https://reactjs.org/) with [Inertia](https://inertiajs.com/).
 
 Open a new terminal in your `chirper` project directory and install your chosen stack with the given commands:
 
