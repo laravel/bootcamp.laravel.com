@@ -45,8 +45,8 @@ new class extends Component
     {
         $this->chirps = Chirp::with('user')
             ->latest()
-            ->get(); // [tl! add:end]
-    }
+            ->get();
+    } // [tl! add:end]
 }; ?>
 
 <div> <!-- [tl! remove] -->
