@@ -42,6 +42,8 @@ new class extends Component
     public function edit(Chirp $chirp): void
     {
         $this->editing = $chirp;
+
+        $this->getChirps();
     } // [tl! add:end]
 }; ?>
 
@@ -102,7 +104,11 @@ state(['chirps' => $getChirps, 'editing' => null]); // [tl! add]
 
 on(['chirp-created' => $getChirps]);
 // [tl! add:start]
-$edit = fn (Chirp $chirp) => $this->editing = $chirp; // [tl! add:end]
+$edit = function (Chirp $chirp) {
+    $this->editing = $chirp;
+    
+    $this->getChirps();
+};  // [tl! add:end]
 
 ?>
 
@@ -284,11 +290,8 @@ new class extends Component
     }
     // [tl! collapse:end]
     #[On('chirp-created')]
-    #[On('chirp-updated')] // [tl! add]
     public function getChirps(): void
     {
-        $this->editing = null; // [tl! add:start]
-        // [tl! add:end]
         $this->chirps = Chirp::with('user')
             ->latest()
             ->get();
@@ -297,12 +300,17 @@ new class extends Component
     public function edit(Chirp $chirp): void
     {
         $this->editing = $chirp;
+
+        $this->getChirps();
     }
     // [tl! add:start]
     #[On('chirp-edit-canceled')]
-    public function cancelEdit(): void
+    #[On('chirp-updated')] // [tl! add]
+    public function disableEditing(): void
     {
         $this->editing = null;
+
+        $this->getChirps();
     } // [tl! add:end]
 }; ?>
 
@@ -357,11 +365,12 @@ new class extends Component
 use App\Models\Chirp;
 use function Livewire\Volt\{on, state};
 
-$getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get(); // [tl! remove]
-$getChirps = function () { // [tl! add:start]
+$getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get();
+
+$disableEditing = function () { // [tl! add:start]
     $this->editing = null;
 
-    return $this->chirps = Chirp::with('user')->latest()->get();
+    return $this->getChirps();
 }; // [tl! add:end]
 
 state(['chirps' => $getChirps, 'editing' => null]);
@@ -369,11 +378,15 @@ state(['chirps' => $getChirps, 'editing' => null]);
 on(['chirp-created' => $getChirps]); // [tl! remove]
 on([ // [tl! add:start]
     'chirp-created' => $getChirps,
-    'chirp-updated' => $getChirps,
-    'chirp-edit-canceled' => fn () => $this->editing = null,
+    'chirp-updated' => $disableEditing,
+    'chirp-edit-canceled' => $disableEditing,
 ]); // [tl! add:end]
 
-$edit = fn (Chirp $chirp) => $this->editing = $chirp;
+$edit = function (Chirp $chirp) {
+    $this->editing = $chirp;
+
+    $this->getChirps();
+};
 
 ?>
 
