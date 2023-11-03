@@ -93,7 +93,7 @@ new class extends Component
                                 <x-dropdown-link wire:click="edit({{ $chirp->id }})">
                                     {{ __('Edit') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link wire:click="delete({{ $chirp->id }})"> <!-- [tl! add:start] -->
+                                <x-dropdown-link wire:click="delete({{ $chirp->id }})" wire:confirm="Are you sure to delete this chirp?"> <!-- [tl! add:start] -->
                                     {{ __('Delete') }}
                                 </x-dropdown-link> <!-- [tl! add:end] -->
                             </x-slot>
@@ -178,7 +178,7 @@ $delete = function (Chirp $chirp) {
                                 <x-dropdown-link wire:click="edit({{ $chirp->id }})">
                                     {{ __('Edit') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link wire:click="delete({{ $chirp->id }})"> <!-- [tl! add:start] -->
+                                <x-dropdown-link wire:click="delete({{ $chirp->id }})" wire:confirm="Are you sure to delete this chirp?"> <!-- [tl! add:start] -->
                                     {{ __('Delete') }}
                                 </x-dropdown-link> <!-- [tl! add:end] -->
                             </x-slot>
