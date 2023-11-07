@@ -32,11 +32,8 @@ new class extends Component
     }
 
     #[On('chirp-created')]
-    #[On('chirp-updated')]
     public function getChirps(): void
     {
-        $this->editing = null;
-
         $this->chirps = Chirp::with('user')
             ->latest()
             ->get();
@@ -45,12 +42,17 @@ new class extends Component
     public function edit(Chirp $chirp): void
     {
         $this->editing = $chirp;
+
+        $this->getChirps();
     }
 
     #[On('chirp-edit-canceled')]
-    public function cancelEdit(): void
+    #[On('chirp-updated')]
+    public function disableEditing(): void
     {
         $this->editing = null;
+
+        $this->getChirps();
     } // [tl! collapse:end]
     // [tl! add:start]
     public function delete(Chirp $chirp): void
@@ -91,7 +93,7 @@ new class extends Component
                                 <x-dropdown-link wire:click="edit({{ $chirp->id }})">
                                     {{ __('Edit') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link wire:click="delete({{ $chirp->id }})"> <!-- [tl! add:start] -->
+                                <x-dropdown-link wire:click="delete({{ $chirp->id }})" wire:confirm="Are you sure to delete this chirp?"> <!-- [tl! add:start] -->
                                     {{ __('Delete') }}
                                 </x-dropdown-link> <!-- [tl! add:end] -->
                             </x-slot>
@@ -116,21 +118,27 @@ new class extends Component
 use App\Models\Chirp;
 use function Livewire\Volt\{on, state};
 
-$getChirps = function () {
+$getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get();
+
+$disableEditing = function () {
     $this->editing = null;
 
-    return $this->chirps = Chirp::with('user')->latest()->get();
+    return $this->getChirps();
 };
 
 state(['chirps' => $getChirps, 'editing' => null]);
 
 on([
     'chirp-created' => $getChirps,
-    'chirp-updated' => $getChirps,
-    'chirp-edit-canceled' => fn () => $this->editing = null,
+    'chirp-updated' => $disableEditing,
+    'chirp-edit-canceled' => $disableEditing,
 ]);
 
-$edit = fn (Chirp $chirp) => $this->editing = $chirp; // [tl! collapse:end]
+$edit = function (Chirp $chirp) {
+    $this->editing = $chirp;
+
+    $this->getChirps();
+}; // [tl! collapse:end]
 // [tl! add:start]
 $delete = function (Chirp $chirp) {
     $this->authorize('delete', $chirp);
@@ -170,7 +178,7 @@ $delete = function (Chirp $chirp) {
                                 <x-dropdown-link wire:click="edit({{ $chirp->id }})">
                                     {{ __('Edit') }}
                                 </x-dropdown-link>
-                                <x-dropdown-link wire:click="delete({{ $chirp->id }})"> <!-- [tl! add:start] -->
+                                <x-dropdown-link wire:click="delete({{ $chirp->id }})" wire:confirm="Are you sure to delete this chirp?"> <!-- [tl! add:start] -->
                                     {{ __('Delete') }}
                                 </x-dropdown-link> <!-- [tl! add:end] -->
                             </x-slot>
