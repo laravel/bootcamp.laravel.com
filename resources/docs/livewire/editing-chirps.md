@@ -306,7 +306,7 @@ new class extends Component
     // [tl! add:start]
     #[On('chirp-edit-canceled')]
     #[On('chirp-updated')] // [tl! add]
-    public function disableEditing(): void
+    public function cancelEdit(): void
     {
         $this->editing = null;
 
@@ -367,7 +367,7 @@ use function Livewire\Volt\{on, state};
 
 $getChirps = fn () => $this->chirps = Chirp::with('user')->latest()->get();
 
-$disableEditing = function () { // [tl! add:start]
+$cancelEdit = function () { // [tl! add:start]
     $this->editing = null;
 
     return $this->getChirps();
@@ -378,8 +378,8 @@ state(['chirps' => $getChirps, 'editing' => null]);
 on(['chirp-created' => $getChirps]); // [tl! remove]
 on([ // [tl! add:start]
     'chirp-created' => $getChirps,
-    'chirp-updated' => $disableEditing,
-    'chirp-edit-canceled' => $disableEditing,
+    'chirp-updated' => $cancelEdit,
+    'chirp-edit-canceled' => $cancelEdit,
 ]); // [tl! add:end]
 
 $edit = function (Chirp $chirp) {
