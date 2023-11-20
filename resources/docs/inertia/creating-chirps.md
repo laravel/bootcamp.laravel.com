@@ -189,7 +189,7 @@ class ChirpController extends Controller
      */
     public function index(): Response
     {
-        return 'Hello, World!';// [tl! remove]
+        return response('Hello, World!');// [tl! remove]
         return Inertia::render('Chirps/Index', [// [tl! add:start]
             //
         ]);// [tl! add:end]
