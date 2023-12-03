@@ -286,7 +286,7 @@ const editing = ref(false);
                         </button>
                     </template>
                     <template #content>
-                        <button class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" @click="editing = true">
+                        <button class="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out" @click="editing = true">
                             Edit
                         </button>
                         <DropdownLink as="button" :href="route('chirps.destroy', chirp.id)" method="delete"><!-- [tl! add:start] -->
@@ -356,7 +356,7 @@ export default function Chirp({ chirp }) {
                                 </button>
                             </Dropdown.Trigger>
                             <Dropdown.Content>
-                                <button className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" onClick={() => setEditing(true)}>
+                                <button className="block w-full px-4 py-2 text-start text-sm leading-5 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:bg-gray-100 dark:focus:bg-gray-800 transition duration-150 ease-in-out" onClick={() => setEditing(true)}>
                                     Edit
                                 </button>
                                 <Dropdown.Link as="button" href={route('chirps.destroy', chirp.id)} method="delete">
