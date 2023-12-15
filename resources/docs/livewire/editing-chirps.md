@@ -183,7 +183,7 @@ new class extends Component
 {
     public Chirp $chirp; // [tl! add:start]
 
-    #[Rule('required|string|max:255')]
+    #[Validate('required|string|max:255')]
     public string $message = '';
 
     public function mount(): void
