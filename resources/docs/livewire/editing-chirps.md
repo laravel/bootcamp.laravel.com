@@ -176,14 +176,14 @@ Note that, even though we're only displaying the edit button to the author of th
 <?php
 
 use App\Models\Chirp; // [tl! add:start]
-use Livewire\Attributes\Rule; // [tl! add:end]
+use Livewire\Attributes\Validate; // [tl! add:end]
 use Livewire\Volt\Component;
 
 new class extends Component
 {
     public Chirp $chirp; // [tl! add:start]
 
-    #[Rule('required|string|max:255')]
+    #[Validate('required|string|max:255')]
     public string $message = '';
 
     public function mount(): void
