@@ -12,6 +12,9 @@ If you have already [installed PHP and Composer on your local machine](https://h
 composer create-project laravel/laravel chirper
 ```
 
+> **Note**
+> You will need a [supported version of PHP](https://www.php.net/supported-versions.php) before continuing. You may check your installation by running the `php -v` command. Alternatively, you may follow the <a href="#docker">instructions for Docker</a>.
+
 After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI serve command:
 
 ```none
@@ -31,6 +34,7 @@ For simplicity, you may use SQLite to store your application's data. To instruct
 DB_CONNECTION=sqlite
 ```
 
+<a name="docker"></a>
 ### Installation via Docker
 
 If you do not have PHP installed locally, you may develop your application using [Laravel Sail](https://laravel.com/docs/sail), a light-weight command-line interface for interacting with Laravel's default Docker development environment, which is compatible with all operating systems. Before we get started, make sure to install [Docker](https://docs.docker.com/get-docker/) for your operating system. For alternative installation methods, check out our full [installation guide](https://laravel.com/docs/installation).
