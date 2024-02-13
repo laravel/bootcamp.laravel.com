@@ -273,7 +273,8 @@
                 </div>
                 <div class="mt-10 border-t pt-6 pb-16 border-gray-200 dark:border-dark-500">
                     <p class="text-xs text-gray-700 dark:text-gray-400">
-                        Laravel is a Trademark of Taylor Otwell. Copyright © Laravel LLC.
+                        Laravel is a Trademark of Laravel Holdings Inc.<br />
+                        Copyright &copy; Laravel Holdings Inc.
                     </p>
                     <p class="mt-6 text-xs text-gray-700 dark:text-gray-400">
                         Code highlighting provided by <a href="https://torchlight.dev">Torchlight</a>
