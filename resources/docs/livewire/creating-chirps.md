@@ -248,12 +248,12 @@ Our form has been configured to invoke the `store` action when the `Chirp` butto
 ```php tab=Class filename=resources/views/livewire/chirps/create.blade.php
 <?php
 
-use Livewire\Attributes\Rule;// [tl! add]
+use Livewire\Attributes\Validate;// [tl! add]
 use Livewire\Volt\Component;
 
 new class extends Component
 {
-    #[Rule('required|string|max:255')]// [tl! add]
+    #[Validate('required|string|max:255')]// [tl! add]
     public string $message = '';
     // [tl! add:start]
     public function store(): void
@@ -313,7 +313,7 @@ $store = function () {
 </div>
 ```
 
-Using Livewire's `Rule` attribute, we're leveraging Laravel's powerful validation features to ensure that the user provides a message that doesn't exceed the 255 character limit of the database column we'll be creating.
+Using Livewire's `Validate` attribute, we're leveraging Laravel's powerful validation features to ensure that the user provides a message that doesn't exceed the 255 character limit of the database column we'll be creating.
 
 We're then creating a record that will belong to the logged in user by utilizing a `chirps` relationship. We will define that relationship soon.
 
