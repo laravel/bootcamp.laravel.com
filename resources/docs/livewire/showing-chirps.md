@@ -113,12 +113,12 @@ Finally, every time a new Chirp is created, we need to update the list of Chirps
 ```php tab=Class filename=resources/views/livewire/chirps/create.blade.php
 <?php
 // [tl! collapse:start]
-use Livewire\Attributes\Rule;
+use Livewire\Attributes\Validate;
 use Livewire\Volt\Component;
 
 new class extends Component
 {
-    #[Rule('required|string|max:255')]
+    #[Validate('required|string|max:255')]
     public $message = '';
     // [tl! collapse:end]
     public function store(): void
