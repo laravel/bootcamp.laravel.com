@@ -321,7 +321,7 @@ Finally, we are also clearing the `message` form field value.
 
 ## Creating a relationship
 
-You may have noticed in the previous step that we called a `chirps` method on the `$request->user()` object. We need to create this method on our `User` model to define a ["has many"](https://laravel.com/docs/eloquent-relationships#one-to-many) relationship:
+You may have noticed in the previous step that we called a `chirps` method on the `auth()->user()` object. We need to create this method on our `User` model to define a ["has many"](https://laravel.com/docs/eloquent-relationships#one-to-many) relationship:
 
 ```php filename=app/Models/User.php
 <?php
