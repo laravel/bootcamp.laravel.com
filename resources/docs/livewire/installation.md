@@ -15,7 +15,7 @@ composer create-project laravel/laravel chirper
 > **Note**
 > You will need a [supported version of PHP](https://www.php.net/supported-versions.php) before continuing. You may check your installation by running the `php -v` command. Alternatively, you may follow the <a href="#docker">instructions for Docker</a>.
 
-For simplicity, the Composer's `create-project` command will automatically setup a new SQLite database at `database/database.sqlite` to store your application's data. After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI serve command:
+For simplicity, Composer's `create-project` command will automatically create a new SQLite database at `database/database.sqlite` to store your application's data. After the project has been created, start Laravel's local development server using the Laravel Artisan's `serve` command:
 
 ```none
 cd chirper

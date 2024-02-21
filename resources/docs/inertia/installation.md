@@ -15,7 +15,7 @@ composer create-project laravel/laravel chirper
 > **Note**
 > You will need a [supported version of PHP](https://www.php.net/supported-versions.php) before continuing. You may check your installation by running the `php -v` command. Alternatively, you may follow the <a href="#docker">instructions for Docker</a>.
 
-For simplicity, the Composer's `create-project` command will automatically setup a new SQLite database at `database/database.sqlite` to store your application's data. After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI serve command:
+For simplicity, Composer's `create-project` command will automatically create a new SQLite database at `database/database.sqlite` to store your application's data. After the project has been created, start Laravel's local development server using Laravel Artisan's `serve` command:
 
 ```none
 cd chirper
@@ -41,7 +41,7 @@ curl -s "https://laravel.build/chirper" | bash
 
 Sail installation may take several minutes while Sail's application containers are built on your local machine.
 
-By default, the installer will pre-configure Laravel Sail with a number of useful services for your application, including a MySQL database server if you wish to use MySQL instead of SQLite later. You may [customize the Sail services](https://laravel.com/docs/installation#choosing-your-sail-services) if needed.
+By default, the installer will pre-configure Laravel Sail with a number of useful services for your application, including a MySQL database server if you wish to use MySQL instead of SQLite. You may [customize the Sail services](https://laravel.com/docs/installation#choosing-your-sail-services) if needed.
 
 After the project has been created, you can navigate to the application directory and start Laravel Sail:
 

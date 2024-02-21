@@ -404,7 +404,7 @@ You can learn more about Laravel's mass assignment protection in the [documentat
 
 ## Updating the migration
 
-During the creation of application, Laravel already applied the default migrations that are included `database/migrations` directory. You may inspect the current database structure by using the `php artisan db:show` and `php artisan db:table` commands:
+During the creation of the application, Laravel already applied the default migrations that are included in the `database/migrations` directory. You may inspect the current database structure by using the `php artisan db:show` and `php artisan db:table` commands:
 
 ```shell
 php artisan db:show
