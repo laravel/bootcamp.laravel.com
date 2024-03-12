@@ -15,7 +15,7 @@ composer create-project laravel/laravel chirper
 > **Note**
 > You will need a [supported version of PHP](https://www.php.net/supported-versions.php) before continuing. You may check your installation by running the `php -v` command. Alternatively, you may follow the <a href="#docker">instructions for Docker</a>.
 
-After the project has been created, start Laravel's local development server using the Laravel's Artisan CLI serve command:
+For simplicity, Composer's `create-project` command will automatically create a new SQLite database at `database/database.sqlite` to store your application's data. After the project has been created, start Laravel's local development server using Laravel Artisan's `serve` command:
 
 ```none
 cd chirper
@@ -27,12 +27,6 @@ Once you have started the Artisan development server, your application will be a
 
 <img src="/img/screenshots/fresh.png" alt="A fresh Laravel installation" class="dark:hidden rounded-lg border shadow-lg" />
 <img src="/img/screenshots/fresh-dark.png" alt="A fresh Laravel installation" class="hidden dark:block rounded-lg border-gray-700 shadow-lg" />
-
-For simplicity, you may use SQLite to store your application's data. To instruct Laravel to use SQLite instead of MySQL, update your new application's `.env` file and remove all of the `DB_*` environment variables except for the `DB_CONNECTION` variable, which should be set to `sqlite`:
-
-```ini
-DB_CONNECTION=sqlite
-```
 
 <a name="docker"></a>
 ### Installation via Docker
@@ -47,7 +41,7 @@ curl -s "https://laravel.build/chirper" | bash
 
 Sail installation may take several minutes while Sail's application containers are built on your local machine.
 
-By default, the installer will pre-configure Laravel Sail with a number of useful services for your application, including a MySQL database server. You may [customize the Sail services](https://laravel.com/docs/installation#choosing-your-sail-services) if needed.
+By default, the installer will pre-configure Laravel Sail with a number of useful services for your application, including a MySQL database server if you wish to use MySQL instead of SQLite. You may [customize the Sail services](https://laravel.com/docs/installation#choosing-your-sail-services) if needed.
 
 After the project has been created, you can navigate to the application directory and start Laravel Sail:
 
@@ -92,12 +86,6 @@ Breeze will install and configure your front-end dependencies for you, so we jus
 
 ```shell
 npm run dev
-```
-
-Finally, open another terminal in your `chirper` project directory and run the initial database migrations to populate the database with the default tables from Laravel and Breeze:
-
-```shell
-php artisan migrate
 ```
 
 If you refresh your new Laravel application in the browser, you should now see a "Register" link at the top-right. Follow that to see the registration form provided by Laravel Breeze.

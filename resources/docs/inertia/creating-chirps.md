@@ -49,17 +49,6 @@ use App\Http\Controllers\ChirpController;// [tl! add]
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
-// [tl! collapse:start]
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
@@ -69,7 +58,7 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
     ]);
 });
-// [tl! collapse:end]
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -519,13 +508,17 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
+     * Get the attributes that should be cast.
      *
-     * @var array<string, string>
+     * @return array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
     // [tl! collapse:end]
     public function chirps(): HasMany// [tl! add:start]
     {
@@ -568,7 +561,14 @@ You can learn more about Laravel's mass assignment protection in the [documentat
 
 ## Updating the migration
 
-The only thing missing is extra columns in our database to store the relationship between a `Chirp` and its `User` and the message itself. Remember the database migration we created earlier? It's time to open that file to add some extra columns:
+During the creation of the application, Laravel already applied the default migrations that are included in the `database/migrations` directory. You may inspect the current database structure by using the `php artisan db:show` and `php artisan db:table` commands:
+
+```shell
+php artisan db:show
+php artisan db:table users
+```
+
+So, the only thing missing is extra columns in our database to store the relationship between a `Chirp` and its `User` and the message itself. Remember the database migration we created earlier? It's time to open that file to add some extra columns:
 
 ```php filename=databases/migrations/&amp;lt;timestamp&amp;gt;_create_chirps_table.php
 <?php
