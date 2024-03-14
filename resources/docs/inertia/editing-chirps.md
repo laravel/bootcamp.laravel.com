@@ -199,6 +199,7 @@ We can now update the `update` method on our `ChirpController` class to validate
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -206,6 +207,8 @@ use Inertia\Response;
 // [tl! collapse:end]
 class ChirpController extends Controller
 {
+    use AuthorizesRequests;
+
     // [tl! collapse:start]
     /**
      * Display a listing of the resource.
