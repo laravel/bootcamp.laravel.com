@@ -207,8 +207,6 @@ use Inertia\Response;
 // [tl! collapse:end]
 class ChirpController extends Controller
 {
-    use AuthorizesRequests;
-
     // [tl! collapse:start]
     /**
      * Display a listing of the resource.
