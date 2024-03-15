@@ -201,6 +201,7 @@ namespace App\Http\Controllers;
 use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 use Inertia\Inertia;
 use Inertia\Response;
 // [tl! collapse:end]
@@ -262,7 +263,7 @@ class ChirpController extends Controller
     public function update(Request $request, Chirp $chirp): RedirectResponse// [tl! add]
     {
         //
-        $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
+        Gate::authorize('update', $chirp);// [tl! remove:-1,1 add:start]
 
         $validated = $request->validate([
             'message' => 'required|string|max:255',
