@@ -140,6 +140,7 @@ use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 // [tl! collapse:end]
 class ChirpController extends Controller
@@ -192,7 +193,7 @@ class ChirpController extends Controller
     public function edit(Chirp $chirp): View// [tl! add]
     {
         //
-        $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
+        Gate::authorize('update', $chirp);// [tl! remove:-1,1 add:start]
 
         return view('chirps.edit', [
             'chirp' => $chirp,
@@ -205,7 +206,7 @@ class ChirpController extends Controller
     public function update(Request $request, Chirp $chirp): RedirectResponse// [tl! add]
     {
         //
-        $this->authorize('update', $chirp);// [tl! remove:-1,1 add:start]
+        Gate::authorize('update', $chirp);// [tl! remove:-1,1 add:start]
 
         $validated = $request->validate([
             'message' => 'required|string|max:255',
