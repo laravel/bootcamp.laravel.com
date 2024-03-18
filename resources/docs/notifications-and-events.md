@@ -232,58 +232,6 @@ We've used a [database cursor](https://laravel.com/docs/eloquent#cursors) to avo
 > **Note**
 > In a production application you should add the ability for your users to unsubscribe from notifications like these.
 
-### Registering the event listener
-
-Finally, let's bind our event listener to the event. This will tell Laravel to invoke our event listener when the corresponding event is dispatched. We can do this within our `EventServiceProvider` class:
-
-```php filename=App\Providers\EventServiceProvider.php
-<?php
-
-namespace App\Providers;
-
-use App\Events\ChirpCreated;// [tl! add]
-use App\Listeners\SendChirpCreatedNotifications;// [tl! add]
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
-
-class EventServiceProvider extends ServiceProvider
-{
-    /**
-     * The event to listener mappings for the application.
-     *
-     * @var array<class-string, array<int, class-string>>
-     */
-    protected $listen = [
-        ChirpCreated::class => [// [tl! add:start]
-            SendChirpCreatedNotifications::class,
-        ],// [tl! add:end]
-
-        Registered::class => [
-            SendEmailVerificationNotification::class,
-        ],
-    ];
-    // [tl! collapse:start]
-    /**
-     * Register any events for your application.
-     */
-    public function boot(): void
-    {
-        //
-    }
-
-    /**
-     * Determine if events and listeners should be automatically discovered.
-     */
-    public function shouldDiscoverEvents(): bool
-    {
-        return false;
-    }
-    // [tl! collapse:end]
-}
-```
-
 ## Testing it out
 
 You may utilize local email testing tools like [Mailpit](https://github.com/axllent/mailpit) and [HELO](https://usehelo.com/) to catch any emails coming from your application so you may view them. If you are developing via Docker and Laravel Sail then Mailpit is included for you.
