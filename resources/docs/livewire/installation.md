@@ -88,12 +88,6 @@ composer require laravel/breeze --dev
 php artisan breeze:install livewire-functional
 ```
 
-Finally, open another terminal in your `chirper` project directory and run the initial database migrations to populate the database with the default tables from Laravel and Breeze:
-
-```shell
-php artisan migrate
-```
-
 Now, we just need to start the Vite development server to automatically recompile our CSS and refresh the browser when we make changes to our Blade templates:
 
 ```shell
