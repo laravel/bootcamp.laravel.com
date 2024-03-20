@@ -10,7 +10,7 @@
         },
     }"
     :class="initializeAnimation ? 'animate-cube' : ''"
-    {{ $attributes->merge(['class' => 'text-red-600']) }}
+    {{ $attributes->merge(['class' => 'text-orange-600']) }}
     width="46"
     height="53"
     viewBox="0 0 46 53"

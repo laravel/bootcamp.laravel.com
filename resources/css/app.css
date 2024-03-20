@@ -38,7 +38,7 @@ h6:hover .heading-permalink,
 
 /* Red heading numerals */
 h1 b {
-    @apply text-red-600;
+    @apply text-orange-600;
     font-weight: inherit;
 }
 

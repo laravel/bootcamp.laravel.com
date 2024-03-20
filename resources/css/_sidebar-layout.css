@@ -11,7 +11,7 @@
                 }
 
                 a.active {
-                    @apply text-red-600;
+                    @apply text-orange-600;
                 }
 
                 a.heading-permalink {
@@ -37,7 +37,7 @@
                     @apply pl-4 font-normal leading-5 relative border-l-[3px] border-transparent;
 
                     &.active {
-                        @apply border-red-600 text-red-600 font-medium;
+                        @apply border-orange-600 text-orange-600 font-medium;
                     }
                 }
             }
@@ -67,7 +67,7 @@
                 @apply py-2;
 
                 a.active {
-                    @apply text-red-600;
+                    @apply text-orange-600;
                 }
 
                 ul {

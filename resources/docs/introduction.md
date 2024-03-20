@@ -17,7 +17,7 @@ Greetings {{ $friend }}, let's build Chirper with Blade!
 ```
 
 <a href="/blade/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
-    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-red-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with Blade</span>
+    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-orange-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with Blade</span>
 </a>
 
 ### Livewire
@@ -63,7 +63,7 @@ $increment = fn () => $this->count++;
 ```
 
 <a href="/livewire/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
-    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-red-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with Livewire</span>
+    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-orange-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with Livewire</span>
 </a>
 
 
@@ -92,5 +92,5 @@ Go ahead and choose your stack:
 At any point you may view the code for either framework to see what life is like on the other side, just be sure not to mix the code in your project.
 
 <a href="/inertia/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
-    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-red-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with JavaScript and Inertia</span>
+    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-orange-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with JavaScript and Inertia</span>
 </a>
