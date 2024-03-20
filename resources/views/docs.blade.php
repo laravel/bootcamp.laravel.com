@@ -19,7 +19,7 @@
                             width="50"
                             height="52"
                         > --}}
-                        <span class="hidden lg:block ml-4 text-orange-500 text-3xl font-medium">Bootcamp</span>
+                        <span class="hidden lg:block ml-4 text-orange-500 text-3xl font-medium">Boostcamp</span>
                     </a>
                     <div class="overflow-y-auto overflow-x-hidden px-4 lg:overflow-hidden lg:px-8 xl:px-16">
                         <nav id="indexed-nav" class="hidden lg:block lg:mt-4">
@@ -50,7 +50,7 @@
                     <div class="mx-auto px-8 sm:px-16 flex items-center justify-between">
                         <a href="/" class="flex items-center">
                             {{-- <img class="" src="/img/logomark.min.svg" alt="Laravel"> --}}
-                            <span class="hidden sm:block ml-5 text-orange-500 text-3xl font-medium">Bootcamp</span>
+                            <span class="hidden sm:block ml-5 text-orange-500 text-3xl font-medium">Boostcamp</span>
                         </a>
                         <div class="flex-1 flex items-center justify-end">
                             <button id="header__sun" onclick="toSystemMode()" title="Switch to system theme" class="relative w-10 h-10 focus:outline-none focus:shadow-outline text-gray-500">

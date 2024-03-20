@@ -7,7 +7,7 @@
         <title>{{ isset($title) ? $title . ' - ' : null }}AI Bootcamp</title>
 
         <!-- Primary Meta Tags -->
-        <meta name="title" content="AI Bootcamp - Learn the AI Web Programming">
+        <meta name="title" content="AI Boostcamp - Learn the AI Web Programming">
         <meta name="description" content="Together let's walk through building and deploying a modern AI Web application from scratch.">
 
         <!-- Open Graph / Facebook -->
