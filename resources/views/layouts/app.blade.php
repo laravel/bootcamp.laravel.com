@@ -4,28 +4,28 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>{{ isset($title) ? $title . ' - ' : null }}Laravel Bootcamp</title>
+        <title>{{ isset($title) ? $title . ' - ' : null }}AI Bootcamp</title>
 
         <!-- Primary Meta Tags -->
-        <meta name="title" content="Laravel Bootcamp - Learn the PHP Framework for Web Artisans">
-        <meta name="description" content="Together let's walk through building and deploying a modern Laravel application from scratch.">
+        <meta name="title" content="AI Bootcamp - Learn the AI Web Programming">
+        <meta name="description" content="Together let's walk through building and deploying a modern AI Web application from scratch.">
 
         <!-- Open Graph / Facebook -->
-        <meta property="og:type" content="website">
+        {{-- <meta property="og:type" content="website">
         <meta property="og:url" content="https://bootcamp.laravel.com/">
         <meta property="og:title" content="Laravel Bootcamp - Learn the PHP Framework for Web Artisans">
         <meta property="og:description" content="Together let's walk through building and deploying a modern Laravel application from scratch.">
-        <meta property="og:image" content="https://bootcamp.laravel.com/img/og-image.jpg">
+        <meta property="og:image" content="https://bootcamp.laravel.com/img/og-image.jpg"> --}}
 
         <!-- Twitter -->
-        <meta property="twitter:card" content="summary_large_image">
+        {{-- <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="https://bootcamp.laravel.com/">
         <meta property="twitter:title" content="Laravel - Learn the PHP Framework for Web Artisans">
         <meta property="twitter:description" content="Together let's walk through building and deploying a modern Laravel application from scratch.">
-        <meta property="twitter:image" content="https://bootcamp.laravel.com/img/og-image.jpg">
+        <meta property="twitter:image" content="https://bootcamp.laravel.com/img/og-image.jpg"> --}}
 
         <!-- Favicon -->
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
+        {{-- <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
         <link rel="manifest" href="/img/favicon/site.webmanifest">
@@ -34,19 +34,13 @@
         <meta name="msapplication-TileColor" content="#ff2d20">
         <meta name="msapplication-config" content="/img/favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <meta name="color-scheme" content="light">
+        <meta name="color-scheme" content="light"> --}}
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://use.typekit.net/ins2wgm.css">
 
         <!-- Scripts & Styles -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-        @production
-            <!-- Fathom - beautiful, simple website analytics -->
-            <script src="https://cdn.usefathom.com/script.js" data-site="KRRQTWHM" defer></script>
-            <!-- / Fathom -->
-        @endproduction
 
         <script>
             window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
