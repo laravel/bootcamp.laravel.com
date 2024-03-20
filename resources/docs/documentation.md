@@ -1,6 +1,6 @@
 - ## [Introduction](/introduction)
 
-- ## Build Chirper with Blade
+- ## HTML/CSS
     - [Installation](/blade/installation)
     - [Creating Chirps](/blade/creating-chirps)
     - [Showing Chirps](/blade/showing-chirps)
@@ -8,7 +8,7 @@
     - [Deleting Chirps](/blade/deleting-chirps)
     - [Notifications & Events](/blade/notifications-and-events)
 
-- ## Build Chirper with Livewire
+- ## JavaScript et POO
     - [Installation](/livewire/installation)
     - [Creating Chirps](/livewire/creating-chirps)
     - [Showing Chirps](/livewire/showing-chirps)
@@ -16,7 +16,39 @@
     - [Deleting Chirps](/livewire/deleting-chirps)
     - [Notifications & Events](/livewire/notifications-and-events)
 
-- ## Build Chirper with Inertia
+- ## Système de contrôle de version (Git)
+    - [Installation](/inertia/installation)
+    - [Creating Chirps](/inertia/creating-chirps)
+    - [Showing Chirps](/inertia/showing-chirps)
+    - [Editing Chirps](/inertia/editing-chirps)
+    - [Deleting Chirps](/inertia/deleting-chirps)
+    - [Notifications & Events](/inertia/notifications-and-events)
+  
+- ## React
+    - [Installation](/inertia/installation)
+    - [Creating Chirps](/inertia/creating-chirps)
+    - [Showing Chirps](/inertia/showing-chirps)
+    - [Editing Chirps](/inertia/editing-chirps)
+    - [Deleting Chirps](/inertia/deleting-chirps)
+    - [Notifications & Events](/inertia/notifications-and-events)
+  
+- ## Node.js
+    - [Installation](/inertia/installation)
+    - [Creating Chirps](/inertia/creating-chirps)
+    - [Showing Chirps](/inertia/showing-chirps)
+    - [Editing Chirps](/inertia/editing-chirps)
+    - [Deleting Chirps](/inertia/deleting-chirps)
+    - [Notifications & Events](/inertia/notifications-and-events)
+  
+- ## Modélisation UML
+    - [Installation](/inertia/installation)
+    - [Creating Chirps](/inertia/creating-chirps)
+    - [Showing Chirps](/inertia/showing-chirps)
+    - [Editing Chirps](/inertia/editing-chirps)
+    - [Deleting Chirps](/inertia/deleting-chirps)
+    - [Notifications & Events](/inertia/notifications-and-events)
+  
+- ## Cahier des charges fonctionnels <br/> et gestion de projet (Agile)
     - [Installation](/inertia/installation)
     - [Creating Chirps](/inertia/creating-chirps)
     - [Showing Chirps](/inertia/showing-chirps)
@@ -24,5 +56,29 @@
     - [Deleting Chirps](/inertia/deleting-chirps)
     - [Notifications & Events](/inertia/notifications-and-events)
 
-- ## [Deploying](/deploying)
+- ## Intégration de l'IA avec OpenAI
+    - [Installation](/inertia/installation)
+    - [Creating Chirps](/inertia/creating-chirps)
+    - [Showing Chirps](/inertia/showing-chirps)
+    - [Editing Chirps](/inertia/editing-chirps)
+    - [Deleting Chirps](/inertia/deleting-chirps)
+    - [Notifications & Events](/inertia/notifications-and-events)
+
+- ## Création d’assistant AI <br/> avec la technologie V.D.O.M 
+    - [Installation](/inertia/installation)
+    - [Creating Chirps](/inertia/creating-chirps)
+    - [Showing Chirps](/inertia/showing-chirps)
+    - [Editing Chirps](/inertia/editing-chirps)
+    - [Deleting Chirps](/inertia/deleting-chirps)
+    - [Notifications & Events](/inertia/notifications-and-events)
+  
+- ## Projet final
+    - [Installation](/inertia/installation)
+    - [Creating Chirps](/inertia/creating-chirps)
+    - [Showing Chirps](/inertia/showing-chirps)
+    - [Editing Chirps](/inertia/editing-chirps)
+    - [Deleting Chirps](/inertia/deleting-chirps)
+    - [Notifications & Events](/inertia/notifications-and-events)
+
+- ## [Déployement](/deploying)
 - ## [Conclusion](/conclusion)

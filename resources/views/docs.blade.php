@@ -135,9 +135,9 @@
                                         <div class="relative -mr-22 xl:-mr-44 mb-12 sm:mb-20 xl:flex xl:justify-between xl:items-center">
                                             <div>
                                                 <h1>
-                                                    <small class="text-xl font-medium leading-10 text-gray-900 dark:text-white">Learn the</small><br>
-                                                    <span class="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">PHP Framework</span><br>
-                                                    <strong class="text-4xl sm:text-5xl font-bold text-orange-600">for Web Artisans</strong>
+                                                    <small class="text-xl font-medium leading-10 text-gray-900 dark:text-white">Apprendre le</small><br>
+                                                    <span class="mt-4 text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white">Développement</span><br>
+                                                    <strong class="text-4xl sm:text-5xl font-bold text-orange-600">Web et IA</strong>
                                                 </h1>
                                                 
                                             </div>

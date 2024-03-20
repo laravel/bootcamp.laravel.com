@@ -1,96 +1,18 @@
 # <b>01.</b> Introduction
 
-Welcome to the Laravel Bootcamp! In this guide we will walk through building a modern Laravel application from scratch. To explore the framework, we'll build a microblogging platform called *Chirper*.
-
-## Choose your own adventure:<br>Blade, Livewire, or JavaScript
-
-Laravel is incredibly flexible, allowing you to build your front-end with a wide variety of technologies to suit your needs. For this tutorial, we have prepared a few choices for you.
-
-### Blade
-
-[Blade](https://laravel.com/docs/blade) is the simple, yet powerful templating engine that is included with Laravel. Your HTML will be rendered server-side, making it a breeze to include dynamic content from your database. We'll also be using [Tailwind CSS](https://tailwindcss.com/) to make it look great!
-
-If you're not sure where to start, we think Blade is the most straight-forward. You can always come back and build Chirper again using Livewire or JavaScript.
-
-```blade filename=welcome.blade.php
-Greetings {{ $friend }}, let's build Chirper with Blade!
-```
-
-<a href="/blade/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
-    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-orange-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with Blade</span>
-</a>
-
-### Livewire
-
-[Livewire](https://livewire.laravel.com/) is a powerful way of building dynamic, reactive, front-end UIs using just PHP. Honestly, you won't believe it's not JavaScript. If you're a Laravel developer, you'll feel right at home.
-
-```php tab=Class filename=counter.blade.php
-<?php
-
-use Livewire\Volt\Component;
-
-new class extends Component
-{
-    public int $count = 0;
-
-    public function increment(): void
-    {
-        $this->count++;
-    }
-}; ?>
-
-<div>
-    <h1>{{ $count }}</h1>
-    <button wire:click="increment">+</button>
-</div>
-```
-
-```php tab=Functional filename=counter.blade.php
-<?php
-
-use function Livewire\Volt\{state};
-
-state(['count' => 0]);
-
-$increment = fn () => $this->count++;
-
-?>
-
-<div>
-    <h1>{{ $count }}</h1>
-    <button wire:click="increment">+</button>
-</div>
-```
-
-<a href="/livewire/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
-    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-orange-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with Livewire</span>
-</a>
+Bienvenue au camp d'entraînement! Dans ce guide, nous allons apprendre la programmation Web AI et créer des applications modernes à partir de zéro.
 
 
-### JavaScript & Inertia
+## Description
 
-If you'd like to use JavaScript, we will be providing code samples for both [Vue](https://vuejs.org/) and [React](https://reactjs.org/). We'll also be using [Inertia](https://inertiajs.com/) to connect it all up and [Tailwind CSS](https://tailwindcss.com/) to make it look great!
+Une application AI-WEB est une application web qui intègre l'intelligence artificielle (IA) dès sa conception afin d’offrir une expérience utilisateur personnalisée et assistée. Cette nouvelle évolution dans la conception d'applications web vise à utiliser l'IA pour comprendre les besoins et les préférences des utilisateurs, et à fournir une assistance et des recommandations en temps réel pour améliorer leur expérience sur le site web. AX (Assistance Experience) est un terme qui peut être utilisé pour décrire cette nouvelle expérience utilisateur offerte par les applications AI-Web 
 
-If you're not sure which to select, we're big fans of Vue since it is beginner-friendly and extremely powerful. After you've finished the Bootcamp, you can always try it again with the other stack.
+Dans le passé, les concepteurs d'applications web se sont concentrés sur l'interface utilisateur (UI) pour rendre les sites web esthétiques et faciles à utiliser. Ensuite, l'expérience utilisateur (UX) est devenue une priorité, avec une attention particulière portée à la convivialité et à la satisfaction de l'utilisateur. Aujourd'hui, l'IA offre la possibilité de personnaliser encore davantage l'expérience utilisateur en fournissant une assistance et des recommandations adaptées aux besoins et aux préférences de chaque utilisateur. 
 
-Go ahead and choose your stack:
+Les applications AI-WEB peuvent être utilisées dans de nombreux domaines, tels que le commerce électronique, la santé, les finances, l'éducation et les services publics. Elles peuvent aider les utilisateurs à trouver des produits, à prendre des décisions éclairées, à accéder à des informations pertinentes et à accomplir des tâches complexes de manière plus efficace. 
 
-```vue tab=Vue filename=Welcome.vue
-<template><!-- [tl! .hidden] -->
-<Welcome>
-    Hey {{ friend }}, let's build Chirper with Vue!
-</Welcome>
-</template><!-- [tl! .hidden] -->
-```
+En somme, les applications AI-WEB représentent la prochaine évolution dans la conception d'applications web, en mettant l'accent sur l'assistance et la personnalisation de l'expérience utilisateur grâce à l'IA. 
 
-```jsx tab=React filename=Welcome.jsx
-<Welcome>
-    Nice to see you {friend}, let's build Chirper with React!
-</Welcome>
-```
+Ce programme de formation est conçu pour fournir aux étudiants les compétences et les connaissances nécessaires pour développer des applications web complexes à l'aide de React et Node.js, et pour intégrer l'IA à l'aide du modèle de langage de OpenAI. Il couvre un large éventail de sujets, notamment la programmation JavaScript et orientée objet, HTML/CSS, le développement d'applications React et Node.js, la modélisation UML, l'écriture de cahiers des charges fonctionnels/techniques et la gestion de projet Agile. La formation est une formation par projet et une évaluation continue.  
 
-At any point you may view the code for either framework to see what life is like on the other side, just be sure not to mix the code in your project.
-
-<a href="/inertia/installation" class="group relative inline-flex border border-red-600 focus:outline-none mt-2 no-underline">
-    <span class="w-full inline-flex items-center justify-center self-stretch px-4 py-2 text-sm text-orange-600 text-center font-bold uppercase bg-white dark:bg-dark-700 ring-1 ring-red-600 ring-offset-1 dark:ring-offset-dark-600 transform transition-transform group-hover:-translate-y-1 group-hover:-translate-x-1 group-focus:-translate-y-1 group-focus:-translate-x-1">Build Chirper with JavaScript and Inertia</span>
-</a>
+En effet, certaines notions seront enseignées lors de la réalisation de projets concrets et feront l'objet d'un livrable. Des QCM seront utilisés pour évaluer l'acquisition des notions théoriques importantes. La formation se terminera par un projet final qui permettra aux étudiants de mettre en pratique leurs compétences et de démontrer leur maîtrise des technologies et des concepts abordés dans la formation. 
