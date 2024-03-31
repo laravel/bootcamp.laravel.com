@@ -1,10 +1,14 @@
-### Introduction
+[TOC]
+
+# <b>01.</b> Motivation et Mindset
+
+## Introduction
 
 Apprendre à coder est incroyablement gratifiant, mais peut aussi être difficile et frustrant. Comme toute compétence qui mérite d'être connue, son acquisition prend du temps et ne peut pas être apprise en un week-end ou même en un mois. Cela dit, nous pensons que n’importe qui peut apprendre à programmer à condition d’y consacrer du temps et des efforts.
 
 Donc, avant d'entrer dans le vif du sujet, nous allons passer en revue les points suivants pour vous aider à tirer le meilleur parti du programme: les éléments qui vous aideront à réussir dans votre objectif d'apprendre à coder et les pièges qui en découlent. vous devriez essayer d'éviter.
 
-### Motivation
+## Motivation
 
 Prenez un moment pour réfléchir aux raisons pour lesquelles vous avez décidé d'apprendre la programmation.
 
@@ -15,7 +19,7 @@ Prenez un moment pour réfléchir aux raisons pour lesquelles vous avez décidé
 
 Votre motivation pourrait être une combinaison de ces raisons ou autre chose. Quoi qu’il en soit, gardez bien votre motivation : c’est elle qui vous guidera jusqu’au bout de ce voyage, vous donnant un objectif définitif vers lequel tendre.
 
-### Mentalité de croissance
+## Mentalité de croissance
 
 Votre état d'esprit est très important lorsque vous vous enseignez *toute* de nouvelles compétences, pas seulement en programmation. Votre état d’esprit aura plus d’impact sur vos chances de réussite que n’importe quelle autre chose.
 
@@ -76,7 +80,7 @@ Pour les apprenants qui débutent en programmation, des outils comme ChatGPT ou 
 
 Nous vous déconseillons d'utiliser des outils d'IA pour votre apprentissage.
 
-### Gérer votre temps d'étude
+## Gérer votre temps d'étude
 
 Vous aurez plus de succès avec le programme en y consacrant un temps **constant** plutôt qu'en y travaillant une fois par semaine. Prendre l’habitude d’étudier chaque jour à une heure précise et avec un objectif précis vous garantira des progrès constants.
 
@@ -92,7 +96,7 @@ Pour faire court : ne vous inquiétez pas, allez simplement apprendre !
 
 Voici quelques-uns des pièges que les débutants rencontrent souvent lorsqu’ils apprennent à programmer. Faites de votre mieux pour les éviter.
 
-#### Procrastination
+### Procrastination
 
 La procrastination sera votre plus grand ennemi lorsque vous tenterez de progresser.
 

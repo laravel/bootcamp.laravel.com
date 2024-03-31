@@ -1,4 +1,8 @@
-### Pourquoi une communauté est géniale pour vous
+[TOC]
+
+# <b>01.</b> Pourquoi une communauté est géniale pour vous ?
+
+## Introduction 
 
 Apprendre le développement Web sera un voyage long et ardu, mais vous pouvez rendre le marathon beaucoup plus amusant en vous impliquant dans notre communauté Discord. Quel que soit le rythme auquel vous suivez notre programme, il y aura toujours des gens quelques longueurs d'avance sur vous qui seront prêts à vous aider. De plus, aider les autres qui sont à quelques pas de vous est un excellent moyen d’approfondir votre propre compréhension et de pérenniser votre apprentissage.
 

@@ -1,3 +1,7 @@
+[TOC]
+
+# Comment demander de l'iade ?
+
 # Introduction
 
 Tout au long de votre parcours de programmation, vous devrez inévitablement poser des questions dans une communauté de codage en ligne comme la nôtre ou lors de conversations avec vos collègues. Bien que poser des questions puisse sembler plutôt simple, dans un environnement de programmation, il est essentiel de poser des questions bien formulées avec autant de contexte que nécessaire afin que vous puissiez tirer le meilleur parti de votre demande d'aide. En substance, « aidez les autres à vous aider ! » Cette leçon vous fournira les outils nécessaires pour poser efficacement des questions dans des communautés telles que notre chat Discord/Slack, Stack Overflow et sur le lieu de travail !

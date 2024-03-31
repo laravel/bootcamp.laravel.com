@@ -1,4 +1,8 @@
-### Introduction
+[TOC]
+
+# <b>01.</b> Introduction au développement web
+
+## Introduction
 
 Que font les développeurs Web ? En bref, ils créent et maintiennent des sites Web.
 

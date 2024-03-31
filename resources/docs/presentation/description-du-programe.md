@@ -1,4 +1,8 @@
-### Introduction
+[TOC]
+
+# <b>01.</b> Description du programme
+
+## Introduction
 
 Notre objectif est de fournir les meilleures sources d'informations pour vous faire passer de zéro à un développeur full-stack.
 
@@ -12,20 +16,20 @@ Nous commencerons par nous familiariser avec Internet et votre propre ordinateur
 
 Cette section couvre intentionnellement un très large éventail de sujets. C'est idiot de se lancer directement dans la programmation côté serveur sans avoir un contexte sur ce que c'est et pourquoi c'est utile (et pourquoi vous devriez l'apprendre !).
 
-### Comment ça fonctionne
+## Comment ça fonctionne
 
 Ce programme fonctionne en rassemblant le meilleur contenu d'Internet pour apprendre un sujet particulier. Dans chaque leçon, nous présenterons le sujet et essaierons de fournir un contexte utile avant de vous diriger vers des ressources externes créées par d'autres.
 
 La plupart des leçons contiendront des questions auxquelles vous devriez être en mesure de répondre avant de continuer. Certaines leçons vous demanderont de réaliser des exercices. De plus, nous proposons plusieurs projets tout au long du programme pour vous aider à développer votre compréhension en construisant réellement des choses.
 
 
-### Que ce passe t-il après
+## Que ce passe t-il après ?
 
 Une fois que vous avez terminé ce cours, vous devriez vous sentir à l'aise avec les éléments constitutifs de la programmation Web, mais avoir envie d'approfondir. Même si nous passons pas mal de temps à approfondir chacun des sujets majeurs de ce cours, ce n'est en réalité qu'un avant-goût de ce qui va suivre (et de toutes les choses intéressantes que vous pouvez faire avec).
 
 La dernière leçon de ce cours vous donnera l'opportunité de choisir entre un parcours Full Stack JavaScript et Full Stack JS, tous deux conçus prendre les bases construites dans ce cours et les intégrer à une compréhension appliquée du matériau. Chaque parcours se concentrera sur la prise en compte de ces éléments de base et sur leur perfectionnement en un ensemble de compétences hautement fonctionnelles.
 
-Nous avons sélectionné certaines des meilleures ressources disponibles et élaboré un guide expliquant comment les parcourir. S'il n'y a pas de bonnes ressources, nous écrivons les nôtres. Cela dit, sachez que **tout** dans le programme est intentionnellement inclus et essentiel pour que vous deveniez un programmeur à succès.
+Nous avons sélectionné certaines des meilleures ressources disponibles et élaboré un guide expliquant comment les parcourir. S'il n'y a pas de bonnes ressources, nous écrivons les nôtres. Cela dit, sachez que <b>**tout**</b> dans le programme est intentionnellement inclus et essentiel pour que vous deveniez un programmeur à succès.
 
 Au fur et à mesure que vous avancez dans le programme, chaque partie est construite sur tout ce qui l'a précédée, donc sauter des choses créera des poches de non-compréhension dans vos connaissances qui commenceront à affecter votre capacité à résoudre des problèmes et à comprendre la tâche à accomplir.
 
@@ -33,14 +37,14 @@ Les ressources supplémentaires sont la seule chose qui est considérée comme f
 
 **NE SAUTEZ RIEN !**
 
-### Affectation
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
  
-1. Inscrivez vous sur discord.
+1. Inscrivez vous sur discord. / Rejoindre le chanel
 
 </div>
 
 ### Ressources additionnelles
 
-[aucune ressources]
+[aucune ressource]
