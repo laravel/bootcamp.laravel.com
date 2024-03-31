@@ -1,4 +1,6 @@
-- ## [Introduction](/introduction)
+- ## Introduction
+    - [Qu'est-ce qu'une applicaiton IA](/introduction)
+    - [Description du programme](/presentation/demander-de-l-aide)
 
 - ## HTML/CSS
     - [Installation](/blade/installation)
