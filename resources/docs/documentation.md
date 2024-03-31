@@ -25,12 +25,12 @@
     - [Projet receipt](/html-foundations/project-recipes)
 
 - ## JavaScript et POO
-    - [Installation](/blade/coming-soon)
-    - [Creating Chirps](/blade/coming-soon)
-    - [Showing Chirps](/blade/coming-soon)
-    - [Editing Chirps](/blade/coming-soon)
-    - [Deleting Chirps](/blade/coming-soon)
-    - [Notifications & Events](/blade/coming-soon)
+    - [Installation](/javascript/historique)
+    - [Creating Chirps](/javascript/coming-soon)
+    - [Showing Chirps](/javascript/coming-soon)
+    - [Editing Chirps](/javascript/coming-soon)
+    - [Deleting Chirps](/javascript/coming-soon)
+    - [Notifications & Events](/javascript/coming-soon)
   
 - ## React
     - [Installation](/blade/installation)
