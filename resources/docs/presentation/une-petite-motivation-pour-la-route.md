@@ -1,6 +1,6 @@
 [TOC]
 
-# <b>01.</b> Motivation et Mindset
+# <b>Motivation et Mindset</b> 
 
 ## Introduction
 
@@ -17,7 +17,8 @@ Prenez un moment pour réfléchir aux raisons pour lesquelles vous avez décidé
 - Êtes-vous déterminé à développer les compétences et les capacités nécessaires pour créer n'importe quelle application à laquelle vous pouvez penser ?
 - Voulez-vous créer votre propre entreprise en transformant une idée d'application en réalité ?
 
-Votre motivation pourrait être une combinaison de ces raisons ou autre chose. Quoi qu’il en soit, gardez bien votre motivation : c’est elle qui vous guidera jusqu’au bout de ce voyage, vous donnant un objectif définitif vers lequel tendre.
+> **note**
+> Votre motivation pourrait être une combinaison de ces raisons ou autre chose. Quoi qu’il en soit, gardez bien votre motivation : c’est elle qui vous guidera jusqu’au bout de ce voyage, vous donnant un objectif définitif vers lequel tendre.
 
 ## Mentalité de croissance
 
@@ -36,33 +37,35 @@ Pendant que vous suivez le programme, acceptez les difficultés que vous rencont
 
 Lorsque vous vous posez des questions sur vos capacités, réfléchissez aux succès que vous avez déjà obtenus en apprenant à programmer : les projets que vous avez réalisés et les concepts que vous ne compreniez pas autrefois mais que vous comprenez maintenant. C’est toute la preuve dont vous avez besoin pour prouver que vous pouvez le faire.
 
-### Le processus d'apprentissage
+## Le processus d'apprentissage
 
 Apprendre des concepts puis les mettre en pratique vous aidera à mieux comprendre comment les choses fonctionnent et s'emboîtent. Les projets sont la méthode ultime pour garantir que votre compréhension théorique correspond au fonctionnement réel des concepts et techniques de programmation.
 
 Lors de l’apprentissage, votre esprit basculera constamment entre le mode concentration et le mode diffus. Le **mode Focus** se produit lorsque vous vous concentrez consciemment sur l'apprentissage, la lecture, le visionnage de vidéos ou le travail sur un projet. Le **mode diffus** se produit inconsciemment, à des moments où vous n'apprenez pas activement, comme lorsque vous faites la vaisselle, faites de l'exercice ou dormez. Dans cet état, votre esprit s’occupe de relier ce que vous avez appris aux autres choses que vous connaissez. C’est là que se produisent les avancées.
 
+
 Il est important de savoir que votre esprit passe par ces deux états lorsque vous apprenez, car vous pouvez les utiliser pour rendre votre apprentissage plus efficace. Lorsque vous êtes coincé sur un concept ou un projet, prendre une pause pour vous rafraîchir et laisser votre subconscient travailler à établir des liens donne le plus souvent une solution à votre problème. L’astuce consiste à faire d’abord des efforts pour résoudre le problème, puis à faire une pause.
 
-Bref, comprenez-le, pratiquez-le et enfin enseignez-le.
+> **note**
+> **Bref, comprenez-le, pratiquez-le et enfin enseignez-le.**
 
 Enseigner ce que vous savez aux autres est un excellent moyen de consolider ce que vous avez appris et peut souvent révéler des lacunes dans vos connaissances que vous n'auriez pas identifiées autrement.
 
 Vous pouvez mettre en pratique cette méthode d’apprentissage en aidant les autres membres de notre communauté.
 
-### Que faire lorsque vous êtes bloqué
+## Que faire lorsque vous êtes bloqué ?
 
 Vous serez inévitablement bloqué à un moment donné du programme, peut-être à cause d'un concept que vous avez du mal à comprendre ou peut-être à cause de quelque chose qui ne fonctionne pas correctement dans un projet. Quoi qu’il en soit, utilisez les outils suivants pour vous décoller :
 
 - Recherchez-le sur Google : vous pouvez être certain que quelqu'un d'autre a rencontré le même problème que vous à un moment donné. Une recherche rapide sur Google peut souvent conduire à une solution.
 - Faites une pause : laissez votre état d'apprentissage diffus travailler sur le problème.
-- Demandez de l'aide sur le [serveur TOP Discord](https://discord.gg) ; venez préparé avec vos recherches. Les gens seront plus disposés à vous aider lorsqu’ils verront que vous avez déjà déployé des efforts pour essayer de trouver la solution par vous-même.
+- Demandez de l'aide sur le [serveur TOP Discord](https://discord.gg/qAXhuudu) ; venez préparé avec vos recherches. Les gens seront plus disposés à vous aider lorsqu’ils verront que vous avez déjà déployé des efforts pour essayer de trouver la solution par vous-même.
 
 De plus, n'hésitez pas à suivre le schéma ci-dessous qui devrait vous aider à résoudre les problèmes que vous pourriez rencontrer :
 
 ![schéma pour aider les apprenants à surmonter les problèmes lorsqu'ils sont bloqués](https://cdn.statically.io/gh/TheOdinProject/curriculum/978ba0e91a6a47452de819246f4c495e6b092f54/foundations/introduction/motivation_and_mindset/imgs/00.png)
 
-### Une note sur la génération de code IA
+## Une note sur la génération de code IA
 
 À mesure que la technologie progresse, nous avons vu émerger des outils incroyables qui peuvent aider à accélérer la capacité de codage. Un domaine particulier qui a explosé en popularité ces derniers temps est l'utilisation de grands modèles linguistiques (LLM) et d'IA génératives pour la complétion de code (comme GitHub Copilot) et la génération de code (comme ChatGPT).
 
@@ -155,11 +158,11 @@ Nous ne recommandons pas de prendre beaucoup de notes tout au long de votre parc
 
 **Solution :** Au lieu de prendre des notes à utiliser comme références directes, prenez des notes qui peuvent servir d'incitation à des recherches plus approfondies. Il est important de se familiariser avec la lecture de la documentation, qui agit essentiellement comme des notes préexistantes prises par quelqu'un d'autre.
 
-### Conclusion
+## Conclusion
 
 L’apprentissage de toute nouvelle compétence est un voyage semé d’embûches et d’obstacles à surmonter. Nous espérons que les principes énoncés ici vous mettront dans une bien meilleure position pour réussir et tirer le meilleur parti du programme.
 
-### Assignment
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
 
@@ -172,7 +175,7 @@ L’apprentissage de toute nouvelle compétence est un voyage semé d’embûche
 
 </div>
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

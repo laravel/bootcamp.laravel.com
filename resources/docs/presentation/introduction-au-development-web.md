@@ -1,10 +1,10 @@
 [TOC]
 
-# <b>01.</b> Introduction au développement web
+# <b>Introduction au développement web</b> 
 
 ## Introduction
 
-Que font les développeurs Web ? En bref, ils créent et maintiennent des sites Web.
+**Que font les développeurs Web ?** En bref, ils créent et maintiennent des sites Web.
 
 Les développeurs Web travaillent souvent pour des clients qui tentent de diffuser leur produit ou service sur le Web.
 Le travail est généralement très axé sur le projet et implique une collaboration avec une équipe qui aide à coordonner les besoins du client dans le produit final. Le client peut être une entreprise technologique, une organisation ou un gouvernement. Le travail peut impliquer le développement Web front-end, back-end ou full-stack.
@@ -12,7 +12,7 @@ Le travail est généralement très axé sur le projet et implique une collabora
 Le développement Web pourrait être un bon métier pour vous si vous aimez résoudre des problèmes logiques, créer des choses utiles et expérimenter de nouvelles technologies.
 Les développeurs Web sont très demandés, ont généralement un bon équilibre entre vie professionnelle et vie privée et perçoivent des salaires confortables. Recherchez votre emplacement spécifique sur Google pour avoir une meilleure idée de vos opportunités d'emploi en développement Web local.
 
-### Types de développeurs Web
+## Types de développeurs Web
 
 Plus tôt, nous avons mentionné que le travail de développement Web pouvait concerner le front-end, le back-end ou la pile complète. Que signifient exactement ces termes ?
 
@@ -26,7 +26,7 @@ Les **développeurs full-stack** sont à l'aise avec le front-end et le back-end
 
 Les **développeurs IA** sont tournés vers la creation d'une experience assitée par IA aux utilisateurs. Ils developpent des assistant IA qu'ils intègrent à leur logiciel. Ce domaine est rendu aujourd'hui possible grâce au développement des LLM.
 
-### Types de carrières
+## Types de carrières
 
 Maintenant que vous connaissez les différents types de développeurs Web, abordons ce que nous avons mentionné plus tôt concernant les différents types de clients et d'employeurs avec lesquels vous pouvez travailler.
 
@@ -40,7 +40,7 @@ En tant que consultant pour un cabinet de conseil Web, vous renonceriez à une p
 
 Enfin, les grandes entreprises plus anciennes ont encore besoin de développeurs web. Ces entreprises offrent un bon équilibre entre vie professionnelle et vie privée, une rémunération et des avantages sociaux, mais évoluent souvent plus lentement qu'une entreprise fortement axée sur la technologie.
 
-### Outils du métier
+## Outils du métier
 
 Voici quelques-uns des outils de base que vous utiliserez régulièrement. Vous ne savez peut-être pas de quoi il s’agit actuellement, mais vous le saurez certainement à l’avenir.
 
@@ -52,7 +52,7 @@ Voici quelques-uns des outils de base que vous utiliserez régulièrement. Vous 
 - **[Git](https://git-scm.com/)**
 - **[GitHub](https://github.com/)**
 
-### Motivation
+## Motivation
 
 Apprendre à coder est incroyablement gratifiant, mais peut aussi être difficile et frustrant.
 Les atouts les plus puissants que vous puissiez avoir en tant qu’étudiant sont le désir de construire, un esprit de résolution de problèmes et la persévérance face aux revers.
@@ -60,7 +60,7 @@ Les atouts les plus puissants que vous puissiez avoir en tant qu’étudiant son
 Le secteur du développement Web a une longue histoire de développeurs à succès issus d'horizons variés, de sorte que les gens ont tendance à se soucier davantage de ce que vous avez réellement **construit** que de la façon dont vous y êtes arrivé.
 
 
-### Conclusion
+## Conclusion
 
 J'espère que vous avez acquis une meilleure idée de ce que fait réellement un développeur Web et de ce à quoi pourrait ressembler votre vie si vous décidiez d'en faire carrière. Cela n’a été qu’un avant-goût du monde du développement Web.
 
@@ -74,25 +74,23 @@ Mais ça va aussi être amusant.
 
 Et cela pourrait même changer votre vie.
 
-_Qu'est-ce que tu attends?_
+**_Qu'est-ce que tu attends?_**
 
-### Devoir
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
 
-1. Consultez l'article ["Pourquoi apprendre à coder est **tellement difficile**"](https://web.archive.org/web/20230630111131/https://www.thinkful.com/blog/why -apprendre-à-coder-est-tellement-difficile/) afin que vous ayez une bonne idée de ce à quoi ressemble le voyage à venir.
+1. Consultez l'article ["Pourquoi apprendre à coder est **tellement difficile**"](https://web.archive.org/web/20230630111131/https://www.thinkful.com/blog/why-apprendre-à-coder-est-tellement-difficile/) afin que vous ayez une bonne idée de ce à quoi ressemble le voyage à venir.
 1. Lisez l'[Entrée Wikipédia sur la conception Web](https://en.wikipedia.org/wiki/Web_design) qui décrit l'étendue de la profession de développement Web.
 1. Lisez l'article de blog d'Udacity sur les [développeurs front-end, back-end et full stack.](https://www.udacity.com/blog/2020/12/front-end-vs-back-end-vs- full-stack-web-developers.html)
 
 </div>
 
-### Ressources additionnelles
-
+## Ressources additionnelles
+> **warning**
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 
-- [Quora : Comment puis-je devenir un très bon développeur Web ?](http://www.quora.com/Computer-Programming/How-can-I-become-a-really-good-Web-Developer-starting- à partir de maintenant à 20 ans avant 25 ans)
 - [Quora : Qu'est-ce qui fait un bon développeur Web ?](http://www.quora.com/What-makes-a-great-web-developer)
 - [Jared the Nerd : Qu'est-ce qui fait un bon développeur ?](http://jaredthenerd.com/2013/05/What-Makes-A-Good-Developer/)
-- [FreeCodeCamp : des choses que j'aurais aimé que quelqu'un me dise quand j'apprenais à coder](https://www.freecodecamp.org/news/things-i-wish-someone-had-told-me-when-i- j'apprenais-comment-coder-565fc9dcb329/)
-- [TechCrunch : Ne croyez pas quiconque vous dit qu'apprendre à coder est facile] (http://techcrunch.com/2014/05/24/dont-believe-anyone-who-tells-you-learning-to-code -est facile/)
+- [TechCrunch : Ne croyez pas quiconque vous dit qu'apprendre à coder est facile] (https://techcrunch.com/2014/05/24/dont-believe-anyone-who-tells-you-learning-to-code-is-easy/)
 - [Quizz de code : pratique de programmation délibérée](https://codequizzes.wordpress.com/2013/04/28/deliberate-programming-practice/)

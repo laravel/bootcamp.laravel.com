@@ -1,14 +1,16 @@
 <!-- markdownlint-disable MD024 MD043 -->
 
-### Introduction
+# <b>Editeur de text</b>
+
+## Introduction
 
 Un éditeur de texte est de loin l’outil de développement le plus utilisé, quel que soit le type de développeur que vous êtes. Un bon éditeur de texte peut vous aider à écrire un meilleur code grâce à la vérification du code en temps réel, à la coloration syntaxique et au formatage automatique.
 
-### Pourquoi ne puis-je pas utiliser Microsoft Word ?
+## Pourquoi ne puis-je pas utiliser Microsoft Word ?
 
 Les éditeurs de texte enrichi, tels que Microsoft Word et Libre-Office Writer, sont parfaits pour rédiger un article, mais les fonctionnalités qui les rendent efficaces pour créer des documents bien formatés les rendent inadaptés à l'écriture de code. Un document créé avec ces éditeurs de texte enrichi contient bien plus que du texte intégré dans le fichier. Ces fichiers contiennent également des informations sur la manière d'afficher le texte à l'écran et des données sur la manière d'afficher les graphiques intégrés dans le document. En revanche, les éditeurs de texte brut, tels que VSCode et Sublime, n'enregistrent aucune information supplémentaire. Enregistrer uniquement le texte permet à d'autres programmes, comme l'interpréteur de Ruby, de lire et d'exécuter le fichier sous forme de code.
 
-### Éditeurs de codes
+## Éditeurs de codes
 
 Vous pouvez considérer les éditeurs de code comme des outils de développement Web spécialisés. Ils sont hautement personnalisables et offrent de nombreuses fonctionnalités qui vous faciliteront la vie. Il n'y a rien de pire que de passer 2 heures à essayer de comprendre pourquoi votre programme ne fonctionne pas et de réaliser que vous avez raté une parenthèse fermante. Les plugins, la coloration syntaxique, la fermeture automatique des crochets et des accolades et le peluchage ne sont que quelques-uns des avantages de l'utilisation d'un éditeur de code. Il existe de nombreux éditeurs de texte parmi lesquels choisir, mais nous vous suggérons de commencer par Visual Studio Code.
 
@@ -25,7 +27,7 @@ Choisissez votre système d'exploitation :
 <détails markdown="block">
 <summary class="dropDown-header">Linux</summary>
 
-#### Étape 1 : Téléchargez VSCode
+### Étape 1 : Téléchargez VSCode
 
 - Ouvrez votre **Terminal**.
 - Exécutez la commande suivante pour télécharger le dernier package **VSCode** `.deb` :
@@ -34,7 +36,7 @@ Choisissez votre système d'exploitation :
 wget -O code-latest.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
 ```
 
-#### Étape 2 : Installer VSCode
+### Étape 2 : Installer VSCode
 
 - Saisissez la commande suivante dans votre terminal pour installer le package **VSCode** `.deb` :
 
@@ -78,54 +80,48 @@ Vous pouvez démarrer VSCode de deux manières :
 code
 ```
 
-</détails>
+> MacOS
 
-<détails markdown="block">
-<summary class="dropDown-header">MacOS</summary>
-
-#### Étape 1 : Téléchargez VSCode
+## Étape 1 : Téléchargez VSCode
 
 - [Téléchargez le dernier fichier .zip du programme d'installation de VSCode.](https://code.visualstudio.com/sha/download?build=stable&os=darwin-universal)
 
-#### Étape 2 : Installer VSCode
+## Étape 2 : Installer VSCode
 
 - Ouvrez le dossier **Téléchargements**.
 - Double-cliquez sur le fichier **VSCode-darwin-universal.zip**.
 - Faites glisser l'icône **Visual Studio Code.app** vers l'icône du dossier **Applications**.
 
-#### Étape 3 : Supprimez le fichier d'installation
+## Étape 3 : Supprimez le fichier d'installation
 
 - Ouvrez le **Finder**.
 - Accédez au dossier **Téléchargements**.
 - Faites glisser **VSCode-darwin-universal.zip** vers la corbeille.
 
-#### Étape 4 : Utiliser VSCode
+## Étape 4 : Utiliser VSCode
 
 - Accédez à votre dossier **Applications**.
 - Double-cliquez sur **Visual Studio Code**.
 
-</détails>
+> WSL2 
 
-<détails markdown="block">
-<summary class="dropDown-header">WSL2</summary>
-
-#### Étape 1 : Installer VSCode
+## Étape 1 : Installer VSCode
 
 - Suivez les instructions de [Visual Studio Code sous Windows](https://code.visualstudio.com/docs/setup/windows) pour installer VSCode.
 
-#### Étape 2 : Supprimez le fichier d'installation
+## Étape 2 : Supprimez le fichier d'installation
 
 - Ouvrez **Explorateur de fichiers**.
 - Accédez au dossier **Téléchargements**.
 - Faites glisser **VSCodeUserSetup-{version}.exe** vers la corbeille.
 
-#### Étape 3 : Installer l'extension WSL
+## Étape 3 : Installer l'extension WSL
 
 - Ouvrez Visual Studio Code.
 - Accédez à l'onglet Extensions.
 - Recherchez et installez l'[extension WSL](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-wsl).
 
-#### Étape 4 : Assurez-vous que WSL2 peut ouvrir correctement VSCode
+## Étape 4 : Assurez-vous que WSL2 peut ouvrir correctement VSCode
 
 - Ouvrez un nouveau terminal WSL2.
 - Exécutez la commande suivante pour ouvrir une nouvelle fenêtre VSCode.
@@ -136,9 +132,8 @@ code
 
 - Après quelques instants, une nouvelle fenêtre VSCode devrait s'ouvrir et VSCode devrait fournir une notification indiquant son ouverture dans WSL2.
 
-</détails>
 
-### Affectation
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
 
@@ -146,7 +141,7 @@ code
 
 </div>
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

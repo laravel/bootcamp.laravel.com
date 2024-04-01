@@ -1,8 +1,12 @@
-### Introduction
+[TOC]
+
+# <b> Comment fonctionne l'ordinateur ?</b>
+
+## Introduction
 
 Inutile de dire qu’en apprenant à coder, vous passerez la plupart de votre temps sur un ordinateur. Il est donc crucial de comprendre comment travailler avec votre ordinateur. Dans cette leçon, nous présenterons une ressource qui vous permettra de vous familiariser rapidement avec quelques bases informatiques.
 
-### Aperçu de la leçon
+## Aperçu de la leçon
 
 Cette section contient un aperçu général des sujets que vous apprendrez dans cette leçon.
 
@@ -10,7 +14,7 @@ Cette section contient un aperçu général des sujets que vous apprendrez dans 
 - Comment prendre des captures d'écran.
 - L'importance des mots de passe forts.
 
-### Affectation
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
 
@@ -26,7 +30,7 @@ Les ressources de la Goodwill Community Foundation (GCF) sont excellentes pour v
 </div>
 
 
-### Vérification des connaissances
+## Vérification des connaissances
 
 Cette section contient des questions vous permettant de vérifier par vous-même votre compréhension de cette leçon. Si vous rencontrez des difficultés pour répondre à une question, cliquez dessus et consultez le matériel auquel elle renvoie.
 
@@ -35,7 +39,10 @@ Cette section contient des questions vous permettant de vérifier par vous-même
 - [Quels sont quelques cas d'utilisation d'une capture d'écran ?](https://edu.gcfglobal.org/en/techsavvy/taking-screenshots/1/)
 - [Donnez un exemple de mot de passe faible et fort.](https://edu.gcfglobal.org/en/techsavvy/password-tips/1/)
 
-### Ressources additionnelles
+> **note**
+> Discuter des questions dans le chanel [discord](https://discord.gg/qAXhuudu)
+
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

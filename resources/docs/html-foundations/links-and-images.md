@@ -1,4 +1,8 @@
-### Introduction
+[TOC]
+
+# <b>Les éléments et les tags</b>
+
+## Introduction
 
 Les liens sont l'une des fonctionnalités clés du HTML. Ils nous permettent de créer des liens vers d'autres pages HTML du Web. En fait, c’est pour cela qu’on l’appelle le Web.
 

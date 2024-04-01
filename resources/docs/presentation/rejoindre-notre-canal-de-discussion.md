@@ -1,6 +1,6 @@
 [TOC]
 
-# <b>01.</b> Pourquoi une communauté est géniale pour vous ?
+# <b> Pourquoi une communauté est géniale pour vous ?</b>
 
 ## Introduction 
 
@@ -11,7 +11,7 @@ Lorsque vous parcourez le désert du désespoir, où votre code ne fonctionne pl
 Vous vous souvenez de ce projet pour lequel vous avez eu tant de mal à comprendre et que vous êtes si fier d'avoir terminé ? Grâce à notre communauté, vous pourrez partager votre travail et vos progrès avec ceux qui apprécient pleinement tout le travail acharné qui y a été consacré.
 
 
-### Avant de demander de l'aide
+## Avant de demander de l'aide
 
 Comme la plupart des projets sont conçus pour vous pousser à vos limites, n'oubliez pas qu'il y a toujours une communauté vers qui se tourner ! Vous n'avez pas besoin de savoir comment résoudre chaque problème d'emblée, MAIS vous devez avoir une idée générale de l'endroit où vous allez. Cela devient très important lorsque vous posez vos questions car parfois le problème vient de votre **approche** et non de votre code.
 
@@ -21,7 +21,7 @@ Vous devez également utiliser Google pour trouver des informations pertinentes 
 
 Si ces méthodes ne vous apportent pas de solution, il est temps de contacter la communauté et de demander de l'aide.
 
-### Demander de l'aide
+## Demander de l'aide
 
 Vous avez donc passé du temps à lutter pour résoudre le problème par vous-même, et il est maintenant temps de lancer le Discord et de demander de l'aide.
 
@@ -69,7 +69,7 @@ Vos multiples lignes de code coloré
 
 \`\`\`
 
-### Fonctionnalités de discussion
+## Fonctionnalités de discussion
 
 - Amusez-vous avec giphys : tapez `/gif hi` pour dire bonjour à tout le monde.
 - Tapez `/help` pour plus d'informations sur les commandes de chat.
@@ -77,49 +77,49 @@ Vos multiples lignes de code coloré
 - N'oubliez pas de visiter toutes les chambres disponibles !
 
 
-### Comment aider les autres à résoudre des problèmes de codage
+## Comment aider les autres à résoudre des problèmes de codage
 
 Non seulement il est important de savoir poser une question efficace, mais il est également important de savoir comment aider les autres de manière efficace. Veuillez prendre un moment pour consulter ces directives afin que vous ayez de bonnes attentes quant à l'aide que vous recevrez dans notre communauté Discord. De plus, revenez consulter ces directives lorsque vous êtes prêt à commencer à aider les autres.
 
-#### 1. Au lieu de répondre à la question, guidez-les vers la réponse.
+### 1. Au lieu de répondre à la question, guidez-les vers la réponse.
 
 À moins que le problème ne soit une simple erreur de frappe ou de syntaxe, il est plus avantageux de les guider pour trouver leur propre réponse. Cette approche enseignera de bonnes compétences en débogage et augmentera leur capacité à résoudre de futurs problèmes.
 
 Commencez par poser des questions approfondies, telles que « Qu'avez-vous déjà essayé ? », « Qu'attendez-vous de cette fonction ? » ou « Que pensez-vous que cette erreur signifie ? ».
 
-#### 2. Aidez uniquement lorsque vous êtes certain de la réponse.
+### 2. Aidez uniquement lorsque vous êtes certain de la réponse.
 
 Si vous n’êtes pas sûr à 100 % de la réponse, vous risquez de faire plus de mal que de bien, alors laissez quelqu’un d’autre y répondre.
 
 Ne vous inquiétez pas du temps que quelqu'un devra attendre pour obtenir une réponse. La bonne réponse vaut la peine d'attendre.
 
-#### 3. Aidez uniquement lorsque personne d'autre ne vous aide actuellement.
+### 3. Aidez uniquement lorsque personne d'autre ne vous aide actuellement.
 
 Si quelqu’un reçoit déjà de l’aide, ne sautez pas au milieu de la conversation. Nous savons que vous avez de bonnes intentions, mais il est accablant pour la personne qui reçoit de l'aide de suivre plusieurs conversations.
 
-#### 4. N'aidez que lorsque vous disposez de suffisamment de temps.
+### 4. N'aidez que lorsque vous disposez de suffisamment de temps.
 
 Si vous n’avez pas beaucoup de temps pour aider, laissez quelqu’un d’autre répondre à la question.
 
-#### 5. Ajustez vos attentes à leur niveau.
+### 5. Ajustez vos attentes à leur niveau.
 
 Si la question ne révèle pas où ils se situent dans le programme, posez-leur la question afin d'ajuster vos attentes à leur niveau de connaissances.
 
-#### 6. Demandez des éclaircissements.
+### 6. Demandez des éclaircissements.
 
 Si la question semble confuse ou ambiguë, demandez plus de clarté ou associez-la poliment à notre commande de robot `/question`, qui renvoie vers [Comment être doué pour poser des questions de codage](https://medium.com/@ gordon_zhu/how-to-be-great-at-asking-questions-e37be04d0603).
 
-#### 7. Demandez le code en direct.
+### 7. Demandez le code en direct.
 
 Si la question doit avoir du code en direct pour bien comprendre ou déboguer, demandez-leur d'utiliser [replit](https://replit.com) pour le fournir. Si le problème est difficile à isoler, ils doivent le recréer avec du code isolé.
 
-#### 8. Ne répondez pas aux questions googleables.
+### 8. Ne répondez pas aux questions googleables.
 
 Apprendre à rechercher ces questions est une compétence très importante pour les développeurs, nous devons donc leur donner les moyens de trouver leur propre réponse. Lorsque nous répondons à ces questions, cela entrave leur croissance personnelle et les rend codépendants de notre communauté.
 
 Au lieu de répondre à ces questions, demandez-leur poliment de rechercher leur question sur Google ou d'utiliser notre commande de robot « /google » avec les termes de recherche.
 
-#### 9. Ne répondez pas aux questions abordées dans notre programme.
+### 9. Ne répondez pas aux questions abordées dans notre programme.
 
 Si vous savez que la réponse est fournie dans notre programme, demandez-leur où ils en sont dans le programme.
 
@@ -127,51 +127,51 @@ S’ils n’ont pas atteint cette partie du programme, faites-leur savoir qu’i
 
 S'ils ont déjà parcouru cette partie du programme, demandez-leur poliment de revoir cette leçon.
 
-#### 10. Answer the question before pointing out other problems.
+### 10. Answer the question before pointing out other problems.
 
 When helping someone it can be easy to spot other problems in their code. Resolve the original question, before pointing out any other problems that need attention.
 
-#### 11. Encourage students to use a debugger.
+### 11. Encourage students to use a debugger.
 
 It is common for students to not understand the importance of using a debugger to look at the values of their variables at different points in their program. When students are getting unexpected values, politely encourage them to use a debugger with our bot command `/debug`.
 
-#### 10. Répondez à la question avant de signaler d'autres problèmes.
+### 10. Répondez à la question avant de signaler d'autres problèmes.
 
 Lorsqu'on aide quelqu'un, il peut être facile de repérer d'autres problèmes dans son code. Résolvez la question initiale, avant de signaler tout autre problème nécessitant une attention particulière.
 
-#### 11. Encouragez les élèves à utiliser un débogueur.
+### 11. Encouragez les élèves à utiliser un débogueur.
 
 Il est courant que les étudiants ne comprennent pas l'importance d'utiliser un débogueur pour examiner les valeurs de leurs variables à différents moments de leur programme. Lorsque les étudiants obtiennent des valeurs inattendues, encouragez-les poliment à utiliser un débogueur avec notre commande de robot `/debug`.
 
-#### 12. Surveillez les élèves qui ont besoin de prendre du recul.
+### 12. Surveillez les élèves qui ont besoin de prendre du recul.
 
 Il est courant que les étudiants se concentrent trop sur un problème et ne soient pas capables de tout voir clairement. Lorsque cette situation se présente, encouragez-les poliment à prendre du recul par rapport au problème et à faire une pause. Souvent, s’éloigner d’un problème les aidera à avoir une vision d’ensemble et à savoir comment le résoudre.
 
-#### 13. Surveillez les élèves qui sont dépassés.
+### 13. Surveillez les élèves qui sont dépassés.
 
 Il est courant que les élèves sautent une leçon/un projet ou pensent qu'ils en savent plus qu'ils n'en savent réellement. Lorsque cette situation se présente, encouragez-les poliment à revenir en arrière et à relire une section du programme pour mieux comprendre.
 
-#### 14. Admettez lorsque le problème dépasse vos connaissances actuelles.
+### 14. Admettez lorsque le problème dépasse vos connaissances actuelles.
 
 Il est courant que le problème réel dépasse la question initiale. Si cela dépasse vos connaissances actuelles, il est important d’admettre que vous n’êtes pas sûr de la bonne réponse et de laisser quelqu’un d’autre vous aider.
 
 Après avoir approfondi le problème, ils pourront peut-être continuer le dépannage par eux-mêmes ou attendre l’aide d’une personne plus expérimentée.
 
-#### 15. Soyez patient.
+### 15. Soyez patient.
 
 Aider les autres à résoudre un problème n’est pas toujours facile. N'oubliez pas d'être patient pendant qu'ils luttent pour résoudre le problème.
 
-#### 16. Éloignez-vous de la conversation si vous êtes frustré.
+### 16. Éloignez-vous de la conversation si vous êtes frustré.
 
 Il y a parfois des malentendus et les interactions se passent mal. Vous êtes bénévole et n’êtes pas obligé d’aider lorsque les choses deviennent incontrôlables. Éloignez-vous poliment de la conversation et laissez quelqu'un d'autre intervenir.
 
-### Assignment
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
 
 1. Tout d'abord, créez un [compte GitHub] gratuit (https://github.com/join). Comme vous le découvrirez, GitHub fait partie intégrante du workflow de développement.
 
-2. Maintenant, connectez-vous à notre [serveur Discord](https://discord.gg/). Entrez et dites bonjour ! Nous avons créé une salle de présentation qui est un endroit idéal pour vous présenter et nous sommes toujours heureux d'accueillir de nouveaux membres de la communauté. Nous disposons de salons de discussion pour chaque sujet de développement abordé dans notre programme. Connectez-vous au chat et commencez à explorer !
+2. Maintenant, connectez-vous à notre [serveur Discord](https://discord.gg/qAXhuudu). Entrez et dites bonjour ! Nous avons créé une salle de présentation qui est un endroit idéal pour vous présenter et nous sommes toujours heureux d'accueillir de nouveaux membres de la communauté. Nous disposons de salons de discussion pour chaque sujet de développement abordé dans notre programme. Connectez-vous au chat et commencez à explorer !
 
     - **Liez votre GitHub à votre profil Discord :** Accédez à « Paramètres Discord > Connexions », puis cliquez sur l'icône GitHub. Dans le nouvel onglet qui s'ouvre, cliquez sur "Autoriser l'accès", puis de retour dans Discord, assurez-vous que "Afficher sur le profil" est activé. Cela permettra aux autres de voir sur quoi vous travaillez et vice versa !
 
@@ -187,8 +187,8 @@ Il y a parfois des malentendus et les interactions se passent mal. Vous êtes b�
 
 </div>
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 
-- Pour plus d'informations sur le formatage, consultez [Discord Markdown 101](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline -).
+- Pour plus d'informations sur le formatage, consultez [Discord Markdown 101](https://support.discord.com/hc/en-us/articles/210298617-Markdown-Text-101-Chat-Formatting-Bold-Italic-Underline).
