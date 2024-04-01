@@ -1,12 +1,16 @@
-### Introduction
+[TOC]
 
-Vous avez peur de la ligne de commande ? Tu n'es pas seul. Nous avons cette image de développeurs regardant attentivement un écran noir avec du texte blanc ou vert clignotant alors qu'ils saisissent sauvagement des commandes incompréhensibles pour pirater l'ordinateur central de l'entreprise (sans doute en buvant du soda et en essuyant la poussière de Cheetos orange fluo de leur clavier).
+# <b>Les commandes linux</b>
 
-Cet écran ou cette fenêtre vide avec une invite et un curseur clignotant est l'<span id="command-line">interface de ligne de commande (CLI)</span>, où vous pouvez saisir les commandes que votre ordinateur exécutera pour vous. Bien que vous n'ayez pas besoin de reconstituer la scène ci-dessus, travailler avec la ligne de commande est une compétence essentielle que vous devez acquérir en tant que développeur. La ligne de commande est comme notre base d’opérations, à partir de laquelle nous pouvons lancer d’autres programmes et interagir avec eux. Il a sa propre syntaxe à apprendre, mais comme vous saisirez les mêmes commandes des dizaines de fois, vous récupérerez rapidement les commandes dont vous avez le plus besoin.
+## Introduction
+
+Tu as peur de la ligne de commande ? Tu n'es pas seul. Nous avons cette image de développeurs regardant attentivement un écran noir avec du texte blanc ou vert clignotant alors qu'ils saisissent sauvagement des commandes incompréhensibles pour pirater l'ordinateur central de l'entreprise (sans doute en buvant du soda et en essuyant la poussière de Cheetos orange fluo de leur clavier).
+
+Cet écran ou cette fenêtre vide avec une invite et un curseur clignotant est l'`interface de ligne de commande (CLI)`, où vous pouvez saisir les commandes que votre ordinateur exécutera pour vous. Bien que vous n'ayez pas besoin de reconstituer la scène ci-dessus, travailler avec la ligne de commande est une compétence essentielle que vous devez acquérir en tant que développeur. La ligne de commande est comme notre base d’opérations, à partir de laquelle nous pouvons lancer d’autres programmes et interagir avec eux. Il a sa propre syntaxe à apprendre, mais comme vous saisirez les mêmes commandes des dizaines de fois, vous récupérerez rapidement les commandes dont vous avez le plus besoin.
 
 Dans cette leçon d'introduction à la ligne de commande, vous apprendrez à naviguer sur votre ordinateur et à manipuler des fichiers et des répertoires (également appelés dossiers) directement depuis le confort de la ligne de commande. Vous verrez bientôt que ce n’est pas aussi difficile qu’on pourrait le penser. Les commandes que vous apprendrez dans cette leçon sont très simples. Alors ne vous laissez pas intimider par la perspective d’utiliser la ligne de commande pour la première fois.
 
-### Aperçu de la leçon
+## Aperçu de la leçon
 
 Cette section contient un aperçu général des sujets que vous apprendrez dans cette leçon.
 
@@ -19,7 +23,7 @@ Cette section contient un aperçu général des sujets que vous apprendrez dans 
 
 ### Testez votre terminal
 
-<span id="open-command-line">Ouvrez un terminal</span> sur votre ordinateur.
+`Ouvrez un terminal` sur votre ordinateur.
 
 - **Linux** : ouvrez le menu des programmes et recherchez "Terminal". Vous pouvez également ouvrir le terminal en appuyant sur <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> sur votre clavier.
 
@@ -46,25 +50,20 @@ Vous utiliserez intensivement la ligne de commande tout au long de ce programme,
    Vous pouvez toujours saisir votre mot de passe comme d'habitude et appuyer sur Entrée pour le soumettre.
 </div>
 
-### Affectation
+## Devoir
 
-<div class="lesson-content__panel" markdown="1">
-
-<div class="lesson-note" markdown="1">
 **Remarque pour les utilisateurs WSL2** : Vous devrez utiliser la commande `wget` avec le lien donné dans la section `Télécharger les fichiers` afin d'avoir le fichier zip dans votre installation WSL2 (`wget https://swcarpentry .github.io/shell-novice/data/shell-lesson-data.zip`). Vous devrez également installer unzip en utilisant la commande « sudo apt install unzip » puis « unzip shell-lesson-data.zip » pour décompresser le fichier. Gardez à l’esprit que tout au long du cours lié à la première étape ci-dessous, le résultat de votre terminal peut être légèrement différent de celui présenté dans les leçons. Chaque fois que le cours vous demande d'accéder au bureau, vous accéderez plutôt au répertoire personnel, ce qui peut être fait en utilisant la commande cd (`cd ~`).
-</div>
 
-<div class="lesson-note lesson-note--warning" markdown=1>
+
 Beaucoup de ces ressources supposent que vous utilisez un environnement Mac ou Linux. Si vous avez suivi notre leçon d'installation précédente, vous devriez déjà avoir Linux installé en dual-boot ou sur une machine virtuelle. Ou bien, vous utilisez peut-être macOS. Si vous n'avez pas installé macOS ou toute version officielle d'Ubuntu, veuillez revenir à la [Leçon d'installations](https://www.theodinproject.com/lessons/foundations-installations).
-</div>
 
 1. Visitez le cours [The Unix Shell](https://swcarpentry.github.io/shell-novice/) conçu par la Software Carpentry Foundation. Vous y trouverez un ensemble complet de leçons sur l'utilisation de la CLI, mais pour l'instant, concentrez-vous uniquement sur les leçons suivantes :
 
-    - [Télécharger les fichiers](https://swcarpentry.github.io/shell-novice/#download-files) - suivez uniquement les instructions de cette section, vous n'avez pas besoin d'installer de logiciel et pouvez passer à la puce suivante point dans cette liste.
-    - [Présentation du Shell](https://swcarpentry.github.io/shell-novice/01-intro.html)
-    - [Navigation dans les fichiers et répertoires](https://swcarpentry.github.io/shell-novice/02-filedir.html)
-    - [Travailler avec des fichiers et des répertoires](https://swcarpentry.github.io/shell-novice/03-create.html)
-    - [Tuyaux et filtres](https://swcarpentry.github.io/shell-novice/04-pipefilter.html)
+- [Télécharger les fichiers](https://swcarpentry.github.io/shell-novice/#download-files) - suivez uniquement les instructions de cette section, vous n'avez pas besoin d'installer de logiciel et pouvez passer à la puce suivante point dans cette liste.
+- [Présentation du Shell](https://swcarpentry.github.io/shell-novice/01-intro.html)
+- [Navigation dans les fichiers et répertoires](https://swcarpentry.github.io/shell-novice/02-filedir.html)
+- [Travailler avec des fichiers et des répertoires](https://swcarpentry.github.io/shell-novice/03-create.html)
+- [Tuyaux et filtres](https://swcarpentry.github.io/shell-novice/04-pipefilter.html)
 
 1. Avec vos super pouvoirs CLI nouvellement découverts, entraînez-vous à créer un dossier et quelques fichiers à l'aide des commandes « mkdir », « touch » et « cd » introduites à l'étape précédente. À titre d'exemple, un site Web de base peut avoir un fichier principal « index.html », un fichier de feuille de style CSS appelé « style.css » et un dossier pour « images ». Pensez à la façon dont vous pourriez créer ces fichiers avec les commandes et mettez-les en pratique !
 
@@ -78,8 +77,6 @@ Beaucoup de ces ressources supposent que vous utilisez un environnement Mac ou L
      1. Supprimez le répertoire `test`.
 
      C'est tout --vous avez fini avec la pratique ! Si vous vous engagez à faire la plupart des choses à partir de la ligne de commande à partir de maintenant, ces commandes deviendront une seconde nature pour vous. Le déplacement et la copie de fichiers s'effectuent beaucoup plus efficacement via la ligne de commande, même si cela semble plus compliqué à ce stade.
-
-</div>
 
 ### Utilisez la ligne de commande comme un pro
 
@@ -108,7 +105,7 @@ Troisièmement, il existe un raccourci très pratique pour tout ouvrir dans un r
 
 - **WSL2** : L'ouverture de VSCode à partir de la ligne de commande dans WSL2 est aussi simple que sous Linux. Entrez simplement « code » qui ouvrira VSCode dans WSL2.
 
-### Vérification des connaissances
+## Vérification des connaissances
 
 Les questions suivantes sont l’occasion de réfléchir aux sujets clés de cette leçon. Si vous ne pouvez pas répondre à une question, cliquez dessus pour consulter le matériel, mais gardez à l'esprit que vous n'êtes pas censé mémoriser ou maîtriser ces connaissances.
 
@@ -124,7 +121,7 @@ Les questions suivantes sont l’occasion de réfléchir aux sujets clés de cet
 - [Comment détruire un répertoire ou un fichier ?](https://www.softcover.io/read/fc6c09de/unix_commands/basics#cid9)
 - [Comment renommer un répertoire ou un fichier ?](https://www.softcover.io/read/fc6c09de/unix_commands/basics#cid10)
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

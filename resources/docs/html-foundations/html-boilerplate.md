@@ -1,15 +1,18 @@
-### Introduction
+[TOC]
+
+# <b> Les fondamentaux de HTML </b>
+## Introduction
 
 Tous les documents HTML ont la même structure de base ou passe-partout qui doit être en place avant que quelque chose d'utile puisse être fait. Dans cette leçon, nous explorerons les différentes parties de ce passe-partout et verrons comment tout s'articule.
 
-### Aperçu de la leçon
+## Aperçu de la leçon
 
 Cette section contient un aperçu général des sujets que vous apprendrez dans cette leçon.
 
 - Comment rédiger le passe-partout de base d'un document HTML.
 - Comment ouvrir des documents HTML dans votre navigateur.
 
-### Création d'un fichier HTML
+## Création d'un fichier HTML
 
 Pour démontrer un passe-partout HTML, nous avons d’abord besoin d’un fichier HTML avec lequel travailler.
 
@@ -51,22 +54,22 @@ De retour dans le fichier `index.html`, ajoutons l'élément `<html>` en tapant 
 
 Vous avez remarqué le mot `lang ` ici ? Il représente un attribut HTML associé à la balise HTML donnée, c'est-à-dire `<html>` dans ce cas. Ces attributs fournissent des informations supplémentaires sur les éléments HTML. (En savoir plus sur les  `attributs HTML` dans la leçon suivante.)
 
-#### Qu'est-ce que l'attribut lang ?
+## Qu'est-ce que l'attribut lang ?
 
 `lang` spécifie la langue du contenu du texte dans cet élément. Cet attribut est principalement utilisé pour améliorer l'accessibilité de la page Web. Il permet aux technologies d'assistance, par exemple les lecteurs d'écran, de s'adapter en fonction de la langue et d'invoquer une prononciation correcte.
 
-### Élément de tête
+## Élément de tête
 
 L'élément `<head>` est l'endroit où nous mettons les méta-informations importantes **sur** nos pages Web et les éléments requis pour que nos pages Web s'affichent correctement dans le navigateur.
 À l'intérieur du `<head>`, nous ** ne devrions ** utiliser aucun élément qui affiche le contenu de la page Web.
 
-#### Élément méta
+### Élément méta
 
 Nous devrions toujours avoir la balise `<meta>` avec le codage charset de la page Web dans l'élément `<head>` : `<meta charset="utf-8">`.
 
 La définition de l'encodage est très importante car elle garantit que la page Web affichera correctement les symboles et caractères spéciaux de différentes langues dans le navigateur.
 
-#### Élément de titre
+### Élément de titre
 
 Un autre élément que nous devrions toujours inclure dans l'en-tête d'un document HTML est l'élément `<title>` :
 
@@ -146,25 +149,25 @@ De retour dans le fichier `index.html`, ajoutons un en-tête (nous y reviendrons
 
 Maintenant, si vous actualisez la page dans le navigateur, vous devriez voir les modifications prendre effet, ainsi que le titre « Hello World ! » sera affiché.
 
-### Raccourci VSCode
+## Raccourci VSCode
 
 VSCode dispose d'un raccourci intégré que vous pouvez utiliser pour générer tout le passe-partout en une seule fois. Veuillez noter que ce raccourci ne fonctionne que lors de l'édition d'un fichier avec l'extension `.html` ou d'un fichier texte avec le langage HTML déjà sélectionné. Pour déclencher le raccourci, supprimez tout ce qui se trouve dans le fichier `index.html` et entrez simplement `!` sur la première ligne. Cela fera apparaître quelques options. Appuyez sur la touche <kbd>Entrée</kbd> pour choisir la première, et voilà, vous devriez avoir tous les passe-partout remplis pour vous.
 
 Mais il est toujours bon de savoir comment rédiger vous-même le passe-partout au cas où vous vous retrouveriez à utiliser un éditeur de texte comme le bloc-notes (à Dieu ne plaise), qui ne dispose pas de ce raccourci. Essayez de ne pas utiliser le raccourci dans vos premiers projets HTML, afin de pouvoir développer une certaine mémoire musculaire pour écrire le code passe-partout.
 
-### Affectation
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
 
-1. Regardez et suivez la brillante [vidéo Building Your First Web Page] de Kevin Powell (https://www.youtube.com/watch?v=V8UAEoOvqFg&t=93s).
+1. Regardez et suivez la brillante [vidéo Building Your First Web Page de Kevin Powell](https://www.youtube.com/watch?v=V8UAEoOvqFg&t=93s).
 
 2. Construisez de la mémoire musculaire en supprimant le contenu du fichier « index.html » et en essayant d'écrire à nouveau tout le passe-partout de la mémoire. Ne vous inquiétez pas si vous devez jeter un coup d'œil au contenu de la leçon les premières fois si vous êtes bloqué. Continuez jusqu'à ce que vous puissiez le faire plusieurs fois de mémoire.
 
-3. Exécutez votre passe-partout via le [validateur HTML] W3 (https://validator.w3.org/) ou bien ce [validateur HTML] (https://www.freeformatter.com/html-validator.html). Les validateurs garantissent que votre balisage est correct et constituent un excellent outil d'apprentissage, car ils fournissent des commentaires sur les erreurs de syntaxe que vous faites souvent et dont vous n'êtes pas conscient, telles que les balises de fermeture manquantes et les espaces supplémentaires dans votre code HTML.
+3. Exécutez votre passe-partout via le [validateur HTML W3](https://validator.w3.org/) ou bien ce [validateur HTML](https://www.freeformatter.com/html-validator.html). Les validateurs garantissent que votre balisage est correct et constituent un excellent outil d'apprentissage, car ils fournissent des commentaires sur les erreurs de syntaxe que vous faites souvent et dont vous n'êtes pas conscient, telles que les balises de fermeture manquantes et les espaces supplémentaires dans votre code HTML.
 
 </div>
 
-### Vérification des connaissances
+## Vérification des connaissances
 
 Cette section contient des questions vous permettant de vérifier par vous-même votre compréhension de cette leçon. Si vous rencontrez des difficultés pour répondre à une question, cliquez dessus et consultez le matériel auquel elle renvoie.
 
@@ -173,7 +176,7 @@ Cette section contient des questions vous permettant de vérifier par vous-même
 - [Quel est le but de l'élément head ?](#head-element)
 - [Quel est le but de l'élément body ?](#body-element)
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

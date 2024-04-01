@@ -1,4 +1,7 @@
-### Introduction
+[TOC]
+
+# <b> Aperçu des installations</b>
+# Introduction
 
 La première étape pour créer un site Web consiste à disposer des bons outils. Pour nous, cela signifie mettre en place un environnement de développement pour écrire du bon code.
 
@@ -6,7 +9,7 @@ De nombreux cours de développement en ligne utilisent des éditeurs de code int
 
 Nous ne vous mentirons pas : installer des packages, des éditeurs et même des systèmes d'exploitation entiers peut être très frustrant. Cependant, avoir l'expérience de la mise en place d'un environnement de développement pour exécuter le code que vous écrirez est une compétence inestimable et concrète que vous conserverez avec vous pour le reste de votre carrière.
 
-### Le plan d'installation
+## Le plan d'installation
 
 Dans les sections suivantes, nous passerons en revue les étapes de configuration de votre environnement. Il n'est pas nécessaire d'installer quoi que ce soit dans cette leçon, c'est une leçon informative. Ces sections sont **les étapes les plus importantes** de l'ensemble du programme. Veuillez prendre le temps supplémentaire de **vérifier ce que vous tapez**, sinon vous pourriez vous causer encore plus de maux de tête plus tard.
 
@@ -21,21 +24,24 @@ Dans les prochaines leçons, nous passerons ensemble en revue ces étapes d’in
 
 - Examinez la sortie du terminal pour détecter l'erreur réelle.
 - Google Google Google.
-- N'ayez jamais peur de demander de l'aide sur le [serveur TOP Discord](https://discord.gg/theodinproject) !
+- N'ayez jamais peur de demander de l'aide sur le [serveur général](https://discord.gg/qAXhuudu)
+
+> **note**
+> Discuter des questions dans le chanel [discord](https://discord.gg/qAXhuudu)
 
 Pour les utilisateurs de Chromebook, le choix de votre système d’exploitation a effectivement été fait pour vous. Cependant, sur [Systèmes ChromeOS prenant en charge "Linux sur ChromeOS"](https://www.chromium.org/chromium-os/chrome-os-systems-supporting-linux), la leçon suivante contient des instructions sur la façon de définir ceci sur votre appareil.
 
-### Options du système d'exploitation
+## Options du système d'exploitation
 
-#### macOS
+### macOS
 
 Si vous utilisez un Mac, vous êtes en pleine forme. En installant seulement quelques programmes, vous serez opérationnel en un rien de temps !
 
-#### Linux (saveurs officielles d'Ubuntu)
+### Linux (saveurs officielles d'Ubuntu)
 
 [Linux](https://en.wikipedia.org/wiki/Linux) est un système d'exploitation gratuit et open source qui fonctionne bien avec tous les langages de programmation. La plupart des outils de développement sont écrits pour fonctionner nativement avec Linux. Vos outils seront probablement mis à jour plus souvent, disposeront de plus d’informations pour le dépannage et fonctionneront tout simplement mieux sous Linux. Nous utiliserons Ubuntu, l'une des distributions les plus populaires et les plus conviviales disponibles, ou l'alternative plus légère Xubuntu. **Si vous n'utilisez pas de Mac, nous vous recommandons d'utiliser Linux.** C'est aussi simple que cela.
 
-#### Les fenêtres
+### Windows
 
 Windows, en lui-même, **n'est pas pris en charge nativement** pour la formation. Étant donné que la plupart des outils que vous utiliserez ont été écrits pour un environnement Linux, vous en aurez besoin même si vous envisagez d'utiliser Windows comme système d'exploitation de développement. Si vous utilisez actuellement Windows, vous pouvez utiliser l'une des options suivantes pour créer votre environnement de développement :
 
@@ -75,7 +81,7 @@ Avant de continuer, nous devons d’abord souligner un détail important :
 
 Cela étant dit, nous devons mettre en place un environnement de développement approprié !
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

@@ -1,4 +1,8 @@
-### Introduction
+[TOC]
+
+# <b> PROJET HTML/CSS </b>
+
+## Introduction
 
 Il est temps de mettre en pratique toutes les connaissances HTML que vous avez acquises. Dans ce projet, vous allez créer un site Web de recettes de base.
 
@@ -8,22 +12,27 @@ Mais il est important de garder à l'esprit que ce projet consiste simplement à
 
 ### Configurer le dépôt GitHub de votre projet
 
-Comme mentionné dans l'[introduction à Git](), vous souhaiterez organiser tous vos projets comme un portfolio et les lier à GitHub afin qu'ils puissent être vus par d'autres.
+Comme mentionné dans l'`introduction à Git`, vous souhaiterez organiser tous vos projets comme un portfolio et les lier à GitHub afin qu'ils puissent être vus par d'autres.
 
 <div class="lesson-note lesson-note--warning" markdown="1">
 
-#### Soyez prudent lorsque vous créez des fichiers sur GitHub
+## Soyez prudent lorsque vous créez des fichiers sur GitHub
 
 GitHub nous permet d'apporter des modifications directement sur son site. Si vous faites cela après avoir cloné le référentiel sur votre machine, votre code local sera une version derrière la version distante, ce qui créera des défis supplémentaires lorsque vous pousserez votre travail. La plupart du temps, vous devriez créer des fichiers localement.
 
-  Au fur et à mesure de votre progression dans le cours, vous apprendrez à gérer ces situations, mais pour l'instant, il est important de suivre attentivement les instructions pour rester sur le chemin de la simplicité.
+Au fur et à mesure de votre progression dans le cours, vous apprendrez à gérer ces situations, mais pour l'instant, il est important de suivre attentivement les instructions pour rester sur le chemin de la simplicité.
 </div>
 
-Si vous ne savez pas comment configurer un référentiel, suivez les étapes d'instructions 1 et 2 trouvées dans [Git Basics]() pour découvrez comment, avant de poursuivre ces étapes :
+Si vous ne savez pas comment configurer un référentiel, suivez les étapes d'instructions 1 et 2 trouvées dans `Git Basics` pour découvrez comment, avant de poursuivre ces étapes :
+
+## Comment réaliser ce projet et le soumettre pour la review ?
 
 1. Créez un nouveau dépôt pour ce projet sur GitHub.com et appelez-le `project-recipes` et choisissez l'option « public » au lieu de l'option privée par défaut.
 
-1. Clonez ce référentiel sur votre machine locale, dans le dossier « repos » que vous avez précédemment créé dans la leçon Git Basics. La commande devrait ressembler à `git clone git@github.com:username/project-recipes.git` (utilisez SSH).
+1. Clonez ce référentiel sur votre machine locale, dans le dossier « repos » que vous avez précédemment créé dans la leçon Git Basics. La commande devrait ressembler à `git clone git@github.com:<username>/project-recipes.git` (utilisez SSH). 
+
+> **warning**
+> Vous devez remplacer `<username>` par votre nom d'utilisateur github
 
 1. Maintenant, `cd` dans le répertoire du projet `project-recipes` qui se trouve maintenant sur votre ordinateur local.
 
@@ -33,23 +42,21 @@ Si vous rencontrez des problèmes :
 
 - Toutes les commandes Git doivent être exécutées depuis le dossier de votre projet (avez-vous oublié de `cd` dans le dossier `project-recipes` ?).
 
-- Assurez-vous d'avoir suivi les étapes [ici à l'étape 2.3](/paths/foundations/courses/foundations/lessons/setting-up-git#step-2-configure-git-and-github) pour cloner depuis GitHub avec SSH.
+- Creer un nouvelle branche avec `git checkout -b create-html`. 
 
-- Reportez-vous au [workflow]() dans la leçon sur les bases de Git.
+- Faites votre travail et poussez regulierement votre code sur github avec la commande `git add.` , `git commit -m"message de validation"` , `git push origin create-html`
 
-#### Conseils pour savoir quand s'engager
+- Lorsque vous avez fini le travail, vous devez creer un une Pull request et soumettre le lien de votre projet sur github pour etre relu par un mentor.
 
-N'oubliez pas tout ce que nous avons abordé dans la [leçon précédente]() sur les messages de validation !
+### Conseils pour savoir quand s'engager
 
-Lorsque vous construisez votre projet, vous finirez probablement par faire plusieurs cycles `git add` + `git commit` avant d'être prêt à le pousser vers GitHub avec `git push origin main`.
-
-Lors de l’écriture de code, il est considéré comme une bonne pratique de s’engager tôt et souvent. Engagez-vous à chaque fois que vous apportez un changement significatif dans le code. Cela créera une chronologie de vos progrès et montrera que votre code terminé n'est pas apparu de nulle part.
+Lors de l’écriture de code, il est considéré comme une bonne pratique de faire `git commit`  tôt et régulièrement. Engagez-vous à chaque fois que vous apportez un changement significatif dans le code. Cela créera une chronologie de vos progrès et montrera que votre code terminé n'est pas apparu de nulle part.
 
 Après avoir entré « git push origin main », passez à votre navigateur et ouvrez votre référentiel sur GitHub. Vous devriez maintenant voir tous les fichiers que vous venez de transférer.
 
 D'accord, c'est assez Git pour le moment – il est temps de réellement construire des choses !
 
-### Devoir
+## Devoir
 
 <div class="lesson-content__panel" markdown="1">
 
@@ -58,14 +65,14 @@ D'accord, c'est assez Git pour le moment – il est temps de réellement constru
 1. Dans le répertoire `project-recipes`, créez un fichier `index.html`.
 1. Remplissez-le avec le code HTML standard habituel et ajoutez un en-tête « h1 » « Recettes Odin » au corps.
 
-#### Itération 2 : page de recette
+### Itération 2 : page de recette
 
 1. Créez un nouveau répertoire dans le répertoire `project-recipes` et nommez-le « recettes ».
 1. Créez un nouveau fichier HTML dans le répertoire « recettes » et nommez-le d'après la recette qu'il contiendra. Par exemple `lasagna.html`. Vous pouvez utiliser le nom de votre plat préféré ou, si vous avez besoin d'inspiration, vous pouvez [trouver une recette à utiliser ici](https://www.allrecipes.com/).
 1. Pour l'instant, incluez simplement un en-tête « h1 » avec le nom de la recette comme contenu.
 1. De retour dans le fichier `index.html`, ajoutez un lien vers la page de recette que vous venez de créer. Exemple : sous l'en-tête `<h1>Recettes Odin</h1>`, écrivez le lien comme ceci : `<a href="recipes/recipename.html">Titre de la recette</a>`. Le texte du lien doit à nouveau être le nom de la recette.
 
-#### Itération 3 : contenu de la page de recette
+### Itération 3 : contenu de la page de recette
 
 Votre nouvelle page de recettes devrait avoir le contenu suivant :
 
@@ -77,7 +84,7 @@ Votre nouvelle page de recettes devrait avoir le contenu suivant :
 
 1. Enfin, sous la liste des ingrédients, ajoutez un titre « Étapes » suivi d'une **liste ordonnée** des étapes nécessaires à la réalisation du plat.
 
-#### Itération 4 : ajouter plus de recettes
+### Itération 4 : ajouter plus de recettes
 
 1. Ajoutez deux autres recettes avec des structures de page identiques à la page de recettes que vous avez déjà créée.
 1. N'oubliez pas de créer un lien vers les nouvelles recettes sur la page d'index. Pensez également à placer tous les liens dans une liste non ordonnée afin qu’ils ne soient pas tous sur une seule ligne.

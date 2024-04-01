@@ -1,43 +1,41 @@
 <!-- markdownlint-disable MD024 MD043 -->
+[TOC]
 
-### Introduction
+# <b>Les installations</b>
+
+## Introduction
 
 Si vous utilisez déjà **MacOS**, **Ubuntu** ou [une version officielle d'Ubuntu](https://wiki.ubuntu.com/UbuntuFlavors) comme système d'exploitation et que vous disposez de **Google Chrome** en tant que navigateur installé, vous pouvez ignorer cette leçon. Sinon, cliquez sur la petite flèche à gauche de la méthode que vous souhaitez utiliser ci-dessous pour développer cette section, puis suivez les instructions d'installation.
 
-<div class="lesson-note lesson-note--warning" markdown="1">
 #### Faites attention au système d'exploitation que vous utilisez
 Nous ne pouvons prendre en charge que les systèmes d'exploitation indiqués ci-dessus. Nos instructions ont été testées avec MacOS, Ubuntu et les versions officielles d'Ubuntu. Nous vous déconseillons d'installer un système d'exploitation uniquement basé sur Ubuntu (comme Mint, Pop!_OS, ElementaryOS, etc.).
-</div>
 
-### Aperçu de la leçon
+## Aperçu de la leçon
 
 Cette section contient un aperçu général des sujets que vous apprendrez dans cette leçon.
 
 - Comment mettre en place un environnement approprié pour suivre le programme.
 - Installation de Google Chrome dans votre environnement.
 
-### Affectation
-
-<div class="lesson-content__panel" markdown="1">
+## Devoir
 
 1. Si vous n'exécutez pas déjà un environnement pris en charge, décidez quel environnement vous allez configurer.
     - Parcourez les instructions pour savoir à quoi vous attendre.
     - Choisissez et suivez l'une des instructions ci-dessous.
 1. Une fois votre environnement trié, passez aux instructions d'installation de Google Chrome.
 
-</div>
-
 ### Installation du système d'exploitation
 
-#### IMPORTANT
 
-Ce programme prend uniquement en charge l'utilisation d'un ordinateur portable, d'un ordinateur de bureau ou d'un Chromebook pris en charge. Nous ne pouvons pas vous aider à configurer un environnement de développement sur un RaspberryPi ou tout autre appareil. Il vous suffit de suivre l'un de ces ensembles d'instructions ou aucun d'entre eux si vous utilisez déjà **MacOS**, **Ubuntu** ou [une version officielle d'Ubuntu](https://wiki.ubuntu.com /UbuntuFlavors) comme système d'exploitation.
+> **warning**
+> Ce programme prend uniquement en charge l'utilisation d'un ordinateur portable, d'un ordinateur de bureau ou d'un Chromebook pris en charge. Nous ne pouvons pas vous aider à configurer un environnement de développement sur un RaspberryPi ou tout autre appareil. 
+
+Il vous suffit de suivre l'un de ces ensembles d'instructions ou aucun d'entre eux si vous utilisez déjà **MacOS**, **Ubuntu** ou [une version officielle d'Ubuntu](https://wiki.ubuntu.com /UbuntuFlavors) comme système d'exploitation.
 
 Choisissez votre méthode d'installation ci-dessous :
 
-<détails markdown="block">
-<summary class="dropDown-header">Machine virtuelle (recommandé)
-</résumé>
+> **note**
+> **Machine virtuelle (recommandé)**
 
 L'installation d'une machine virtuelle (VM) est le moyen le plus simple et le plus fiable de commencer à créer un environnement pour le développement Web. Une VM est une émulation informatique complète qui s'exécute dans votre système d'exploitation (OS) actuel, comme Windows. Le principal inconvénient d’une VM est qu’elle peut être lente car vous utilisez essentiellement deux ordinateurs en même temps. Nous ferons quelques choses pour améliorer ses performances.
 
@@ -126,7 +124,7 @@ Cliquez simplement sur la flèche verte appelée **Afficher** et une fenêtre de
 
 Il est possible que vous receviez une erreur comme celle-ci après avoir cliqué sur **Terminer** :
 
-![L'erreur apparaît sur le côté droit de la fenêtre VirtualBox et peut être formulée un peu différemment.](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/ 09_virtualization_error.png)
+![L'erreur apparaît sur le côté droit de la fenêtre VirtualBox et peut être formulée un peu différemment.](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/09_virtualization_error.png)
 
 Cela signifie que vous devez [activer la virtualisation dans les paramètres BIOS/UEFI de votre ordinateur](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_deployment_and_administration_guide/sect-troubleshooting-enabling_intel_vt_x_and_amd_v_virtualization_hardware_extensions_in_bios). [Instructions alternatives pour activer la virtualisation dans les paramètres BIOS/UEFI](https://2nwiki.2n.cz/pages/viewpage.action?pageId=75202968). Si vous possédez un processeur AMD, vous recherchez probablement quelque chose appelé « SVM » pour activer, pour les processeurs Intel, la « technologie de virtualisation Intel ». L'erreur devrait vous dire ce qu'elle recherche. Après avoir traité le problème, **Démarrez** simplement la machine et laissez les choses se dérouler, vous saurez que le processus est terminé lorsque vous voyez un écran de connexion :
 
@@ -138,7 +136,7 @@ En raison de la façon dont l'installation sans assistance est configurée par V
 
 #### Étape 3.1 : Accédez aux utilisateurs et au groupe
 
-Tout d'abord, si ce n'est pas déjà fait, connectez-vous avec le nom d'utilisateur et le mot de passe créés précédemment, puis cliquez sur l'icône ![L'icône du menu Whisker de rongeur bleu-blanc](https://cdn.statically.io/gh/TheOdinProject/curriculum/ 96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/00_whisker_icon.png){: .inline-img} en haut à gauche de votre fenêtre, tapez ensuite « Utilisateurs » et vous devriez voir « Utilisateurs et groupes » apparaître. Clique dessus.
+Tout d'abord, si ce n'est pas déjà fait, connectez-vous avec le nom d'utilisateur et le mot de passe créés précédemment, puis cliquez sur l'icône ![L'icône du menu Whisker de rongeur bleu-blanc](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/00_whisker_icon.png) en haut à gauche de votre fenêtre, tapez ensuite « Utilisateurs » et vous devriez voir « Utilisateurs et groupes » apparaître. Clique dessus.
 
 ![Cela devrait être la première option que vous voyez. Il est possible qu'en raison de la localisation, il soit appelé différemment - essayez alors d'utiliser le terme dans votre langue.](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/11_users_and_groups.png)
 
@@ -158,7 +156,7 @@ Et puis cliquez sur **OK**. Vous serez accueilli par une invite de mot de passe 
 
 #### Étape 3.3 : Redémarrez votre VM
 
-Maintenant que tout est fait, vous pouvez fermer ces fenêtres et redémarrer votre VM. Vous pouvez ouvrir une fenêtre `Terminal` en faisant <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> et tapez `reboot` puis appuyez sur <kbd>Entrée< /kbd> pour exécuter la commande. Vous pouvez également cliquer sur l'![Icône de menu Whisker de rongeur bleu-blanc](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/00_whisker_icon.png){ : .inline-img}, puis cliquez sur l'icône d'alimentation en bas à droite et choisissez **Redémarrer**.
+Maintenant que tout est fait, vous pouvez fermer ces fenêtres et redémarrer votre VM. Vous pouvez ouvrir une fenêtre `Terminal` en faisant <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>T</kbd> et tapez `reboot` puis appuyez sur <kbd>Entrée< /kbd> pour exécuter la commande. Vous pouvez également cliquer sur l'![Icône de menu Whisker de rongeur bleu-blanc](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/00_whisker_icon.png), puis cliquez sur l'icône d'alimentation en bas à droite et choisissez **Redémarrer**.
 
 ![Vous souhaiterez peut-être prendre note des autres options que vous voyez dans ce menu.](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/14_logout.png)
 
@@ -179,7 +177,7 @@ Il s'agit d'une fonctionnalité de sécurité destinée à protéger les informa
 Vous pouvez toujours saisir votre mot de passe comme d'habitude et appuyer sur Entrée pour le soumettre.
 </div>
 
-```bash
+```shell
 sudo apt mise à jour
 mise à niveau sudo apt
 ```
@@ -193,7 +191,7 @@ Après l'exécution de « sudo apt update » pendant un certain temps, il vous s
 Voici quelques conseils pour vous aider à démarrer dans un environnement virtuel :
 
 - Activez la barre d'outils dans les paramètres de votre VM - il existe des options utiles avec lesquelles vous voudrez peut-être jouer, en particulier celles concernant le plein écran ou les affichages multiples. Pour ce faire, cliquez sur **Paramètres**, puis accédez à **Interface utilisateur** et enfin cochez **Afficher en haut de l'écran**.
-     ![C'est une bonne idée de regarder les paramètres dans leur ensemble pour avoir une idée de ce qui est possible.](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/16_toolbar. png)
+![C'est une bonne idée de regarder les paramètres dans leur ensemble pour avoir une idée de ce qui est possible.](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/16_toolbar.png)
 - Tout votre travail doit se dérouler dans la VM. Vous installerez tout ce dont vous avez besoin pour le codage, y compris votre éditeur de texte, vos environnements linguistiques et divers outils à l'intérieur de la VM. L'installation de Xubuntu à l'intérieur de votre VM est également livrée avec un navigateur Web préinstallé, mais nous installerons Chrome sous peu.
 - Pour installer un logiciel sur votre VM, vous suivrez les instructions d'installation de Linux (Ubuntu) depuis la VM Xubuntu.
 - Vous devrez peut-être prendre des captures d'écran lorsque vous demandez de l'aide sur notre Discord, voici comment procéder selon l'endroit où vous l'utilisez :
@@ -206,15 +204,15 @@ Voici quelques conseils pour vous aider à démarrer dans un environnement virtu
 #### Problèmes/questions fréquents
 
 - Si en essayant de démarrer la VM, vous obtenez uniquement un écran noir, fermez et « éteignez » la VM, cliquez sur **Paramètres -> Affichage** et assurez-vous que **Activer l'accélération 3D** est DÉCOCHÉ et que la mémoire vidéo est réglé sur **AU MOINS 128 Mo**.
-- Vous manquez d'espace ? Regardez ces [instructions pour augmenter l'espace disque de la VM à partir du serveur TOP Discord](https://discord.com/channels/505093832157691914/690588860085960734/1015965403572351047).
+
 - Utilisez-vous un écran tactile ? [Regardez une vidéo sur la façon d'activer les commandes de l'écran tactile pour VirtualBox](https://www.youtube.com/watch?v=hW-iyHHoDy4).
 
-- **Conseils sur les performances des VM** :
-   - Lors de l'exécution de la VM, réduisez votre activité Windows. Vous souhaiterez probablement également être branché sur le secteur si vous utilisez un ordinateur portable.
-   - Assurez-vous que vos processeurs sont réglés sur seulement 2 et que la mémoire que vous avez attribuée à votre VM représente au plus la moitié de votre RAM totale mais au moins 2 Go. Si vous ne pouvez pas épargner les 2 Go, double démarrage.
-   - Si les vidéos sont en retard dans la VM, assurez-vous de maximiser la mémoire vidéo au maximum ou de les lire sur votre Windows si votre machine peut le gérer. Désactivez l'accélération 3D si vous l'avez activée.
-   - Faites attention à l' ![Icône avec une tortue verte et un V](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/17_turtle.png){ : Icône .inline-img} en bas à droite de la fenêtre de votre VM. Cela signifie que quelque chose appelé Hyper-V est activé. Un fil de discussion sur les forums VirtualBox décrit [comment désactiver complètement Hyper-V](https://forums.virtualbox.org/viewtopic.php?f=25&t=99390). Vous voulez avoir l'icône d'une puce avec un V ![Icône d'une puce avec un V](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/18_vboxV .png){: .inline-img} à la place. Si vous ne voyez aucune de ces icônes en bas à droite, vous devez quitter le mode plein écran pour les voir.
-   - Si vos performances font toujours défaut, optez pour un double démarrage car cela garantira que vous utilisez toutes vos spécifications pour un seul système d'exploitation, améliorant ainsi considérablement votre expérience.
+**Conseils sur les performances des VM** :
+- Lors de l'exécution de la VM, réduisez votre activité Windows. Vous souhaiterez probablement également être branché sur le secteur si vous utilisez un ordinateur portable.
+- Assurez-vous que vos processeurs sont réglés sur seulement 2 et que la mémoire que vous avez attribuée à votre VM représente au plus la moitié de votre RAM totale mais au moins 2 Go. Si vous ne pouvez pas épargner les 2 Go, double démarrage.
+- Si les vidéos sont en retard dans la VM, assurez-vous de maximiser la mémoire vidéo au maximum ou de les lire sur votre Windows si votre machine peut le gérer. Désactivez l'accélération 3D si vous l'avez activée.
+- Faites attention à l'icône avec une tortue verte et un V ![Icône avec une tortue verte et un V](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/17_turtle.png) en bas à droite de la fenêtre de votre VM. Cela signifie que quelque chose appelé Hyper-V est activé. Un fil de discussion sur les forums VirtualBox décrit [comment désactiver complètement Hyper-V](https://forums.virtualbox.org/viewtopic.php?f=25&t=99390). Vous voulez avoir l'icône d'une puce avec un V ![Icône d'une puce avec un V](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/18_vboxV.png) à la place. Si vous ne voyez aucune de ces icônes en bas à droite, vous devez quitter le mode plein écran pour les voir.
+- Si vos performances font toujours défaut, optez pour un double démarrage car cela garantira que vous utilisez toutes vos spécifications pour un seul système d'exploitation, améliorant ainsi considérablement votre expérience.
 - Si votre molette de défilement se comporte étrangement dans Google Chrome et/ou dans d'autres applications et que vous avez suivi les conseils de performances de la VM pour vous assurer que votre VM fonctionne comme prévu, vérifiez [si votre version des ajouts invité est correcte](https:/ /discord.com/channels/505093832157691914/690588860085960734/1195697147123867668).
 
 ### Étape 5 : Arrêtez votre VM en toute sécurité
@@ -223,7 +221,7 @@ Vous ne débranchez pas votre ordinateur d’usage quotidien, n’est-ce pas ? 
 
 #### Option 1 - Arrêt depuis l'intérieur de la VM avec l'interface utilisateur
 
-En cliquant sur le **Menu Whisker** ![L'icône du menu Whisker du rongeur bleu-blanc](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/00_whisker_icon.png ){: .inline-img} et en cliquant sur l'icône d'alimentation, vous obtiendrez plusieurs options sur la façon de modifier votre session, y compris **Arrêter**. Oui, c'est le même endroit que vous avez peut-être utilisé pour **Redémarrer** auparavant !
+En cliquant sur le **Menu Whisker** ![L'icône du menu Whisker du rongeur bleu-blanc](https://cdn.statically.io/gh/TheOdinProject/curriculum/96d534641514fe4d62aabe2919fac3c52cb286e7/foundations/installations/installations/imgs/00_whisker_icon.png ) et en cliquant sur l'icône d'alimentation, vous obtiendrez plusieurs options sur la façon de modifier votre session, y compris **Arrêter**. Oui, c'est le même endroit que vous avez peut-être utilisé pour **Redémarrer** auparavant !
 
 #### Option 2 - Arrêt depuis l'intérieur de la VM avec le terminal
 
@@ -239,13 +237,11 @@ La dernière façon d’atteindre cet objectif d’arrêt en toute sécurité co
 
 Pour être sûr, cliquez sur la radio **Envoyer le signal d'arrêt** et appuyez sur OK. Cela éteindra votre VM en toute sécurité et vos fichiers ne seront pas corrompus.
 
-</détails>
+> **note**
+> Double démarrage Ubuntu/Windows
 
-<détails markdown="block">
-<summary class="dropDown-header">Double démarrage Ubuntu/Windows
-</résumé>
 
-### Lisez toute cette section avant de commencer
+## Lisez toute cette section avant de commencer
 
 Le double démarrage fournit deux systèmes d'exploitation sur votre ordinateur entre lesquels vous pouvez basculer avec un simple redémarrage. Un système d'exploitation ne modifiera pas l'autre, sauf si vous lui demandez explicitement de le faire. Avant de continuer, assurez-vous de sauvegarder toutes les données importantes et de disposer d'un moyen de demander de l'aide. Si vous êtes perdu, effrayé ou bloqué, nous sommes là pour vous aider dans le discord. Venez dire "Bonjour" !
 
@@ -277,17 +273,15 @@ Si vous souhaitez tester la version d'Ubuntu sur la clé USB, cliquez sur « Es
 
 L'installation d'Ubuntu est l'endroit où les véritables changements commencent à se produire sur votre ordinateur. Les paramètres par défaut sont pour la plupart parfaits, mais assurez-vous d'**"Installer Ubuntu aux côtés de Windows"** et de modifier l'espace disque alloué autorisé pour Ubuntu à 30 Go (ou plus si vous le pouvez).
 
-Pour des instructions étape par étape, veuillez suivre [comment installer Ubuntu 22.04 et le double démarrage avec Windows 10](https://medium.com/linuxforeveryone/how-to-install-ubuntu-20-04-and-dual- démarrer aux côtés de Windows-10-323a85271a73).
+Pour des instructions étape par étape, veuillez suivre [comment installer Ubuntu 22.04 et le double démarrage avec Windows 10](https://medium.com/linuxforeveryone/how-to-install-ubuntu-20-04-and-dual-boot-alongside-windows-10-323a85271a73).
 
 ### Intel RST (technologie de stockage rapide)
 
-Si vous rencontrez une erreur vous demandant de désactiver **Intel RST** lors de la tentative d'installation d'Ubuntu, suivez cette [solution de contournement pour installer Ubuntu 22.04 avec les systèmes Intel RST](https://askubuntu.com/questions/1233623/workaround-to -install-ubuntu-20-04-with-intel-rst-systems/1233644#1233644), en particulier **Choix n°2**. Le processus oblige Windows à démarrer en mode sans échec après avoir changé le pilote de stockage de votre carte mère pour qu'il fonctionne avec Ubuntu. Une fois qu'il démarre sous Windows, le mode de sécurité forcé est désactivé et vous êtes libre de tenter à nouveau une installation d'Ubuntu.
+Si vous rencontrez une erreur vous demandant de désactiver **Intel RST** lors de la tentative d'installation d'Ubuntu, suivez cette [solution de contournement pour installer Ubuntu 22.04 avec les systèmes Intel RST](https://askubuntu.com/questions/1233623/workaround-to-install-ubuntu-20-04-with-intel-rst-systems/1233644#1233644), en particulier **Choix n°2**. Le processus oblige Windows à démarrer en mode sans échec après avoir changé le pilote de stockage de votre carte mère pour qu'il fonctionne avec Ubuntu. Une fois qu'il démarre sous Windows, le mode de sécurité forcé est désactivé et vous êtes libre de tenter à nouveau une installation d'Ubuntu.
 
-</détails>
+> **note**
+> ChromeOS/ChromeOS Flex
 
-<détails markdown="block">
-<summary class="dropDown-header">ChromeOS/ChromeOS Flex
-</résumé>
 
 Avec l'ajout récent de la possibilité d'exécuter un terminal Linux, la plate-forme ChromeOS a été ouverte à la possibilité d'installer des applications Linux natives. Si vous souhaitez utiliser votre Chromebook pour réaliser les projets, vous devrez vous assurer de remplir quelques conditions :
 
@@ -298,19 +292,15 @@ Avec l'ajout récent de la possibilité d'exécuter un terminal Linux, la plate-
 
 Une fois que vous avez satisfait à ces deux exigences, vous devriez être en mesure de suivre les instructions Linux tout au long du programme.
 
-</détails>
 
-<détails markdown="block">
-<summary class="dropDown-header">WSL2 (avancé)</summary>
+> WSL2 (avancé)
 
 L'utilisation de WSL2 est un moyen simple et rapide de démarrer avec Linux, vous permettant d'exécuter une distribution Linux à partir de Windows. WSL2 est disponible sur Windows 10 version 2004 et supérieure (Build 19041 et supérieure) et Windows 11.
 
 Pour être clair : vous allez utiliser un système d’exploitation différent, ce n’est pas une façon d’éviter d’utiliser Linux. En raison de la façon dont WSL2 est intégré à Windows, cela provoque souvent une confusion importante chez les nouveaux apprenants. Utilisez la machine virtuelle si vous souhaitez une séparation claire entre votre Windows et Linux afin que le programme soit plus facile à suivre.
 
-<div class="lesson-note" markdown="1">
 #### Instructions WSL2 et Linux
 Parce que WSL2 est une distribution Linux à part entière, presque tout ce que le programme enseigne sur Linux est également applicable à WSL2. Dans les leçons futures, chaque fois que des instructions diffèrent selon le système d'exploitation, vous devez suivre les instructions Linux, à moins que la leçon n'inclue des instructions spécifiques à WSL2.
-</div>
 
 ### Étape 1 : Installations
 
@@ -396,22 +386,15 @@ Vous avez probablement remarqué que le raccourci clavier courant : <kbd>Ctrl</
 
 - Entrez votre mot de passe, si nécessaire
 
-<div class="lesson-note lesson-note--tip" markdown="1">
 
-#### Une note sur la saisie des mots de passe dans le terminal
+> Une note sur la saisie des mots de passe dans le terminal
+Lorsque vous utilisez une commande dans le terminal qui vous demande de saisir votre mot de passe pour l'authentification (comme sudo), vous remarquerez que les caractères ne sont pas visibles lorsque vous les tapez. Même s’il peut sembler que le terminal ne répond pas, ne vous inquiétez pas !
+Il s'agit d'une fonctionnalité de sécurité destinée à protéger les informations confidentielles, comme la façon dont les champs de mot de passe sur les sites Web utilisent des astérisques ou des points. En n'affichant pas les caractères que vous écrivez, le terminal sécurise votre mot de passe.
+Vous pouvez toujours saisir votre mot de passe comme d'habitude et appuyer sur Entrée pour le soumettre.
 
-   Lorsque vous utilisez une commande dans le terminal qui vous demande de saisir votre mot de passe pour l'authentification (comme sudo), vous remarquerez que les caractères ne sont pas visibles lorsque vous les tapez. Même s’il peut sembler que le terminal ne répond pas, ne vous inquiétez pas !
-
-   Il s'agit d'une fonctionnalité de sécurité destinée à protéger les informations confidentielles, comme la façon dont les champs de mot de passe sur les sites Web utilisent des astérisques ou des points. En n'affichant pas les caractères que vous écrivez, le terminal sécurise votre mot de passe.
-
-   Vous pouvez toujours saisir votre mot de passe comme d'habitude et appuyer sur Entrée pour le soumettre.
-</div>
-
-<div class="lesson-note lesson-note--tip" markdown="1">
 
 Vous pourriez voir un avis commençant par « N : Le téléchargement est effectué sans bac à sable (...) ». Vous n'avez pas besoin de vous en soucier. [Vous pouvez lire un article sur Reddit pour plus d'informations.](https://www.reddit.com/r/linux4noobs/comments/ux6cwx/comment/i9x2twx/)
 
-</div>
 
 #### Étape 3 : Supprimez le fichier d'installation
 
@@ -430,16 +413,11 @@ Vous pouvez démarrer Chrome de deux manières :
 Google Chrome
 ```
 
-<div class="lesson-note lesson-note--tip" markdown="1">
+> Chrome va utiliser ce terminal pour afficher divers messages et ne vous permettra pas d'exécuter d'autres commandes. Ne vous inquiétez pas de ces messages. Si vous souhaitez utiliser le même terminal dans lequel vous exécutez Chrome pour d'autres commandes, utilisez plutôt « google-chrome & ».
 
-Chrome va utiliser ce terminal pour afficher divers messages et ne vous permettra pas d'exécuter d'autres commandes. Ne vous inquiétez pas de ces messages. Si vous souhaitez utiliser le même terminal dans lequel vous exécutez Chrome pour d'autres commandes, utilisez plutôt « google-chrome & ».
 
-</div>
-
-</détails>
-
-<détails markdown="block">
-<summary class="dropDown-header">MacOS</summary>
+> **note**
+> MacOS
 
 #### Étape 1 : Téléchargez Google Chrome
 
@@ -464,10 +442,8 @@ Chrome va utiliser ce terminal pour afficher divers messages et ne vous permettr
 - Accédez à votre dossier **Applications**
 - Double-cliquez sur **Google Chrome**
 
-</détails>
 
-<détails markdown="block">
-<summary class="dropDown-header">WSL2</summary>
+> WSL2
 
 #### Étape 1 : Téléchargez Google Chrome
 
@@ -491,14 +467,14 @@ Chrome va utiliser ce terminal pour afficher divers messages et ne vous permettr
 
 </détails>
 
-### Vérification des connaissances
+## Vérification des connaissances
 
 Les questions suivantes sont l’occasion de réfléchir aux sujets clés de cette leçon. Si vous ne pouvez pas répondre à une question, cliquez dessus pour consulter le matériel, mais gardez à l'esprit que vous n'êtes pas censé mémoriser ou maîtriser ces connaissances.
 
 - [Quels systèmes d'exploitation sont pris en charge par dans la formation ?](#os-installation)
 - [Quel navigateur est pris en charge ?](#google-chrome-installation)
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

@@ -1,8 +1,13 @@
-### Introduction
+[TOC]
+
+# <b>Comment fonctionne le web ?</b>
+
+
+## Introduction
 
 Avant de comprendre comment programmer le Web, vous avez besoin d’une compréhension plus rigoureuse du Web lui-même que celle que vous avez probablement actuellement. Ces concepts offrent une compréhension plus globale de l'écosystème dans lequel vous travaillerez et vous permettront de discuter intelligemment de votre travail avec d'autres développeurs.
 
-### Aperçu de la leçon
+## Aperçu de la leçon
 
 Cette section contient un aperçu général des sujets que vous apprendrez dans cette leçon.
 
@@ -14,20 +19,20 @@ Cette section contient un aperçu général des sujets que vous apprendrez dans 
 - Expliquez ce que sont les adresses IP.
 - Expliquez ce que sont les serveurs DNS.
 
-### Devoir
 
-<div class="lesson-content__panel" markdown="1">
-   1. Regardez ce court métrage de la BBC pour un [aperçu du fonctionnement d'Internet](https://www.youtube.com/watch?v=eHp1l73ztB8).
-   1. Lisez cet [article de Mozilla sur « Comment fonctionne Internet ? »](https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work).
-   1. Regardez [Comment fonctionne Internet en 5 minutes](https://youtu.be/7_LPdttKXPc?t=46s).
-   1. Renseignez-vous sur les [différences entre une page Web, un serveur Web et un moteur de recherche](https://developer.mozilla.org/en-US/Learn/Common_questions/Pages_sites_servers_and_search_engines).
-   1. Regardez ceci [un court métrage Google expliquant ce qu'est un navigateur Web] (https://youtu.be/BrXPcaRlBqo). Ensuite, utilisez ce site pour [connaître votre navigateur Web et sa version actuels](https://www.whatsmybrowser.org/).
-   1. Découvrez [comment les différentes parties du Web interagissent les unes avec les autres](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/How_the_Web_works#Clients_and_servers) et lisez cet [article MDN sur la façon dont une requête DNS fonctionne](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name#how_does_a_dns_request_work). Alternativement, voici une [vidéo sur le fonctionnement d'une requête DNS](https://www.youtube.com/watch?v=72snZctFFtA&t=45s).
-</div>
+## Devoir
+1. Regardez ce court métrage de la BBC pour un [aperçu du fonctionnement d'Internet](https://www.youtube.com/watch?v=eHp1l73ztB8).
+1. Lisez cet [article de Mozilla sur « Comment fonctionne Internet ? »](https://developer.mozilla.org/en-US/Learn/Common_questions/How_does_the_Internet_work).
+1. Regardez [Comment fonctionne Internet en 5 minutes](https://youtu.be/7_LPdttKXPc?t=46s).
+1. Renseignez-vous sur les [différences entre une page Web, un serveur Web et un moteur de recherche](https://developer.mozilla.org/en-US/Learn/Common_questions/Pages_sites_servers_and_search_engines).
+1. Regardez ceci [un court métrage Google expliquant ce qu'est un navigateur Web] (https://youtu.be/BrXPcaRlBqo). Ensuite, utilisez ce site pour [connaître votre navigateur Web et sa version actuels](https://www.whatsmybrowser.org/).
+1. Découvrez [comment les différentes parties du Web interagissent les unes avec les autres](https://developer.mozilla.org/en-US/Learn/Getting_started_with_the_web/How_the_Web_works#Clients_and_servers) et lisez cet [article MDN sur la façon dont une requête DNS fonctionne](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_domain_name#how_does_a_dns_request_work). Alternativement, voici une [vidéo sur le fonctionnement d'une requête DNS](https://www.youtube.com/watch?v=72snZctFFtA&t=45s).
 
-### Vérification des connaissances
 
-Cette section contient des questions vous permettant de vérifier par vous-même votre compréhension de cette leçon. Si vous rencontrez des difficultés pour répondre à une question, cliquez dessus et consultez le matériel auquel elle renvoie.
+## Vérification des connaissances
+
+> **note**
+> Cette section contient des questions vous permettant de vérifier par vous-même votre compréhension de cette leçon. Si vous rencontrez des difficultés pour répondre à une question, cliquez dessus et consultez le matériel auquel elle renvoie.
 
 - [Qu'est-ce qu'un serveur Web ?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
 - [Qu'est-ce qu'un réseau ?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/How_does_the_Internet_work)
@@ -43,9 +48,12 @@ Cette section contient des questions vous permettant de vérifier par vous-même
 - [Qu'est-ce qu'un moteur de recherche ?](https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Pages_sites_servers_and_search_engines)
 - [Qu'est-ce qu'une requête DNS ?](https://www.youtube.com/watch?v=72snZctFFtA&t=45s)
 - [Quel navigateur utilisez-vous actuellement ?](https://www.whatsmybrowser.org/)
-- [Dans vos propres mots, décrivez le processus qui se déroule lorsque vous lancez une recherche sur google.com en fonction de ce dont nous avons discuté dans cette section.](https://developer.mozilla.org/en-US/docs/ Apprendre/Common_questions/Pages_sites_servers_and_search_engines)
+- [Dans vos propres mots, décrivez le processus qui se déroule lorsque vous lancez une recherche sur google.com en fonction de ce dont nous avons discuté dans cette section.](https://developer.mozilla.org/en-US/search?q=Pages%20sites%20servers%20and%20search%20engines)
 
-### Ressources additionnelles
+> **note**
+> Discuter des questions dans le chanel [discord](https://discord.gg/qAXhuudu)
+
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers d'autres contenus. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 

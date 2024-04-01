@@ -1,6 +1,8 @@
 <!-- markdownlint-disable MD024 MD043 -->
 
-### Introduction
+# <b>Configuration git</b>
+
+## Introduction
 
 [Git](https://git-scm.com/) est un système de contrôle de version très populaire. Vous vous familiariserez très bien avec ce logiciel tout au long de TOP, alors ne vous inquiétez pas trop de sa compréhension à ce stade. De nombreuses leçons sont axées sur Git plus tard dans le programme.
 
@@ -8,7 +10,7 @@
 
 Même si GitHub et Git semblent être la même chose, ils ne sont pas la même chose ni même créés par la même entreprise.
 
-### Étape 1 : Installer Git
+## Étape 1 : Installer Git
 
 Cliquez sur le système d'exploitation que vous avez choisi ci-dessous :
 
@@ -81,7 +83,7 @@ Lire le terminal peut sembler un peu intimidant, mais c'est une excellente occas
 MacOS est déjà livré avec une version de Git, mais vous devez mettre à jour vers la dernière version. Dans le terminal, tapez
 
 ```bash
-brasser installer git
+brew installer git
 ```
 
 Cela installera la dernière version de Git. Facile, non ?
@@ -103,17 +105,12 @@ Si le numéro de version est inférieur à 2.28, suivez à nouveau les instructi
 ![Exemple de sortie de Brew Doctor](https://cdn.statically.io/gh/TheOdinProject/curriculum/284f0cdc998be7e4751e29e8458323ad5d320303/foundations/installations/setting_up_git/imgs/00.png)
 1. Exécutez `brew install git`, **ouvrez une nouvelle fenêtre de terminal**, puis vérifiez votre version de Git, qui devrait maintenant être la dernière.
 
-</détails>
-
-<détails markdown="block">
-<summary class="dropDown-header">Chrome OS
-</résumé>
+> Chrome OS
 
 Suivez les instructions pour [installer Git à partir de la source](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-debian-10#installing-git-from-source) depuis Digital Ocean .
 
-</détails>
 
-### Étape 2 : Configurer Git et GitHub
+## Étape 2 : Configurer Git et GitHub
 
 #### Étape 2.1 : Créer un compte GitHub
 
@@ -219,15 +216,15 @@ Maintenant, retournez à GitHub dans la fenêtre de votre navigateur et collez l
 
 #### Étape 2.5 Tester votre clé
 
-Suivez ces instructions pour [tester votre connexion SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection?platform=linux) **( n'oubliez pas d'omettre le `$` lorsque vous copiez et collez le code !)**. Vous devriez voir cette réponse dans votre terminal : **Salut nom d'utilisateur ! Vous vous êtes authentifié avec succès, mais GitHub ne fournit pas d'accès au shell.** Ne laissez pas le manque d'accès au shell de GitHub vous déranger. Si vous voyez ce message, vous avez ajouté avec succès votre clé SSH et vous pouvez continuer. Si le résultat ne correspond pas correctement, essayez à nouveau de suivre ces étapes ou venez sur [le chat Discord](https://discord.gg/fbFCkYabZB) pour demander de l'aide.
+Suivez ces instructions pour [tester votre connexion SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/testing-your-ssh-connection?platform=linux) **( n'oubliez pas d'omettre le `$` lorsque vous copiez et collez le code !)**. Vous devriez voir cette réponse dans votre terminal : **Salut nom d'utilisateur ! Vous vous êtes authentifié avec succès, mais GitHub ne fournit pas d'accès au shell.** Ne laissez pas le manque d'accès au shell de GitHub vous déranger. Si vous voyez ce message, vous avez ajouté avec succès votre clé SSH et vous pouvez continuer. Si le résultat ne correspond pas correctement, essayez à nouveau de suivre ces étapes ou venez sur [le chat Discord](https://discord.gg/qAXhuudu) pour demander de l'aide.
 
-### Étape 3 : Dites-nous comment ça s'est passé !
+## Étape 3 : Dites-nous comment ça s'est passé !
 
 Vous avez terminé la section sur les installations de base, bon travail ! Au fur et à mesure que vous progressez dans les chemins, d’autres outils seront installés, alors gardez l’œil ouvert !
 
 Vous aviez probablement l’impression d’être au-dessus de votre tête et vous ne compreniez probablement pas grand-chose de ce que vous faisiez. C'est 100% normal. Accrochez-vous. Tu peux le faire! Et nous vous soutenons.
 
-### Ressources additionnelles
+## Ressources additionnelles
 
 Cette section contient des liens utiles vers du contenu connexe. Ce n’est pas obligatoire, alors considérez-le comme supplémentaire.
 
