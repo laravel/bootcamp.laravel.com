@@ -11,14 +11,14 @@
             >
                 <div class="relative min-h-0 flex-1 flex flex-col xl:w-80">
                     <a href="/" class="flex items-center py-8 px-4 lg:px-8 xl:px-16">
-                        {{-- <img
+                        <img
                             class="w-8 h-8 shrink-0 transition-all duration-300 lg:w-12 lg:h-12"
                             :class="{ 'w-12 h-12': navIsOpen }"
-                            src="/img/logomark.min.svg"
-                            alt="Laravel"
+                            src="/img/logomark.svg"
+                            alt="Boostcamp"
                             width="50"
                             height="52"
-                        > --}}
+                        >
                         <span class="hidden lg:block ml-4 text-orange-500 text-3xl font-medium">Boostcamp</span>
                     </a>
                     <div class="overflow-y-auto overflow-x-hidden px-4 lg:overflow-hidden lg:px-8 xl:px-16">
