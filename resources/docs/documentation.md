@@ -50,6 +50,7 @@
     - [Editing Chirps](/livewire/editing-chirps)
     - [Deleting Chirps](/livewire/deleting-chirps)
     - [Notifications & Events](/livewire/notifications-and-events)
+
   
 - ## Modélisation UML
     - [Installation](/blade/coming-soon)
@@ -61,6 +62,7 @@
     - [Editing Chirps](/inertia/editing-chirps)
     - [Deleting Chirps](/inertia/deleting-chirps)
     - [Notifications & Events](/inertia/notifications-and-events)
+
 
 - ## Intégration de l'IA avec OpenAI
     - [Installation](/blade/coming-soon)
