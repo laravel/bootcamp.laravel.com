@@ -25,12 +25,15 @@
     - [Projet receipt](/html-foundations/project-recipes)
 
 - ## JavaScript et POO
-    - [Installation](/javascript/historique)
-    - [Creating Chirps](/javascript/coming-soon)
-    - [Showing Chirps](/javascript/coming-soon)
-    - [Editing Chirps](/javascript/coming-soon)
-    - [Deleting Chirps](/javascript/coming-soon)
-    - [Notifications & Events](/javascript/coming-soon)
+    - [Introduction à JavaScript](/javascript/historique)
+    - [Mon premier script](/javascript/coming-soon)
+    - [Variables, Type de données et Opérateurs](/javascript/coming-soon)
+    - [Conditions et boucles](/javascript/coming-soon)
+    - [Fonctions](/javascript/coming-soon)
+    - [Evènements](/javascript/coming-soon)
+    - [Structure de données: Objets et tableaux](/javascript/coming-soon)
+    - [Algorithmique](/javascript/coming-soon)
+    - [Programmation Orienté Objet](/javascript/coming-soon)
   
 - ## React
     - [Installation](/blade/installation)
@@ -50,11 +53,6 @@
   
 - ## Modélisation UML
     - [Installation](/blade/coming-soon)
-    - [Creating Chirps](/blade/coming-soon)
-    - [Showing Chirps](/blade/coming-soon)
-    - [Editing Chirps](/blade/coming-soon)
-    - [Deleting Chirps](/blade/coming-soon)
-    - [Notifications & Events](/blade/coming-soon)
   
 - ## Gestion de projet (Agile)
     - [Installation](/inertia/installation)
@@ -66,27 +64,12 @@
 
 - ## Intégration de l'IA avec OpenAI
     - [Installation](/blade/coming-soon)
-    - [Creating Chirps](/blade/coming-soon)
-    - [Showing Chirps](/blade/coming-soon)
-    - [Editing Chirps](/blade/coming-soon)
-    - [Deleting Chirps](/blade/coming-soon)
-    - [Notifications & Events](/blade/coming-soon)
 
 - ## Création d’assistant AI 
     - [Installation](/blade/coming-soon)
-    - [Creating Chirps](/blade/coming-soon)
-    - [Showing Chirps](/blade/coming-soon)
-    - [Editing Chirps](/blade/coming-soon)
-    - [Deleting Chirps](/blade/coming-soon)
-    - [Notifications & Events](/blade/coming-soon)
   
 - ## Projet final
     - [Installation](/blade/coming-soon)
-    - [Creating Chirps](/blade/coming-soon)
-    - [Showing Chirps](/blade/coming-soon)
-    - [Editing Chirps](/blade/coming-soon)
-    - [Deleting Chirps](/blade/coming-soon)
-    - [Notifications & Events](/blade/coming-soon)
 
 - ## [Déployement](/deploying)
 - ## [Conclusion](/conclusion)
