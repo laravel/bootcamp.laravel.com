@@ -207,11 +207,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Chirp;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
+use Illuminate\Http\Request;// [tl! collapse:end]
+use Illuminate\Support\Facades\Gate;// [tl! add]
 use Inertia\Inertia;
 use Inertia\Response;
-// [tl! collapse:end]
 class ChirpController extends Controller
 {
     // [tl! collapse:start]
