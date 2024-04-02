@@ -149,6 +149,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;// [tl! collapse:end]
 use Illuminate\Support\Facades\Gate;// [tl! add]
 use Illuminate\View\View;
+
 class ChirpController extends Controller
 {
     // [tl! collapse:start]
