@@ -15,6 +15,11 @@
     - [Configurer git](/installations/configurer-git)
     - [Editeur de text](/installations/text-editors)
 
+- ## Apprendre git
+    - [Introduction à git ?](/git/foundations-git/introduction-to-git)
+    - [Les bases de git](/git/foundations-git/git-basics)
+    - [Les commits et message ](/git/foundations-git/commit-messages)
+
 - ## HTML/CSS
     - [Introduction à HTML/CSS](/html-foundations/intro-to-html-css)
     - [HTML fondammentaux](/html-foundations/html-boilerplate)
