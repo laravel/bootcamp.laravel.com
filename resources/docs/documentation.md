@@ -20,6 +20,11 @@
     - [Les bases de git](/git/foundations-git/git-basics)
     - [Les commits et message ](/git/foundations-git/commit-messages)
 
+- ## Travailler en remote avec git
+    - [Approfondir git ?](/git/intermediate-git/a-deeper-look-at-git)
+    <!-- - [Git dans le monde réel ](/git/intermediate-git/using-git-in-the-real-world)
+    - [ Travailler en remote](/git/intermediate-git/working-with-remotes) -->
+
 - ## HTML/CSS
     - [Introduction à HTML/CSS](/html-foundations/intro-to-html-css)
     - [HTML fondammentaux](/html-foundations/html-boilerplate)
