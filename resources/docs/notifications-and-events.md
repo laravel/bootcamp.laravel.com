@@ -223,7 +223,7 @@ class SendChirpCreatedNotifications implements ShouldQueue// [tl! add]
 }
 ```
 
-We've marked our listener with the `ShouldQueue` interface, which tells Laravel that the listener should be run in a [queue](https://laravel.com/docs/queues). By default, the "database" queue will be used to process jobs asynchronously; to process the notification run `php artisan queue:work`. However, you may set the queue connnection to "sync" to synchronously process queued items with the current request; `QUEUE_CONNECTION=sync`.
+We've marked our listener with the `ShouldQueue` interface, which tells Laravel that the listener should be run in a [queue](https://laravel.com/docs/queues). By default, the "database" queue will be used to process jobs asynchronously. To begin processing queued jobs, you should run the `php artisan queue:work` Artisan command in your terminal.
 
 We've also configured our listener to send notifications to every user in the platform, except the author of the Chirp. In reality, this might annoy users, so you may want to implement a "following" feature so users only receive notifications for accounts they follow.
 
