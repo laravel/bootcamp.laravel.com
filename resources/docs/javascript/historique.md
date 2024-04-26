@@ -1,1 +1,0 @@
-### Qu’est-ce que JavaScript ?

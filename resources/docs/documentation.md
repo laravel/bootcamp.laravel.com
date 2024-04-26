@@ -34,16 +34,14 @@
     - [Les listes](/html-foundations/lists)
     - [Projet receipt](/html-foundations/project-recipes)
 
-- ## JavaScript et POO
-    - [Introduction à JavaScript](/javascript/historique)
-    - [Mon premier script](/javascript/coming-soon)
-    - [Variables, Type de données et Opérateurs](/javascript/coming-soon)
-    - [Conditions et boucles](/javascript/coming-soon)
-    - [Fonctions](/javascript/coming-soon)
-    - [Evènements](/javascript/coming-soon)
-    - [Structure de données: Objets et tableaux](/javascript/coming-soon)
-    - [Algorithmique](/javascript/coming-soon)
-    - [Programmation Orienté Objet](/javascript/coming-soon)
+- ## JavaScript et manipulation du DOM
+    - [Aperçu du chapitre](/javascript/introduction)
+    - [Mon premier script](/javascript/les-bases-de-javascript)
+    - [Manipuler le DOM et les events ](/javascript/dom-et-events)
+    - [Les objets en javascript](/javascript/les-objets-en-javascript)
+    - [Validation côté client](/javascript/validation-client)
+    - [Local storage](/javascript/local-storage)
+    - [Projet javascript](/javascript/projet-javascript)
   
 - ## React
     - [Installation](/blade/installation)
