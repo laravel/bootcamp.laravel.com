@@ -34,7 +34,7 @@
     - [Les listes](/html-foundations/lists)
     - [Projet receipt](/html-foundations/project-recipes)
 
-- ## JavaScript et manipulation du DOM
+- ## JavaScript: Manipulation du DOM
     - [Aperçu du chapitre](/javascript/introduction)
     - [Mon premier script](/javascript/les-bases-de-javascript)
     - [Manipuler le DOM et les events ](/javascript/dom-et-events)
@@ -42,6 +42,14 @@
     - [Validation côté client](/javascript/validation-client)
     - [Local storage](/javascript/local-storage)
     - [Projet javascript](/javascript/projet-javascript)
+
+- ## JavaScript: Travailler avec des objets
+    - [Introduction aux objets Js](/javascript/les-objets-js)
+    - [Les classes Js](/javascript/les-classes-js)
+    - [Concepte de single page](/javascript/concept-de-single-page)
+    - [Projet: Awesome Books](/javascript/awesome-books-project)
+    - [Refactoriser votre projet](/javascript/refactoriser-votre-projet-awesome-book)
+    - [Project complet avec Navigation](/javascript/navigation-project-awesome-book)
   
 - ## React
     - [Installation](/blade/installation)
