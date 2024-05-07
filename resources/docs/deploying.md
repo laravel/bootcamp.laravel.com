@@ -16,7 +16,7 @@ Laravel Forge can create servers on various infrastructure providers such as Dig
 
 Laravel Vapor is a serverless deployment platform for Laravel, powered by AWS. Launch your Laravel infrastructure on Vapor and fall in love with the scalable simplicity of serverless.
 
-Both are fantastic options, but today we're going with Forge for it's simplicity, choice of providers, and for being budget-friendly on smaller applications. You can always move to Vapor later if you want the scalability of serverless.
+Both are fantastic options, but today we're going with Forge for its simplicity, choice of providers, and for being budget-friendly on smaller applications. You can always move to Vapor later if you want the scalability of serverless.
 
 Sign up for your free trial with [Laravel Forge](https://forge.laravel.com/?ref=bootcamp.laravel.com) and then pick your server provider:
 
@@ -68,7 +68,7 @@ If you would like to use a domain name then we recommend visiting the *Sites* ta
 
 <img src="/img/screenshots/forge-new-site.png" alt="New site screenshot" class="rounded-lg border dark:border-none shadow-lg" />
 
-Select your site, and then click on it's name in the heading to visit your site and see Forge's default site page.
+Select your site, and then click on its name in the heading to visit your site and see Forge's default site page.
 
 ## Creating a database
 
@@ -102,7 +102,7 @@ If you would like to run a queue worker, ensure that the `QUEUE_CONNECTION` valu
 
 ## Configuring your deploy script
 
-On the *App* tab for your site you may review the deploy script that Forge created for you.
+On the *App* tab for your site, you may review the deploy script that Forge created for you.
 
 <img src="/img/screenshots/forge-deploy-script.png" alt="Deploy script screenshot" class="rounded-lg border dark:border-none shadow-lg" />
 
