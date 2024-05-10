@@ -413,7 +413,7 @@ php artisan db:table users
 
 So, the only thing missing is extra columns in our database to store the relationship between a `Chirp` and its `User` and the message itself. Remember the database migration we created earlier? It's time to open that file to add some extra columns:
 
-```php filename=databases/migrations/&amp;lt;timestamp&amp;gt;_create_chirps_table.php
+```php filename=database/migrations/&amp;lt;timestamp&amp;gt;_create_chirps_table.php
 <?php
 // [tl! collapse:start]
 use Illuminate\Database\Migrations\Migration;
