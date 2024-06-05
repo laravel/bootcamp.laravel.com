@@ -63,7 +63,13 @@ cd chirper
 ./vendor/bin/sail npm --version
 ```
 
-Once the application's Docker containers have been started, you can access the application in your web browser at: [http://localhost](http://localhost).
+Once the application's Docker containers have started, you should run your application's [database migrations](https://laravel.com/docs/migrations):
+
+```shell
+./vendor/bin/sail artisan migrate
+```
+
+Finally, you can access the application in your web browser at: [http://localhost](http://localhost).
 
 <img src="/img/screenshots/fresh.png" alt="A fresh Laravel installation" class="dark:hidden rounded-lg border shadow-lg" />
 <img src="/img/screenshots/fresh-dark.png" alt="A fresh Laravel installation" class="hidden dark:block rounded-lg border-gray-700 shadow-lg" />
