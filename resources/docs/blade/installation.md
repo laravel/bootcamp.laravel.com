@@ -63,7 +63,7 @@ cd chirper
 ./vendor/bin/sail npm --version
 ```
 
-Once the application's Docker containers have started, you should run your application's [database migrations](https://laravel.com/docs/11.x/migrations):
+Once the application's Docker containers have started, you should run your application's [database migrations](https://laravel.com/docs/migrations):
 
 ```shell
 ./vendor/bin/sail artisan migrate
