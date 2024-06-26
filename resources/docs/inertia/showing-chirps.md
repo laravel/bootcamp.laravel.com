@@ -54,7 +54,7 @@ class ChirpController extends Controller
 
         return redirect(route('chirps.index'));// [tl! remove]
         return Inertia::render('Chirps/Index', [// [tl! add:start]
-            'chirps' => Chirp::with('user:id,name')->latest()->get(),// [tl! remove:-1,1 add]
+            'chirps' => Chirp::with('user:id,name')->latest()->get(),
         ]);// [tl! add:end]
     }
 
