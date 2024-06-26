@@ -14,7 +14,7 @@ Let's update the `index` method of our `ChirpController` class to pass Chirps fr
 namespace App\Http\Controllers;
 
 use App\Models\Chirp;
-use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\RedirectResponse;// [tl! remove]
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Inertia\Response;
@@ -43,7 +43,8 @@ class ChirpController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request): RedirectResponse// [tl! remove]
+    public function store(Request $request): Response// [tl! add]
     {
         $validated = $request->validate([
             'message' => 'required|string|max:255',
