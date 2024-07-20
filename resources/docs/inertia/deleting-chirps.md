@@ -242,7 +242,7 @@ Finally, we can add a delete button to the dropdown menu we created earlier in o
 ```vue tab=Vue filename=resources/js/Components/Chirp.vue
 <script setup>
 import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';// [tl! add]
+import DropdownLink from '@/Components/DropdownLink.vue';
 import InputError from '@/Components/InputError.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import dayjs from 'dayjs';
@@ -283,10 +283,10 @@ const editing = ref(false);
                         </button>
                     </template>
                     <template #content>
-                        <button class="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" @click="editing = true">
+                        <DropdownLink as="button" @click="editing = true">
                             Edit
-                        </button>
-                        <DropdownLink as="button" :href="route('chirps.destroy', chirp.id)" method="delete"><!-- [tl! add:start] -->
+                        </DropdownLink>
+                        <DropdownLink as="button" @click=" form.delete(route('chirps.destroy', chirp.id))"><!-- [tl! add:start] -->
                             Delete
                         </DropdownLink><!-- [tl! add:end] -->
                     </template>
@@ -322,13 +322,13 @@ export default function Chirp({ chirp }) {
 
     const [editing, setEditing] = useState(false);
 
-    const { data, setData, patch, processing, reset, errors } = useForm({
+    const form = useForm({
         message: chirp.message,
     });
 
     const submit = (e) => {
         e.preventDefault();
-        patch(route('chirps.update', chirp.id), { onSuccess: () => setEditing(false) });
+        form.patch(route('chirps.update', chirp.id), { onSuccess: () => setEditing(false) });
     };
     // [tl! add:26,3]
     return (
@@ -353,10 +353,10 @@ export default function Chirp({ chirp }) {
                                 </button>
                             </Dropdown.Trigger>
                             <Dropdown.Content>
-                                <button className="block w-full px-4 py-2 text-left text-sm leading-5 text-gray-700 hover:bg-gray-100 focus:bg-gray-100 transition duration-150 ease-in-out" onClick={() => setEditing(true)}>
+                                <Dropdown.Link as="button" onClick={() => setEditing(true)}>
                                     Edit
-                                </button>
-                                <Dropdown.Link as="button" href={route('chirps.destroy', chirp.id)} method="delete">
+                                </Dropdown.Link>
+                                <Dropdown.Link as="button" onClick={() => form.delete(route('chirps.destroy', chirp.id))}>
                                     Delete
                                 </Dropdown.Link>
                             </Dropdown.Content>
@@ -365,11 +365,11 @@ export default function Chirp({ chirp }) {
                 </div>
                 {editing
                     ? <form onSubmit={submit}>
-                        <textarea value={data.message} onChange={e => setData('message', e.target.value)} className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
-                        <InputError message={errors.message} className="mt-2" />
+                        <textarea value={form.data.message} onChange={e => form.setData('message', e.target.value)} className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
+                        <InputError message={form.errors.message} className="mt-2" />
                         <div className="space-x-2">
                             <PrimaryButton className="mt-4">Save</PrimaryButton>
-                            <button className="mt-4" onClick={() => setEditing(false) && reset()}>Cancel</button>
+                            <button className="mt-4" onClick={() => setEditing(false) && form.reset()}>Cancel</button>
                         </div>
                     </form>
                     : <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
