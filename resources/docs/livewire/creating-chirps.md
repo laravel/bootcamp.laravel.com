@@ -232,7 +232,7 @@ And also for mobile screens:
 
 ## Saving the Chirp
 
-Our form has been configured to invoke the `store` action when the `Chirp` button is clicked. Let's add a `store` action to our `chirp.create` component to validate the data and create a new Chirp.
+Our form has been configured to invoke the `store` action when the `Chirp` button is clicked. Let's add a `store` action to our `chirps.create` component to validate the data and create a new Chirp.
 
 ```php tab=Class filename=resources/views/livewire/chirps/create.blade.php
 <?php
