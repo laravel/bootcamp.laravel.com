@@ -6,7 +6,7 @@ Let's add a feature that's missing from other popular bird-themed microblogging 
 
 ## Updating our component
 
-Let's start by updating our existing `chirp.list` Livewire component to have an edit form for existing Chirps. The edit form will be a nested Livewire component that we'll create later.
+Let's start by updating our existing `chirps.list` Livewire component to have an edit form for existing Chirps. The edit form will be a nested Livewire component that we'll create later.
 
 First, we'll use the `x-dropdown` component that is included with Breeze. In addition, we will make this dropdown only visible to the Chirp's original author. In this dropdown, we'll add a link that will trigger the `edit` action on the component. This method will set the `editing` property to the Chirp that we want to edit. We'll use this property to conditionally display the edit form.
 
@@ -264,7 +264,7 @@ $cancel = fn () => $this->dispatch('chirp-edit-canceled'); // [tl! add:end]
 </div>
 ```
 
-Finally, we'll need to update the `chirp.list` component to listen both for the `chirp-updated` and `chirp-edit-canceled` events.
+Finally, we'll need to update the `chirps.list` component to listen both for the `chirp-updated` and `chirp-edit-canceled` events.
 
 If the `chirp-updated` event is dispatched, we'll need to update the list of Chirps. If the `chirp-edit-canceled` event is dispatched, we'll need to set the `editing` property to `null` so that the edit form is no longer displayed:
 
