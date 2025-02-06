@@ -259,7 +259,7 @@ const form = useForm({
 <template>
     <Head title="Chirps" />
 
-    <AuthenticatedLayout>
+    <AuthenticatedLayout :user="auth.user">
         <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
             <form @submit.prevent="form.post(route('chirps.store'), { onSuccess: () => form.reset() })">
                 <textarea
@@ -293,7 +293,7 @@ export default function Index({ auth }) {
     };
 
     return (
-        <AuthenticatedLayout>
+        <AuthenticatedLayout user={auth.user}>
             <Head title="Chirps" />
 
             <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
